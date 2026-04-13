@@ -1,0 +1,222 @@
+.m-da-modal {
+  overflow-y: auto;
+  flex-direction: column;
+  width: 100%;
+  max-width: scale(970);
+  padding: var(--padding_def);
+  border-radius: scale(16);
+  background-color: var(--a-color_grey_10);
+
+  &__title {
+    margin: 0 0 scale(8);
+    @include desktop {
+      margin: 0 0 scale(12);
+    }
+  }
+
+  &__introtext {
+    margin: 0 0 scale(8);
+    @include desktop {
+      margin: 0 0 scale(20);
+    }
+  }
+
+  &__cards {
+    gap: scale(8);
+    display: grid;
+    margin: 0 0 scale(8);
+    @include tablet(min) {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    }
+    @include desktop {
+      margin: 0 0 scale(12);
+    }
+  }
+  &.--custom &__cards {
+    @include mobile(max) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__card {
+    gap: scale(8);
+    display: flex;
+    align-items: center;
+    min-width: 0;
+    padding: scale(12);
+    border-radius: scale(12);
+    background-color: var(--a-color_white);
+    @include desktop {
+      gap: scale(16);
+      flex-direction: column;
+      justify-content: space-between;
+      padding: scale(16);
+      border-radius: scale(16);
+    }
+    &-icos {
+      flex: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: var(--a-color_white);
+    }
+    &-num {
+      position: relative;
+      flex: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: scale(20);
+      height: scale(20);
+      border-radius: 50%;
+      background-color: var(--a-color_dark);
+      @include desktop {
+        width: scale(36);
+        height: scale(36);
+      }
+    }
+    img {
+      flex: none;
+      display: inline-block;
+      width: scale(20);
+      height: scale(20);
+      margin-left: scale(-4);
+      @include desktop {
+        width: scale(36);
+        height: scale(36);
+        margin-left: scale(-8);
+      }
+    }
+  }
+  &.--custom &__card {
+    @include desktop {
+      align-items: flex-start;
+    }
+  }
+  &.--programs &__card {
+    @include tablet(min) {
+      flex-direction: column-reverse;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    @include desktop {
+      flex-direction: column;
+      align-items: flex-end;
+    }
+  }
+
+  &__text {
+    padding: scale(12);
+    border-radius: scale(12);
+    background-color: var(--a-color_white);
+    @include mobile {
+      padding-right: scale(24);
+    }
+    @include desktop {
+      padding: scale(16);
+    }
+    :deep(strong) {
+      display: inline-block;
+      padding: scale(2) scale(4);
+      margin-left: scale(-4);
+      border-radius: scale(4);
+      background-color: var(--a-color_red);
+      box-shadow: 0px 3.83px 0.55px 0px #00000017;
+      color: var(--a-color_white);
+      @include tablet() {
+        strong {
+          border-top-right-radius: 0;
+          border-bottom-right-radius: 0;
+        }
+        strong:last-of-type {
+          border-top-right-radius: scale(4);
+          border-bottom-right-radius: scale(4);
+          border-top-left-radius: 0;
+          border-bottom-left-radius: 0;
+        }
+      }
+    }
+  }
+
+  &__form {
+    position: relative;
+    margin: scale(8) 0 0;
+    padding: scale(12);
+    border-radius: scale(16);
+    background-color: var(--a-color_grey_40);
+    @include tablet(min) {
+      margin: scale(16) 0 0;
+      padding-right: 53%;
+      background-image: #{__cdnUrl('synergy-api/uploads/content/s-download-app/m-da-modal-bg.webp')};
+      background-repeat: no-repeat;
+      background-size: cover
+    }
+    @include desktop {
+      margin: scale(20) 0 0;
+      padding: scale(16) scale(24) 0;
+      padding-right: 49%;
+    }
+  }
+  &.--custom &__form {
+    @include desktop {
+      height: scale(284);
+    }
+  }
+  &.--programs &__form {
+    @include desktop {
+      height: scale(253);
+    }
+  }
+
+  picture {
+    display: none;
+    @include tablet(min) {
+      overflow: hidden;
+      position: absolute;
+      left: 0;
+      top: scale(-16);
+      right: 0;
+      bottom: 0;
+      z-index: 0;
+      display: block;
+      border-bottom-right-radius: 16px;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top right;
+    }
+  }
+  &.--custom picture {
+    @include desktop {
+      top: scale(-56);
+    }
+  }
+  &.--programs picture {
+    @include desktop {
+      top: scale(-40);
+    }
+  }
+
+  :deep() {
+    .m-form {
+      position: relative;
+      height: auto;
+      z-index: 1;
+      &__title {
+        margin: 0 0 scale(12);
+        @include desktop {
+          margin: 0 0 scale(16);
+        }
+      }
+      &__content {
+        margin: 0 0 scale(8);
+        @include desktop {
+          margin: 0 0 scale(16);
+        }
+      }
+      .a-input { background-color: var(--a-color_white) }
+    }
+  }
+}

@@ -1,0 +1,154 @@
+.s-resume {
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: scale(8);
+
+    @include desktop(min) {
+      gap: scale(20);
+      flex-direction: row;
+    }
+  }
+
+  &__container {
+    display: flex;
+    flex-direction: column;
+    gap: scale(8);
+
+    @include desktop(min) {
+      gap: scale(20);
+      max-width: scale(600);
+      width: 100%;
+    }
+  }
+
+  &__content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: scale(8);
+
+    @include desktop(min) {
+      gap: scale(20);
+    }
+  }
+
+  &__item {
+    flex: 1;
+    padding: scale(12);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    &.--skills {
+      flex: 10;
+      @include desktop(min) {
+        display: flex;
+        flex-direction: column;
+      }
+    }
+
+    &.--name {
+      display: grid;
+      gap: scale(12);
+      grid-template-columns: scale(48) 1fr;
+      background-color: var(--a-color_grey_40);
+
+      @include desktop(min) {
+        gap: scale(20);
+        grid-template-columns: scale(60) 1fr;
+      }
+    }
+
+    @include desktop(min) {
+      padding: scale(24);
+    }
+  }
+
+  &__item-name {
+    margin-bottom: scale(20);
+  }
+
+  &__item-title {
+    display: flex;
+    gap: scale(12);
+    flex-wrap: wrap;
+    align-items: center;
+    margin-bottom: scale(36);
+    color: var(--a-color_grey_80);
+
+    img {
+      max-width: scale(312);
+      height: auto;
+
+      @include tablet(min) {
+        margin-left: auto;
+      }
+    }
+
+    .--name & {
+      margin-bottom: scale(8);
+    }
+
+    @include desktop(min) {
+      margin-bottom: scale(20);
+
+      .--name & {
+        margin-bottom: scale(8);
+      }
+    }
+  }
+
+  &__item-text {
+    margin-bottom: scale(12);
+
+    .--name & {
+      margin-bottom: 0;
+    }
+
+    @include desktop(min) {
+      margin-bottom: scale(20);
+
+      .--name & {
+        margin-bottom: 0;
+      }
+    }
+  }
+
+  &__item-tags {
+    margin-top: auto;
+    :deep() {
+      li {
+        position: relative;
+        padding-left: scale(16);
+        &:not(:last-child) {
+          margin: 0 0 scale(6);
+          @include desktop() {
+            margin: 0 0 scale(8);
+          }
+        }
+  
+        @include desktop() {
+          padding-left: scale(30);
+        }
+  
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: scale(6);
+          display: block;
+          width: scale(8);
+          height: scale(8);
+          border-radius: scale(2);
+          background-color: currentColor;
+  
+          @include desktop() {
+            width: scale(12);
+            height: scale(12);
+          }
+        }
+      }
+    }
+
+  }
+}

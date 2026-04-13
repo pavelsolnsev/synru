@@ -1,0 +1,196 @@
+.s-employment {
+  :deep() {
+    .l-section__inner {
+      display: flex;
+      flex-direction: column;
+      gap: var(--gap_def);
+
+      @include tablet(min) {
+        display: grid;
+        grid-template-columns: scale(336) 1fr;
+      }
+
+      @include desktop(min) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .swiper {
+      // height: 100%;
+    }
+
+    .swiper-wrapper {
+      // @include tablet(max) {
+      //   flex-direction: row;
+      //   row-gap: var(--gap_def);
+      // }
+
+      // @include desktop(min) {
+      //   display: flex;
+      //   flex-wrap: wrap;
+      //   gap: var(--gap_def);
+      //   grid-template-columns: 1fr 1fr 1fr;
+      // }
+    }
+  }
+
+  &__banner {
+    position: relative;
+    display: flex;
+    gap: scale(24);
+    flex-direction: column;
+    justify-content: space-between;
+    padding: var(--padding_def);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      width: scale(77);
+      height: auto;
+
+      @include desktop(min) {
+        top: scale(15);
+        right: scale(38);
+        width: scale(282);
+      }
+
+      &.big {
+
+        @include mobile(max) {
+          width: scale(140);
+          z-index: 0;
+        }
+      }
+    }
+  }
+
+  &__banner-text {
+    max-width: scale(592);
+    position: relative;
+    z-index: 1;
+  }
+
+  &__slider {
+    overflow: hidden;
+
+    &_mobile {
+      display: none;
+
+      @include tablet(max) {
+        display: block;
+      }
+    }
+  }
+
+  &__slide {
+    display: block;
+    padding: var(--padding_def);
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(16);
+    height: scale(64) !important;
+
+    @include mobile() {}
+    
+    @include tablet(min) {}
+
+    @include desktop(min) {
+      height: scale(132) !important;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+
+  &__lines {
+    position: relative;
+    display: grid;
+    overflow: hidden;
+    gap: var(--gap_def);
+    min-height: scale(433);
+
+    &:before,
+    &:after {
+      top: 0;
+      z-index: 10;
+      position: absolute;
+      display: block;
+      height: 100%;
+
+      @include tablet(min) {
+        content: '';
+        width: scale(64);
+      }
+
+      @include desktop(min) {
+        width: scale(103);
+      }
+    }
+
+    &:before {
+      left: 0;
+      background: linear-gradient(90deg, rgba(245,245,246,1) 0%, rgba(245,245,246,0) 100%);
+    }
+
+    &:after {
+      right: 0;
+      background: linear-gradient(90deg, rgba(245,245,246,0) 0%, rgba(245,245,246,1) 100%);
+    }
+
+    @include tablet(max) {
+      display: none;
+    }
+  }
+
+  &__line {
+    position: relative;
+  }
+
+  &__item {
+    --slide-width: #{scale(160)};
+    --slide-gap: var(--gap_def);
+    --total-width: calc(var(--slide-width) + var(--slide-gap));
+    --speed: calc(5s * var(--slide-count));
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    left: max(calc(var(--total-width) * (var(--slide-count) - 1)), 100%);
+    animation: scrollLeft var(--speed) linear infinite;
+    animation-delay: calc(var(--speed) / var(--slide-count) * var(--n) - var(--speed));
+    width: var(--slide-width);
+    padding: scale(13) scale(10);
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(12);
+
+    &.--toRight {
+      animation-direction: reverse;
+    }
+
+    @include desktop(min) {
+      --slide-width: #{scale(323)};
+      padding: scale(40) scale(59);
+      border-radius: scale(16);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+
+    @keyframes scrollLeft {
+      to {
+        left: calc(-1 * var(--total-width));
+      }
+    }
+  }
+}

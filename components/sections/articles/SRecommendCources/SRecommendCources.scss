@@ -1,0 +1,25 @@
+.s-recommend-cources {
+  overflow: visible;
+  display: grid;
+  gap: scale(24);
+  background-color: var(--a-color_white);
+  
+  @include desktop() {
+    gap: scale(40);
+  }
+
+  &__wrapper {
+    background-color: var(--a-color_white);
+  }
+  
+  &__inner {
+    display: grid;
+    gap: scale(10);
+    @include tablet(min) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include desktop() {
+      gap: scale(20);
+    }
+  }
+}

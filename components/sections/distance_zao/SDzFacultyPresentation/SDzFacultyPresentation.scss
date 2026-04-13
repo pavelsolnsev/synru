@@ -1,0 +1,104 @@
+.s-dz-faculty-presentation {
+  overflow: visible;
+  
+  :deep(.m-section__inner) {
+    position: relative;
+    overflow: visible;
+  }
+
+  &__content {
+    z-index: 1;
+    position: relative;
+    padding: var(--padding_def);
+    margin-top: scale(-16);
+    border-radius: scale(16);
+    background-color: var(--a-color_dark);
+    color: var(--a-color_white);
+
+    @include desktop {
+      display: flex;
+      flex-direction: column;
+      min-height: scale(500);
+      background-color: transparent;
+    }
+  }
+
+  &__title {
+    margin-bottom: scale(16);
+    max-width: scale(1200);
+  }
+
+  &__subtitle {
+    max-width: scale(1200);
+    
+    @include desktop {
+      margin-bottom: auto;
+
+      &:has(+ .s-form-full-bg__tags) {
+        margin-bottom: scale(44);
+      }
+    }
+  }
+
+  picture {
+    background-color: var(--a-color_dark);
+    @include tablet(max) {
+      overflow: hidden;
+      position: relative;
+      display: block;
+      height: scale(238);
+      border-top-left-radius: scale(16);
+      border-top-right-radius: scale(16);
+    }
+    @include desktop {
+      overflow: hidden;
+      border-radius: scale(16);
+    }
+    img {
+      object-position: top center;
+      @include desktop {
+        object-position: center right;
+      }
+    }
+  }
+
+  &:deep() {
+    .a-uikit-select {
+      align-self: flex-start;
+      width: 100%;
+      height: scale(32);
+      margin: scale(16) 0;
+      @include desktop {
+        width: auto;
+        min-width: scale(400);
+        height: scale(40);
+        margin: 0 0 scale(24);
+      }
+      &__input {
+        padding: scale(8) scale(12);
+        padding-right: scale(40);
+        border: rem(1) solid;
+        border-radius: scale(40);
+        background-color: transparent;
+        color: var(--a-color_white);
+        @include desktop {
+          padding: scale(10) scale(16);
+          padding-right: scale(58);
+        }
+        &:before {
+          width: scale(12);
+          height: scale(8);
+          background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTIiIGhlaWdodD0iOCIgdmlld0JveD0iMCAwIDEyIDgiIGZpbGw9Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+CjxwYXRoIGQ9Ik0xMiAxLjM0MTcyTDYgNy42MzY3Mkw3LjUwNjcxZS0wOCAxLjM0MTcyTDEuMjc4NTEgMC4wMDAzNTUyNTlMNiA0Ljk1Mzk5TDEwLjcyMTUgMC4wMDAzNTUzNzJMMTIgMS4zNDE3MloiIGZpbGw9IndoaXRlIi8+Cjwvc3ZnPgo=');
+        }
+      }
+      &__list {
+        background-color: var(--a-color_dark);
+        white-space: normal;
+        &-option:hover {
+          background-color: var(--a-color_grey_dark);
+        }
+      }
+    }
+  }
+  
+}

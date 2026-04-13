@@ -1,0 +1,4 @@
+<template>
+  <SEduForm />
+  <SEduInteresting />
+</template>

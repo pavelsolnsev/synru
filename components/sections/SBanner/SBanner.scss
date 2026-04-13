@@ -1,0 +1,95 @@
+.s-banner {
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  margin: var(--layout-v-padding) 0;
+  padding: 0;
+  border-radius: var(--border-radius_def);
+
+  @include tablet(min, $p_md) {
+    min-height: scale(320);
+    margin: var(--layout-v-padding) var(--layout-h-padding);
+    padding: var(--padding_def);
+  }
+
+  @include desktop(min){
+    min-height: scale(540);
+
+    &:not(:first-child) {
+      margin-top: 0;
+    }
+  }
+
+  &_bg {
+    &--dark {
+      background-color: var(--a-color_dark);
+      color: var(--a-color_white);
+    }
+    &--red {
+      background-color: var(--a-color_red);
+      color: var(--a-color_white);
+    }
+  }
+
+  &__head {
+    @include tablet(max) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      padding: scale(12);
+    }
+  }
+
+  &__img {
+    img {
+      z-index: -1;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: scale(16);
+      object-fit: cover;
+    
+      @include tablet(min, $p_md) {
+        position: absolute;
+        height: 100%;
+      }
+    }
+  }
+
+  .a-btn {
+    position: relative;
+    margin: scale(12);
+
+    @include tablet(min, $p_md) {
+      width: scale(280);
+      margin: auto 0 0;
+
+    }
+
+    @include desktop {
+      width: scale(420);
+    }
+  }
+
+  &__title {
+    max-width: scale(886);
+    margin: 0 0 scale(12);
+
+    @include tablet {
+      max-width: scale(364);
+    }
+  }
+
+  &__description {
+    max-width: scale(630);
+    
+    @include tablet {
+      max-width: scale(364);
+    }
+  }
+}

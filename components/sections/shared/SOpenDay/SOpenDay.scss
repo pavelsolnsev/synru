@@ -1,0 +1,50 @@
+.s-open-day {
+  padding: scale(40) var(--layout-h-padding);
+  border-radius: scale(16);
+  background-color: var(--a-color_grey_20);
+  @include desktop {
+    padding: scale(80) var(--layout-h-padding);
+  }
+  &:not(:first-child) {
+    margin-top: var(--layout-v-padding);
+  }
+  &:not(:last-child) {
+    margin-bottom: var(--layout-v-padding);
+  }
+
+  &__video {
+    height: scale(216) !important;
+    margin: 0 0 scale(24);
+    @include tablet() {
+      height: scale(360) !important;
+    }
+    @include desktop {
+      height: scale(680) !important;
+      margin: 0 0 scale(48);
+    }
+
+    :deep() {
+      .a-play {
+        left: 0;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        margin: auto;
+        @include desktop {
+          width: scale(64);
+          height: scale(64);
+          svg {
+            width: scale(32);
+            height: scale(32);
+          }
+        }
+      }
+
+      .a-tag {
+        @include desktop {
+          top: scale(24);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,89 @@
+.s-course-price {
+
+  @include mobile() {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  :deep() {
+    .m-form {
+      padding: var(--padding_def);
+      border-radius: scale(16);
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: grid;
+    gap: var(--gap_def);
+
+    @include desktop(min) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__prices {
+    position: relative;
+    padding: var(--padding_def);
+    background-color: var(--a-color_grey_40);
+    border-radius: scale(16);
+  }
+
+  &__info {
+    display: grid;
+    gap: scale(8);
+    margin-top: scale(32);
+
+    @include tablet(min) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include desktop(min) {
+      gap: scale(12);
+      margin-top: scale(47);
+    }
+  }
+
+  &__info-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    min-height: scale(122);
+    padding: scale(12);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      min-height: scale(152);
+    }
+
+    img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      height: auto;
+      width: scale(85);
+
+      @include desktop(min) {
+        width: scale(122);
+      }
+    }
+  }
+
+  &__info-text {
+    padding-right: scale(70);
+    color: var(--a-color_grey_100);
+
+    @include desktop(min) {
+      padding-right: scale(100);
+    }
+  }
+
+  &__info-item-value {
+    font-size: scale(20);
+    font-weight: 700;
+    line-height: scale(28);
+    color: var(--a-color_black);
+  }
+}

@@ -1,0 +1,96 @@
+.m-rating-card {
+  border-radius: var(--border-radius_def);
+  background-color: var(--a-color_grey_40);
+  padding: var(--padding_def);
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  gap: scale(20);
+  min-height: scale(180);
+  z-index: 0;
+  &[href]:hover {
+    background-color: var(--a-color_grey_10);
+  }
+
+  @include desktop() {
+    min-height: scale(280);
+  }
+
+  &__header {
+    display: flex;
+    gap: scale(12);
+    align-items: center;
+  }
+
+  &__position {
+    color: var(--a-color_white);
+    background-color: var(--a-color_red);
+    border-radius: scale(37);
+    padding-left: scale(10);
+    padding-right: scale(12);
+    height: scale(27);
+    font-weight: 600;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: scale(5);
+
+    @include desktop() {
+      height: scale(53);
+      padding-left: scale(22);
+      padding-right: scale(24);
+      gap: scale(8);
+    }
+
+    svg {
+      height: scale(12);
+      width: scale(13);
+      @include desktop() {
+        height: scale(25);
+        width: scale(26);
+      }
+    }
+  }
+
+  &__num {
+    font-size: scale(14);
+
+    @include desktop() {
+      font-size: scale(27);
+    }
+  }
+
+  &__organization {
+    color: var(--a-color_grey_100);
+  }
+
+  &__name {
+    max-width: scale(215);
+
+    @include tablet() {
+      max-width: scale(470);
+    }
+    @include desktop() {
+      max-width: scale(510);
+    }
+  }
+
+  &__image {
+    position: absolute;
+    right: 0;
+    bottom: scale(18);
+    width: scale(124);
+    height: scale(110);
+    z-index: -1;
+    @include tablet() {
+      width: scale(172);
+      height: scale(152);
+    }
+    @include desktop() {
+      width: scale(280);
+      height: scale(248);
+    }
+  }
+}

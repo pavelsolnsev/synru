@@ -1,0 +1,22 @@
+.s-quiz {
+  @include tablet(min) {
+    min-height: scale(290);
+    padding: scale(20);
+  }
+  @include desktop(min) {
+    min-height: scale(400);
+  }
+
+  &__intro-title {
+    margin-bottom: scale(24);
+  }
+
+  &__btns {
+    @include tablet(min) {
+      margin-top: auto;
+    }
+    @include desktop() {
+      .a-btn { width: scale(320) }
+    }
+  }
+}

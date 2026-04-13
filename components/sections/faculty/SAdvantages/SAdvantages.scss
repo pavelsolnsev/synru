@@ -1,0 +1,82 @@
+.s-advantages {
+  :deep() {
+    .l-section__inner {
+      position: relative;
+    }
+    .l-section__title {
+      @include desktop(min) {
+        max-width: unset;
+      }
+    }
+
+    .swiper {
+      overflow: visible;
+    }
+
+    .swiper-navigation {
+      button {
+        margin: 0;
+      }
+    }
+  }
+
+  .swiper-slide {
+    max-width: scale(280);
+    height: auto;
+    margin: 0;
+
+    @include desktop(min) {
+      max-width: scale(600);
+      min-height: scale(320);
+    }
+  }
+
+
+  &__item {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: scale(12);
+    border-radius: scale(16);
+    background-color: var(--a-color_grey_40);
+    @include desktop(min) {
+      min-height: scale(320);
+      padding: scale(24);
+    }
+
+    &-num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: scale(36);
+      height: scale(36);
+      margin: 0 0 scale(20);
+      border-radius: 50%;
+      background-color: var(--a-color_red);
+      color: var(--a-color_white);
+      @include desktop(min) {
+        position: absolute;
+        left: auto;
+        top: auto;
+        right: scale(24);
+        bottom: scale(24);
+        width: scale(48);
+        height: scale(48);
+        margin: 0;
+      }
+    }
+
+    &-title {
+      margin: 0 0 scale(12);
+    }
+
+    &-text {
+      margin-top: auto;
+      @include desktop(min) {
+        padding-right: scale(68);
+      }
+    }
+  }
+}

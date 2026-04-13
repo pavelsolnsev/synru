@@ -1,0 +1,145 @@
+.m-help-choose-card {
+  padding: var(--padding_def);
+  border-radius: scale(16);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+
+  &.--color-white {
+    color: var(--a-color_white);
+  }
+
+  &.--first {
+    @include desktop() {
+      width: scale(600);
+      min-height: scale(334);
+    }
+    @include tablet() {
+      width: scale(364);
+      min-height: scale(185);
+    }
+    @include mobile() {
+      width: scale(336);
+      min-height: scale(185);
+    }
+    .m-help-choose-card__title {
+      margin-bottom: scale(8);
+      max-width: scale(191);
+      @include desktop() {
+        max-width: scale(342);
+        margin-bottom: scale(24);
+      }
+    }
+
+    .m-help-choose-card__description {
+      margin-bottom: scale(4);
+      max-width: scale(191);
+      font-size: scale(10);
+      line-height: 1.3em;
+
+      @include desktop() {
+        max-width: scale(281);
+        margin-bottom: scale(8);
+        font-size: scale(15);
+      }
+      &:not(:has(+ .m-help-choose-card__text)) {
+        margin-bottom: scale(19);
+      }
+    }
+
+    .m-help-choose-card__text {
+      max-width: scale(191);
+      margin-bottom: scale(10);
+      font-size: scale(10);
+      line-height: 1.3em;
+
+      @include desktop() {
+        max-width: scale(281);
+        font-size: scale(15);
+      }
+    }
+  }
+
+  &.--second {
+    @include desktop() {
+      width: scale(600);
+      min-height: scale(334);
+    }
+    @include tablet() {
+      width: scale(364);
+      min-height: scale(185);
+    }
+    @include mobile() {
+      width: scale(336);
+      min-height: scale(185);
+    }
+    .m-help-choose-card__title {
+      margin-bottom: scale(8);
+      max-width: scale(170);
+      @include desktop() {
+        max-width: scale(309);
+        margin-bottom: scale(24);
+      }
+    }
+
+    .m-help-choose-card__description {
+      margin-bottom: scale(10);
+      font-size: scale(10);
+      line-height: 1.3em;
+      max-width: scale(170);
+      @include desktop() {
+        max-width: scale(281);
+        margin-bottom: scale(9);
+        font-size: scale(15);
+      }
+
+      &:not(:has(+ .m-help-choose-card__text)) {
+        margin-bottom: scale(19);
+      }
+    }
+
+    .m-help-choose-card__text {
+      margin-bottom: scale(10);
+      font-size: scale(10);
+      line-height: 1.3em;
+      max-width: scale(170);
+
+      @include desktop() {
+        max-width: scale(281);
+        font-size: scale(15);
+      }
+    }
+  }
+
+  &.--is-article-page {
+    .m-help-choose-card__description,
+    .m-help-choose-card__text {
+      @include desktop() {
+        max-width: scale(174);
+      }
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    height: 100%;
+    width: 100%;
+    img {
+      height: 100%;
+      width: 100%;
+      border-radius: scale(16);
+      object-position: bottom right;
+      object-fit: cover;
+    }
+  }
+
+  .a-btn {
+    margin-top: auto;
+    width: fit-content;
+    white-space: nowrap;
+  }
+}

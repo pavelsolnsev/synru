@@ -1,0 +1,188 @@
+.s-chances-entry {
+  @include mobile() {
+    padding-left: 0;
+    padding-right: 0;
+  }
+  :deep() {
+    .l-section__title {
+      @include mobile() {
+        padding: var(--layout-v-padding) var(--layout-h-padding);
+        padding-top: 0;
+        margin-bottom: scale(4);
+      }
+      @include desktop() {
+        max-width: initial;
+        margin-bottom: scale(62);
+      }
+    }
+  }
+  &__wrapper {
+    display: grid;
+    gap: scale(8);
+    @include tablet() {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, auto);
+      grid-template-areas:
+        "--budget --volunteer"
+        "--budget --medal"
+        "--olimp --sport";
+    }
+    @include desktop() {
+      grid-template-columns: repeat(4, 1fr);
+      grid-template-rows: repeat(2, auto);
+      grid-template-areas:
+        "--budget --budget --olimp --medal"
+        "--volunteer --volunteer --sport --sport";
+      gap: scale(20);
+    }
+  }
+
+  &__image {
+    position: absolute;
+    z-index: -1;
+
+    @include tablet(max) {
+      display: none;
+    }
+  }
+
+  &__item {
+    background-color: var(--a-color_grey_40);
+    padding: var(--padding_def);
+    border-radius: scale(16);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+    z-index: 2;
+    overflow: hidden;
+    &__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      @include desktop() {
+        align-items: flex-start;
+      }
+      .ico {
+        width: scale(32);
+        height: scale(32);
+        flex-shrink: 0;
+        @include desktop() {
+          width: scale(48);
+          height: scale(48);
+        }
+      }
+    }
+
+    &.--budget {
+      min-height: scale(321);
+      order: 0;
+      @include tablet(min) {
+        grid-area: --budget;
+      }
+      @include tablet() {
+        min-height: scale(313);
+        max-height: scale(313);
+      }
+      @include desktop() {
+        height: scale(386);
+
+        .s-chances-entry__item__header__footer {
+          max-width: scale(773);
+        }
+      }
+    }
+
+    &.--olimp {
+      order: 3;
+      min-height: scale(174);
+      @include tablet(min) {
+        grid-area: --olimp;
+      }
+      @include tablet() {
+        min-height: scale(225);
+        max-height: scale(225);
+      }
+      @include desktop() {
+        order: 1;
+        height: scale(386);
+        .s-chances-entry__item__header__footer {
+          max-width: scale(377);
+        }
+      }
+    }
+
+    &.--medal {
+      order: 2;
+      min-height: scale(129);
+      @include tablet(min) {
+        grid-area: --medal;
+      }
+      @include tablet() {
+        min-height: scale(152.5);
+        max-height: scale(152.5);
+      }
+      @include desktop() {
+        order: 2;
+        height: scale(386);
+
+        .s-chances-entry__item__header__footer {
+          max-width: scale(397);
+        }
+      }
+
+      img {
+        width: scale(274);
+        height: scale(274);
+        bottom: scale(-45);
+        right: scale(-30);
+      }
+    }
+
+    &.--volunteer {
+      order: 1;
+      min-height: scale(157);
+      @include tablet(min) {
+        grid-area: --volunteer;
+      }
+      @include tablet() {
+        min-height: scale(152.5);
+        max-height: scale(152.5);
+      }
+      @include desktop() {
+        order: 3;
+        height: scale(235);
+
+        .s-chances-entry__item__header__footer {
+          max-width: scale(610);
+        }
+      }
+
+      img {
+        width: scale(211);
+        height: scale(230);
+        bottom: scale(-25);
+        right: scale(40);
+      }
+    }
+
+    &.--sport {
+      order: 4;
+      min-height: scale(225);
+      @include tablet(min) {
+        grid-area: --sport;
+      }
+      @include tablet() {
+        min-height: scale(225);
+        max-height: scale(225);
+      }
+      @include desktop() {
+        height: scale(235);
+
+        .s-chances-entry__item__header__footer {
+          max-width: scale(805);
+        }
+      }
+    }
+  }
+}

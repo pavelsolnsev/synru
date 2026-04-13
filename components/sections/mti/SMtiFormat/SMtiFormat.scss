@@ -1,0 +1,87 @@
+.s-mti-format {
+  &__body {
+    display: flex;
+    flex-wrap: wrap;
+    gap: scale(20);
+
+    @include tablet(max) {
+      flex-direction: column;
+      gap: scale(8);
+    }
+  }
+
+  &__card {
+    width: calc(100% / 3 - scale(40) / 3);
+    height: scale(255);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: scale(24);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+    box-shadow: 0 3px 7.1px 0 rgba(0, 0, 0, 0.06);
+
+    @include tablet(max) {
+      width: 100%;
+      border-radius: scale(12);
+      height: scale(148);
+      padding: scale(12);
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    gap: scale(20);
+  }
+
+  &__info {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: scale(12);
+
+    @include tablet(max) {
+      gap: scale(6);
+    }
+  }
+
+  &__description {
+    max-width: scale(301);
+    color: var(--a-color_grey_80);
+
+    @include tablet(max) {
+      max-width: scale(212);
+    }
+  }
+
+  &__img {
+    flex-shrink: 0;
+    width: scale(100);
+    height: scale(100);
+
+    @include tablet(max) {
+      width: scale(64);
+      height: scale(64);
+
+      &:deep(img) {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
+    }
+  }
+
+  &__btn {
+    width: scale(151);
+    height: scale(48);
+    font-size: scale(16);
+
+    @include tablet(max) {
+      width: scale(135);
+      height: scale(40);
+      font-size: scale(12);
+    }
+  }
+}

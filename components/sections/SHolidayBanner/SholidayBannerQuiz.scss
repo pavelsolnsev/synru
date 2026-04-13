@@ -1,0 +1,206 @@
+.s-modal-quiz-ny {
+  position: relative;
+  overflow: hidden;
+  margin: 0 var(--layout-h-padding);
+  padding: 0 !important;
+  background: none !important;
+  border-radius: scale(12);
+  @include tablet(min) {
+    width: scale(720);
+    border-radius: scale(16);
+  }
+  @include desktop {
+    width: scale(1530);
+  }
+
+  picture {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: var(--a-color_grey_10);
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top right;
+    }
+  }
+
+  &__content {
+    padding: scale(16) scale(12) 0;
+    @include mobile(max) {
+      .a-btn { display: none }
+    }
+    @include tablet(min) {
+      display: flex;
+      flex-direction: column;
+      min-height: scale(292);
+      padding: scale(16) scale(16) scale(24);
+    }
+    @include desktop {
+      min-height: scale(516);
+      padding: scale(40);
+    }
+  }
+
+  &__title {
+    @include mobile() {
+      font-size: scale(44);
+      line-height: 100%;
+    }
+
+    @include desktop {
+      max-width: scale(600);
+    }
+  }
+
+  &__description {
+    margin: scale(8) 0;
+
+    @include tablet(min) {
+      max-width: scale(310);
+      margin: scale(18) 0 auto;
+    }
+    @include desktop {
+      max-width: scale(680);
+      margin: auto 0 scale(24);
+    }
+  }
+
+  &__bottom {
+    margin: scale(216) 0 0;
+    padding: scale(12);
+    border-radius: scale(12);
+    background-color: var(--a-color_white);
+    text-align: center;
+    @include tablet(min) {
+      margin: 0;
+      padding: scale(16);
+      border-radius: scale(16);
+      :deep(.a-btn) { display: none }
+    }
+    @include desktop {
+      padding: scale(24);
+    }
+  }
+
+  &__txt {
+    max-width: scale(280);
+    margin: 0 auto;
+    font-weight: 600;
+    font-size: scale(10);
+    line-height: 1.3;
+    color: var(--a-color_grey_100);
+    @include tablet(min) {
+      max-width: scale(445);
+      margin: scale(28) auto 0;
+      font-size: scale(12);
+      line-height: 1.2;
+    }
+    @include desktop {
+      max-width: unset;
+      margin: scale(24) auto 0;
+      font-size: scale(19);
+    }
+  }
+
+  .a-btn {
+    width: 100%;
+    margin: scale(16) 0 0;
+    @include tablet(min) {
+      margin: auto 0 0;
+      width: scale(190);
+      height: scale(40);
+      font-size: scale(12);
+      line-height: 1.2;
+    }
+    @include desktop {
+      width: scale(400);
+      height: scale(78);
+      font-size: scale(26);
+      margin-top: 0;
+    }
+  }
+
+  &__timer {
+    @include tablet(min) {
+      gap: scale(24);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    @include desktop {
+      gap: scale(40);
+    }
+    &-title {
+      font-weight: 600;
+      font-size: scale(17);
+      line-height: 1.2;
+      letter-spacing: -0.01em;
+      @include tablet(min) {
+        align-self: center;
+        font-size: scale(24);
+      }
+      @include desktop {
+        font-size: scale(38);
+      }
+    }
+    &-widget {
+      gap: scale(25);
+      display: flex;
+      flex-wrap: nowrap;
+      align-items: center;
+      justify-content: center;
+      margin: scale(12) auto scale(28);
+      font-weight: 600;
+      font-size: scale(26);
+      line-height: 1;
+      @include tablet(min) {
+        margin: 0;
+      }
+      @include desktop {
+        gap: scale(46);
+      }
+      span {
+        position: relative;
+        flex: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: scale(54);
+        height: scale(46);
+        border-radius: scale(12);
+        background-color: var(--a-color_grey_10);
+        @include desktop {
+          width: scale(82);
+          height: scale(73);
+          font-size: scale(48);
+          letter-spacing: -0.02em;
+          line-height: 1.1;
+        }
+      }
+      span:not(:first-child):before {
+        content: ':';
+        position: absolute;
+        left: auto;
+        top: 0;
+        right: 100%;
+        bottom: 0;
+        margin: auto;
+        margin-right: scale(8);
+        font-size: scale(38);
+        line-height: 1;
+        @include desktop {
+          margin-right: scale(16);
+          font-size: scale(64);
+          letter-spacing: -0.02em;
+        }
+      }
+    }
+  }
+}

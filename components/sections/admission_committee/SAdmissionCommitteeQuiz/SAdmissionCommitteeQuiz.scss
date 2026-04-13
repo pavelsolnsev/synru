@@ -1,0 +1,30 @@
+:deep() {
+  .s-quiz {
+    @include tablet(min) {
+      min-height: scale(295);
+    }
+  
+    @include desktop(min) {
+      min-height: scale(540);
+    }
+  
+    .s-quiz__bg img {
+      object-position: top right;
+    }
+  }
+
+  .s-quiz__intro {
+    @include tablet(min) {
+      width: 51% !important;
+    }
+  }
+  
+  .m-breadcrumbs__link a {
+    color: var(--a-color_grey_40);
+  }
+  
+  .m-breadcrumbs .swiper-wrapper .swiper-slide:before {
+    color: var(--a-color_grey_40);
+  }
+  
+}

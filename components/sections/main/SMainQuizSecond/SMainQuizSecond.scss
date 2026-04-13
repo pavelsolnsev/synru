@@ -1,0 +1,336 @@
+.s-main-banner {
+  :deep() {
+    .l-section__inner {
+      z-index: 1;
+      position: relative;
+      overflow: hidden;
+      height: scale(607);
+      border-radius: scale(16);
+
+      @include tablet(min) {
+        height: scale(322);
+      }
+
+      @include desktop(min) {
+        height: scale(590);
+      }
+    }
+  }
+
+  padding-top: 0;
+
+  &__slider {
+    height: 100%;
+    color: var(--a-color_black);
+    position: relative;
+  }
+
+  &__item {
+    display: grid;
+    grid-template-rows: (auto 1fr);
+    grid-template-columns: 1fr;
+    overflow: visible;
+    height: 100%;
+    @include tablet() {
+      grid-template-columns: (1fr auto);
+    }
+    @include desktop() {
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: (1fr);
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--a-color_grey_40);
+    border-radius: scale(16);
+    opacity: 1;
+    @include mobile() {
+      order: 2;
+      padding: scale(21) scale(6);
+    }
+    @include tablet() {
+      padding: scale(12) 0 scale(12) scale(12);
+      width: scale(478);
+    }
+    @include desktop() {
+      padding: scale(24) 0 scale(26) scale(24);
+      width: scale(1139);
+    }
+  }
+
+  &__title {
+    text-align: center;
+
+    @include mobile(max) {
+      font-size: scale(32);
+    }
+
+    @include tablet(min) {
+      margin-top: 0;
+      max-width: scale(373);
+      text-align: left;
+    }
+
+    @include desktop(min) {
+      max-width: scale(994);
+    }
+  }
+
+  &__description {
+    margin: scale(12) 0;
+    @include mobile() {
+      font-size: scale(17);
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      text-align: center;
+    }
+    @include tablet() {
+      font-size: scale(12);
+      font-weight: 600;
+      line-height: 1.2;
+    }
+    @include desktop() {
+      margin: scale(17) 0;
+    }
+    &--gray {
+      @include mobile() {
+        font-size: scale(12);
+        margin: scale(8) 0;
+      }
+      @include desktop() {
+        color: var(--a-color_grey_80);
+      }
+    }
+  }
+
+  &__text {
+    @include mobile() {
+      font-size: scale(17);
+      letter-spacing: -0.01em;
+      line-height: 1.2;
+      text-align: center;
+      margin: auto 0 scale(165);
+    }
+    @include tablet() {
+      margin: auto 0 scale(90);
+    }
+    @include desktop() {
+      margin: auto 0 scale(120);
+    }
+
+    :deep() {
+      .--md-hidden-text {
+        display: inline;
+        @include tablet() {
+          display: none;
+        }
+      }
+      .--md-show-text {
+        display: none;
+        @include tablet() {
+          display: inline;
+        }
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: scale(10);
+    width: 100%;
+
+    @include tablet(min) {
+      flex-direction: row;
+      gap: scale(12);
+      width: scale(412);
+    }
+
+    @include desktop(min) {
+      gap: scale(20);
+      width: scale(660);
+    }
+    :deep() {
+      .a-btn {
+        width: 100%;
+        margin: 0;
+        white-space: nowrap;
+        @include tablet(min) {
+          max-width: scale(200);
+        }
+
+        @include desktop(min) {
+          max-width: scale(320);
+        }
+      }
+    }
+  }
+
+  &__bg {
+    display: flex;
+    border-radius: scale(16);
+    @include mobile() {
+      order: 1;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      border-radius: scale(16);
+      box-sizing: border-box;
+    }
+  }
+
+  :deep() {
+    .swiper {
+      overflow: hidden;
+    }
+
+    .swiper-pagination {
+      z-index: 1;
+      position: absolute;
+      display: flex;
+      gap: scale(4);
+      height: 0;
+
+      @include mobile() {
+        width: scale(312);
+        bottom: auto;
+        right: scale(12);
+        left: auto;
+        top: scale(200);
+      }
+      @include tablet() {
+        width: scale(235);
+        bottom: scale(12);
+        right: scale(12);
+        left: auto;
+        top: auto;
+      }
+      @include desktop() {
+        width: scale(650);
+        bottom: scale(24);
+        right: scale(24);
+        left: auto;
+        top: auto;
+      }
+
+      &-bullet {
+        position: relative;
+        margin: 0;
+        background-color: rgba(255, 255, 255, 0.4);
+        border-radius: scale(20);
+
+        &::before {
+          content: "";
+          display: block;
+          width: 0;
+          height: 100%;
+          border-radius: scale(20);
+          background-color: var(--a-color_white);
+        }
+
+        &-active {
+          --progress: 0;
+
+          &::before {
+            width: var(--progress);
+          }
+        }
+      }
+    }
+  }
+
+  &.--js-quiz-visible {
+    .swiper-pagination {
+      z-index: 0;
+    }
+    .m-quiz {
+      display: block;
+      border-radius: scale(16);
+      overflow: hidden;
+    }
+    :deep() {
+      .l-section__inner {
+        @include tablet(min) {
+          height: scale(430);
+        }
+        @include desktop(min) {
+          height: scale(660);
+        }
+      }
+    }
+
+    .s-main-banner__info {
+      @include tablet(min) {
+        height: scale(430);
+      }
+      @include desktop(min) {
+        height: scale(660);
+      }
+    }
+  }
+  :deep() {
+    .m-quiz-form {
+      position: absolute;
+      z-index: 2;
+      left: scale(0);
+      bottom: scale(10);
+      @include mobile() {
+        padding: 0 var(--layout-h-padding);
+      }
+      @include tablet() {
+        left: scale(10);
+        bottom: scale(10);
+        h3 {
+          font-size: scale(22);
+        }
+      }
+      @include desktop() {
+        left: scale(20);
+        bottom: scale(20);
+        h3 {
+          font-size: scale(50);
+        }
+      }
+      .a-chekbox__label {
+        color: var(--a-color_grey_80);
+        &::before {
+          background-color: var(--a-color_grey_60);
+        }
+      }
+
+    }
+  }
+  .m-quiz {
+    z-index: 3;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    display: none;
+    color: var(--a-color_white);
+  }
+
+  &__quiz-bg {
+    z-index: 2;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    display: none;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  .swiper-slide-active {
+    opacity: 1!important;
+  }
+}

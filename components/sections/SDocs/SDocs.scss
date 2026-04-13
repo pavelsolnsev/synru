@@ -1,0 +1,161 @@
+.s-docs {
+  :deep() {
+    .l-section__inner {
+      display: grid;
+      gap: var(--gap_def);
+      grid-template-columns: 1fr;
+
+      @include desktop(min) {
+        grid-template-columns: 1fr 1fr;
+        min-height: scale(530);
+      }
+    }
+  }
+
+  &__items {
+    margin-left: 0;
+    overflow: visible;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: scale(9);
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: scale(8);
+    width: 100%;
+    padding: scale(12) scale(12) scale(8);
+    background-color: var(--a-color_grey_40);
+    border-radius: scale(16);
+    transition: var(--transition);
+
+    @include tablet(min) {
+      gap: scale(10);
+    }
+
+    @include desktop() {
+      justify-content: space-between;
+      padding: scale(24);
+      background-color: var(--a-color_grey_40);
+    }
+
+    &-title {
+      margin-bottom: scale(34);
+    }
+
+    &-subtitle {
+      margin-top: auto;
+      margin-bottom: scale(12);
+
+      @include desktop(min) {
+        margin-bottom: scale(24);
+      }
+    }
+
+    &-doc {
+      text-align: center;
+      padding: scale(40) 0 scale(12);
+      cursor: pointer;
+
+      @include mobile() {
+        background-color: var(--a-color_white);
+      }
+
+      @include tablet(min) {
+        max-width: scale(368);
+      }
+
+      @include desktop(min) {
+        justify-content: center;
+
+        max-width: scale(445);
+        min-height: scale(530);
+        padding: scale(24);
+        gap: scale(40);
+      }
+
+      &:hover {
+        background-color: var(--a-color_white);
+      }
+
+      .ico {
+        position: absolute;
+        top: scale(8);
+        right: scale(8);
+        width: scale(24);
+        height: scale(24);
+        color: var(--a-color_dark);
+        background-color: var(--a-color_grey_40);
+        border-radius: 50%;
+
+        @include desktop(min) {
+          top: scale(20);
+          right: scale(20);
+          width: scale(31);
+          height: scale(31);
+          color: var(--a-color_white);
+          background-color: var(--a-color_dark);
+        }
+      }
+
+      img {
+        display: block;
+        width: 100%;
+        max-width: scale(105);
+        height: auto;
+        margin: 0 auto;
+        padding-left: scale(5);
+        padding-right: scale(5);
+
+        @include desktop(min) {
+          max-width: scale(288);
+        }
+      }
+
+      p {
+        @include desktop(min) {
+          min-height: scale(48);
+        }
+      }
+    }
+  }
+
+  &__link {
+    &-text {
+      @include mobile() {
+        font-size: scale(10);
+      }
+      @include tablet(max) {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-grow: 1;
+      }
+    }
+  }
+
+  :deep() {
+    .swiper {
+      .s-docs__item {
+        @include desktop() {
+          gap: scale(50);
+        }
+      }
+      &.--form {
+        @include tablet(max) {
+          margin-bottom: scale(32);
+        }
+      }
+    }
+  }
+
+  form {
+    @include desktop() {
+      grid-column: 1 / -1;
+      margin-top: scale(32);
+      height: initial;
+    }
+  }
+}

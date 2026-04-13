@@ -1,0 +1,141 @@
+.a-btn {
+  $btn: &;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 scale(16);
+  border: none;
+  border-radius: scale(12);
+  transition: var(--transition);
+  &[class*='a-font'] {
+    display: inline-flex;
+  }
+  @include desktop {
+    padding: 0 scale(24);
+  }
+
+  svg {
+    vertical-align: middle;
+    align-self: center;
+    &:last-child {
+      margin-left: scale(12);
+    }
+    &:first-child {
+      margin-right: scale(12);
+    }
+    &:first-child:last-child {
+      margin: auto;
+    }
+  }
+
+  &--primary {
+    //- primary colors
+
+    &#{$btn}--red {
+      color: var(--a-color_white);
+      background-color: var(--a-color_red);
+      &:hover {
+        background-color: var(--a-color_red_dark);
+      }
+
+      &#{$btn}--lg {
+        box-shadow: 0 scale(4) scale(2) 0 rgba(102, 0, 0, 0.2);
+        @include desktop {
+          box-shadow: 0 scale(6) scale(2) 0 rgba(102, 0, 0, 0.2);
+        }
+        &:hover {
+          box-shadow: 0 0 0 0 rgba(102, 0, 0, 0.2);
+        }
+      }
+
+      &#{$btn}--md {
+        box-shadow: 0 scale(4) scale(2) 0 rgba(102, 0, 0, 0.2);
+        &:hover {
+          box-shadow: 0 0 0 0 rgba(102, 0, 0, 0.2);
+        }
+      }
+    }
+
+    &#{$btn}--white {
+      color: var(--a-color_dark);
+      background-color: var(--a-color_white);
+      &:hover {
+        background-color: var(--a-color_grey_10);
+      }
+
+      &#{$btn}--lg {
+        box-shadow: 0 scale(4) scale(2) 0 rgba(82, 82, 82, 0.2);
+        @include desktop {
+          box-shadow: 0 scale(6) scale(2) 0 rgba(82, 82, 82, 0.2);
+        }
+        &:hover {
+          box-shadow: 0 0 0 0 rgba(82, 82, 82, 0.2);
+        }
+      }
+
+      &#{$btn}--md {
+        box-shadow: 0 scale(4) scale(2) 0 rgba(82, 82, 82, 0.2);
+        &:hover {
+          box-shadow: 0 0 0 0 rgba(82, 82, 82, 0.2);
+        }
+      }
+    }
+
+    &#{$btn}--black {
+      color: var(--a-color_white);
+      background-color: var(--a-color_dark);
+
+      &:hover {
+        background-color: var(--a-color_grey_dark);
+      }
+
+      &#{$btn}--lg {
+        box-shadow: 0 scale(4) scale(2) 0 rgba(102, 0, 0, 0.18);
+        @include desktop {
+          box-shadow: 0 scale(6) scale(2) 0 rgba(102, 0, 0, 0.18);
+        }
+        &:hover {
+          box-shadow: 0 0 0 0 rgba(102, 0, 0, 0.18);
+        }
+      }
+
+      &#{$btn}--md {
+        box-shadow: 0 scale(4) scale(2) 0 rgba(102, 0, 0, 0.18);
+        &:hover {
+          box-shadow: 0 0 0 0 rgba(102, 0, 0, 0.18);
+        }
+      }
+    }
+  }
+
+  //- size
+  &--lg {
+    height: scale(48);
+    border-radius: scale(12);
+    @include desktop {
+      height: scale(60);
+    }
+  }
+
+  &--md {
+    height: scale(40);
+    border-radius: scale(8);
+    @include desktop {
+      height: scale(48);
+      border-radius: scale(12);
+    }
+  }
+
+  &--sm {
+    height: scale(32);
+    border-radius: scale(8);
+    @include desktop {
+      height: scale(40);
+    }
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+}

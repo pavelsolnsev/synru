@@ -1,0 +1,83 @@
+.s-dodemba-schedule {
+
+  &__body {
+    display: flex;
+    gap: scale(15);
+    margin-top: scale(50);
+
+    @include tablet(max) {
+      flex-wrap: wrap;
+      gap: scale(8);
+    }
+  }
+
+  &__card {
+    width: calc(100% / 4 - (scale(15) * 3) / 4);
+    height: scale(310);
+    padding: scale(33) scale(24) scale(24) scale(24);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: var(--a-color_white);
+    border-radius: scale(30);
+
+    @include tablet(max) {
+      width: calc(100% / 2 - scale(8) / 2);
+      height: scale(159);
+      padding: scale(12);
+      border-radius: scale(16);
+    }
+
+    @include mobile(max) {
+      width: 100%;
+      height: auto;
+    }
+  }
+
+  &__icon {
+    width: scale(43);
+    height: scale(43);
+
+    @include tablet(max) {
+      width: scale(30);
+      height: scale(30);
+    }
+  }
+
+  &__time {
+    font-size: scale(38);
+    font-weight: 600;
+    line-height: 1em;
+    margin-top: scale(27);
+    text-align: center;
+
+    @include tablet(max) {
+      font-size: scale(19);
+      margin-top: scale(8);
+    }
+  }
+
+  &__name,
+  &__description {
+    font-size: scale(23);
+    font-weight: 600;
+    line-height: 1.2em;
+    text-align: center;
+
+    @include tablet(max) {
+      font-size: scale(15);
+    }
+  }
+
+  &__name {
+    color: var(--a-color_grey_80);
+  }
+
+  &__description {
+    margin-top: auto;
+
+    @include mobile(max) {
+      margin-top: scale(24);
+    }
+  }
+}

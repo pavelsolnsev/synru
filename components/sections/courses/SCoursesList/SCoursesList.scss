@@ -1,0 +1,200 @@
+.s-courses-list {
+  overflow: unset;
+
+  &__filters {
+    position: relative;
+    z-index: indexes("courses-filters");
+    display: flex;
+    flex-direction: column;
+    margin: 0 0 scale(6);
+    @include desktop(min) {
+      margin: 0 0 scale(26);
+    }
+  }
+
+  .m-switcher {
+    width: scale(336);
+    @include desktop(min) {
+      width: scale(600);
+    }
+  }
+
+  .m-filters-tabs-slider {
+    margin-bottom: scale(14);
+    @include desktop(min) {
+      margin: 0 0 scale(26);
+    }
+    :deep(.m-filter-tab) { justify-content: center }
+  }
+
+
+  &__grid {
+    position: relative;
+    gap: scale(8);
+    display: grid;
+
+    @include tablet(min) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktop(min) {
+      gap: scale(22) scale(20);
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+
+  &__content {
+    display: none;
+    &._is-active { display: block }
+  }
+
+
+  .specialty-card {
+    &__label:before {
+      content: none;
+    }
+    &__label > span:before {
+      content: "/";
+      margin: 0 calc(var(--scale)* 4);
+    }
+  }
+
+
+  &__more {
+    display: flex;
+    justify-content: center;
+    .a-btn {
+      width: 100%;
+      max-width: scale(255);
+      margin-top: scale(24);
+      @include desktop {
+        max-width: scale(290);
+        margin-top: scale(40);
+      }
+    }
+  }
+
+
+  &__loader {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    ins {
+      position: relative;
+      width: scale(48);
+      height: scale(48);
+      border-radius: 50%;
+      animation: rotate 1s linear infinite;
+
+      &:before {
+        content: "";
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        border-radius: 50%;
+        border: scale(5) solid var(--a-color_grey_80);
+        animation: prixClipFix 2s linear infinite;
+      }
+    }
+
+    @keyframes rotate {
+      100% {transform: rotate(360deg)}
+    }
+
+    @keyframes prixClipFix {
+        0%   {clip-path:polygon(50% 50%,0 0,0 0,0 0,0 0,0 0)}
+        25%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 0,100% 0,100% 0)}
+        50%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,100% 100%,100% 100%)}
+        75%  {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 100%)}
+        100% {clip-path:polygon(50% 50%,0 0,100% 0,100% 100%,0 100%,0 0)}
+    }
+  }
+
+  .swiper-wrapper {
+    padding-bottom: 1px;
+  }
+
+  .profession_directions.sticky {
+    position: sticky;
+  }
+
+  &__selects {
+    z-index: 200;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: var(--gap_def);
+    padding-bottom: scale(8);
+  
+    @include tablet(min) {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(min-content, 135px);
+    }
+  
+    &-cropped {
+      @include desktop(min) {
+        grid-template-columns: repeat(2, minmax(0, 534px)) minmax(min-content, 135px);
+      }
+      @include tablet(min) {
+        grid-template-columns: repeat(2, minmax(0, 534px)) minmax(min-content, 178px);
+      }
+    }
+  
+    &-single {
+      @include desktop(min) {
+        grid-template-columns: repeat(1, minmax(0, 534px)) minmax(min-content, 135px);
+      }
+      @include tablet(min) {
+        grid-template-columns: repeat(1, minmax(0, 534px)) minmax(min-content, 178px);
+      }
+    }
+  
+    @include desktop(min) {
+      grid-gap: scale(20);
+      padding-bottom: 0;
+    }
+  
+    .a-uikit-select {
+      &__input {
+        background-color: var(--a-color_grey_20);
+        &._open {
+          background-color: var(--a-color_white);
+        }
+      }
+    }
+    &:has(._open) {
+      z-index: indexes("program-selects");
+    }
+  }
+
+  .a-uikit-select__input {
+    background-color: var(--a-color_grey_20);
+  }
+
+  .s-courses-list__reset {
+    font-weight: 600;
+    letter-spacing: 0;
+
+    &:disabled {
+      background-color: var(--a-color_grey_20);
+      color: var(--a-color_dark);
+      box-shadow: none;
+    }
+
+    &:disabled:hover {
+      background-color: var(--a-color_grey_20);
+      color: var(--a-color_dark);
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+  }
+}
+
+.s-courses-list__type-slider-wrapper {
+  margin-bottom: calc(var(--scale) * 24);
+}

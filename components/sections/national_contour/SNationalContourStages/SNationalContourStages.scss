@@ -1,0 +1,100 @@
+.s-national-contour-stages {
+  background-color: var(--a-color_grey_20);
+  padding-top: scale(80);
+  margin-top: scale(40);
+  @include tablet(max) {
+    margin-top: scale(0);
+    padding-top: scale(40);
+  }
+
+  &__list {
+    display: flex;
+    gap: scale(20);
+
+    @include tablet(max) {
+      flex-direction: column;
+      gap: scale(8);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    gap: scale(34);
+    background-color: var(--a-color_white);
+    padding: scale(24);
+    border-radius: scale(16);
+    justify-content: space-between;
+    min-width: scale(352);
+    min-height: scale(304);
+
+    @include tablet(max) {
+      flex-direction: column;
+      gap: scale(16);
+      min-width: unset;
+      min-height: scale(140);
+      padding: scale(12);
+    }
+
+    &-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-bottom {
+      display: flex;
+      justify-content: space-between;
+      align-items: end;
+      gap: scale(12);
+    }
+
+    &-num {
+      color: var(--a-color_red);
+
+      @include tablet(max) {
+        font-size: scale(24);
+        line-height: 1.2;
+      }
+    }
+
+    &-subtitle {
+      max-width: scale(242);
+      @include tablet(max) {
+        max-width: unset;
+      }
+    }
+
+    svg {
+      @include desktop {
+        width: scale(48);
+        height: scale(48);
+      }
+      @include tablet(max) {
+        width: scale(32);
+        height: scale(32);
+      }
+    }
+  }
+
+  .--desktop {
+    @include tablet(max) {
+      display: none;
+    }
+  }
+
+  .--mobile {
+    @include desktop {
+      display: none;
+    }
+  }
+
+  &__btn-form {
+    width: 100%;
+    margin-top: scale(8);
+    @include desktop {
+      min-height: scale(78);
+      margin-top: scale(20);
+    }
+  }
+}

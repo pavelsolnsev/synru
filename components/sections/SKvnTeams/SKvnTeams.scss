@@ -1,0 +1,112 @@
+.s-kvn-teams {
+  .swiper-slide {
+    width: 100%;
+    height: auto;
+    max-width: scale(280);
+
+    @include desktop(min) {
+      max-width: scale(600);
+    }
+  }
+  .m-card-text .a-btn {
+    width: 100%;
+    @include desktop(min) {
+      width: scale(420);
+    }
+  }
+
+  .m-card-text:not(.swiper-slide) {
+    display: none;
+    @include mobile() {
+      display: flex;
+      margin-bottom: scale(24);
+    }
+  }
+
+  .m-card-text.swiper-slide {
+    @include mobile() {
+      display: none;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    img {
+      width: 100%;
+      height: scale(180);
+      object-fit: cover;
+      border-radius: scale(16);
+
+      @include desktop(min) {
+        height: scale(350);
+      }
+    }
+
+    &-desc {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      position: relative;
+      z-index: 1;
+      margin-top: scale(-16);
+      padding: scale(12);
+      background-color: var(--a-color_white);
+      border-radius: scale(16);
+
+      @include desktop(min) {
+        margin-top: scale(-32);
+        padding: scale(20) scale(24);
+      }
+    }
+
+    &-subtitle {
+      margin-bottom: scale(4);
+      color: var(--a-color_grey_80);
+    }
+
+    &-title {
+      margin-bottom: scale(16);
+    }
+
+    &-text {
+      display: grid;
+      gap: scale(8);
+      margin-bottom: auto;
+      color: var(--a-color_grey_80);
+
+      b {
+        color: var(--a-color_dark);
+      }
+    }
+    :deep() {
+      .a-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+        height: scale(44);
+        margin-top: scale(32);
+
+        @include desktop(min) {
+          height: scale(56);
+          width: max-content;
+          min-width: scale(216);
+        }
+
+        .ico {
+          width: scale(20);
+          height: scale(20);
+
+          @include desktop(min) {
+            width: scale(24);
+            height: scale(24);
+          }
+        }
+        svg:last-child {
+          margin-left: calc(var(--scale) * 12);
+        }
+      }
+    }
+  }
+}

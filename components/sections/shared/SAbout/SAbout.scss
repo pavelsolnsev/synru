@@ -1,0 +1,198 @@
+.s-about {
+  @include desktop(min) {
+    padding-top: var(--layout-v-padding);
+  }
+
+  &__grid {
+    display: grid;
+    gap: scale(8);
+    @include desktop(min) {
+      gap: scale(20);
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  :deep() {
+    .m-card-text {
+      min-width: 0;
+      background-color: var(--a-color_white);
+      &__title {
+        @include tablet(min) {
+          max-width: scale(600);
+        }
+        @include desktop(min) {
+          max-width: unset;
+        }
+      }
+      &__text {
+        @include tablet(min) {
+          max-width: scale(600);
+        }
+        @include desktop(min) {
+          max-width: unset;
+        }
+      }
+      &__icons {
+        display: none;
+        @include tablet(min) {
+          display: flex;
+        }
+      }
+      &__bottom {
+        @include desktop(min) {
+          padding-top: scale(72);
+        }
+      }
+    }
+  }
+
+  &__slider {
+    overflow: visible;
+    width: 100%;
+    min-width: 0;
+
+    &.--grid {
+      display: grid;
+      grid-gap: var(--gap_def);
+
+      @include tablet(min) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      :deep() {
+        .swiper-slide {
+          width: 100% !important;
+        }
+      }
+    }
+
+    :deep() {
+      .swiper-wrapper {
+        min-width: fit-content;
+        @include desktop(min) {
+          gap: scale(20);
+          display: grid;
+          grid-template-columns: repeat(2, 1fr);
+          grid-template-rows: repeat(2, 1fr);
+          transform: translate3d(0, 0, 0) !important;
+        }
+      }
+      .swiper-slide {
+        width: scale(178) !important;
+        height: auto;
+        min-height: scale(140);
+        min-width: 0;
+        @include tablet(min) {
+          flex: 1;
+        }
+        @include desktop(min) {
+          width: 100% !important;
+          &:nth-child(odd):last-child {
+            grid-column: 1 / -1;
+          }
+        }
+        &:not(:last-child) {
+          margin-right: scale(8);
+        }
+        &.--has-modal:hover {
+          transition: .2s;
+          opacity: .7;
+        }
+      }
+    }
+  }
+
+  &__card {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: scale(12);
+    border-radius: scale(12);
+    background-color: var(--a-color_grey_40);
+    @include desktop(min) {
+      min-height: scale(230);
+      padding: scale(24);
+      border-radius: scale(16);
+    }
+    &.--bg-red {
+      background-color: var(--a-color_red);
+      color: var(--a-color_white);
+    }
+    &.--bg-img {
+      color: var(--a-color_white);
+    }
+
+    &[class*="a-font_"] {
+      .s-about__card-title {
+        @include desktop(min) {
+          font-size: inherit;
+          line-height: inherit;
+        }
+      }
+    }
+
+    &-title {
+      position: relative;
+      z-index: 1;
+    }
+
+    &-text {
+      position: relative;
+      z-index: 1;
+      margin-top: auto;
+    }
+
+    &-img {
+      position: absolute;
+      left: auto;
+      top: auto;
+      right: 0;
+      bottom: 0;
+      width: scale(105);
+      height: scale(105);
+      @include desktop(min) {
+        width: scale(245);
+        height: scale(222);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top left;
+      }
+    }
+    &.--bg-img &-img {
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: 100%;
+      height: 100%;
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: 0;
+        display: block;
+        width: scale(140);
+        background: linear-gradient(
+          90deg,
+          var(--a-color_dark) 0,
+          transparent 100%
+        );
+        opacity: 0.76;
+        @include desktop(min) {
+          width: scale(240);
+        }
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+}

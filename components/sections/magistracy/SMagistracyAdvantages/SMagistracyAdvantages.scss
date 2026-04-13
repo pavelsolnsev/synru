@@ -1,0 +1,98 @@
+.s-magistracy-advantages {
+  &__body {
+    display: flex;
+    gap: scale(20);
+
+    @include tablet(max) {
+      flex-direction: column;
+      gap: scale(8);
+    }
+  }
+
+  &__info {
+    width: scale(600);
+    flex-shrink: 0;
+    height: scale(340);
+    padding: scale(24);
+    position: relative;
+    border-radius: scale(16);
+    overflow: hidden;
+
+    @include tablet(max) {
+      height: scale(180);
+      width: 100%;
+      padding: scale(12);
+    }
+
+    @include mobile(max) {
+      height: scale(220);
+    }
+  }
+
+  &__title {
+    color: var(--a-color_white);
+    position: relative;
+    z-index: 1;
+  }
+
+  &__slider {
+    display: flex;
+    flex-wrap: wrap;
+    gap: scale(20);
+
+    &_desktop {
+      @include tablet(max) {
+        display: none;
+      }
+    }
+
+    &_mobile {
+      display: none;
+
+      @include tablet(max) {
+        display: block;
+      }
+    }
+  }
+
+  &__slide {
+    width: calc((100% / 3) - (((scale(20) * 2) / 3)));
+    height: scale(160);
+    padding: scale(24);
+    background-color: var(--a-color_grey_40);
+    display: flex;
+    gap: scale(24);
+    align-items: center;
+    border-radius: scale(16);
+
+    @include tablet(max) {
+      width: scale(280);
+      height: scale(128);
+      padding: scale(12);
+      flex-direction: column;
+      align-items: start;
+      justify-content: space-between;
+      gap: 0;
+    }
+  }
+
+  &__number {
+    width: scale(40);
+    height: scale(40);
+    flex-shrink: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--a-color_white);
+    border-radius: 100%;
+    background-color: var(--a-color_red);
+    font-size: scale(19);
+    font-weight: 600;
+
+    @include tablet(max) {
+      width: scale(32);
+      height: scale(32);
+      font-size: scale(15);
+    }
+  }
+}

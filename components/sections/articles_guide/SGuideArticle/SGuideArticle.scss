@@ -1,0 +1,9 @@
+.s-guide-article {
+  gap: scale(32);
+  display: grid;
+  min-width: 0;
+  padding: 0;
+  @include desktop() {
+    gap: scale(45);
+  }
+}

@@ -1,0 +1,113 @@
+.s-form-full-bg {
+  :deep() {
+    .m-section__inner {
+      @include desktop(min) {
+        position: relative;
+        border-radius: scale(16);
+        overflow: hidden;
+        background-color: var(--a-color_dark);
+      }
+    }
+  }
+
+  &__content {
+    z-index: 1;
+    position: relative;
+    padding: var(--padding_def);
+    color: var(--a-color_white);
+    background-color: var(--a-color_dark);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      display: flex;
+      flex-direction: column;
+      min-height: scale(480);
+      background-color: transparent;
+    }
+  }
+
+  &__title {
+    margin-bottom: scale(16);
+    max-width: scale(1200);
+  }
+
+  &__subtitle {
+    max-width: scale(1200);
+    
+    @include desktop(min) {
+      margin-bottom: auto;
+
+      &:has(+ .s-form-full-bg__tags) {
+        margin-bottom: scale(44);
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    margin-bottom: scale(-24);
+    border-radius: scale(16);
+    overflow: hidden;
+
+    @include desktop(min) {
+      z-index: 0;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+
+      @include desktop(min) {
+        height: 100%;
+        object-fit: cover;
+        object-position: center right;
+      }
+    
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: scale(8);
+    margin: scale(16) 0 scale(24);
+
+    @include desktop(min) {
+      margin-top: auto;
+      max-width: scale(940);
+    }
+
+    li {
+      border: 1px solid var(--a-color_white);
+      padding: scale(6) scale(12);
+      border-radius: scale(40);
+      -webkit-backdrop-filter: blur(20px);
+      backdrop-filter: blur(20px);
+    }
+  }
+
+  &[routename="distance_university"] {
+    @include mobile(max) {
+      padding-left: 0;
+      padding-right: 0;
+    }
+    @include tablet(max) {
+      .s-form-full-bg__image {
+        margin: 0;
+        border-bottom-left-radius: 0;
+        border-bottom-right-radius: 0;
+      }
+      .s-form-full-bg__content {
+        border-top-left-radius: 0;
+        border-top-right-radius: 0;
+        background-color: #423528;
+      }
+    }
+  }
+  
+}

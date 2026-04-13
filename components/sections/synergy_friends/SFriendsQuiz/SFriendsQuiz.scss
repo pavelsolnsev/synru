@@ -1,0 +1,183 @@
+.s-quiz {
+  $quiz: &;
+  position: relative;
+  padding-top: 0;
+  padding-bottom: 0;
+  z-index: 1;
+
+  @include mobile() {
+    padding-left: 0;
+    padding-right: 0;
+    margin-bottom: scale(5);
+  }
+
+  @include tablet(min) {
+    margin-bottom: var(--layout-v-padding);
+  }
+
+  .--js-quiz-visible &__inner {
+    display: none;
+  }
+
+  &__inner {
+    @include tablet(min) {
+      display: flex;
+      flex-direction: column;
+      position: relative;
+    }
+    @include tablet() {
+      min-height: scale(283);
+    }
+    @include desktop() {
+      min-height: scale(480);
+    }
+  }
+
+  :deep() {
+    .m-breadcrumbs {
+      position: absolute;
+      top: scale(24);
+      left: scale(24);
+
+      &__link {
+        color: var(--a-color_grey_40);
+      }
+
+      &__link--last {
+        color: var(--a-color_white);
+      }
+    }
+  }
+
+  &__bg {
+    display: inline-block;
+    @include mobile() {
+      height: scale(270);
+      width: 100%;
+    }
+
+    @include tablet(min) {
+      position: absolute;
+      top: 0;
+      height: 100%;
+      z-index: -1;
+    }
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+
+      @include tablet(min) {
+        border-radius: scale(16);
+      }
+    }
+  }
+
+  &__info {
+    padding: var(--padding_def);
+    color: var(--a-color_white);
+    @include mobile() {
+      background-color: var(--a-color_dark);
+      border-radius: scale(16);
+      text-align: center;
+      position: relative;
+      bottom: scale(16);
+    }
+    @include tablet(min) {
+      display: flex;
+      flex-direction: column;
+      flex-grow: 1;
+    }
+    @include tablet() {
+      max-width: scale(350);
+    }
+    @include desktop() {
+      max-width: scale(1000);
+    }
+  }
+
+  &__title {
+    margin-bottom: scale(24);
+    @include tablet(max) {
+      font-size: scale(44);
+    }
+    @include desktop() {
+      margin-top: scale(38);
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: scale(5);
+    @include tablet() {
+      margin-top: auto;
+    }
+    @include desktop() {
+      font-size: scale(38);
+    }
+  }
+
+  &__description {
+    opacity: 0.8;
+    margin-bottom: scale(15);
+  }
+
+  .a-btn {
+    background-color: var(--a-color_white);
+    color: var(--a-color_dark);
+    width: scale(290);
+    height: scale(35);
+    border-radius: scale(5);
+
+    @include desktop() {
+      margin-top: auto;
+      width: scale(600);
+      height: scale(60);
+      background-color: var(--a-color_dark);
+      color: var(--a-color_white);
+      border-radius: scale(12);
+    }
+  }
+
+  &__tags {
+    position: absolute;
+    top: scale(12);
+    display: flex;
+    justify-content: center;
+    gap: scale(4);
+
+    @include mobile() {
+      width: 100%;
+    }
+
+    @include tablet(min) {
+      top: var(--padding_def);
+      right: var(--padding_def);
+    }
+
+    @include desktop() {
+      gap: scale(10);
+    }
+    :deep() {
+      .a-tag {
+        min-height: scale(32);
+        @include desktop() {
+          min-height: scale(39);
+        }
+      }
+    }
+  }
+
+  .m-quiz {
+    z-index: 1;
+    display: none;
+  }
+
+  .--js-quiz-visible & {
+    .m-quiz {
+      display: flex;
+      background-color: var(--a-color_dark);
+      color: var(--a-color_white);
+    }
+  }
+}

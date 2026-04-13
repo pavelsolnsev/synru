@@ -1,0 +1,186 @@
+@mixin has-ico($el) {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-areas:
+    "title ico"
+    "text text"
+  ;
+  @include desktop {
+    grid-template-areas:
+      "title title"
+      "text ico"
+    ;
+  }
+  #{$el}-title {
+    grid-area: title;
+  }
+  #{$el}-text {
+    grid-area: text;
+  }
+  #{$el}-ico {
+    grid-area: ico;
+  }
+}
+
+.s-training {
+  &__grid {
+    display: grid;
+    gap: var(--gap_def);
+    grid-auto-flow: dense;
+    grid-template-columns: repeat(2, 1fr);
+
+    @include desktop {
+      grid-template-columns: repeat(8, 1fr);
+    }
+  }
+
+  &__item {
+    $item: &;
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    grid-column: span 2;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    min-height: scale(166);
+    padding: scale(12);
+    border-radius: scale(16);
+    background-color: var(--a-color_grey_40);
+    @include desktop {
+      min-height: scale(320);
+      padding: scale(24);
+    }
+
+    picture {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      inset: 0;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &.--has-img {
+      @include tablet(max) {
+        min-height: scale(180);
+      }
+    }
+
+    &.--has-title-text-ico {
+      #{$item}-inner { @include has-ico(#{$item}) }
+    }
+
+    &.--has-title-text-ico-img {
+      #{$item}-inner { @include has-ico(#{$item}) }
+    }
+
+    &:nth-child(1) {
+      min-height: scale(250);
+      @include desktop {
+        grid-column: span 4;
+      }
+    }
+
+    &:nth-child(3) {
+      @include tablet(max) {
+        grid-column: 2;
+      }
+    }
+
+    &:nth-child(4) {
+      @include tablet(max) {
+        grid-row: 5;
+        picture { display: none }
+      }
+      @include desktop {
+        grid-row: 2/4;
+      }
+    }
+
+    &:nth-child(5) {
+      @include tablet(max) {
+        grid-column: 1;
+        grid-row: 3;
+      }
+      @include desktop {
+        grid-column: span 3;
+      }
+    }
+
+    &:nth-child(6) {
+      @include tablet(max) {display: none }
+      @include desktop { grid-column: span 3 }
+    }
+
+    &:nth-child(7) {
+      @include tablet(max) {display: none }
+    }
+
+    &:nth-child(8) {
+      @include tablet(max) {
+        flex-direction: column-reverse;
+        padding: scale(180) 0 0;
+      }
+      @include desktop {
+        grid-column: span 4;
+      }
+      picture {
+        @include tablet(max) {
+          height: scale(180);
+        }
+      }
+      #{$item}-inner {
+        @include tablet(max) {
+          display: flex;
+          flex-direction: column;
+          height: auto;
+          margin: scale(-24) 0 0;
+          padding: scale(12);
+          border-radius: scale(16);
+          background-color: var(--a-color_white);
+        }
+        :deep(img) {
+          width: 100%;
+          height: 100%;
+          object-fit: contain;
+          object-position: left;
+        }
+      }
+      #{$item}-title {
+        width: auto;
+        height: scale(32);
+        @include desktop {
+          height: scale(48);
+        }
+      }
+    }
+
+    &-inner {
+      display: grid;
+      gap: scale(24);
+      height: 100%;
+      max-width: scale(484);
+    }
+    
+    &-text {
+      margin: auto 0 0;
+    }
+
+    &-ico {
+      width: scale(32);
+      height: scale(32);
+      @include desktop {
+        width: scale(48);
+        height: scale(48);
+        margin: auto 0 0;
+      }
+    }
+  }
+}

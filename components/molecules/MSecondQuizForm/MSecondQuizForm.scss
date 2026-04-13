@@ -1,0 +1,52 @@
+.m-quiz-form {
+  display: flex;
+  flex-direction: column;
+  @include mobile() {
+    gap: scale(10);
+  }
+  :deep() {
+    .a-input,
+    .a-btn-main {
+      width: scale(420);
+      height: scale(60);
+      white-space: nowrap;
+
+      @include tablet(max) {
+        width: 100%;
+        height: scale(52);
+        min-height: scale(52);
+        border-radius: scale(16);
+        font-size: scale(16);
+      }
+    }
+    .widget-form-privacy {
+      display: none !important;
+    }
+    .a-btn[disabled] {
+      cursor: not-allowed !important;
+      opacity: 0.5;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+  &__header {
+    display: flex;
+    gap: scale(21);
+    @include tablet(max) {
+      flex-direction: column;
+      gap: scale(12);
+      max-width: scale(340);
+    }
+    @include mobile() {
+      gap: scale(10);
+    }
+    div {
+      width: initial;
+    }
+  }
+  .widget-form-privacy {
+    display: none !important;
+  }
+}

@@ -1,0 +1,140 @@
+.s-job-for {
+
+  :deep(.m-section__inner) {
+    @include desktop {
+      overflow: visible;
+    }
+  }
+  
+  .m-switcher {
+    margin: 0 0 scale(12);
+    @include desktop { display: none }
+    :deep(.m-switcher__btns) { border: rem(1) solid var(--a-color_grey_60) }
+  }
+
+  &__grid {
+    @include desktop {
+      gap: scale(20);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: self-start;
+    }
+  }
+
+  &__column {
+    display: grid;
+    gap: scale(8);
+    @include desktop {
+      display: grid !important;
+      gap: scale(20);
+      &.--lonely-column {
+        grid-column: 1 / -1;
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+          "first item_1"
+          "first item_2"
+      }
+    }
+  }
+
+  &__first {
+    overflow: hidden;
+    position: relative;
+    gap: scale(8);
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    min-height: scale(153);
+    margin: 0 0 scale(4);
+    padding: scale(8);
+    border-radius: scale(16);
+    color: var(--a-color_white);
+    @include desktop {
+      gap: scale(24);
+      min-height: scale(340);
+      margin: 0;
+      padding: scale(24);
+      .--lonely-column & {
+        grid-area: first;
+      }
+    }
+    picture {
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: -1;
+      width: auto;
+      height: auto;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__item {
+    gap: scale(12);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    min-height: scale(134);
+    padding: scale(12);
+    border-radius: scale(16);
+    background-color: var(--a-color_white);
+    box-shadow: 0 scale(3) scale(7) 0 #0000000F;
+    transition: var(--transition);
+    @include desktop {
+      .--lonely-column & {
+        grid-area: item;
+        grid-row: auto;
+        &:nth-child(even) { grid-column: 1 }
+        &:nth-child(odd) { grid-column: 2 }
+        &:nth-child(2) { grid-area: item_1 }
+        &:nth-child(3) { grid-area: item_2 }
+        &:nth-child(even):last-child { grid-column: 1 / -1; }
+      }
+      min-height: scale(160);
+      padding: scale(24);
+    }
+    &:hover {
+      transform: #{'scale(1.03)'};
+      background-color: var(--a-color_red);
+      color: var(--a-color_white);
+    }
+    p {
+      grid-column: 1 / -1;
+      align-self: end;
+    }
+    &-more {
+      align-self: start;
+      gap: scale(8);
+      display: flex;
+      align-items: center;
+      padding: scale(4);
+      padding-left: scale(16);
+      border: rem(1) solid var(--a-color_red);
+      border-radius: scale(40);
+      @include desktop {
+        padding: scale(4) scale(8);
+        padding-left: scale(24);
+      }
+      .ico {
+        width: scale(24);
+        height: scale(24);
+        border-radius: 50%;
+        background-color: var(--a-color_red);
+        color: var(--a-color_white);
+        @include desktop {
+          width: scale(30);
+          height: scale(30);
+        }
+      }
+    }
+    &:hover &-more {
+      background-color: var(--a-color_dark);
+      color: var(--a-color_white);
+    }
+  }
+}

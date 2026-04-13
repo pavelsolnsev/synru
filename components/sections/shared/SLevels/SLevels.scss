@@ -1,0 +1,128 @@
+.s-levels {
+  &__nav {
+    overflow: hidden;
+    :deep() {
+      .swiper-wrapper {
+        @include desktop(min) {
+          display: grid;
+          gap: scale(20);
+          grid-auto-flow: column;
+        }
+      }
+    }
+  }
+
+  &__tabs {
+    margin-top: scale(14);
+
+    @include desktop(min) {
+      margin-top: scale(34);
+    }
+
+    .s-about__slider {
+      @include mobile() {
+        overflow: hidden;
+        width: calc(100% + #{scale(24)});
+        padding: 0 scale(12);
+        margin: 0 scale(-12);
+      }
+    }
+  }
+
+  &__tab {
+    display: none;
+    &._active {
+      display: block;
+    }
+    & > .a-btn {
+      width: 100%;
+      margin: scale(24) 0 0;
+      @include tablet(min) {
+        display: none;
+      }
+    }
+  }
+
+  :deep() {
+    .m-filter-tab {
+      text-align: center;
+      padding: scale(8) scale(12);
+
+      span {
+        display: inline-block;
+        width: 100%;
+      }
+      @include desktop(min) {
+        width: 100%;
+        padding: scale(16);
+      }
+    }
+
+    .s-about {
+      overflow: visible;
+      position: relative;
+      margin: 0;
+      padding: 0;
+    }
+
+    .s-about .m-card-text {
+      position: static;
+      background-color: var(--a-color_white);
+
+      @include desktop(min) {
+        min-height: scale(500);
+      }
+
+      .a-btn {
+        display: none;
+
+        @include tablet(min) {
+          display: flex;
+          max-width: scale(250);
+        }
+
+        @include desktop(min) {
+          max-width: scale(400);
+        }
+      }
+
+      &__bottom {
+        padding-top: scale(36);
+
+        @include tablet(min) {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+
+      &__icon {
+        background-color: var(--a-color_grey_40);
+      }
+
+      &__icons {
+        display: flex;
+      }
+
+      &__block {
+        margin-bottom: 0;
+
+        @include tablet(min) {
+          max-width: scale(420);
+        }
+      }
+    }
+
+    .about-card {
+      min-height: scale(120);
+
+      @include desktop(min) {
+        min-height: scale(242);
+      }
+
+      &__title {
+        max-width: 100%;
+        word-break: normal;
+      }
+    }
+  }
+}

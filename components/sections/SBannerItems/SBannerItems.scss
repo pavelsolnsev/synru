@@ -1,0 +1,122 @@
+
+.s-banner-items {
+  @include tablet(max) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__content {
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: scale(12);
+    position: relative;
+    min-height: scale(380);
+    padding: var(--padding_def);
+    color: var(--a-color_white);
+    background-color: var(--a-color_dark);
+    border-radius: scale(16);
+    overflow: hidden;
+
+    @include desktop(min) {
+      min-height: scale(510);
+    }
+  }
+
+  &__title {
+  }
+
+  &__text {
+    max-width: scale(240);
+
+    @include tablet(min) {
+      max-width: scale(376);
+    }
+
+    @include desktop(min) {
+      max-width: scale(730);
+    }
+  }
+
+  &__img {
+    z-index: -1;
+    top: 0;
+    left: 0;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+  }
+
+  &__list {
+    margin-top: scale(8);
+
+    @include desktop(min) {
+      margin-top: scale(24);
+    }
+
+    .swiper {
+      padding: 0 scale(12);
+
+      @include desktop(min) {
+        padding: 0;
+      }
+    }
+  }
+
+  &__item {
+    display: flex;
+    gap: scale(12);
+    flex-direction: column;
+    height: auto;
+    width: scale(172);
+    padding: scale(12);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      width: scale(352);
+      padding: scale(24) scale(16) scale(16) scale(24);
+    }
+  }
+
+  &__item-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: scale(28);
+    height: scale(28);
+    color: var(--a-color_white);
+    background-color: var(--a-color_red);
+    border-radius: 50%;
+
+    @include desktop(min) {
+      width: scale(36);
+      height: scale(36);
+    }
+  }
+
+  &__item-title {
+    &:has(+.s-banner-items__item-text) {
+      padding-right: scale(28);
+
+      @include desktop(min) {
+        padding-right: scale(36);
+      }
+    }
+    & + .s-banner-items__item-num {
+      margin-left: auto;
+      margin-top: auto;
+    }
+  }
+
+  &__item-text {
+    max-width: scale(886);
+    margin-top: auto;
+
+    & + .s-banner-items__item-num {
+      position: absolute;
+      right: scale(12);
+      top: scale(12);
+    }
+  }
+}

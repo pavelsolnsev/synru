@@ -1,0 +1,8 @@
+:deep() {
+  .s-discipline-cards,
+  .s-discipline-article {
+    padding: var(--padding_def);
+    border-radius: scale(16);
+    background-color: var(--a-color_white);
+  }
+}

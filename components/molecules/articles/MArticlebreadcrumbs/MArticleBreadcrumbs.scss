@@ -1,0 +1,9 @@
+.m-breadcrumbs {
+  :deep() {
+    .m-breadcrumbs__link {
+      color: var(--a-color_grey_50);
+      &--last { color: var(--a-color_dark) }
+      a:hover { color: var(--a-color_red) }
+    }
+  }
+}

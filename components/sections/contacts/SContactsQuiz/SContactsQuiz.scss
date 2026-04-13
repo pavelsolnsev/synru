@@ -1,0 +1,11 @@
+:deep() {
+  .s-quiz {
+    min-height: scale(464) !important;
+    @include tablet(min) {
+      min-height: scale(300) !important;
+    }
+    @include desktop(min) {
+      min-height: scale(590) !important;
+    }
+  }
+}

@@ -1,0 +1,161 @@
+.s-reserve-career {
+  background-color: var(--a-color_grey_20);
+  border-radius: scale(16);
+
+  &__slider {
+    position: relative;
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: scale(280);
+     min-height: scale(158);
+    padding: var(--padding_def);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      width: scale(600);
+      min-height: scale(320);
+    }
+
+    &:last-child {
+      img {
+        height: scale(124);
+
+        @include desktop(min) {
+          height: scale(208);
+        }
+      }
+    }
+
+    img {
+      position: absolute;
+      top: scale(12);
+      right: scale(12);
+      height: scale(84);
+      width: auto;
+
+      @include desktop(min) {
+        top: scale(16);
+        right: scale(16);
+        height: scale(136);
+      }
+    }
+  }
+
+  &__title {
+    margin-bottom: auto;
+  }
+
+
+  &__list {
+    list-style-type: disc;
+    margin-top: scale(4);
+    padding-left: scale(12);
+
+    @include tablet(max) {
+      li:not(:first-child) {
+        display: none;
+      }
+    }
+
+    @include desktop(min) {
+      column-count: 2;
+      margin-top: scale(16);
+      padding-left: scale(24);
+    }
+  }
+
+  &__banner {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+    position: relative;
+    margin: scale(24) 0 scale(40);
+    border-radius: scale(16);
+    overflow: hidden;
+
+    @include desktop(min) {
+      height: scale(590);
+      margin: scale(48) 0 scale(20);
+      padding: var(--padding_def);
+      background-color: var(--a-color_grey_40);
+    }
+
+    picture {
+      order: -1;
+      margin-bottom: scale(-30);
+      @include desktop(min) {
+        inset: 0;
+        z-index: -1;
+        position: absolute;
+        margin: 0;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover
+      }
+    }
+  }
+
+  &__banner-content {
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding_def);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      max-width: scale(838);
+      height: 100%;
+    }
+  }
+
+  &__banner-title {
+    margin-bottom: var(--gap_def);
+  }
+
+  &__banner-subtitle {
+    margin-bottom: scale(12);
+  }
+
+  &__banner-text {
+    display: grid;
+    gap: scale(8);
+    margin-top: auto;
+  }
+
+  &__banner-items {
+    top: scale(24);
+    right: scale(24);
+    position: absolute;
+    display: grid;
+    gap: scale(16);
+
+    @include tablet(max) {
+      display: none;
+    }
+  }
+
+  &__banner-item {
+    display: grid;
+    gap: scale(14);
+    width: scale(200);
+    height: scale(124);
+    padding: scale(14);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    .ico {
+      width: scale(32);
+      height: scale(32);
+      background-color: var(--a-color_grey_40);
+      border-radius: 50%;
+    }
+  }
+}

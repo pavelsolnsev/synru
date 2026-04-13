@@ -1,0 +1,143 @@
+.s-header__main {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: scale(12) var(--layout-h-padding);
+
+  .menu-opened & {
+    // После добавления поиска, раскаментить стиль, а под ним удалить
+    // padding-bottom: scale(60);
+    padding-bottom: scale(60 - 50);
+
+    @include tablet {
+      // После добавления поиска, раскаментить стиль, а под ним удалить
+      // padding-bottom: scale(72);
+      padding-bottom: scale(72 - 60);
+    }
+
+    @include desktop {
+      padding-bottom: scale(4);
+
+      &::before {
+        content: none;
+      }
+    }
+  }
+
+  @include mobile(max, 767px) {
+    .jobs-link {
+      display: none;
+    }
+  }
+  @include desktop {
+    .jobs-link {
+      display: none;
+    }
+  }
+
+  @include desktop {
+    justify-content: flex-start;
+    padding: scale(12) var(--layout-h-padding);
+    .--visible-nav & {
+      padding-bottom: scale(4);
+    }
+  }
+}
+
+.s-header__tools {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: scale(12);
+
+  html.--scroll-header:not(.menu-opened) & {
+    @include mobile(max, 767px) {
+      width: 100%;
+    }
+  }
+
+  @include tablet() {
+    gap: scale(12);
+    margin-left: auto;
+  }
+
+  @include desktop() {
+    flex: 1;
+  }
+
+  &-phones {
+    display: flex;
+    gap: scale(16);
+    justify-content: center;
+    align-items: center;
+    position: relative;
+
+    html.--scroll-header:not(.menu-opened) & {
+      @include mobile(max, 767px) {
+        display: none;
+      }
+    }
+
+    @include desktop(min) {
+      .--visible-search & {
+        display: none;
+      }
+    }
+
+    a {
+      white-space: nowrap;
+      display: none;
+      transition: var(--transition);
+
+      &:hover {
+        color: var(--a-color_red);
+      }
+
+      @include desktop {
+        display: block;
+      }
+    }
+
+    .a-btn {
+      flex: none;
+      display: flex;
+      width: scale(32);
+      height: scale(32);
+      padding: 0;
+      border-radius: 50%;
+      background-color: var(--a-color_grey_40);
+      transition: var(--transition);
+
+      @include desktop {
+        display: none;
+      }
+
+      &:hover {
+        background-color: var(--a-color_white);
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+
+  .a-apply-btn {
+    box-shadow: none;
+    @include mobile {
+      display: none;
+    }
+  }
+
+  .--priemnaya-komissiya {
+    display: none;
+    @include tablet() {
+      display: inline-flex;
+      border-color: inherit !important;
+      color: var(--a-color_red) !important;
+    }
+  }
+}

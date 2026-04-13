@@ -1,0 +1,118 @@
+.m-burger-contacts {
+  background-color: var(--a-color_grey_20);
+  border-radius: var(--border-radius_def);
+  padding: var(--padding_def);
+  display: flex;
+  flex-direction: column;
+  gap: scale(16);
+
+  &__title {
+    font-size: scale(17);
+  }
+
+  &__main {
+    display: flex;
+    flex-direction: column;
+    gap: scale(16);
+  }
+
+  &__address {
+    display: flex;
+    flex-direction: column;
+    gap: scale(16);
+
+    &__item {
+      display: flex;
+      flex-direction: column;
+      gap: scale(4);
+    }
+
+    &__metro {
+      display: flex;
+      gap: scale(5);
+      font-size: scale(12);
+      span:nth-child(1) {
+        color: red;
+      }
+    }
+
+    &__city {
+      font-size: scale(12);
+    }
+  }
+
+  &__phones {
+    font-size: scale(12);
+    display: flex;
+    flex-direction: column;
+    gap: scale(4);
+  }
+
+  &__students {
+    font-size: scale(14);
+    display: flex;
+    flex-direction: column;
+    gap: scale(12);
+    &__phone {
+      font-size: scale(12);
+    }
+  }
+
+  &__schedule {
+    display: flex;
+    flex-direction: column;
+    gap: scale(12);
+    span {
+      font-size: scale(14);
+    }
+
+    &__block {
+      display: flex;
+      flex-direction: column;
+      gap: scale(4);
+
+      div {
+        display: flex;
+        gap: scale(8);
+      }
+    }
+
+    &__day {
+      width: scale(91);
+      font-size: scale(12);
+    }
+
+    &__time {
+      font-size: scale(12);
+    }
+  }
+
+  &__buttons {
+    margin-top: scale(18);
+    display: grid;
+    gap: scale(12);
+    width: 100%;
+    &__feedback {
+      @include mobile() {
+        height: scale(40);
+      }
+    }
+    :deep() {
+      .m-social-links__wrapper {
+        gap: scale(16);
+
+        a {
+          height: scale(32);
+        }
+      }
+
+      .m-app-links__wrapper {
+        gap: scale(16);
+
+        a {
+          height: scale(40);
+        }
+      }
+    }
+  }
+}

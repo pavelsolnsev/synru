@@ -1,0 +1,84 @@
+.a-loader {
+  position: absolute;
+  top: 0;
+  z-index: 8001;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 1s;
+
+  &__shodown {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: var(--a-color_white);
+    opacity: .5;
+  }
+
+  &__container {
+    position: absolute;
+    z-index: 100;
+
+    display: block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: scale(18);
+
+    @include desktop {
+      gap: scale(24);
+    }
+
+    span {
+      display: block;
+      background-color: var(--a-color_red);
+
+      width: scale(18);
+      height: scale(18);
+
+      border-radius: 50%;
+      @include desktop {
+        width: scale(24);
+        height: scale(24);
+      }
+
+      &:nth-child(1) {
+        animation: bounce 1s infinite ease-in-out;
+      }
+
+      &:nth-child(2) {
+        animation: bounce-middle 1s infinite ease-in-out;
+      }
+
+      &:nth-child(3) {
+        animation: bounce 1s infinite ease-in-out;
+      }
+    }
+  }
+}
+
+@keyframes bounce {
+  0%,
+  100% {
+    transform: translateY(scale(-8));
+  }
+
+  50% {
+    transform: translateY(scale(8)); // Первый и последний опускаются
+  }
+}
+
+@keyframes bounce-middle {
+  0%,
+  100% {
+    transform: translateY(scale(8));
+  }
+
+  50% {
+    transform: translateY(scale(-8)); // Средний поднимается
+  }
+}

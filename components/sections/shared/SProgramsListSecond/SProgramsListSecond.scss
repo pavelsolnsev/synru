@@ -1,0 +1,64 @@
+:deep() {
+  .s-programs-list {
+    overflow: hidden;
+    @include desktop() {
+      border-radius: scale(48);
+      padding: scale(84) scale(40);
+    }
+    @include tablet() {
+      border-radius: scale(16);
+      padding: scale(52) scale(16);
+    }
+
+    @include mobile() {
+      border-radius: scale(16);
+      padding: scale(52) scale(10);
+    }
+
+    .l-section__title {
+      margin-bottom: scale(32);
+      font-size: scale(32);
+      @include desktop(min, $p_xl) {
+        max-width: scale(1470);
+        margin-bottom: scale(40);
+        font-size: scale(64);
+      }
+    }
+
+    .m-help-choose-card {
+      .a-btn {
+        box-shadow: none !important;
+      }
+    }
+
+    .specialty-card {
+      .a-btn {
+        box-shadow: none !important;
+      }
+    }
+
+    .a-uikit-select__list-option {
+      font-size: scale(16) !important;
+    }
+
+    .s-programs-list__reset {
+      box-shadow: none !important;
+    }
+
+    .specialty-card__title {
+      font-size: scale(24);
+      @include desktop() {
+        font-size: scale(38);
+      }
+    }
+
+    .specialty-card:hover {
+      background-color: var(--a-color_grey_20);
+      .specialty-card__breadcrumb,
+      .specialty-card__title,
+      .specialty-card__ico {
+        color: var(--a-color_dark);
+      }
+    }
+  }
+}

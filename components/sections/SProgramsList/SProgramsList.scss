@@ -1,0 +1,162 @@
+.s-programs-list {
+  overflow: hidden;
+
+  &__text {
+    max-width: scale(990);
+    margin-bottom: scale(20);
+
+    @include desktop() {
+      margin-bottom: scale(40);
+    }
+  }
+
+  &__loader {
+    text-align: center;
+    &-el {
+      width: scale(48);
+      height: scale(48);
+      border: scale(5) solid var(--a-color_grey_100);
+      border-bottom-color: transparent;
+      border-radius: 50%;
+      display: inline-block;
+      box-sizing: border-box;
+      animation: rotation 1s linear infinite;
+    }
+
+    @keyframes rotation {
+      0% {
+        transform: rotate(0deg);
+      }
+      100% {
+        transform: rotate(360deg);
+      }
+    }
+  }
+
+  .text--center {
+    text-align: center;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  &__selects {
+    z-index: 200;
+    position: relative;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    grid-gap: var(--gap_def);
+    padding-bottom: scale(8);
+
+    @include tablet(min) {
+      grid-template-columns: repeat(3, minmax(0, 1fr)) minmax(min-content, 135px);
+    }
+
+    &-cropped {
+      @include desktop(min) {
+        grid-template-columns: repeat(2, minmax(0, 534px)) minmax(min-content, 135px);
+      }
+      @include tablet(min) {
+        grid-template-columns: repeat(2, minmax(0, 534px)) minmax(min-content, 178px);
+      }
+    }
+
+    &-single {
+      @include desktop(min) {
+        grid-template-columns: repeat(1, minmax(0, 534px)) minmax(min-content, 135px);
+      }
+      @include tablet(min) {
+        grid-template-columns: repeat(1, minmax(0, 534px)) minmax(min-content, 178px);
+      }
+    }
+
+    @include desktop(min) {
+      grid-gap: scale(20);
+      padding-bottom: 0;
+    }
+
+    .a-uikit-select {
+      &__input {
+        background-color: var(--a-color_grey_20);
+        &._open {
+          background-color: var(--a-color_white);
+        }
+      }
+    }
+    &:has(._open) {
+      z-index: indexes("program-selects");
+    }
+  }
+
+  &__inner {
+    display: grid;
+    grid-gap: var(--gap_def);
+    padding: scale(24) 0 0;
+
+    @include tablet() {
+      grid-template-columns: repeat(2, 1fr);
+      padding: scale(16) 0 0;
+    }
+
+    @include desktop(min) {
+      padding-top: 0;
+      grid-template-columns: repeat(3, 1fr);
+      padding: scale(32) 0 0;
+    }
+  }
+
+  .specialty-card {
+    min-width: 0;
+    &__place { display: none }
+  }
+
+  &__more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    margin-top: scale(24);
+
+    @include desktop {
+      margin-top: scale(40);
+    }
+
+    .a-btn {
+      width: 100%;
+      max-width: scale(255);
+
+      @include desktop {
+        max-width: scale(290);
+      }
+    }
+  }
+
+  .s-programs-list__reset {
+    font-weight: 600;
+    letter-spacing: 0;
+
+    &:disabled {
+      background-color: var(--a-color_grey_20);
+      color: var(--a-color_dark);
+      box-shadow: none;
+    }
+
+    &:disabled:hover {
+      background-color: var(--a-color_grey_20);
+      color: var(--a-color_dark);
+      box-shadow: none;
+      cursor: not-allowed;
+    }
+  }
+
+  &__level-slider-wrapper {
+    margin-bottom: calc(var(--scale) * 24);
+  }
+
+  &__block-benefits {
+    display: flex;
+    flex-direction: row;
+    gap: scale(16);
+  }
+}

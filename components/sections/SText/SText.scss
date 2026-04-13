@@ -1,0 +1,18 @@
+.s-text {
+  &__subtitle {
+    margin-bottom: scale(16);
+
+    @include desktop(min) {
+      margin-bottom: scale(48);
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: var(--gap_def);
+    
+    @include desktop(min) {
+      grid-template-columns: repeat(auto-fit, minmax(scale(400), 1fr));
+    }
+  }
+}

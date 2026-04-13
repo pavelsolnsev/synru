@@ -1,0 +1,17 @@
+:deep() {
+  .m-news {
+    padding: 0 var(--layout-h-padding);
+    @include desktop(min) {
+      position: sticky;
+      top: var(--headerArticlesHeight);
+      grid-row: 1/3;
+      grid-column: 2 !important;
+      display: grid;
+      width: scale(363);
+      min-width: 0;
+      height: auto;
+      margin: 0;
+      padding: 0;
+    }
+  }
+}

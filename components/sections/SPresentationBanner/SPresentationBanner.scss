@@ -1,0 +1,55 @@
+.s-presentation-banner {
+  :deep() {
+    .l-section__inner {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-direction: column;
+      min-height: scale(260);
+      padding: var(--padding_def);
+      color: var(--a-color_white);
+      background-color: var(--a-color_black);
+      border-radius: scale(16);
+      overflow: hidden;
+
+      @include desktop(min) {
+        justify-content: space-between;
+        min-height: scale(265);
+      }
+    }
+
+    .a-btn {
+      margin-top: scale(20);
+
+      @include desktop(min) {
+        margin-top: 0;
+        max-width: scale(862);
+      }
+    }
+  }
+
+  &__title {
+    @include mobile() {
+      font-size: scale(26);
+    }
+
+    @include tablet(max) {
+      margin-bottom: auto;
+    }
+  }
+
+  picture {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: auto;
+    height: 100%;
+    z-index: -1;
+    
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

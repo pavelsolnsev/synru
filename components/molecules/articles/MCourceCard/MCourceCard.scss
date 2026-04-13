@@ -1,0 +1,81 @@
+.m-cource-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  height: auto;
+
+  &__thumb {
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    height: scale(152);
+    border-radius: scale(16) scale(16) 0 0;
+    @include desktop {
+      height: scale(204);
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: var(--transition);
+    }
+  }
+  &:hover img {
+    transform: #{'scale(1.05)'};
+    filter: brightness(1.1);
+  }
+
+  &__desc {
+    z-index: 1;
+    flex: 1;
+    gap: scale(12);
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    min-height: scale(142);
+    padding: scale(12);
+    margin: scale(-12) 0 0;
+    border-radius: scale(16);
+    background-color: var(--a-color_grey_10);
+    @include tablet(min) {
+      min-height: scale(192);
+    }
+    @include desktop {
+      gap: scale(24);
+      min-height: scale(248);
+      padding: scale(24);
+    }
+  }
+
+  &__title {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    width: 100%;
+    transition: var(--transition);
+  }
+  &:hover &__title {
+    color: var(--a-color_red);
+  }
+
+  &__text {
+    display: -webkit-box;
+    -webkit-line-clamp: 5;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin: 0 0 scale(12);
+    color: var(--a-color_grey_50);
+  }
+
+  .a-btn {
+    width: scale(164);
+    margin: auto 0 0;
+    @include desktop {
+      width: scale(213);
+    }
+  }
+  &:hover .a-btn { background-color: var(--a-color_red_dark) }
+}

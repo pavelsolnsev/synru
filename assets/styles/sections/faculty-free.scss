@@ -1,0 +1,31 @@
+.--free-red {
+  display: inline-block;
+  padding: 0 scale(24) 0 scale(4);
+  background-image: linear-gradient(90deg, var(--a-color_red) 57%, rgba(var(--a-color_red_rgb), 0));
+  background-repeat: no-repeat;
+  background-position: 0 scale(1);
+  color: var(--a-color_white);
+  @include desktop(min) {
+    padding: 0 scale(52) 0 scale(6);
+
+    .a-font_h3 & {
+      background-position: 0 scale(4);
+    }
+  }
+}
+
+.--free-white {
+  display: inline-block;
+  padding: 0 scale(24) 0 scale(4);
+  background-image: linear-gradient(90deg, var(--a-color_white) 75%, rgba(var(--a-color_white_rgb), 0));
+  background-repeat: no-repeat;
+  background-position: 0 scale(1);
+  color: var(--a-color_dark);
+  @include desktop(min) {
+    padding: 0 scale(52) 0 scale(6);
+
+    .a-font_h3 & {
+      background-position: 0 scale(4);
+    }
+  }
+}

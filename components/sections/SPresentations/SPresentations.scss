@@ -1,0 +1,67 @@
+.s-presentations {
+  overflow: visible;
+
+  .m-search {
+    margin-bottom: scale(4);
+
+    @include desktop(min) {
+      margin-bottom: scale(12);
+
+      .a-input {
+        border-color: var(--a-color_white);
+      }
+    }
+  }
+
+  &__levels {
+    padding-top: scale(8);
+    padding-bottom: scale(8);
+    margin-bottom: scale(24);
+
+    @include desktop(min) {
+      margin-bottom: scale(72);
+    }
+  }
+
+  .m-filter-tab {
+    display: flex;
+    justify-content: center;
+    padding: scale(6) scale(12);
+
+    @include desktop(min) {
+      flex: 1;
+      padding: scale(16);
+    }
+  }
+}
+
+.s-presentation-cards__list {
+  display: grid;
+  gap: var(--gap_def);
+
+  @include tablet(min) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop(min) {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+.s-presentation-cards {
+  display: none;
+  &:not(:last-child) {
+    margin-bottom: scale(40);
+
+    @include desktop(min) {
+      margin-bottom: scale(80);
+    }
+  }
+  &.--visible {
+    display: block;
+  }
+
+  &.--out-search {
+    display: none;
+  }
+}

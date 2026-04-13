@@ -1,0 +1,135 @@
+.s-national-contour-services {
+  :deep(.m-section__inner) {
+    overflow: hidden;
+    position: relative;
+    width: auto;
+  }
+
+  &__body {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
+    grid-auto-flow: column;
+    gap: scale(20);
+
+    @include tablet(max) {
+      grid-template-columns: 1fr;
+      grid-template-rows: auto;
+      grid-auto-flow: row;
+      gap: scale(8);
+    }
+  }
+
+  &__list {
+    display: contents;
+
+    @include tablet(max) {
+      display: flex;
+      flex-direction: row;
+      overflow-x: scroll;
+      gap: scale(9);
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+    }
+  }
+
+  &__hero {
+    grid-row: span 2;
+    position: relative;
+    color: var(--a-color_white);
+    min-height: scale(340);
+    padding: scale(22) scale(24);
+    display: flex;
+    align-items: end;
+    border-radius: scale(16);
+    overflow: hidden;
+
+    @include tablet(max) {
+      grid-row: auto;
+      min-height: scale(177);
+    }
+
+    picture {
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  &__card {
+    padding: scale(24);
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(16);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
+    @include tablet(max) {
+      padding: scale(12);
+      gap: scale(24);
+      min-height: scale(139);
+      min-width: scale(280);
+    }
+  }
+
+  &__card-wrapper {
+    height: 100%;
+    display: flex;
+    gap: scale(20);
+    flex-direction: column;
+    &:nth-child(3) {
+      grid-row: span 2;
+    }
+  }
+
+  &__card-top {
+    display: flex;
+    gap: scale(24);
+    align-items: center;
+
+    @include tablet(max) {
+      align-items: start;
+    }
+    svg {
+      filter: drop-shadow(0px 0px 22px rgba(237, 19, 28, 0.5));
+      min-width: scale(32);
+      height: scale(32);
+      @include desktop {
+        width: scale(40);
+        height: scale(40);
+      }
+    }
+  }
+
+  &__btn-desktop {
+    width: 100%;
+    min-height: scale(78);
+    @include tablet(max) {
+      &.a-btn {
+        display: none;
+      }
+    }
+  }
+
+  &__btn-mobile {
+    width: 100%;
+    @include desktop {
+      &.a-btn {
+        display: none;
+      }
+    }
+  }
+}

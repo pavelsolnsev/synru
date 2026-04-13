@@ -1,0 +1,98 @@
+.s-contacts {
+  &__inner {
+    display: grid;
+    gap: var(--gap_def);
+    @include tablet(min) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include desktop() {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: scale(146);
+    padding: scale(12);
+    border-radius: var(--border-radius_def);
+    background-color: var(--a-color_white);
+    @include desktop() {
+      min-height: scale(253);
+      padding: scale(24);
+    }
+
+    &-text {
+      margin: auto 0 scale(8);
+      color: var(--a-color_grey_80);
+      @include desktop() {
+        margin: auto 0 scale(20);
+      }
+    }
+
+    .a-btn {
+      svg {
+        width: scale(20);
+        height: scale(20);
+      }
+    }
+  }
+
+  &__form {
+    @include tablet(min) {
+      grid-column: span 2;
+    }
+  }
+  :deep() {
+    .m-form {
+      margin: 0;
+      &__content {
+        @include desktop() {
+          display: grid;
+          grid-template-columns: repeat(3, 1fr);
+          .a-btn {
+            grid-column: -1 / 1;
+          }
+        }
+      }
+
+      .a-input-label {
+        position: relative;
+
+        span {
+          opacity: 0;
+          top: 50%;
+          left: 0;
+          transform: translateY(-50%);
+          position: absolute;
+          color: var(--a-color_grey_80);
+          padding-left: scale(40);
+          background: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='14' height='14' fill='none' viewBox='0 0 14 14'%3e%3cpath fill='%237E7F81' d='M7.821 6.75V4.49a.607.607 0 0 0-.18-.446.607.607 0 0 0-.447-.18.607.607 0 0 0-.447.18c-.12.12-.18.269-.18.447v2.493a.649.649 0 0 0 .188.455l2.07 2.07a.595.595 0 0 0 .44.173.595.595 0 0 0 .438-.173.595.595 0 0 0 .173-.439.595.595 0 0 0-.173-.439L7.821 6.75Zm-.627 6.523a6.108 6.108 0 0 1-2.446-.494 6.334 6.334 0 0 1-1.992-1.34 6.335 6.335 0 0 1-1.341-1.992A6.109 6.109 0 0 1 .92 7c0-.868.165-1.683.494-2.447a6.335 6.335 0 0 1 1.34-1.991A6.335 6.335 0 0 1 4.749 1.22 6.109 6.109 0 0 1 7.194.727c.868 0 1.683.164 2.447.494.763.33 1.427.776 1.992 1.34a6.336 6.336 0 0 1 1.34 1.992A6.11 6.11 0 0 1 13.467 7a6.11 6.11 0 0 1-.494 2.447 6.336 6.336 0 0 1-1.34 1.991A6.334 6.334 0 0 1 9.64 12.78a6.108 6.108 0 0 1-2.447.494Z'/%3e%3c/svg%3e")
+            no-repeat scale(12) 50%;
+        }
+
+        input[type="time"] {
+          display: flex;
+          align-items: center;
+          -webkit-appearance: none;
+          -moz-appearance: none;
+          -o-appearance: none;
+          appearance: none;
+
+          &::-webkit-calendar-picker-indicator {
+            display: none;
+          }
+
+          &:not(.hidden-label):not(:focus) {
+            color: transparent;
+
+            & + span {
+              opacity: 1;
+            }
+          }
+        }
+      }
+    }
+  }
+}

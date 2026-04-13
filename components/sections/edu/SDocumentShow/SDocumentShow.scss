@@ -1,0 +1,50 @@
+.s-discipline {
+  padding: 0 !important;
+
+  @include mobile() {
+    margin: calc(-1 * var(--layout-h-padding));
+  }
+
+  :deep() {
+    .l-section__inner {
+      display: grid;
+      padding: var(--padding_def);
+      border-radius: scale(16);
+      background-color: var(--a-color_white);
+      gap: scale(20);
+      grid-template-columns: 1fr;
+
+      @include desktop() {
+        gap: scale(32);
+      }
+    }
+  }
+
+  &__content {
+    :deep() {
+      a {
+        text-decoration: underline;
+        color: var(--a-color_red);
+
+        &:hover {
+          text-decoration: none;
+        }
+      }
+      p {
+        margin: scale(12) 0;
+      }
+    }
+  }
+
+  &__content-pdf {
+    height: scale(480);
+
+    @include tablet() {
+      height: scale(680);
+    }
+
+    @include desktop() {
+      height: scale(820);
+    }
+  }
+}

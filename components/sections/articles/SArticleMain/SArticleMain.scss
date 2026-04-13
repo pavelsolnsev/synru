@@ -1,0 +1,50 @@
+.s-main {
+  @include desktop() {
+    display: grid;
+    gap: 0 scale(20);
+    align-items: start;
+    grid-template-columns: 1fr auto;
+  }
+
+  & > * {
+    grid-column: 1;
+    min-width: 0;
+  }
+
+  &__inner {
+    display: grid;
+    gap: scale(20);
+    align-items: start;
+    margin: 0 0 scale(32);
+    @include desktop() {
+      gap: scale(40);
+      min-width: 0;
+      margin: 0;
+      padding: var(--padding_def);
+      border-radius: scale(16);
+      background-color: var(--a-color_white);
+    }
+  }
+
+  &__bottom {
+    align-self: self-start;
+    display: grid;
+    gap: scale(32);
+    margin: scale(12) 0;
+
+    @include desktop() {
+      gap: scale(40);
+      grid-column: 1;
+      min-width: 0;
+      margin: scale(40) 0 0;
+    }
+
+    &:has(.image-container) {
+      margin: 0;
+
+      @include desktop() {
+        margin: 0;
+      }
+    }
+  }
+}

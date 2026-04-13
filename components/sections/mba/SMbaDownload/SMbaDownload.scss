@@ -1,0 +1,45 @@
+.s-mba-download {
+  &__body {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 100%;
+    height: scale(372);
+    padding: scale(23) scale(31);
+    border-radius: scale(16);
+    color: var(--a-color_white);
+    position: relative;
+
+    @include tablet(max) {
+      height: scale(164);
+      padding: scale(12);
+    }
+
+    @include mobile(max) {
+      height: scale(320);
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 1;
+
+    @include mobile(max) {
+      font-size: scale(26);
+    }
+  }
+
+  &__btn {
+    position: relative;
+    z-index: 1;
+    width: scale(421);
+
+    @include tablet(max) {
+      width: scale(301);
+    }
+
+    @include mobile(max) {
+      width: 100%;
+    }
+  }
+}

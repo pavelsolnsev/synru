@@ -1,0 +1,159 @@
+.s-info-dod {
+  :deep() {
+    .l-section__inner {
+      z-index: 1;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      padding: var(--padding_def);
+      background-color: var(--a-color_grey_40);
+      border-radius: scale(16);
+      overflow: hidden;
+
+      @include desktop(min) {
+        height: scale(540);
+      }
+    }
+  }
+
+  picture {
+    position: absolute;
+    z-index: -1;
+    top: 0;
+    right: 0;
+    
+    @include mobile() {
+      display: none;
+    }
+
+    @include tablet(min) {
+      width: 100%;
+      height: 100%;
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__title {
+    margin-bottom: scale(28);
+
+    @include tablet(min) {
+      max-width: scale(450);
+      margin-bottom: scale(32);
+    }
+
+    @include desktop(min) {
+      max-width: scale(726);
+      margin-bottom: auto;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: scale(8);
+    margin-top: scale(27);
+    margin-bottom: scale(24);
+
+    @include tablet(min) {
+      margin-top: 0;
+      max-width: scale(370);
+    }
+
+    @include desktop(min) {
+      max-width: scale(743);
+    }
+  }
+
+  &__btn {
+    @include tablet(min) {
+      max-width: scale(224);
+    }
+
+    @include desktop(min) {
+      max-width: scale(400);
+    }
+  }
+
+  &__gallery {
+    display: grid;
+    gap: var(--gap_def);
+
+    @include tablet(min) {
+      position: absolute;
+      top: 0;
+      right: scale(40);
+      grid-template-columns: 1fr 1fr;
+      height: 100%;
+    }
+
+    @include desktop(min) {
+      right: scale(103);
+    }
+  }
+
+  &__gallery-item {
+    position: relative;
+    height: scale(119);
+
+    @include tablet(min) {
+      height: 100%;
+      width: scale(100);
+    }
+
+    @include desktop(min) {
+      width: scale(337);
+    }
+
+    img {
+      --slide-width: #{scale(180)};
+      --slide-gap: var(--gap_def);
+      --total-width: calc(var(--slide-width) + var(--slide-gap));
+      --speed: calc(5s * var(--slide-count));
+      position: absolute;
+      width: var(--slide-width);
+      height: 100%;
+      left: max(calc(var(--total-width) * (var(--slide-count) - 1)), 100%);
+      animation: scrollLeft var(--speed) linear infinite;
+      animation-delay: calc(var(--speed) / var(--slide-count) * var(--n) - var(--speed));
+      border-radius: scale(16);
+      object-fit: cover;
+
+      &.--toRight {
+        animation-direction: reverse;
+      }
+
+      @include tablet(min) {
+        --slide-width: #{scale(100)};
+        --slide-height: #{scale(65)};
+        --total-height: calc(var(--slide-height) + var(--slide-gap));
+        left: 0;
+        top: max(calc(var(--total-height) * (var(--slide-count) - 1)), 100%);
+        height: var(--slide-height);
+        animation: scrollTop var(--speed) linear infinite;
+        animation-delay: calc(var(--speed) / var(--slide-count) * var(--n) - var(--speed));
+      }
+
+      @include desktop(min) {
+        --slide-width: #{scale(337)};
+        --slide-height: #{scale(220)};
+      }
+    }
+  }
+}
+
+@keyframes scrollLeft {
+  to {
+    left: calc(-1 * var(--total-width));
+  }
+}
+
+@keyframes scrollTop {
+  to {
+    top: calc(-1 * var(--total-height));
+  }
+}

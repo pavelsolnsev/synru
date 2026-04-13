@@ -1,0 +1,70 @@
+.s-certificate-activate {
+  position: relative;
+
+  @include mobile(max) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__body {
+    position: relative;
+    z-index: 1;
+    padding: scale(41) 0 scale(54) scale(33);
+    border-radius: scale(16);
+    overflow: hidden;
+    display: flex;
+    gap: scale(52);
+
+    @include tablet(max) {
+      gap: scale(36);
+      padding: scale(12);
+    }
+
+    @include mobile(max) {
+      flex-direction: column;
+      padding-bottom: scale(37);
+    }
+  }
+
+  &__info {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__first-descr {
+    font-size: scale(38);
+    font-weight: 600;
+    line-height: 1em;
+
+    @include tablet(max) {
+      font-size: scale(19);
+    }
+
+    @include mobile(max) {
+      width: scale(196);
+
+      &:deep(br) {
+        display: none;
+      }
+    }
+  }
+
+  &__second-descr {
+    margin-top: scale(24);
+    font-size: scale(26);
+    font-weight: 600;
+    line-height: 1.2em;
+
+    @include tablet(max) {
+      font-size: scale(15);
+    }
+
+    @include mobile(max) {
+      width: scale(148);
+
+      &:deep(br) {
+        display: none;
+      }
+    }
+  }
+}

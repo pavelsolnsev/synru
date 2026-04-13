@@ -1,0 +1,259 @@
+.s-quiz {
+  min-height: unset;
+  padding: 0;
+  background-color: var(--a-color_dark);
+  @include tablet(min) {
+    min-height: scale(276);
+  }
+  &.--express {
+    @include tablet() {
+      min-height: scale(289);
+    }
+  }
+  @include desktop(min) {
+    min-height: scale(440);
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    @include tablet(min) {
+      height: 100%;
+    }
+  }
+  .--js-quiz-visible &__inner {
+    display: none;
+  }
+
+  &__intro {
+    padding: scale(12);
+    border-radius: scale(16);
+    background-color: rgba(var(--a-color_dark_rgb), 0.8);
+    backdrop-filter: blur(#{scale(12)});
+    -webkit-backdrop-filter: blur(#{scale(12)});
+    @include tablet(min) {
+      height: 100%;
+      background-color: transparent;
+      backdrop-filter: none;
+      -webkit-backdrop-filter: none;
+    }
+    @include desktop {
+      padding: 0 scale(24) scale(24);
+      width: 62% !important;
+
+      .--express & {
+        width: 70% !important;
+      }
+    }
+
+    &-count {
+      margin: 0 0 scale(4);
+      text-wrap: nowrap;
+
+      @include tablet() {
+        .--express & {
+          display: none;
+        }
+      }
+      @include desktop(min) {
+        display: none;
+      }
+    }
+
+    &-title {
+      margin: 0 0 scale(12);
+      @include mobile() {
+        .--express & {
+          letter-spacing: -0.03em;
+        }
+      }
+      @include tablet(min) {
+        order: -1;
+        margin: 0 0 scale(20);
+      }
+      @include desktop() {
+        .--express & {
+          margin: 0 0 auto;
+        }
+      }
+    }
+
+    &-description {
+      margin: 0 0 scale(12);
+      @include tablet(min) {
+        margin: auto 0 scale(12);
+      }
+    }
+
+    &-btn {
+      @include tablet(min) {
+        width: scale(305);
+      }
+      @include desktop {
+        width: scale(420);
+        margin: auto 0 0;
+      }
+    }
+    &-description + &-btn {
+      @include desktop {
+        margin-top: 0;
+      }
+    }
+  }
+
+  .m-quiz-form {
+    @include tablet {
+      width: scale(700);
+      margin: auto 0 0;
+    }
+    @include desktop {
+      margin: auto 0 0;
+    }
+  }
+
+  &.--express {
+    :deep() {
+      .m-quiz-form {
+        .a-input {
+          @include desktop() {
+            width: scale(420) !important;
+            height: scale(60) !important;
+          }
+        }
+        .a-btn {
+          @include tablet() {
+            width: scale(143);
+          }
+          @include desktop() {
+            width: scale(359) !important;
+            height: scale(60) !important;
+          }
+        }
+      }
+
+      .m-breadcrumbs__link--last & {
+        color: var(--a-color_grey_40);
+      }
+    }
+  }
+
+  .s-quiz__intro-description + .m-quiz-form {
+    @include desktop {
+      margin-top: 0;
+    }
+    @include tablet {
+      margin-top: 0;
+    }
+  }
+
+  &__bg {
+    bottom: 0;
+    @include desktop(min) {
+      left: auto;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      width: scale(1010);
+    }
+  }
+
+  &__img {
+    order: -1;
+    position: relative;
+    z-index: 1;
+    height: scale(228);
+    margin: 0 scale(12);
+    @include tablet(min) {
+      position: absolute;
+      left: auto;
+      top: 0;
+      right: scale(20);
+      bottom: 0;
+      width: scale(373);
+      height: auto;
+      margin: 0;
+      .--express & {
+        right: scale(10);
+      }
+    }
+    @include desktop(min) {
+      top: auto;
+      right: scale(230);
+      width: scale(674);
+      height: scale(440);
+      max-height: 100%;
+
+      .--express & {
+        right: scale(165);
+        width: scale(575);
+      }
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      @include desktop(min) {
+        object-position: bottom center;
+      }
+    }
+  }
+
+  &__tags {
+    position: absolute;
+    left: auto;
+    top: scale(12);
+    right: scale(12);
+    z-index: 1;
+    @include tablet(min) {
+      top: scale(10);
+      right: scale(10);
+    }
+    @include desktop {
+      top: scale(24);
+      right: scale(24);
+      display: flex;
+      align-items: center;
+      gap: scale(8);
+    }
+
+    .a-tag {
+      display: none;
+      @include desktop {
+        display: flex;
+      }
+    }
+  }
+  &__ico {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: scale(40);
+    height: scale(40);
+    border-radius: 50%;
+    background-color: var(--a-color_red);
+    color: var(--a-color_white);
+    @include tablet(min) {
+      width: scale(32);
+      height: scale(32);
+    }
+    @include desktop(min) {
+      width: scale(40);
+      height: scale(40);
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}
+
+.m-breadcrumbs:has(+ .--express) {
+  :deep() {
+    .m-breadcrumbs__link--last span {
+      color: var(--a-color_grey_40);
+    }
+  }
+}

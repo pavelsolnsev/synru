@@ -1,0 +1,56 @@
+.m-level-filter {
+  &__cards {
+    .swiper {
+      overflow: visible;
+
+      &-slide {
+        width: scale(136) !important;
+        height: auto;
+
+        @include desktop(min) {
+          width: auto;
+          min-height: auto;
+          flex-basis: content;
+        }
+      }
+    }
+  }
+
+  &__card {
+    z-index: 1;
+    position: relative;
+    height: 100%;
+    padding: scale(12);
+    padding-right: scale(30);
+    background-color: var(--a-color_grey_20);
+    border-radius: var(--border-radius_def);
+    transition: var(--transition);
+
+    @include desktop(min) {
+      padding: scale(24);
+      padding-right: scale(60);
+    }
+
+    &-title {
+      display: block;
+      @include tablet(max) {
+        font-size: scale(12);
+        line-height: 1.2;
+      }
+    }
+
+    &:hover, &.checked {
+      background-color: var(--a-color_red);
+      color: var(--a-color_white);
+      transform: #{"scale(1.04)"};
+    }
+
+    input {
+      display: none;
+    }
+
+    &:hover {
+      cursor: pointer;
+    }
+  }
+}

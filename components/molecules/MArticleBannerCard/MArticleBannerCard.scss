@@ -1,0 +1,235 @@
+.m-article-banner-card {
+  overflow: hidden;
+  z-index: 1;
+  position: relative;
+  margin: 0 calc(-1 * var(--layout-h-padding));
+  background-color: var(--a-color_grey_100);
+  border-radius: scale(16);
+
+  @include tablet(min) {
+    margin: 0;
+  }
+
+  &::after {
+    position: absolute;
+    z-index: -1;
+    left: 0;
+    top: 0;
+    content: "";
+    width: 100%;
+    height: 100%;
+    background: var(--a-color_dark);
+    opacity: 0.2;
+  }
+
+  &__link {
+    display: flex;
+    padding: var(--padding_def);
+  }
+
+  &__inner {
+    display: flex;
+    flex-direction: column;
+    gap: scale(8);
+    height: auto;
+    min-height: scale(382);
+
+    @include tablet(min) {
+      gap: scale(24);
+      min-height: scale(320);
+    }
+
+    @include desktop(min) {
+      gap: scale(14);
+      min-height: scale(497);
+    }
+  }
+
+  &__tags {
+    display: flex;
+    gap: scale(8);
+    margin-bottom: auto;
+
+    @include desktop(min) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: scale(8);
+    height: auto;
+    margin: auto 0 0;
+    @include desktop(min) {
+      flex: 1;
+      margin: 0;
+    }
+  }
+
+  &__title {
+    color: var(--a-color_white);
+
+    @include tablet(min) {
+      max-width: scale(320);
+    }
+
+    @include desktop(min) {
+      max-width: scale(691);
+      margin-bottom: auto;
+    }
+  }
+
+  &__intro {
+    color: var(--a-color_white);
+    opacity: 0.6;
+
+    @include tablet(min) {
+      max-width: scale(320);
+    }
+
+    @include desktop(min) {
+      max-width: scale(691);
+    }
+  }
+
+  &__img {
+    position: absolute;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    &::after {
+      content: "";
+      z-index: 2;
+      bottom: 0;
+      left: 0;
+      position: absolute;
+      height: 60%;
+      width: 100%;
+      background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 70%);
+      opacity: 0.8;
+
+      @include tablet(min) {
+        top: 50%;
+        left: -20%;
+        bottom: auto;
+        width: 60%;
+        height: 130%;
+        transform: translateY(-50%) rotate(80deg);
+        background: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #000 90%);
+      }
+    }
+
+    img {
+      display: block;
+      z-index: 0;
+      position: relative;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+
+      @include tablet(min) {
+        width: 70%;
+        margin-left: auto;
+      }
+
+      @include desktop(min) {
+        width: 60%;
+      }
+
+      & + img {
+        display: none;
+        z-index: 1;
+        position: absolute;
+        transform: translateX(-50%);
+
+        @include tablet(min) {
+          display: block;
+          left: -6%;
+          top: 50%;
+          width: 55%;
+          height: 130%;
+          filter: blur(40px) brightness(0.6);
+          transform: translateY(-50%) rotate(-10deg);
+        }
+
+        @include desktop(min) {
+          left: -3%;
+        }
+      }
+    }
+  }
+
+  :deep() {
+    .a-share {
+      position: absolute;
+      right: scale(12);
+      top: scale(12);
+      z-index: 10;
+
+      @include mobile() {
+        .a-share__toggler {
+          svg {
+            color: var(--a-color_white);
+          }
+        }
+      }
+
+      @include mobile(min) {
+        display: flex;
+        align-items: start;
+        justify-content: end;
+        width: 50px;
+        height: 50px;
+        top: 0;
+        right: 0;
+        padding: scale(12) scale(12) 0 0;
+      }
+
+      @include desktop(min) {
+        top: auto;
+        right: scale(36);
+        bottom: scale(24);
+        width: auto;
+        height: scale(40);
+        gap: scale(8);
+        align-items: center;
+        padding: 0 scale(20);
+        background: rgba(255, 255, 255, 0.01);
+        border: 1px solid var(--a-color_grey_60);
+        border-radius: scale(40);
+        backdrop-filter: blur(#{scale(22)});
+        -webkit-backdrop-filter: blur(#{scale(22)});
+
+        .a-share__toggler {
+          width: scale(15);
+          height: scale(15);
+          color: var(--a-color_grey_60);
+
+          svg {
+            display: block;
+          }
+
+          .a-share:hover & {
+            color: var(--a-color_white);
+          }
+        }
+
+        &:hover {
+          .a-share__toggler {
+            svg {
+              color: var(--a-color_white);
+            }
+          }
+
+          .a-share__label {
+            opacity: 1;
+          }
+        }
+      }
+    }
+  }
+}

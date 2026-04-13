@@ -1,0 +1,65 @@
+.s-schedule {
+  display: grid;
+  gap: scale(20);
+  align-items: start;
+  min-width: 0;
+  margin: 0;
+  padding: var(--padding_def);
+  border-radius: scale(16);
+  background-color: var(--a-color_white);
+  @include desktop() {
+    gap: scale(32);
+    padding-bottom: scale(40);
+  }
+
+  &__title {
+    margin-bottom: scale(16);
+  }
+
+  &__content {
+    :deep() {
+      p { margin: scale(12) 0 }
+    }
+  }
+
+  .m-tabs {
+    width: 100%;
+    min-width: 0;
+  }
+
+  &__subjects {
+    display: grid;
+    grid-gap: scale(16);
+    grid-template-columns: 1fr;
+    margin-bottom: scale(20);
+    &:last-child {
+      margin-bottom: 0;
+    }
+    @include tablet(min) {
+      margin-bottom: scale(16);
+
+      &.--x1 {
+        grid-template-columns: 1fr;
+      }
+      &.--x2 {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      &.--x0 {
+        grid-template-columns: repeat(3, 1fr);
+      }
+      &.--xn {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+    @include desktop {
+      grid-gap: scale(24) scale(20);
+      margin-bottom: scale(24);
+    }
+  }
+
+  :deep(.a-btn--second) {
+    cursor: default;
+    border-color: var(--a-color_grey_60);
+    &:hover { color: var(--a-color_grey_dark) }
+  }
+}

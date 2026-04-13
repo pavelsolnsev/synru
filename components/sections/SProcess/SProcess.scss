@@ -1,0 +1,117 @@
+.s-process {
+  :deep() {
+    .swiper {
+      overflow: visible;
+    }
+  }
+  .swiper-slide {
+    position: relative;
+    width: scale(280);
+    border-radius: scale(16);
+    overflow: hidden;
+
+    @include desktop(min) {
+      display: flex;
+      width: scale(600);
+      height: scale(560);
+    }
+  }
+
+  .a-tag {
+    z-index: 2;
+    position: absolute;
+    top: scale(14);
+    left: scale(15);
+
+    @include desktop(min) {
+      top: scale(24);
+      left: scale(24);
+    }
+  }
+
+  img {
+    width: 100%;
+    height: scale(202);
+    margin-bottom: scale(-30);
+    border-radius: scale(16);
+    object-fit: cover;
+
+    @include desktop(min) {
+      z-index: 0;
+      position: absolute;
+      left: 0;
+      top: 0;
+      height: 100%;
+      margin-bottom: 0;
+    }
+  }
+
+
+
+  :deep() {
+    .m-accordion {
+      position: relative;
+      z-index: 1;
+      padding: var(--padding_def);
+      background-color: var(--a-color_white);
+      border-radius: scale(16);
+      width: 100%;
+  
+      @include desktop(min) {
+        margin-top: auto;
+      }
+  
+      svg {
+        display: none;
+  
+        @include desktop(min) {
+          display: block;
+          width: scale(42);
+          height: scale(42);
+        }
+      }
+  
+      &:hover {
+        .m-accordion__content {
+          grid-template-rows: 1fr;
+        }
+  
+        svg {
+          transform: rotate(90deg);
+        }
+      }
+  
+      &__content {
+        @include tablet(max) {
+          grid-template-rows: 1fr;
+        }
+      }
+  
+      &__wrap div {
+        padding-top: scale(16);
+  
+        @include desktop(min) {
+          padding-top: scale(32);
+        }
+      }
+    }
+    .m-accordion:hover .m-accordion__content {
+      grid-template-rows: 1fr;
+    }
+    .m-accordion:hover svg {
+      transform: rotate(90deg);
+    }
+
+    .s-process__slider {
+      position: relative;
+
+      .swiper-button-prev {
+        margin-top: 0;
+      }
+
+      .swiper-button-next {
+        margin-top: 0;
+      }
+    }
+  }
+}

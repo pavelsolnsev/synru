@@ -1,0 +1,56 @@
+.s-goals {
+  &__slider {
+    position: relative;
+  }
+  :deep() {
+    .swiper {
+      overflow: visible;
+    }
+    .swiper-navigation {
+      button {
+        margin: 0;
+      }
+    }
+
+    .m-article-card {
+      height: auto;
+      max-width: scale(280);
+
+      @include desktop(min) {
+        max-width: scale(599);
+      }
+
+      li {
+        position: relative;
+        padding-left: scale(16);
+        &:not(:last-child) {
+          margin: 0 0 scale(6);
+          @include desktop() {
+            margin: 0 0 scale(8);
+          }
+        }
+
+        @include desktop() {
+          padding-left: scale(30);
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: scale(6);
+          display: block;
+          width: scale(8);
+          height: scale(8);
+          border-radius: scale(2);
+          background-color: currentColor;
+
+          @include desktop() {
+            width: scale(12);
+            height: scale(12);
+          }
+        }
+      }
+    }
+  }
+}

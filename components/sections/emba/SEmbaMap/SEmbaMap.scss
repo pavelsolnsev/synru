@@ -1,0 +1,113 @@
+:deep() {
+  @include desktop {
+    .swiper {
+      height: 100%;
+    }
+    .swiper-scrollbar-vertical {
+      height: 100%;
+      width: scale(4);
+    }
+  }
+}
+#map {
+  width: 100%;
+  height: scale(369);
+
+  @include tablet(min) {
+    height: scale(371);
+  }
+
+  @include desktop(min) {
+    height: scale(763);
+  }
+}
+
+.s-emba-map {
+  &__wrap {
+    overflow: hidden;
+    display: grid;
+    border-radius: scale(16);
+    margin-bottom: scale(12);
+
+    @include desktop(min) {
+      grid-template-columns: scale(457) 1fr;
+      height: scale(763);
+      margin-bottom: scale(24);
+    }
+  }
+
+  .a-btn {
+    width: 100%;
+
+    @include desktop {
+      height: scale(80);
+    }
+  }
+
+  &__slider {
+    position: relative;
+    overflow: hidden;
+    order: 1;
+    background-color: var(--a-color_grey_20);
+
+    @include desktop(min) {
+      display: flex;
+      order: 0;
+      height: 100%;
+      padding: scale(24);
+      padding-right: scale(18);
+      padding-bottom: 0;
+    }
+
+    .swiper {
+      padding: scale(17) scale(12) 0;
+      
+      @include desktop {
+        padding: 0;
+      }
+    }
+
+    .swiper-scrollbar {
+      margin-bottom: scale(10);
+    }
+  }
+
+  &__num {
+    position: absolute;
+    bottom: scale(12);
+    right: scale(12);
+
+    @include desktop(min) {
+      bottom: scale(20);
+      right: scale(20);
+    }
+  }
+
+  .swiper-slide {
+    position: relative;
+    display: grid;
+    align-items: center;
+    gap: scale(12);
+    grid-template-columns: scale(48) 1fr;
+    width: scale(194);
+    height: scale(74);
+    padding: scale(12);
+    background-color: var(--a-color_white);
+    border-radius: scale(12);
+    transition: var(--a-transition);
+
+    &.--active {
+      color: var(--a-color_white);
+      background-color: var(--a-color_red);
+    }
+
+    @include desktop(min) {
+      gap: scale(24);
+      grid-template-columns: scale(90) 1fr;
+      width: 100%;
+      height: scale(134);
+      margin-bottom: scale(12);
+      padding: scale(20);
+    }
+  }
+}

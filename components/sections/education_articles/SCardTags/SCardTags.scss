@@ -1,0 +1,53 @@
+.s-card-tags {
+  display: flex;
+  flex-direction: column;
+  margin: 0 calc(-1 * var(--layout-h-padding));
+  padding: scale(12) scale(12) scale(20);
+  background-color: var(--a-color_white);
+  border-radius: scale(16);
+
+  @include desktop(min) {
+    margin: 0;
+    padding: scale(24);
+  }
+
+  :deep() {
+    .l-section__title {
+      margin: 0;
+    }
+  }
+
+  &__text {
+    max-width: scale(1128);
+  }
+
+  &__list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: scale(8);
+    margin: scale(16) 0 0;
+    @include desktop(min) {
+      gap: scale(12);
+      margin: scale(24) 0 0;
+    }
+  }
+
+  :deep() {
+    .a-tag {
+      white-space: nowrap;
+      transition: var(--transition);
+
+      &--primary {
+        color: var(--a-color_red);
+      }
+      &--fill {
+        color: var(--a-color_white);
+      }
+      &:hover {
+        border-color: var(--a-color_red);
+        background-color: var(--a-color_red);
+        color: var(--a-color_white);
+      }
+    }
+  }
+}

@@ -1,0 +1,23 @@
+.s-article-banners {
+  display: none;
+  gap: scale(30);
+
+  @include desktop(min) {
+    grid-row: 1 / 3;
+    grid-column: 2 !important;
+    display: grid;
+    position: relative;
+    grid-template-rows: auto 1fr;
+    z-index: indexes("articles-banners");
+    width: scale(445);
+    height: 100%;
+  }
+
+  &__space {
+    display: none;
+
+    @include desktop(min) {
+      height: 0;
+    }
+  }
+}

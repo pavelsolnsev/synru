@@ -1,0 +1,60 @@
+.m-mediacenter-block {
+  overflow: hidden;
+  padding: scale(20) scale(12);
+  margin: 0 scale(-12);
+  background-color: var(--a-color_white);
+  border-radius: scale(16);
+
+  @include tablet(min) {
+    padding: scale(20) scale(16);
+    margin: 0 scale(-16);
+  }
+
+  @include desktop(min) {
+    margin: 0;
+    padding: scale(24);
+  }
+
+  &__title {
+    margin-bottom: scale(24);
+
+    @include desktop(min) {
+      margin-bottom: scale(32);
+    }
+  }
+
+  :deep() {
+    .swiper-navigation {
+      @include desktop(min) {
+        top: scale(-90);
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        &:hover {
+          background-color: var(--a-color_grey_10);
+        }
+
+        &.swiper-button-disabled {
+          opacity: 0.4;
+
+          &:hover {
+            background-color: var(--a-color_grey_20);
+          }
+        }
+      }
+    }
+
+    > .a-btn {
+      display: flex;
+      width: 100%;
+      max-width: scale(240);
+      margin: scale(24) auto 0;
+
+      @include desktop(min) {
+        margin-top: scale(40);
+        max-width: scale(196);
+      }
+    }
+  }
+}

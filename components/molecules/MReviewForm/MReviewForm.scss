@@ -1,0 +1,96 @@
+.m-review-form {
+  position: relative;
+  padding: var(--padding_def);
+  border-radius: scale(16);
+  background-color: var(--a-color_grey_40);
+  .m-form {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap_def);
+
+    &__content {
+      order: 0;
+      margin-bottom: 0;
+      display: grid;
+      gap: var(--gap_def);
+      @include tablet(min) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    &__bottom {
+      order: 2;
+
+      display: flex;
+      flex-direction: column;
+      gap: scale(10);
+
+      .a-btn {
+        align-self: flex-end;
+      }
+    }
+  }
+  &:deep() {
+    textarea {
+      min-height: scale(86);
+      background-color: var(--a-color_grey_10);
+      @include desktop() {
+        min-height: scale(122);
+      }
+    }
+
+    .a-btn {
+      width: 100%;
+
+      @include tablet(min) {
+        max-width: scale(177);
+        margin-left: auto;
+      }
+
+      @include desktop(min) {
+        max-width: scale(320);
+      }
+    }
+
+    .a-input {
+      background-color: var(--a-color_grey_10);
+    }
+
+    .a-chekbox__label::before {
+      background-color: var(--a-color_grey_10);
+    }
+  }
+
+  &__inputs {
+    order: 1;
+    display: grid;
+    gap: var(--gap_def);
+  }
+
+  &__stars {
+    order: -1;
+    display: flex;
+    width: scale(131);
+    margin: 0 auto;
+
+    @include tablet(min) {
+      position: absolute;
+      bottom: scale(60);
+      left: var(--padding_def);
+      width: scale(102);
+    }
+
+    @include desktop(min) {
+      bottom: scale(85);
+      width: scale(160);
+    }
+
+    svg {
+      color: var(--a-color_white);
+
+      &.active {
+        color: var(--a-color_red);
+      }
+    }
+  }
+}

@@ -1,0 +1,71 @@
+.s-school-graduates {
+
+  &__grid {
+    display: grid;
+    grid-gap: scale(8);
+
+    @include tablet(min) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include desktop(min) {
+      grid-gap: scale(20);
+    }
+  }
+
+  &__banner {
+    order: -1;
+    position: relative;
+    height: auto;
+    min-height: scale(216);
+    border-radius: scale(16);
+    overflow: hidden;
+
+    @include tablet(min) {
+      order: 1;
+    }
+
+    @include desktop(min) {
+      min-height: scale(450);
+    }
+
+    .a-tag {
+      position: absolute;
+      top: scale(12);
+      left: scale(12);
+
+      @include desktop(min) {
+        top: scale(20);
+        left: scale(20);
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+
+  .m-card-text {
+    color: var(--a-color_white);
+    background-color: var(--a-color_red);
+
+    &__text {
+      margin: auto 0 0;
+    }
+    &__bottom {
+      margin: 0;
+    }
+    .a-btn {
+      display: flex;
+      width: 100%;
+      @include tablet(min) {
+        max-width: scale(250);
+      }
+      @include desktop(min) {
+        max-width: scale(420);
+      }
+    }
+  }
+}

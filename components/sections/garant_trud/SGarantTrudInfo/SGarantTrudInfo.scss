@@ -1,0 +1,39 @@
+.s-garant-trud {
+  :deep() {
+    .l-section__inner {
+      display: grid;
+      gap: scale(8);
+      @include desktop() {
+        grid-template-columns: repeat(2, 1fr);
+        height: scale(530);
+        gap: scale(20);
+      }
+    }
+  }
+
+  &__info {
+    padding: var(--padding_def);
+    background-color: var(--a-color_grey_20);
+    border-radius: var(--border-radius_def);
+    display: flex;
+    flex-direction: column;
+    gap: scale(36);
+    @include tablet(min) {
+      gap: scale(40);
+    }
+  }
+
+  &__img {
+    height: scale(275);
+    @include tablet() {
+      height: scale(360);
+    }
+    @include desktop() {
+      height: scale(530)
+    }
+    img {
+      border-radius: var(--border-radius_def);
+      height: 100%;
+    }
+  }
+}

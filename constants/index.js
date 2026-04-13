@@ -1,0 +1,10 @@
+export * as ENTITIES from './entity';
+export * as ROUTES from './routes';
+export * as KEYS from './keys';
+export * as COMMON from './common';
+export * as APP_LINKS from './appLinks';
+export * as DOCUMENTS from './documents';
+export * as DIPLOMAS from './diplomas';
+export * as SOCIAL from './socials';
+export * as STATE from './state';
+export * as ARTICLES_MENU from './articlesMenu';

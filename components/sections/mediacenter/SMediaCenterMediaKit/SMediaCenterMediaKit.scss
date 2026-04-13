@@ -1,0 +1,74 @@
+.media-kit {
+  :deep() {
+    .m-mediacenter-block__content {
+      display: grid;
+      gap: var(--gap_def);
+
+      @include tablet(min) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+
+  &__item {
+    display: grid;
+    gap: scale(24);
+    padding: var(--padding_def);
+    background-color: var(--a-color_grey_10);
+    border-radius: scale(12);
+
+    @include desktop(min) {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    img {
+      height: scale(24);
+      width: auto;
+
+      @include desktop(min) {
+        height: scale(32);
+      }
+    }
+  }
+
+  &__links {
+    display: flex;
+    gap: var(--gap_def);
+
+    a {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: scale(12);
+      height: scale(40);
+      width: 100%;
+      color: var(--a-color_red);
+      background-color: transparent;
+      border: solid 1px var(--a-color_red);
+      border-radius: scale(8);
+      transition: var(--transition);
+
+      &:hover {
+        background-color: var(--a-color_red);
+        color: var(--a-color_white);
+      }
+
+      @include desktop(min) {
+        height: scale(48);
+        width: scale(100);
+      }
+
+      .ico {
+        width: scale(20);
+        height: scale(20);
+
+        @include desktop(min) {
+          width: scale(24);
+          height: scale(24);
+        }
+      }
+    }
+  }
+}

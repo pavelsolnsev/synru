@@ -1,0 +1,57 @@
+.s-for-whom {
+  &__wrap {
+    display: grid;
+    gap: scale(8);
+
+    @include tablet(min) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include desktop(min) {
+      gap: scale(20);
+    }
+  }
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: scale(8);
+    padding: scale(12);
+    background-color: var(--a-color_grey_40);
+    border-radius: scale(12);
+
+    @include tablet() {
+      &:last-child:nth-child(odd) {
+        grid-column: 1/3;
+      }
+    }
+
+    @include desktop(min) {
+      padding: scale(16);
+      border-radius: scale(16);
+
+      &:first-child {
+        grid-column: 1/3;
+      }
+
+      &:last-child:nth-child(even) {
+        grid-column: 1/3;
+      }
+    }
+  }
+
+  &__item-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: scale(36);
+    height: scale(36);
+    border-radius: 50%;
+    background-color: var(--a-color_white);
+
+    @include desktop(min) {
+      min-width: scale(48);
+      height: scale(48);
+    }
+  }
+}

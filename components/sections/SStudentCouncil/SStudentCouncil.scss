@@ -1,0 +1,60 @@
+.s-student-council {
+  &__wrap {
+    margin-bottom: scale(8);
+    
+    @include desktop(min) {
+      display: grid;
+      gap: scale(20);
+      grid-template-columns: 1fr 1fr;
+      margin-bottom: scale(20);
+    }
+  }
+
+  &__banner {
+    display: none;
+    height: 100%;
+    min-height: scale(417);
+    @include desktop(min) {
+      display: block;
+    }
+  }
+
+  .swiper-slide {
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    max-width: scale(280);
+    height: scale(140);
+    padding: var(--padding_def);
+    color: var(--a-color_white);
+    background-color: var(--a-color_red);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      max-width: scale(445);
+      height: scale(270);
+    }
+
+    @include tablet(max) {
+      p {
+        max-width: scale(170);
+      }
+    }
+
+    img {
+      z-index: -1;
+      position: absolute;
+      right: scale(-22);
+      bottom: scale(-20);
+      width: scale(120);
+      height: scale(120);
+
+      @include desktop(min) {
+        right: scale(10);
+        bottom: scale(10);
+        width: scale(160);
+        height: scale(160);
+      }
+    }
+  }
+}

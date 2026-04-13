@@ -1,0 +1,256 @@
+.s-happiness {
+  padding-top: scale(40);
+  padding-bottom: scale(40);
+  background-color: var(--a-color_grey_20);
+  border-radius: scale(16);
+
+  @include desktop {
+    padding-top: scale(80);
+    border-radius: scale(28);
+  }
+
+  &__grid {
+    display: grid;
+    gap: var(--gap_def);
+
+    @include tablet(min, $p_md) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .m-card-text {
+    display: flex;
+    flex-direction: column;
+
+    &__title {
+      max-width: scale(840);
+    }
+
+    &__text {
+      display: grid;
+      gap: scale(8);
+      max-width: scale(730);
+      margin-top: scale(16);
+      @include desktop {
+        margin-top: scale(20);
+      }
+
+      p {margin: 0;}
+    }
+
+    .a-btn {
+      display: none;
+      @include mobile {
+        display: flex;
+      }
+    }
+
+    &__block {
+      margin: 0;
+    }
+
+    &__icons {
+      gap: scale(8);
+
+      @include mobile {
+        display: none;
+      }
+
+      @include desktop {
+        gap: scale(12);
+      }
+    }
+
+    &__icon {
+      background-color: var(--a-color_grey_40);
+    }
+  }
+
+  &__banner {
+    display: flex;
+    overflow: hidden;
+    position: relative;
+    min-height: scale(224);
+    height: auto;
+    padding: var(--padding_def);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include mobile {
+      order: -1;
+    }
+
+    @include tablet {
+      min-height: scale(473);
+    }
+
+    @include desktop {
+      min-height: scale(593);
+      padding-bottom: scale(28);
+    }
+
+    .a-btn {
+      z-index: 1;
+      position: relative;
+      margin-top: auto;
+      width: 100%;
+
+      @include mobile {
+        display: none;
+      }
+
+      @include desktop {
+        max-width: scale(421);
+      }
+    }
+
+    img {
+      left: 0;
+      top: 0;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: scale(24);
+
+    @include desktop {
+      gap: scale(48);
+    }
+  }
+
+  &__block-title {
+    margin-bottom: scale(16);
+
+    @include desktop {
+      margin-bottom: scale(30);
+    }
+  }
+
+  &__curator-card {
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: scale(280);
+    height: scale(156);
+    padding: var(--padding_def);
+    background-color: var(--a-color_grey_40);
+    border-radius: var(--border-radius_sec);
+
+    @include desktop(min) {
+      width: scale(445);
+      height: scale(290);
+    }
+
+    &::before {
+      z-index: 1;
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      content: '';
+      display: block;
+      width: scale(100);
+      height: scale(26);
+      background-color: var(--a-color_grey_40);
+      opacity: 0.6;
+      filter: blur(20px);
+
+      @include desktop(min) {
+        bottom: scale(-49);
+        right: scale(-12);
+        width: scale(203);
+        height: scale(97);
+      }
+    }
+
+    .a-tag {
+      z-index: 2;
+      position: relative;
+      margin-top: auto;
+      background-color: transparent;
+
+      @include desktop(min) {
+        margin-bottom: scale(-4);
+      }
+    }
+
+    img {
+      position: absolute;
+      right: scale(-20);
+      bottom: scale(-20);
+      z-index: 0;
+      width: scale(120);
+      height: scale(120);
+
+      @include desktop(min) {
+        right: scale(10);
+        bottom: scale(10);
+        width: scale(160);
+        height: scale(160);
+      }
+    }
+  }
+
+  &__center-card {
+    display: flex;
+    flex-direction: column;
+    width: scale(280);
+    min-height: scale(140);
+    padding: var(--padding_def);
+    background-color: var(--a-color_white);
+    border-radius: var(--border-radius_sec);
+
+    @include desktop(min) {
+      width: scale(445);
+      min-height: scale(198);
+    }
+
+    &-title {
+      max-width: scale(340);
+    }
+
+    &-bottom {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      margin-top: auto;
+
+      span {
+        color: var(--a-color_red)
+      }
+    }
+
+    &-icon {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: scale(36);
+      height: scale(36);
+      margin-left: auto;
+      color: var(--a-color_white);
+      background-color: var(--a-color_red);
+      border-radius: 50%;
+
+      @include desktop {
+        width: scale(48);
+        height: scale(48);
+      }
+
+      svg {
+        width: 100%;
+        height: 100%;
+        :deep() {
+          .my-path {
+            fill: var(--a-color_white);
+          }
+        }
+      }
+    }
+  }
+}

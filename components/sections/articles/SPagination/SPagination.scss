@@ -1,0 +1,29 @@
+.s-pagination {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: scale(16) 0 0;
+  @include desktop(min) {
+    margin: scale(24) 0 0;
+  }
+
+  &.--disabled {
+    opacity: 0.3;
+    pointer-events: none;
+  }
+
+  &__link {
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: scale(44);
+    height: scale(44);
+    color: var(--a-color_grey_80);
+
+    &.--active,
+    a#{&}:hover {
+      color: var(--a-color_red);
+    }
+  }
+}

@@ -1,0 +1,237 @@
+.s-reserve-about-training {
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: scale(12);
+
+    @include desktop(min) {
+      gap: scale(20);
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      
+      :deep() {
+        .swiper-wrapper {
+          display: grid;
+          gap: scale(20);
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+    }
+  }
+
+  &__banner {
+    position: relative;
+    z-index: 1;
+    height: 100%;
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(16);
+    overflow: hidden;
+
+    &::before,
+    &:after {
+      position: absolute;
+      z-index: 0;
+      content: '';
+
+      @include mobile() {
+        content: none;
+      }
+    }
+
+    &::before {
+      width: scale(1166.141);
+      height: scale(751.734);
+      left: scale(-600);
+      top: scale(-500.083);
+      background: linear-gradient(0deg, rgba(236, 237, 240, 0.70) 0%, rgba(236, 237, 240, 0.70) 100%), lightgray -87.114px 73.847px / 109.848% 152.877% no-repeat;
+      filter: blur(scale(85));
+
+      @include tablet() {
+        top: scale(-650.083);
+      }
+    }
+
+    &::after {
+      width: scale(1573.5);
+      height: scale(2498.907);
+      transform: rotate(-1.348deg);
+      right: scale(-597.816);
+      bottom: scale(-2350.013);
+      background: linear-gradient(0deg, rgba(236, 237, 240, 0.60) 0%, rgba(236, 237, 240, 0.60) 100%), lightgray -81.507px -537.984px / 109.848% 152.877% no-repeat;
+      filter: blur(scale(70));
+
+      @include tablet() {
+        bottom: scale(-2406.013);
+      }
+    }
+
+    @include tablet(min) {
+      height: 100%;
+      color: var(--a-color_dark);
+    }
+
+    picture {
+      display: block;
+      border-radius: scale(16);
+
+      @include mobile() {
+        margin-bottom: scale(-16);
+      }
+
+      @include tablet(min) {
+        z-index: -1;
+        position: absolute;
+        inset: 0;
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+
+        @include tablet() {
+          object-position: top center;
+        }
+      }
+    }
+  }
+
+  &__banner-text {
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding_def);
+    border-radius: scale(16);
+    position: relative;
+    z-index: 1;
+    
+    @include mobile() {
+      gap: scale(12);
+      position: relative;
+      z-index: 10;
+      background-color: var(--a-color_grey_20);
+    }
+
+    @include tablet(min) {
+      justify-content: space-between;
+      height: scale(436);
+    }
+  }
+
+  &__slider {
+    @include tablet(max) {
+      order: -1;
+    }
+  }
+
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    padding: var(--padding_def);
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(16);
+
+    @include tablet(max) {
+      width: scale(228);
+      min-height: scale(122);
+    }
+
+    @include desktop(min) {
+      min-height: scale(248);
+    }
+
+    img {
+      position: absolute;
+      right: 0;
+      bottom: 0;
+      width: scale(80);
+      height: scale(80);
+
+      @include desktop(min) {
+        width: scale(120);
+        height: scale(120);
+      }
+    }
+
+    &-text {
+      @include tablet(max) {
+        padding-right: scale(78);
+      }
+    }
+  }
+
+  &__direction {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: scale(4);
+    width: 100%;
+    height: scale(219);
+    padding: var(--padding_def);
+    color: var(--a-color_white);
+    background-color: var(--a-color_red);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      gap: scale(8);
+      width: scale(907);
+      min-height: scale(326);
+      overflow: hidden;
+    }
+
+    ul {
+      padding-left: scale(12);
+      margin-top: auto;
+      list-style-type: disc;
+    }
+
+    .a-font_h5 {
+      @include mobile(max) {
+        width: scale(150);
+      }
+    }
+
+    .a-font_h6 {
+      @include mobile(max) {
+        font-size: scale(14);
+      }
+    }
+  }
+
+  &__person {
+    bottom: 0;
+    right: 0;
+    position: absolute;
+    z-index: -1;
+    width: scale(298);
+    object-fit: contain;
+    object-position: right center;
+
+    @include desktop(min) {
+      right: 0;
+      width: scale(475);
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    object-fit: contain;
+    object-position: right center;
+
+    @include tablet(max) {
+      width: scale(120);
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: scale(20);
+    height: 100%;
+  }
+}

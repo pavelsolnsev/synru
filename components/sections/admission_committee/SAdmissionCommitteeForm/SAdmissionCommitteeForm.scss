@@ -1,0 +1,16 @@
+:deep() {
+  .s-form-info {
+    &__grey {
+      color: var(--a-color_grey_60);
+    }
+  }
+  .a-tag, .a-tag.a-tag-no-hover:hover {
+    border-color: var(--a-color_red);
+    background-color: var(--a-color_red);
+    color: var(--a-color_white);
+  }
+  .a-tag:hover {
+    border-color: var(--a-color_white);
+    background-color: transparent;
+  }
+}

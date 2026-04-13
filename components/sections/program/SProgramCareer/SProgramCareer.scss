@@ -1,0 +1,88 @@
+.s-career {
+  &__slider {
+    position: relative;
+  }
+  :deep() {
+    .swiper {
+      overflow: visible;
+    }
+    .swiper-navigation {
+      button {
+        margin: 0;
+      }
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: scale(36);
+    max-width: scale(280);
+    height: auto;
+    padding: scale(12);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      max-width: scale(599);
+      min-height: scale(240);
+      padding: scale(24);
+    }
+
+    &:last-child {
+      .ico {
+        transform: rotate(-45deg);
+      }
+    }
+
+    &-title {
+      display: flex;
+      justify-content: space-between;
+      gap: scale(12);
+
+      @include desktop(min) {
+        gap: scale(20);
+      }
+
+      .ico {
+        min-width: scale(24);
+        max-width: scale(24);
+        height: scale(24);
+      }
+    }
+
+    :deep() {
+      li {
+        position: relative;
+        padding-left: scale(16);
+        &:not(:last-child) {
+          margin: 0 0 scale(6);
+          @include desktop() {
+            margin: 0 0 scale(8);
+          }
+        }
+
+        @include desktop() {
+          padding-left: scale(30);
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: scale(6);
+          display: block;
+          width: scale(8);
+          height: scale(8);
+          border-radius: scale(2);
+          background-color: currentColor;
+
+          @include desktop() {
+            width: scale(12);
+            height: scale(12);
+          }
+        }
+      }
+    }
+  }
+}

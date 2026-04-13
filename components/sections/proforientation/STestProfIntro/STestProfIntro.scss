@@ -1,0 +1,129 @@
+.s-intro {
+  position: relative;
+  margin: 0 calc(-1 * var(--layout-h-padding));
+  border-radius: scale(20);
+  background-color: var(--a-color_white);
+  @include tablet(min) {
+    min-height: scale(384);
+    margin: scale(8) 0 0;
+  }
+  @include desktop() {
+    min-height: scale(616);
+  }
+
+  &.l-section {
+    padding: var(--padding_def);
+  }
+
+  :deep() {
+    .l-section__inner {
+      position: relative;
+      gap: scale(12);
+      display: flex;
+      flex-direction: column;
+      height: 100%;
+      width: 100%;
+      @include tablet(min) {
+        //gap: scale(24);
+      }
+    }
+
+    .l-section__title {
+      margin-bottom: 0;
+      &-nums {
+        padding: scale(7) scale(12);
+        border-radius: scale(40);
+        background-color: var(--a-color_grey_40);
+        letter-spacing: 0;
+        position: relative;
+
+        @include desktop(min) {
+          padding: scale(10) scale(20);
+
+        }
+        border-radius: scale(40);
+        background: linear-gradient(90deg, #ECEDF0 40.85%, #ED131C 157.26%);
+        backdrop-filter: blur(10px);
+        transform: none;
+        white-space: nowrap;
+      }
+      h2,h1 {
+        position: relative;
+      z-index: 1;
+      gap: scale(6);
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+      max-width: scale(1350);
+
+        @include tablet(min) {
+          gap: scale(8);
+          flex-direction: row;
+          align-items: center;
+        }
+      }
+    }
+
+    .a-btn {
+      @include tablet(min) {
+        max-width: scale(230);
+      }
+      @include desktop() {
+        max-width: scale(485);
+        margin: scale(30) 0 0;
+      }
+    }
+  }
+
+  &__description {
+    position: relative;
+    z-index: 1;
+    max-width: scale(336);
+    @include desktop() {
+      max-width: scale(740);
+    }
+  }
+
+  strong { color: var(--a-color_red) }
+
+  picture {
+    overflow: hidden;
+    display: block;
+    height: scale(218);
+    border-radius: scale(12);
+    @include tablet(min) {
+      position: absolute;
+      left: calc(-1 * var(--padding_def));
+      top: calc(-1 * var(--padding_def));
+      right: calc(-1 * var(--padding_def));
+      bottom: calc(-1 * var(--padding_def));
+      width: auto;
+      height: auto;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__bottom {
+    position: relative;
+    z-index: 1;
+    gap: scale(8);
+    display: flex;
+    flex-direction: column;
+    margin: auto 0 0;
+    @include mobile(max) {
+      position: absolute;
+      left: auto;
+      top: auto;
+      right: auto;
+      bottom: scale(72);
+      max-width: scale(140);
+    }
+    @include tablet() {
+      max-width: scale(195);
+    }
+  }
+}

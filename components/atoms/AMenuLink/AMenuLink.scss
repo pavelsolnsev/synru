@@ -1,0 +1,46 @@
+.a-menu-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: scale(32);
+  border: 1px solid var(--a-color_grey_60);
+  padding: scale(8) scale(12);
+  border-radius: scale(40);
+  white-space: nowrap;
+  color: var(--a-color_dark);
+  transition: var(--transition);
+  &:hover {
+    border-color: var(--a-color_grey_40);
+    background-color: var(--a-color_grey_40);
+  }
+  @include desktop() {
+    height: scale(40);
+    padding: scale(8) scale(16);
+  }
+
+  &.--bg-red {
+    border-color: var(--a-color_red);
+    background-color: var(--a-color_red);
+    color: var(--a-color_white);
+    &:hover {
+      border-color: var(--a-color_red_dark);
+      background-color: var(--a-color_red_dark);
+    }
+  }
+
+  &.--color-red {
+    border-color: inherit;
+    color: var(--a-color_red);
+    &:hover {
+      border-color: var(--a-color_grey_40);
+      color: var(--a-color_red_dark);
+    }
+  }
+
+  &.--active,
+  &.menu-item-active {
+    border-color: var(--a-color_dark);
+    background-color: var(--a-color_dark);
+    color: var(--a-color_white);
+  }
+}

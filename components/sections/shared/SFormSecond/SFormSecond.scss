@@ -1,0 +1,29 @@
+.s-form-second {
+  :deep() {
+    .l-section__inner {
+      display: grid;
+      gap: scale(8);
+
+      @include tablet(min) {
+        grid-template-columns: scale(302) 1fr;
+      }
+
+      @include desktop() {
+        grid-template-columns: 1fr 1fr;
+        gap: scale(20);
+      }
+    }
+  }
+
+  &__img {
+    border-radius: scale(16);
+    @include mobile() {
+      height: scale(224);
+    }
+    img {
+      height: 100%;
+      border-radius: scale(16);
+      object-fit: cover;
+    }
+  }
+}

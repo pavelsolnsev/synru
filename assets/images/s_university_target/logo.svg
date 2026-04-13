@@ -1,0 +1,13 @@
+    <svg
+      class="s-university__title-logo"
+      xmlns="http://www.w3.org/2000/svg"
+      fill="none"
+      width="63"
+      viewBox="0 0 63 63"
+    ><path
+      fill="#ED131C"
+      d="M.9.97v61.08H63V.97H.9Zm53.23 52.35H9.77V9.7h44.36v43.62Z"
+    /><path
+      fill="#ED131C"
+      d="m39.11 37.62-6.42-6.1 6.42-5.96V13.5l-19.1 18.01 19.1 18.01v-11.9Z"
+    /></svg>

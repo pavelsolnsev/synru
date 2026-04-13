@@ -1,0 +1,83 @@
+.s-video-reviews {
+  :deep() {
+    .m-filters-tabs-slider {
+      position: static;
+    }
+
+    .m-video-card {
+      display: flex;
+      position: relative;
+      overflow: hidden;
+
+      &__thumb {
+        position: absolute;
+        height: 100%;
+        width: 100%;
+      }
+
+      &__desc {
+        z-index: 1;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        gap: scale(4);
+        margin-top: auto;
+        padding: var(--padding_def);
+        padding-top: scale(40);
+        background: linear-gradient(
+          180deg,
+          rgba(28, 28, 28, 0) 11.88%,
+          rgba(28, 28, 28, 0.65) 52.17%,
+          rgba(28, 28, 28, 0.91) 77.84%,
+          #1c1c1c 100%
+        );
+        border-radius: 0;
+      }
+
+      &__title {
+        color: var(--a-color_white);
+      }
+
+      &__text {
+        order: -1;
+        color: var(--a-color_white);
+      }
+
+      &__play.a-play {
+        z-index: 10;
+        width: scale(32);
+        height: scale(32);
+        bottom: scale(12);
+        right: scale(12);
+        left: auto;
+
+        @include desktop(min) {
+          top: auto;
+          width: scale(48);
+          height: scale(48);
+          bottom: scale(24);
+          right: scale(24);
+        }
+      }
+    }
+  }
+
+  &__slider {
+    position: relative;
+
+    &.is-tabs .swiper-navigation {
+      top: scale(-200);
+    }
+  }
+
+  &__slide {
+    max-width: scale(220);
+    height: scale(260);
+
+    @include desktop(min) {
+      max-width: scale(290);
+      height: scale(480);
+    }
+  }
+}

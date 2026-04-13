@@ -1,0 +1,71 @@
+.m-search {
+  position: relative;
+  display: flex;
+  height: scale(48);
+  color: inherit;
+
+  @include desktop {
+    height: scale(44);
+  }
+
+  .a-input {
+    height: 100%;
+    padding: 0 scale(12);
+    border-radius: scale(16);
+    background-color: var(--a-color_white);
+    @include desktop {
+      padding: 0 scale(16);
+    }
+
+    &__wrapper {
+      flex: 1;
+    }
+
+    &::placeholder {
+      padding: scale(12) scale(24);
+      padding-left: scale(60);
+      font-weight: 600;
+      font-size: scale(16);
+      line-height: 120%;
+      color: #7d7d7d;
+    }
+  }
+
+  :deep() {
+    .a-input {
+      &::placeholder {
+        padding: scale(12) scale(24);
+        padding-left: scale(60);
+        font-weight: 600;
+        font-size: scale(16);
+        line-height: 120%;
+        color: #7d7d7d;
+      }
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    top: 50%;
+    left: scale(24);
+    transform: translateY(-50%);
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    background-color: transparent;
+    font-size: scale(18);
+    cursor: pointer;
+    color: #7d7d7d;
+
+    .icon-sprite {
+      width: scale(24);
+      height: scale(24);
+    }
+
+    @include tablet(max) {
+      top: scale(26);
+    }
+  }
+}

@@ -1,0 +1,88 @@
+.s-ege-download {
+
+  @include mobile(max) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__body {
+    position: relative;
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(16);
+    overflow: hidden;
+    padding: scale(24);
+
+    @include tablet(max) {
+      padding: scale(14);
+      padding-bottom: scale(222);
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position:right center;
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 2;
+    max-width: scale(1115);
+    font-size: scale(56);
+
+    @include tablet(max) {
+      font-size: scale(26);
+    }
+  }
+
+  &__subtitle {
+    position: relative;
+    z-index: 2;
+    font-size: scale(26);
+    font-weight: 600;
+    line-height: 110%;
+    margin-top: scale(24);
+    max-width: scale(800);
+
+    @include tablet(max) {
+      font-size: scale(17);
+      margin-top: scale(12);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    gap: scale(24);
+    margin-top: scale(24);
+    position: relative;
+    z-index: 2;
+
+    @include tablet(max) {
+      flex-direction: column;
+      gap: scale(10);
+      margin-top: scale(12);
+    }
+  }
+
+  &__btn {
+    width: scale(421);
+    height: scale(68);
+    font-size: scale(23);
+
+    @include tablet(max) {
+      width: 100%;
+      height: scale(46);
+      font-size: scale(16);
+    }
+  }
+}

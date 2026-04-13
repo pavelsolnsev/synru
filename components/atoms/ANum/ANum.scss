@@ -1,0 +1,42 @@
+.a-num {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--a-color_white);
+  background-color: var(--a-color_dark);
+  border-radius: 50%;
+
+  &--lg {
+    width: scale(36);
+    height: scale(36);
+
+    @include desktop {
+      width: scale(48);
+      height: scale(48);
+    }
+  }
+
+  &--md {
+    width: scale(22);
+    height: scale(22);
+
+    @include desktop {
+      width: scale(36);
+      height: scale(36);
+    }
+  }
+
+  &--type-star {
+    position: relative;
+    background-color: transparent;
+    svg {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: -1;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+}

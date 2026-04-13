@@ -1,0 +1,110 @@
+.a-share {
+  z-index: 10;
+  position: relative;
+  display: flex;
+  align-items: center;
+  gap: scale(20);
+  cursor: pointer;
+
+  &.--active {
+    .a-share__links {
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  &__toggler {
+    pointer-events: none;
+    width: scale(15);
+    height: scale(15);
+    color: var(--a-color_grey_60);
+    transition: var(--transition);
+    @include desktop(min) {
+      width: scale(25);
+      height: scale(25);
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+      color: inherit;
+    }
+  }
+  &:hover &__toggler,
+  &.--active &__toggler {
+    color: inherit;
+  }
+
+  &__label {
+    pointer-events: none;
+    display: none;
+
+    @include desktop(min) {
+      display: block;
+      opacity: 0.6;
+      color: var(--a-color_white);
+    }
+  }
+
+  &__links {
+    opacity: 0;
+    z-index: 10;
+    visibility: hidden;
+    position: absolute;
+    bottom: calc(100% + #{scale(12)});
+    right: 0;
+    display: grid;
+    gap: scale(20);
+    width: scale(265);
+    padding: scale(20);
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(16);
+    transition: var(--transition);
+    box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.14);
+
+    &.--bottom {
+      top: calc(100% + #{scale(12)});
+      bottom: auto;
+    }
+    &.--right {
+      right: auto;
+      left: 0;
+    }
+
+    a {
+      display: grid;
+      align-items: center;
+      gap: scale(12);
+      grid-template-columns: scale(15) 1fr;
+      color: var(--a-color_dark);
+
+      @include desktop(min) {
+        grid-template-columns: scale(25) 1fr;
+      }
+
+      &:hover {
+        .ico {
+          background-color: var(--a-color_dark);
+          color: var(--a-color_white);
+        }
+      }
+
+      span {
+        pointer-events: none;
+      }
+
+      .ico {
+        width: 100%;
+        height: 100%;
+        aspect-ratio: 1 / 1;
+        background-color: var(--a-color_white);
+        color: var(--a-color_dark);
+        transition: var(--transition);
+        border-radius: scale(4);
+      }
+    }
+  }
+
+  .--is-copied {
+    color: var(--a-color_rating-green);
+  }
+}

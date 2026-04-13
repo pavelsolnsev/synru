@@ -1,0 +1,240 @@
+html.--visible-nav {
+  .m-articles-menu {
+    @include desktop(min) {
+      top: scale(120);
+    }
+  }
+}
+
+.m-articles-menu {
+  $menu: &;
+  overflow: hidden;
+  position: fixed;
+  z-index: indexes("m-articles-menu");
+  top: var(--headerArticlesHeight);
+  left: scale(12);
+  right: scale(12);
+  transform: translateX(110%);
+  transition: var(--transition);
+
+  &.--open {
+    transform: translateX(0);
+  }
+
+  @include tablet {
+    top: scale(100);
+    left: auto;
+    right: scale(16);
+  }
+
+  @include desktop(min) {
+    position: sticky;
+    height: max-content;
+    width: scale(445);
+    transform: translateX(0);
+  }
+
+  &.--collapsed {
+    @include desktop() {
+      left: 0;
+      bottom: 0;
+      overflow: visible;
+      height: 100vh;
+      width: calc(#{scale(16)} + #{scale(42)});
+      #{$menu}__inner {
+        overflow: hidden;
+        position: absolute;
+        max-width: 100%;
+        padding-top: scale(16);
+        padding-bottom: scale(16);
+        transition: var(--transition);
+      }
+      #{$menu}__childs {
+        display: none;
+      }
+      #{$menu}__toggle {
+        display: none;
+      }
+      &:hover #{$menu}__inner {
+        max-width: scale(516);
+        background-color: rgba(var(--a-color_white_rgb), 0.8);
+        backdrop-filter: blur(#{scale(56)});
+      }
+      &:hover #{$menu}__childs {
+        display: flex;
+      }
+      &:hover #{$menu}__toggle {
+        display: flex;
+      }
+      #{$menu}__item span {
+        white-space: nowrap;
+      }
+    }
+  }
+
+  &__inner {
+    padding: scale(16) 0;
+    padding-right: scale(8);
+    background-color: var(--a-color_grey_10);
+    border-radius: scale(18);
+    @include desktop(min) {
+      margin-left: scale(-16);
+      padding: 0;
+      background-color: transparent;
+    }
+  }
+
+  &__list {
+    overflow-y: auto;
+    overflow-x: hidden;
+    display: grid;
+    gap: 0;
+    max-height: calc(100vh - #{scale(140)});
+    padding: 0 scale(16);
+    padding-right: scale(8);
+    @include tablet(min) {
+      width: scale(364);
+    }
+    @include desktop(min) {
+      width: scale(445);
+      padding-right: scale(24);
+    }
+  }
+
+  &__item {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    margin: scale(8) 0;
+    grid-template-columns: scale(21) 1fr;
+    transition: var(--transition);
+    &:first-child {
+      margin-top: 0;
+    }
+
+    @include desktop(min) {
+      margin: scale(10) 0;
+      grid-template-columns: scale(35) 1fr;
+    }
+
+    & > a {
+      display: flex;
+      align-items: center;
+      gap: scale(16);
+      @include desktop(min) {
+        &:hover {
+          color: var(--a-color_red);
+          .ico {
+            color: var(--a-color_red);
+          }
+        }
+      }
+    }
+
+    & > a .ico {
+      flex: none;
+      display: block;
+      height: scale(21);
+      width: scale(21);
+      color: var(--a-color_grey_60);
+      transition: var(--transition);
+
+      @include desktop(min) {
+        height: scale(35);
+        width: scale(35);
+      }
+    }
+
+    &.--is-active {
+      & > a .ico {
+        color: var(--a-color_red);
+      }
+    }
+  }
+
+  &__toggle {
+    position: absolute;
+    left: auto;
+    top: 0;
+    right: 0;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: auto;
+    height: auto;
+    border: none;
+    background-color: transparent;
+    color: var(--a-color_dark);
+    transform: rotate(180deg);
+    transition: var(--transition);
+
+    @include desktop(min) {
+      top: scale(8);
+    }
+
+    .--parent-opened & {
+      transform: rotate(0deg);
+    }
+
+    cursor: pointer;
+    &:hover {
+      color: var(--a-color_red);
+    }
+    svg {
+      width: scale(20);
+      height: scale(20);
+    }
+  }
+
+  &__childs-wrap {
+    overflow: hidden;
+    display: grid;
+    grid-template-rows: 0fr;
+    width: 100%;
+    transition: grid-template-rows var(--transition);
+
+    .--parent-opened > & {
+      grid-template-rows: 1fr;
+      margin: scale(16) 0 0;
+    }
+  }
+
+  &__childs {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    min-height: 0;
+    width: 100%;
+    margin: 0;
+    padding: 0 scale(16);
+    border-radius: var(--border-radius_def);
+    background-color: var(--a-color_white);
+
+    //- level-2
+    & li {
+      &:not(:first-child) a {
+        border-top: rem(1) solid var(--a-color_grey_20);
+      }
+      &:last-of-type {
+        margin-bottom: scale(4);
+      }
+    }
+
+    a {
+      display: block;
+      padding: scale(16) 0 scale(12);
+      color: var(--a-color_grey_80);
+      transition: 0.2s;
+      &.--is-active {
+        pointer-events: all;
+        color: var(--a-color_red);
+      }
+      &:hover {
+        color: var(--a-color_red);
+      }
+    }
+  }
+}

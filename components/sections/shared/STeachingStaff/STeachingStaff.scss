@@ -1,0 +1,49 @@
+.s-teaching-staff {
+  @include desktop {
+    :deep() {
+      .swiper-navigation {
+        top: scale(-95);
+      }
+      button {
+        margin: 0;
+      }
+    }
+    
+  }
+
+  .swiper-pagination {
+    @include desktop(min, $p_xl) {
+      margin-top: scale(40);
+    }
+  }
+
+  &__navigation {
+    @include desktop(min, $p_xl) {
+      margin-bottom: scale(40);
+    }
+  }
+
+  .m-tabs {
+    &__tab {
+      margin-top: scale(16);
+      @include desktop(min, $p_xl) {
+        margin-top: scale(40);
+      }
+    }
+  }
+
+  &__more {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    .a-btn {
+      width: 100%;
+      max-width: scale(294);
+      margin: scale(24) 0 0;
+      @include desktop(min, $p_xl) {
+        margin-top: scale(40);
+        max-width: scale(290);
+      }
+    }
+  }
+}

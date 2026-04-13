@@ -1,0 +1,80 @@
+.s-about {
+
+  &__grid {
+    display: grid;
+    gap: scale(40) 0;
+    @include desktop {
+      gap: 0 scale(20);
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+
+  .m-card-text {
+    min-width: 0;
+    &__title + .m-card-text__text {
+      margin-top: scale(16);
+      @include desktop {
+        margin-top: scale(16);
+      }
+    }
+    &__bottom {
+      padding-top: scale(16);
+    }
+    &__tags {
+      display: flex;
+      flex-direction: column;
+      @include tablet(min) {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+
+  &__teachers {
+    overflow: hidden;
+    min-width: 0;
+    @include desktop {
+      padding: scale(24);
+      border-radius: scale(16);
+      background-color: var(--a-color_grey_40);
+    }
+
+    .swiper-navigation {
+      top: scale(-96);
+      margin-bottom: scale(48);
+      .swiper-button-prev,
+      .swiper-button-next {
+        width: scale(48);
+        height: scale(48);
+        background-color: var(--a-color_white);
+        &:disabled {
+          background-color: var(--a-color_grey_20);
+        }
+        &:not(:disabled):hover {
+          background-color: var(--a-color_dark);
+          color: var(--a-color_white);
+        }
+      }
+    }
+
+    .swiper-scrollbar {
+      margin-top: scale(20);
+    }
+
+    &-title {
+      margin: 0 0 scale(24);
+      @include desktop {
+        margin: 0 0 scale(42);
+      }
+    }
+  }
+
+
+  & + .s-form-min {
+    @include desktop {
+      padding-top: 0;
+    }
+  }
+}

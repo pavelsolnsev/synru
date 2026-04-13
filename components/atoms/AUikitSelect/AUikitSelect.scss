@@ -1,0 +1,202 @@
+.a-uikit-select {
+  position: relative;
+  display: block;
+  height: scale(40);
+
+  @include desktop {
+    height: scale(48);
+    &.--size-xl {
+      height: scale(60);
+    }
+  }
+
+  &.--disabled {
+    .a-uikit-select__input {
+      color: var(--a-color_grey_80);
+      pointer-events: none;
+
+      &::before {
+        opacity: 0.2;
+      }
+    }
+  }
+
+  &__input {
+    position: relative;
+    display: grid;
+    align-items: center;
+    cursor: pointer;
+    appearance: none;
+    resize: none;
+    height: 100%;
+    padding: scale(12);
+    padding-right: scale(40);
+    border-color: transparent;
+    border-radius: scale(8);
+    background: var(--a-color_white);
+    background-position: right scale(16) center;
+    transition: 0s;
+
+    @include desktop {
+      height: 100%;
+      padding-left: scale(24);
+      padding-right: scale(58);
+    }
+
+    &::before {
+      z-index: 1;
+      position: absolute;
+      top: 50%;
+      right: scale(14);
+      width: scale(20);
+      height: scale(20);
+      transform: translateY(-50%);
+      transform-origin: center;
+      transition: var(--transition);
+      background-image: url('data:image/svg+xml,<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M22.8 7.8 12.33 18.23 1.89 7.8 4.1 5.56l8.23 8.23 8.22-8.23L22.8 7.8Z" fill="%231c1c1c"/></svg>');
+      background-size: contain;
+      background-repeat: no-repeat;
+      background-position: center;
+      content: "";
+      pointer-events: none;
+
+      @include desktop {
+        right: scale(24);
+        width: scale(24);
+        height: scale(24);
+      }
+    }
+
+    &._open {
+      &::before {
+        scale: -1;
+        transform: translateY(50%);
+      }
+    }
+
+    &._checked,
+    &._other {
+      // overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+    &:focus {
+      border-color: var(--a-color_red);
+    }
+    input {
+      display: none;
+      width: 100%;
+      border: none;
+      outline: none;
+      &:focus {
+        outline: none;
+      }
+    }
+    &._other input {
+      display: block;
+      outline: none;
+    }
+  }
+  &__placeholder {
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    pointer-events: none;
+  }
+
+  &__input._other &__placeholder {
+    display: none;
+  }
+
+  &.error &__input {
+    border: 1px solid var(--a-color_red);
+  }
+
+  &__list {
+    overflow: hidden;
+    z-index: 2;
+    position: absolute;
+    top: calc(100% + #{scale(6)});
+    right: 0;
+    left: 0;
+    display: flex;
+    max-height: 0;
+    margin-top: scale(-1);
+    border-radius: scale(8);
+    background-color: var(--a-color_grey_20);
+
+    @include desktop {
+      top: calc(100% + #{scale(8)});
+    }
+
+    &-inner {
+      overflow: auto;
+      display: flex;
+      max-height: 100%;
+      width: 100%;
+      &.--selects {
+        flex-direction: column;
+      }
+      &.--choose {
+        text-align: center;
+        flex-wrap: wrap;
+      }
+    }
+
+    &-option {
+      position: relative;
+      padding: scale(8) scale(8);
+      transition: var(--transition);
+      flex: 1;
+      @include desktop {
+        padding: scale(8) scale(16);
+      }
+      &:hover {
+        background-color: var(--a-color_grey_20);
+      }
+      &_other {
+        text-align: left;
+      }
+      & input {
+        cursor: pointer;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        opacity: 0;
+      }
+
+      &.--disabled {
+        color: var(--a-color_grey_40);
+      }
+
+      &.--popular {
+        padding-right: scale(96);
+        &::after {
+          content: "Популярно";
+          position: absolute;
+          right: scale(20);
+          font-weight: 600;
+          color: var(--a-color_red);
+        }
+      }
+
+      svg {
+        position: absolute;
+        right: scale(8);
+        width: scale(16);
+        height: scale(16);
+        @include desktop() {
+          right: scale(12);
+          width: scale(20);
+          height: scale(20);
+        }
+      }
+    }
+  }
+  &__input._open &__list {
+    max-height: scale(310);
+    padding: scale(8);
+  }
+}

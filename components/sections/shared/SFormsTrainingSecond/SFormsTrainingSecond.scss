@@ -1,0 +1,110 @@
+.s-forms-training {
+  overflow: hidden;
+  background-color: var(--a-color_white);
+  margin: scale(52) 0;
+  @include desktop() {
+    margin: scale(84) 0;
+    padding-top: scale(104);
+    padding-bottom: scale(104);
+  }
+  @include tablet() {
+    background-color: initial;
+    margin: 0;
+  }
+  @include mobile() {
+    border-radius: 0;
+  }
+  :deep() {
+    .swiper-navigation {
+      button {
+        margin: 0;
+      }
+    }
+  }
+
+  &__slider {
+    overflow: visible;
+    position: relative;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    min-height: scale(310);
+    max-width: scale(282);
+    padding: scale(12) scale(16);
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(16);
+    @include desktop() {
+      min-height: scale(500);
+      max-width: scale(445);
+      padding: scale(24);
+      margin-right: var(--gap_def);
+    }
+    &:first-child {
+      background-color: var(--a-color_dark);
+      color: var(--a-color_white);
+      .ico {
+        background-color: initial !important;
+      }
+    }
+
+    &:nth-child(2) {
+      background-color: var(--a-color_red);
+      color: var(--a-color_white);
+    }
+    &:last-child {
+      margin-right: 0;
+    }
+  }
+
+  &__item:nth-child(n + 3) {
+    .s-forms-training__item-title {
+      color: var(--a-color_dark);
+    }
+    .s-forms-training__item-content {
+      color: #1c1c1cb2;
+    }
+  }
+
+  &__item-title {
+    display: flex;
+    align-items: center;
+    gap: scale(10);
+    margin-bottom: scale(24);
+    font-weight: 600;
+    font-size: scale(24);
+    line-height: 120%;
+
+    @include desktop(min) {
+      margin-bottom: scale(36);
+      font-size: scale(38);
+    }
+
+    .ico {
+      width: scale(24);
+      height: scale(24);
+      background-color: var(--a-color_red);
+      border-radius: 50%;
+      color: #fff;
+
+      @include desktop(min) {
+        width: scale(48);
+        height: scale(48);
+      }
+    }
+  }
+
+  &__item-content {
+    font-weight: 600;
+    font-size: scale(16);
+    line-height: 130%;
+    @include desktop(min) {
+      font-size: scale(24);
+    }
+  }
+
+  &__item-content {
+    margin-top: auto;
+  }
+}

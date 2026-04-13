@@ -1,0 +1,133 @@
+.s-courses-results {
+  overflow: visible;
+
+  :deep(.l-section__inner) {
+    @include extra() {
+      overflow: visible;
+    }
+  }
+
+  &__wrap {
+    display: grid;
+    gap: scale(24);
+
+    @include desktop(min) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__title {
+    display: grid;
+    grid-template-rows: repeat(2, min-content);
+    gap: scale(12);
+    transition: var(--transition);
+
+    @include desktop(min) {
+      position: sticky;
+      top: scale(50);
+      gap: scale(24);
+      height: min-content;
+
+      .--visible-nav & {
+        top: scale(100);
+      }
+    }
+
+    &-text {
+      @include desktop(min) {
+        max-width: 92%;
+      }
+    }
+  }
+
+  &__cards {
+    display: grid;
+    gap: var(--gap_def);
+
+    @include tablet() {
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+
+  &__card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: scale(40);
+    padding: var(--padding_def);
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(16);
+    background: radial-gradient(
+      120% 170% at 140% 140%,
+      var(--a-color_red) 0%,
+      var(--a-color_grey_20) 100%
+    );
+
+    img {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      width: 40%;
+    }
+
+    @include tablet() {
+      max-width: scale(240);
+
+      &:nth-child(2),
+      &:first-child {
+        max-width: scale(364);
+      }
+    }
+
+    @include desktop(min) {
+      min-height: scale(232);
+      background: radial-gradient(
+        80% 170% at 140% 140%,
+        var(--a-color_red) 0%,
+        var(--a-color_grey_20) 100%
+      );
+
+      &:nth-child(3) {
+        .s-courses-results__card-text {
+          max-width: 60%;
+        }
+      }
+    }
+
+    .--num {
+      z-index: 1;
+      position: absolute;
+      top: var(--padding_def);
+      right: var(--padding_def);
+      width: scale(35);
+      height: scale(35);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--a-color_white);
+      border-radius: 50%;
+
+      @include desktop(min) {
+        width: scale(42);
+        height: scale(42);
+      }
+    }
+
+    &-title {
+      padding-right: scale(35);
+
+      @include desktop(min) {
+        max-width: 80%;
+        padding-right: scale(42);
+      }
+    }
+
+    &-text {
+      @include desktop(min) {
+        max-width: 80%;
+      }
+    }
+  }
+}

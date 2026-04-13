@@ -1,0 +1,149 @@
+.s-target-about {
+  background-color: var(--a-color_grey_20);
+  border-radius: scale(16);
+
+  @include desktop(min) {
+    padding-top: scale(80);
+  }
+
+  &__content {
+    z-index: 1;
+    position: relative;
+    display: grid;
+    gap: scale(12);
+
+    @include desktop(min) {
+      min-height: scale(438);
+      background-color: var(--a-color_grey_40);
+      border-radius: scale(16);
+    }
+
+    picture {
+
+      img {
+        width: 100%;
+      }
+
+      @include desktop(min) {
+        z-index: -1;
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+
+        img {
+          width: 100%;
+          height: auto;
+        }
+      }
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: scale(16);
+    padding: var(--padding_def);
+    border-radius: scale(16);
+
+    @include tablet(max) {
+      background-color: var(--a-color_grey_40);
+    }
+
+    @include desktop(min) {
+      gap: scale(24);
+      max-width: scale(870);
+      height: 100%;
+    }
+
+    ul {
+      display: grid;
+      gap: scale(4);
+      padding-left: scale(12);
+
+      @include desktop(min) {
+        padding-left: scale(24);
+        gap: scale(8);
+      }
+
+      li {
+        position: relative;
+
+        &:before {
+          position: absolute;
+          left: scale(-12);
+          top: scale(6);
+          content: '';
+          display: block;
+          width: scale(6);
+          height: scale(6);
+          background-color: var(--a-color_red);
+          border-radius: 2px;
+
+          @include desktop(min) {
+            left: scale(-24);
+            width: scale(8);
+            height: scale(8);
+          }
+        }
+      }
+    }
+
+    :deep() {
+      .a-btn {
+        @include desktop(min) {
+          width: scale(420);
+          margin-top: auto;
+        }
+      }
+    }
+  }
+
+  &__slider {
+    margin-top: scale(12);
+
+    @include desktop(min) {
+      margin-top: scale(20);
+    }
+  }
+
+  &__slide {
+    position: relative;
+    display: grid;
+    grid-template-rows: 1fr min-content;
+    padding: var(--padding_def);
+    max-width: scale(280);
+    min-height: scale(120);
+    background-color: var(--a-color_grey_40);
+    border-radius: scale(16);
+    height: auto;
+
+    @include desktop(min) {
+      max-width: scale(600);
+      min-height: scale(260);
+    }
+
+    &-text {
+      padding-right: scale(92);
+
+      @include desktop(min) {
+        padding-right: scale(172);
+      }
+    }
+
+    img {
+      position: absolute;
+      bottom: scale(8);
+      right: scale(8);
+      width: scale(74);
+      height: auto;
+
+      @include desktop(min) {
+        right: scale(19);
+        bottom: scale(16);
+        width: scale(107);
+      }
+    }
+  }
+}

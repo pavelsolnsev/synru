@@ -1,0 +1,328 @@
+header {
+  padding-top: var(--headerArticlesHeight);
+}
+
+.s-header {
+  z-index: indexes("header");
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  display: grid;
+  align-items: center;
+  width: 100%;
+  margin: 0 auto;
+  padding: scale(14) var(--layout-h-padding) scale(0);
+  background: rgba(236, 237, 240, 0.76);
+  -webkit-backdrop-filter: blur(20px);
+  backdrop-filter: blur(20px);
+
+  @include tablet(max) {
+    grid-template-columns: scale(166) 1fr;
+    column-gap: scale(16);
+    transition: grid-template-columns var(--transition);
+
+    &.--visible-search {
+      grid-template-columns: scale(30) 1fr;
+    }
+  }
+
+  @include desktop(min) {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: scale(24);
+    height: var(--headerArticlesHeight);
+    max-width: var(--layout-width);
+    padding: scale(21) var(--layout-h-padding);
+  }
+
+  :deep() {
+    .swiper {
+      overflow: visible;
+    }
+  }
+
+  &__logo {
+    overflow: hidden;
+    @include tablet(min) {
+      width: scale(233);
+      height: scale(44);
+      :deep(img) {
+        display: block;
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    :deep() {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+
+  &__slider {
+    overflow: hidden;
+    grid-row: 2;
+    grid-column: 1/3;
+    padding: scale(8) scale(12);
+    margin: 0 scale(-12);
+
+    @include tablet(min) {
+      margin: 0 scale(-16);
+    }
+
+    @include desktop(min) {
+      padding: 0;
+      margin: 0;
+    }
+  }
+
+  &__tools {
+    display: flex;
+    grid-column: 2;
+    grid-row: 1;
+    gap: scale(12);
+    margin-left: auto;
+
+    @include tablet(max) {
+      width: 100%;
+      justify-content: end;
+    }
+
+    @include desktop(min) {
+      gap: scale(16);
+    }
+  }
+
+  &__link {
+    cursor: pointer;
+    display: flex;
+    gap: scale(8);
+    align-items: center;
+    width: max-content;
+    height: scale(32);
+    padding-left: scale(12);
+    padding-right: scale(6);
+    background-color: var(--a-color_white);
+    border-radius: scale(40);
+    border: none;
+    transition: var(--transition);
+
+    @include desktop(min) {
+      padding-left: scale(16);
+    }
+
+    &:hover {
+      background-color: var(--a-color_grey_40);
+    }
+
+    &.--red {
+      color: var(--a-color_white);
+      background-color: var(--a-color_red);
+
+      &:hover {
+        background-color: var(--a-color_red_dark);
+      }
+    }
+
+    &.swiper-slide:not(:last-child) {
+      margin-right: scale(4);
+    }
+
+    @include desktop(min) {
+      gap: scale(12);
+      height: scale(40);
+
+      &.swiper-slide:not(:last-child) {
+        margin-right: scale(8);
+      }
+    }
+
+    img {
+      height: scale(20);
+      width: auto;
+
+      @include desktop(min) {
+        height: scale(30);
+      }
+    }
+
+    &.--start-free {
+      @include tablet(max) {
+        order: -1;
+      }
+      img:last-child {
+        display: none;
+      }
+      &:hover {
+        background-color: #1c8d00;
+        color: var(--a-color_white);
+        img:first-of-type {
+          display: none;
+        }
+        img:last-child {
+          display: block;
+        }
+      }
+    }
+  }
+
+  &__burger {
+    cursor: pointer;
+    display: none;
+    grid-auto-flow: column;
+    align-items: center;
+    gap: scale(12);
+    border: none;
+    background: transparent;
+    color: var(--a-color_dark);
+    outline: none;
+
+    @include tablet(max) {
+      display: grid;
+    }
+
+    &:hover {
+      color: var(--a-color_red);
+    }
+
+    &-label {
+      display: none;
+      transition: var(--transition);
+
+      @include desktop {
+        display: inline-block;
+      }
+    }
+
+    &-icon {
+      width: scale(24);
+      height: scale(24);
+      background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="%231C1C1C" d="M0 19v-2.77h24V19H0Zm0-5.61V10.6h24v2.78H0Zm0-5.62V5h24v2.77H0Z"/></svg>');
+      transition: var(--transition);
+
+      .menu-opened & {
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="%231C1C1C" d="M2.53 4.88 4.5 2.92 21.46 19.9l-1.96 1.96L2.53 4.88Z"/><path fill="%231C1C1C" d="m19.5 2.92 1.96 1.96L4.5 21.85 2.53 19.9 19.5 2.92Z"/></svg>');
+      }
+    }
+  }
+
+  &__search {
+    display: none !important;
+    align-items: center;
+    height: scale(32);
+    background-color: var(--a-color_grey_10);
+    border-radius: scale(40);
+
+    @include tablet(max) {
+      .s-header.--visible-search & {
+        width: 100%;
+      }
+    }
+
+    @include desktop {
+      display: flex;
+      height: scale(40);
+    }
+
+    &-toggler {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: scale(32);
+      height: scale(32);
+      color: var(--a-color_grey_100);
+      border: none;
+      border-radius: 50%;
+      background-color: var(--a-color_white);
+      transition: var(--transition);
+
+      .s-header.--visible-search & {
+        display: none;
+      }
+
+      @include desktop {
+        width: scale(40);
+        height: scale(40);
+      }
+
+      &:hover {
+        color: var(--a-color_red);
+      }
+
+      .icon-sprite {
+        width: scale(20);
+        height: scale(20);
+      }
+
+      @include desktop {
+        display: flex;
+      }
+    }
+
+    & .m-search {
+      display: none;
+      width: 100%;
+      height: scale(32);
+      overflow: hidden;
+      width: 0;
+
+      .s-header.--visible-search & {
+        display: block;
+        width: 100%;
+      }
+
+      @include desktop {
+        height: scale(40);
+
+        .s-header.--visible-search & {
+          width: scale(365);
+        }
+      }
+
+      .a-input {
+        background-color: var(--a-color_grey_10);
+        border: none;
+        border-radius: scale(40);
+      }
+
+      &__btn {
+        cursor: pointer;
+        display: none;
+        align-items: center;
+        justify-content: center;
+        width: scale(32);
+        height: scale(32);
+        color: var(--a-color_grey_100);
+        border: none;
+        border-radius: 50%;
+        background-color: var(--a-color_white);
+        transition: var(--transition);
+
+        .s-header.--visible-search & {
+          display: flex;
+        }
+
+        @include desktop {
+          width: scale(40);
+          height: scale(40);
+        }
+      }
+    }
+  }
+
+  & &__btn {
+    display: none;
+    background-color: var(--a-color_dark);
+
+    @include desktop {
+      display: flex;
+      height: scale(40);
+    }
+  }
+}

@@ -1,0 +1,146 @@
+.s-platform {
+  &__wrap {
+    display: grid;
+    gap: var(--gap_def);
+
+    @include tablet(min) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  :deep() {
+    .m-card-text {
+      min-height: auto;
+      color: var(--a-color_white);
+      background-color: var(--a-color_red);
+
+      @include tablet(min) {
+        min-height: scale(320);
+      }
+
+      @include desktop(min) {
+        min-height: scale(454);
+      }
+
+      &__title {
+        & + .m-card-text__text {
+          @include desktop(min) {
+            margin-top: scale(16);
+          }
+        }
+      }
+
+      &__text {
+        a {
+          text-decoration: underline;
+          transition: var(--transition);
+          &:hover {
+            color: var(--a-color_dark);
+          }
+        }
+      }
+
+      .a-btn {
+        display: flex;
+
+        @include tablet(min) {
+          display: none;
+        }
+      }
+
+      &__bottom {
+        position: relative;
+        padding-top: scale(36);
+
+        @include mobile(max) {
+          align-items: start;
+          gap: scale(12);
+          flex-direction: column-reverse;
+        }
+      }
+
+      &__block {
+        margin-bottom: 0;
+      }
+
+      &__icons {
+        @include mobile(max) {
+          position: absolute;
+          right: 0;
+          bottom: scale(60);
+        }
+      }
+      &__icon {
+        background-color: var(--a-color_dark);
+        path {
+          fill: var(--a-color_white);
+        }
+      }
+
+      &__tags {
+        display: grid;
+        gap: scale(8);
+
+        .a-tag {
+          border-color: var(--a-color_white);
+        }
+
+        @include desktop(min) {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  &__banner {
+    display: flex;
+    position: relative;
+    overflow: hidden;
+    min-height: scale(224);
+    padding: scale(12);
+    background-color: var(--a-color_dark);
+    border-radius: scale(12);
+    order: -1;
+
+    @include tablet(min) {
+      order: 2;
+    }
+
+    @include desktop(min) {
+      padding: scale(24);
+      border-radius: scale(16);
+    }
+
+    :deep() {
+      .a-btn {
+        width: 100%;
+        position: relative;
+        z-index: 2;
+        margin-top: auto;
+
+        @include mobile(max) {
+          display: none;
+        }
+
+        @include desktop(min) {
+          max-width: scale(420);
+        }
+      }
+    }
+
+    picture {
+      left: 0;
+      top: 0;
+      z-index: 1;
+      position: absolute;
+      width: 100%;
+      height: 100%;
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}

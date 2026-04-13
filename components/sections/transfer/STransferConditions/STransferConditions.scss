@@ -1,0 +1,119 @@
+.s-transfer-conditions {
+  &__list {
+    display: flex;
+    gap: scale(20);
+    align-items: end;
+
+    @include tablet(max) {
+      gap: scale(8);
+    }
+
+    @include mobile(max) {
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    width: calc(100% / 3 - scale(40) / 3);
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: scale(24);
+    border-radius: scale(24);
+
+    &:nth-child(1) {
+      height: scale(360);
+    }
+
+    &:nth-child(2) {
+      height: scale(430);
+    }
+
+    &:nth-child(3) {
+      height: scale(500);
+      color: var(--a-color_white);
+    }
+
+    @include tablet(max) {
+      width: calc(100% / 3 - scale(16) / 3);
+      padding: scale(12);
+      border-radius: scale(16);
+      background: var(--a-color_grey_40);
+      box-shadow: 0 3px 7.1px 0 rgba(0, 0, 0, 0.06);
+
+      &:nth-child(1) {
+        height: scale(220);
+      }
+
+      &:nth-child(2) {
+        height: scale(220);
+      }
+
+      &:nth-child(3) {
+        height: scale(220);
+        color: var(--a-color_white);
+      }
+    }
+
+    @include mobile(max) {
+      width: 100%;
+
+
+      &:nth-child(1) {
+        height: scale(180);
+      }
+
+      &:nth-child(2) {
+        height: scale(180);
+      }
+
+      &:nth-child(3) {
+        height: scale(220);
+      }
+    }
+  }
+
+  &__top {
+    font-size: scale(154);
+    font-weight: 600;
+    line-height: 1em;
+    letter-spacing: -4.62px;
+    position: relative;
+    z-index: 1;
+
+    @include tablet(max) {
+      font-size: scale(32);
+      letter-spacing: normal;
+    }
+  }
+
+  &__bottom {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: scale(24);
+
+    @include tablet(max) {
+      gap: scale(12);
+    }
+  }
+
+  &__title {
+    font-size: scale(23);
+    line-height: 1.2em;
+    font-weight: 600;
+
+    @include tablet(max) {
+      font-size: scale(19);
+      line-height: 1em;
+    }
+  }
+
+  &__btn {
+    &:deep(button) {
+      width: 100%;
+    }
+  }
+}

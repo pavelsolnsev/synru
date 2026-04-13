@@ -1,0 +1,53 @@
+.s-header__nav {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  gap: scale(16);
+  grid-template-rows: min-content min-content 1fr;
+  transition: var(--transition);
+  padding: 0 var(--layout-h-padding) 0;
+
+  .menu-opened & {
+    overflow: auto;
+    overflow-x: hidden;
+  }
+
+  @include desktop(min) {
+    padding-top: 0;
+    position: absolute;
+    gap: scale(5);
+    width: 100%;
+    opacity: 0;
+    transition: var(--transition);
+    transform: translateY(-100%);
+
+    .menu-opened & {
+      position: static;
+    }
+
+    .menu-opened &,
+    .s-header.--visible-nav & {
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .s-header.--visible-nav & {
+      gap: scale(20);
+      padding-bottom: scale(22);
+    }
+  }
+
+
+  .a-priemnaya-komissiya {
+    display: none;
+    margin-bottom: scale(-12);
+    .menu-opened &:not(.s-header-menu__chapter-item) {
+      display: flex;
+      @include tablet(min) {
+        display: none;
+      }
+    }
+    .menu-opened & + .s-header__levels {
+      display: none;
+    }
+  }
+}

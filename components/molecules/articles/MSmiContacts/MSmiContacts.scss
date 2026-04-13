@@ -1,0 +1,94 @@
+.s-smi-contacts {
+  padding: scale(20) var(--padding_def);
+  background-color: var(--a-color_grey_10);
+  border-radius: scale(16);
+  @include desktop(min) {
+    padding: var(--padding_def);
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  &__title {
+    margin-bottom: scale(24);
+
+    @include desktop(min) {
+      margin-bottom: scale(40);
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: scale(8);
+
+    @include tablet(min) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include desktop(min) {
+      gap: scale(20);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    min-height: scale(146);
+    padding: var(--padding_def);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      min-height: scale(240);
+    }
+
+    &-top {
+      display: flex;
+      gap: scale(12);
+      align-items: center;
+
+      @include desktop(min) {
+        gap: scale(20);
+      }
+
+      img {
+        width: scale(48);
+        height: scale(48);
+        border-radius: 50%;
+        object-fit: cover;
+
+        @include desktop(min) {
+          width: scale(80);
+          height: scale(80);
+        }
+      }
+    }
+
+    &-bottom {
+      display: grid;
+      gap: scale(8);
+      margin-top: auto;
+      color: var(--a-color_grey_80);
+      @include desktop(min) {
+        gap: scale(16);
+      }
+    }
+
+    .a-btn.--phone {
+      border: 1px solid var(--a-color_dark);
+      box-shadow: none;
+    }
+
+    .ico {
+      width: scale(20);
+      height: scale(20);
+      margin-left: scale(8);
+
+      @include desktop(min) {
+        width: scale(24);
+        height: scale(24);
+        margin-left: scale(12);
+      }
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.s-advantages-university {
+  :deep() {
+    .swiper {
+      @include desktop() {
+        overflow: visible;
+      }
+    }
+    .swiper-wrapper {
+      display: grid;
+      grid-auto-flow: column;
+    }
+    .swiper-scrollbar {
+      @include desktop() {
+        display: none;
+      }
+    }
+  }
+  &__card {
+    background-color: var(--a-color_red);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: scale(280);
+    min-height: scale(148);
+    border-radius: scale(16);
+    color: var(--a-color_white);
+    padding: var(--padding_def);
+
+    @include desktop() {
+      width: scale(290);
+      min-height: scale(290);
+    }
+
+    &__title {
+      font-weight: 600;
+      font-size: scale(19);
+      line-height: 100%;
+      @include desktop() {
+        font-weight: 600;
+        font-size: scale(26);
+        line-height: 120%;
+      }
+    }
+
+    img {
+      width: scale(48);
+      height: scale(48);
+      align-self: flex-end;
+      @include desktop() {
+        width: scale(64);
+        height: scale(64);
+      }
+    }
+  }
+}

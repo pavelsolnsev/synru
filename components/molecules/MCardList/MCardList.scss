@@ -1,0 +1,73 @@
+.m-card-list {
+  display: flex;
+  flex-direction: column;
+  padding: var(--padding_def);
+  border-radius: var(--border-radius_def);
+  background-color: var(--a-color_white);
+
+  &__head {
+    display: grid;
+    gap: scale(12);
+    margin-bottom: scale(64);
+
+    @include desktop {
+      gap: scale(16);
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: scale(6);
+    margin-top: auto;
+    padding: 0;
+    list-style: none;
+
+    @include desktop() {
+      gap: scale(8);
+    }
+    :deep() {
+      .m-card-list__list {
+        display: grid;
+        gap: scale(6);
+        margin-top: auto;
+        padding: 0;
+        list-style: none;
+    
+        @include desktop() {
+          gap: scale(8);
+        }
+      }
+      li {
+        position: relative;
+        padding-left: scale(16);
+        &:not(:last-child) {
+          margin: 0 0 scale(6);
+          @include desktop() {
+            margin: 0 0 scale(8);
+          }
+        }
+
+        @include desktop() {
+          padding-left: scale(30);
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: 0;
+          top: scale(6);
+          display: block;
+          width: scale(8);
+          height: scale(8);
+          border-radius: scale(2);
+          background-color: currentColor;
+
+          @include desktop() {
+            width: scale(12);
+            height: scale(12);
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,36 @@
+$breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px,
+  xxl: 1440px,
+  xxxl: 1920px,
+);
+$displays: inline-block, block, grid, flex, inline-flex, none;
+
+//- .d-sm-grid {
+//-   display: grid !important;
+//- }
+//- @media (min-width: 576px) {
+//-   .d-sm-grid {
+//-     display: grid !important;
+//-   }
+//- }
+@each $name, $size in $breakpoints {
+  @if $size != 0 {
+    @media (min-width: #{$size}) {
+      @each $display in $displays {
+        .d-#{$name}-#{$display} {
+          display: $display !important;
+        }
+      }
+    }
+  } @else {
+    @each $display in $displays {
+      .d-#{$display} {
+        display: $display !important;
+      }
+    }
+  }
+}

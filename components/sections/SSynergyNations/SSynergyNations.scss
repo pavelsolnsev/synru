@@ -1,0 +1,121 @@
+.s-synergy-nations {
+  .s-synergy-nations__wrap {
+    display: grid;
+    gap: scale(8);
+
+    @include desktop(min) {
+      gap: scale(20);
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  .m-card-text__slider {
+    margin-top: scale(16);
+    :deep() {
+      .swiper-slide {
+        display: flex;
+        flex-direction: column;
+        max-width: scale(280);
+        height: scale(110);
+        padding: scale(12);
+        background-color: var(--a-color_grey_40);
+        border-radius: scale(16);
+  
+        @include tablet(min) {
+          max-width: scale(232);
+        }
+  
+        @include desktop(min) {
+          max-width: scale(274);
+          height: scale(180);
+          padding: scale(24) scale(16) scale(16) scale(24)
+        }
+  
+        .ico {
+          width: scale(36);
+          height: scale(36);
+          margin-top: auto;
+          margin-left: auto;
+          color: var(--a-color_white);
+          background-color: var(--a-color_red);
+          border-radius: 50%;
+        }
+      }
+    }
+
+  }
+
+  .s-synergy-nations__slider {
+    position: relative;
+    overflow: hidden;
+    height: scale(215);
+    border-radius: scale(16);
+
+    @include tablet(min) {
+      height: scale(475);
+    }
+
+    @include desktop(min) {
+      height: scale(600);
+    }
+    :deep() {
+      .swiper-slide {
+        display: block;
+        width: 100%;
+        height: 100%;
+        margin: 0;
+        object-fit: cover;
+      }
+    }
+
+  }
+
+  :deep() {
+    .swiper {
+      height: 100%;
+    }
+    .swiper-pagination {
+      position: absolute;
+      top: auto;
+      bottom: scale(24);
+      left: scale(24);
+      right: scale(24);
+      z-index: 1;
+      width: auto;
+    }
+  
+    .swiper-pagination-bullet {
+      overflow: hidden;
+      position: relative;
+      background-color: var(--a-color_white);
+  
+      &:before {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        width: 0;
+        background-color: var(--a-color_grey_100);
+      }
+  
+      &.swiper-pagination-bullet-active:before {
+        width: 100%;
+        transition: width 5s linear;
+        animation: growWidth 5s linear forwards;
+      }
+    }
+  }
+
+}
+
+@keyframes growWidth {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}

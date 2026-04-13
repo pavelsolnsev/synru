@@ -1,0 +1,78 @@
+.s-ege-start {
+
+  &__body {
+    position: relative;
+    min-height: scale(436);
+    padding: scale(24);
+    display: flex;
+    flex-direction: column;
+    border-radius: scale(16);
+    overflow: hidden;
+    color: var(--a-color_white);
+    background-color: var(--a-color_red);
+
+    @include tablet(max) {
+      min-height: scale(536);
+      padding: scale(20) scale(15) scale(15) scale(15);
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    img {
+      object-fit: cover;
+      object-position:center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 2;
+    max-width: scale(1139);
+
+    @include tablet(max) {
+      &:deep(br) {
+        display: none;
+      }
+    }
+  }
+
+  &__subtitle {
+    max-width: scale(1139);
+    font-size: scale(26);
+    font-weight: 600;
+    line-height: 110%;
+    position: relative;
+    z-index: 2;
+    margin-top: auto;
+
+    @include tablet(max) {
+      font-size: scale(17);
+      margin-top: scale(21);
+
+      &:deep(br) {
+        display: none;
+      }
+    }
+  }
+
+  &__btn {
+    position: relative;
+    z-index: 2;
+    margin-top: scale(24);
+    width: scale(421);
+
+    @include tablet(max) {
+      width: 100%;
+      margin-top: auto;
+    }
+  }
+}

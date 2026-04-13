@@ -1,0 +1,64 @@
+.m-graduate-card {
+  display: flex;
+  flex-direction: column;
+  width: scale(280);
+  height: auto;
+  padding: scale(12) scale(16) scale(12) scale(12);
+  background-color: var(--a-color_grey_20);
+  border-radius: scale(32) scale(32) scale(32) 0;
+
+  @include desktop {
+    width: scale(698);
+    padding: scale(24) scale(32) scale(24) scale(24);
+    border-radius: scale(54) scale(54) scale(54) 0;
+  }
+
+  &__top {
+    display: grid;
+    gap: scale(16);
+    margin-bottom: scale(44);
+
+    @include desktop(min) {
+      grid-template-columns: scale(80) 1fr;
+      gap: scale(20);
+      align-items: center;
+      margin-bottom: scale(80);
+    }
+  }
+
+  &__head {
+    display: grid;
+    gap: scale(8);
+  }
+
+  &__img {
+    width: scale(80);
+    height: scale(80);
+    border-radius: 50%;
+    border: 1px solid var(--a-color_grey_60);
+    object-fit: cover;
+  }
+
+  &__info {
+    color: var(--a-color_grey_80);
+    a {
+      color: var(--a-color_dark);
+      font-weight: 600;
+      text-decoration: underline;
+      transition: var(--transition);
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__text {
+    margin-top: auto;
+    :deep() {
+      p:not(:last-child),
+      li:not(:last-child) {
+        margin-bottom: scale(8);
+      }
+    }
+  }
+}

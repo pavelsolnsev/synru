@@ -1,0 +1,180 @@
+.mediacenter-blog {
+  &__wrap {
+    max-width: scale(1375);
+
+    .--more-btn {
+      display: flex !important;
+      margin: scale(24) auto 0;
+      min-width: scale(226);
+
+      @include desktop(min) {
+        margin-top: scale(40);
+        min-width: scale(290);
+      }
+    }
+
+    &.--disabled {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+  }
+
+  &__slider {
+    overflow: hidden;
+    position: relative;
+    margin: 0 scale(-12) scale(20);
+
+    @include tablet(min) {
+      margin: 0 0 scale(24);
+    }
+
+    @include desktop(min) {
+      margin: 0 0 scale(20);
+    }
+
+    :deep() {
+      .m-article-banner-card {
+        margin: 0;
+
+        &__link {
+          @include tablet(min) {
+            padding-bottom: scale(24);
+          }
+
+          @include desktop(min) {
+            padding-bottom: scale(46);
+          }
+        }
+
+        .a-share {
+          @include desktop(min) {
+            bottom: scale(46);
+          }
+        }
+      }
+    }
+
+    & .swiper-pagination {
+      display: none;
+      position: absolute;
+      z-index: 10;
+      bottom: scale(12);
+      left: scale(12);
+      right: scale(12);
+      height: auto;
+      top: auto;
+      width: initial;
+      @include tablet(min) {
+        display: flex;
+      }
+
+      @include desktop(min) {
+        bottom: scale(24);
+        left: scale(24);
+        right: scale(24);
+      }
+    }
+
+    .swiper-pagination-bullet {
+      background-color: var(--a-color_grey_80);
+
+      &-active {
+        background-color: var(--a-color_white);
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    grid-auto-flow: dense;
+    gap: scale(12);
+
+    @include tablet(min) {
+      grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    @include desktop(min) {
+      gap: scale(20);
+    }
+  }
+}
+
+.m-article-card.--big {
+  background-color: var(--a-color_grey_10);
+
+  @include mobile(max) {
+    margin: 0 scale(-12);
+    border-radius: scale(16);
+  }
+
+  @include tablet(min) {
+    border-radius: scale(16);
+    grid-column: 2/4;
+    min-height: scale(274);
+  }
+
+  @include desktop(min) {
+    grid-column: 1/4;
+    height: scale(432);
+  }
+
+  :deep() {
+    .m-article-card {
+      &__text {
+        opacity: 0.6;
+        margin-top: 0;
+
+        @include mobile(max) {
+          margin-bottom: scale(16);
+        }
+      }
+
+      &__title {
+        margin-bottom: scale(8);
+
+        @include desktop(min) {
+          margin-bottom: scale(16);
+        }
+      }
+
+      &__wrap {
+        background-color: var(--a-color_grey_10);
+
+        @include tablet(min) {
+          order: -1;
+          margin: 0;
+          height: 100%;
+        }
+      }
+
+      &__img {
+        @include tablet(min) {
+          height: 100%;
+        }
+      }
+
+      &__link {
+        @include tablet(min) {
+          display: grid;
+          height: 100%;
+          grid-template-columns: 1fr 1fr;
+        }
+
+        @include desktop(min) {
+          grid-template-columns: 1fr 2fr;
+        }
+      }
+    }
+
+    .a-share {
+      @include tablet(min) {
+        right: auto;
+        left: scale(217);
+      }
+
+      @include desktop(min) {
+        left: scale(396);
+      }
+    }
+  }
+}

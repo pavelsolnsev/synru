@@ -1,0 +1,106 @@
+.s-success-history {
+  :deep() {
+    .l-section__inner {
+      position: relative;
+    }
+
+    .swiper-wrapper {
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 300 480"><rect width="289" height="479" x=".5" y=".5" stroke="%23E0E1E5" rx="15.5"/><path fill="%23ECEDF0" d="M94 188v103h103V188H94Zm88.29 88.29H108.7V202.7h73.58v73.58Z"/><path fill="%23ECEDF0" d="m157.38 249.81-10.66-10.31 10.66-10.03v-20.34L125.7 239.5l31.7 30.37v-20.06Z"/></svg>');
+
+        @include desktop(min) {
+          background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 310 480"><rect width="289" height="479" x=".5" y=".5" stroke="%23E0E1E5" rx="15.5"/><path fill="%23ECEDF0" d="M94 188v103h103V188H94Zm88.29 88.29H108.7V202.7h73.58v73.58Z"/><path fill="%23ECEDF0" d="m157.38 249.81-10.66-10.31 10.66-10.03v-20.34L125.7 239.5l31.7 30.37v-20.06Z"/></svg>');
+        }
+      }
+  }
+  &__slider {
+    margin-right: calc(var(--layout-h-padding) * -1);
+    overflow: visible;
+
+    @include desktop(min) {
+      margin-right: 0;
+    }
+
+    .swiper {
+      &-slide {
+        width: scale(220);
+        height: scale(364);
+
+        @include desktop(min) {
+          width: calc((100% - var(--gap_def) * 5) / 6);
+          height: scale(480);
+        }
+
+        &:not(:last-child) {
+          margin-right: scale(8);
+          @include desktop(min) {
+            margin-right: scale(20);
+          }
+        }
+      }
+    }
+    :deep() {
+      .m-video-card {
+        display: flex;
+        position: relative;
+        overflow: hidden;
+  
+        &__thumb {
+          position: absolute;
+          height: 100%;
+          width: 100%;
+        }
+  
+        &__desc {
+          z-index: 1;
+          position: relative;
+          display: flex;
+          flex-direction: column;
+          width: 100%;
+          height: scale(180);
+          gap: scale(4);
+          margin-top: auto;
+          padding: scale(24);
+          background: linear-gradient(
+            180deg,
+            rgba(28, 28, 28, 0) 11.88%,
+            rgba(28, 28, 28, 0.65) 52.17%,
+            rgba(28, 28, 28, 0.91) 77.84%,
+            #1c1c1c 100%
+          );
+          border-radius: 0;
+        }
+  
+        &__title {
+          margin-top: auto;
+          color: var(--a-color_white);
+        }
+  
+        &__text {
+          color: var(--a-color_grey_80);
+        }
+  
+        .a-play {
+          width: scale(32);
+          height: scale(32);
+          top: scale(12);
+          right: scale(12);
+          bottom: auto;
+          left: auto;
+  
+          @include desktop(min) {
+            width: scale(48);
+            height: scale(48);
+            top: scale(20);
+            right: scale(20);
+          }
+        }
+      }
+      .swiper-navigation {
+        button {
+          margin: 0;
+        }
+      }
+    }
+    
+  }
+}

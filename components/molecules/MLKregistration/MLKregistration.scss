@@ -1,0 +1,79 @@
+.m-lk-registration {
+  position: relative;
+  margin: scale(24) 0 0;
+  text-align: center;
+  @include desktop {
+    margin: 0;
+  }
+
+  &__subtitle {
+    text-align: center;
+    margin: scale(24) 0 scale(16);
+    @include desktop {
+      margin: scale(40) 0 scale(24);
+    }
+  }
+
+
+  &__send-code {
+    color: var(--a-color_grey_70);
+    text-align: center;
+    span {
+      color: var(--a-color_dark);
+    }
+  }
+
+
+  &__inner {
+    display: flex;
+    justify-content: center;
+    gap: scale(8);
+    margin-top: scale(32);
+    @include desktop {
+      gap: scale(24);
+      margin-top: scale(48);
+    }
+  }
+
+
+  &__errors {
+    margin: scale(16) 0 0;
+    text-align: center;
+    color: var(--a-color_red);
+  }
+
+
+  &__email {
+    margin-top: scale(16);
+    text-decoration: underline;
+    text-align: center;
+    font-weight: 600;
+    cursor: pointer;
+    @include desktop {
+      margin-top: scale(24);
+    }
+  }
+
+
+  :deep() {
+    .a-input {
+      width: scale(48);
+      height: scale(48);
+      @include desktop {
+        width: scale(53);
+        height: scale(62);
+      }
+    }
+
+    .a-btn {
+      margin: scale(16) 0 0;
+      @include desktop {
+        margin: scale(24) 0 0;
+      }
+      &:disabled {
+        box-shadow: none !important;
+        background-color: var(--a-color_grey_70) !important;
+      }
+    }
+  }
+}

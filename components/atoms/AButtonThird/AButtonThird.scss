@@ -1,0 +1,128 @@
+.a-btn {
+  $btn: &;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 scale(16);
+  border: none;
+  border-radius: scale(12);
+  transition: var(--transition);
+  &[class*='a-font'] {
+    display: inline-flex;
+  }
+  @include desktop {
+    padding: 0 scale(24);
+  }
+
+  svg {
+    vertical-align: middle;
+    align-self: center;
+    &:last-child {
+      margin-left: scale(12);
+    }
+    &:first-child {
+      margin-right: scale(12);
+    }
+    &:first-child:last-child {
+      margin: auto;
+    }
+  }
+
+  &--third {
+    //- third types
+    &#{$btn}--circle {
+      border-radius: scale(80);
+    }
+    &#{$btn}--square {
+      border-radius: scale(12);
+    }
+
+    //- third color
+    &#{$btn}--light {
+      background-color: var(--a-color_grey_40);
+      color: var(--a-color_dark);
+      &:hover {
+        background-color: var(--a-color_grey_20);
+      }
+    }
+
+    &#{$btn}--light-white {
+      background-color: var(--a-color_grey_40);
+      color: var(--a-color_dark);
+      &:hover {
+        background-color: var(--a-color_white);
+      }
+    }
+
+    &#{$btn}--white {
+      background-color: var(--a-color_white);
+      color: var(--a-color_dark);
+      &:hover {
+        background-color: var(--a-color_grey_20);
+      }
+    }
+
+    &#{$btn}--dark {
+      background-color: var(--a-color_grey_100);
+      color: var(--a-color_white);
+      &:hover {
+        background-color: var(--a-color_grey_dark);
+      }
+    }
+
+    &#{$btn}--red {
+      background-color: var(--a-color_red);
+      color: var(--a-color_white);
+      &:hover {
+        background-color: var(--a-color_red_dark);
+      }
+    }
+
+    &#{$btn}--bordered {
+      border: rem(1) solid;
+      background-color: transparent;
+      color: inherit;
+      &:hover {
+        background-color: var(--a-color_grey_20);
+      }
+    }
+
+
+    &:disabled,
+    &:disabled:hover {
+      background-color: var(--a-color_grey_40);
+      color: var(--a-color_grey_60);
+    }
+  }
+
+  //- size
+  &--lg {
+    height: scale(48);
+    border-radius: scale(12);
+    @include desktop {
+      height: scale(60);
+    }
+  }
+
+  &--md {
+    height: scale(40);
+    border-radius: scale(8);
+    @include desktop {
+      height: scale(48);
+      border-radius: scale(12);
+    }
+  }
+
+  &--sm {
+    height: scale(32);
+    border-radius: scale(8);
+    @include desktop {
+      height: scale(40);
+    }
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+}

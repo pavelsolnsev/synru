@@ -1,0 +1,111 @@
+.s-quiz-second {
+  font-size: scale(38);
+  line-height: 100%;
+  padding-top: 0 !important;
+  border-radius: initial !important;
+  @include mobile() {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+  :deep() {
+    .l-section__inner {
+      display: flex;
+      flex-direction: column;
+      gap: scale(24);
+    }
+
+    .m-breadcrumbs {
+      height: scale(40);
+      margin: 0;
+      .swiper-slide {
+        align-items: center;
+      }
+      span {
+        font-weight: 500;
+        font-size: scale(16);
+        line-height: scale(16.8);
+      }
+
+      &__link--last {
+        color: var(--a-color_dark) !important;
+      }
+    }
+
+    .m-quiz-nav-links .swiper {
+      @include mobile() {
+        margin: 0 var(--layout-h-padding);
+      }
+    }
+  }
+
+  &__title {
+    @include desktop() {
+      font-size: scale(80);
+      line-height: 80%;
+    }
+    @include tablet() {
+      font-size: scale(36);
+    }
+    @include mobile() {
+      margin-top: auto;
+      font-size: scale(38);
+      text-align: center;
+    }
+  }
+
+  &__main {
+    padding: var(--padding_def);
+    position: relative;
+    border-radius: var(--border-radius_def);
+    overflow: hidden;
+    color: var(--a-color_white);
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    @include desktop() {
+      min-height: scale(533);
+    }
+    @include tablet() {
+      min-height: scale(360);
+      padding: scale(24);
+    }
+
+    @include mobile() {
+      min-height: scale(686);
+      padding: scale(10);
+    }
+  }
+
+  &__desc {
+    margin-top: auto;
+    margin-bottom: scale(32);
+    @include desktop() {
+      margin-right: scale(35);
+    }
+    @include tablet() {
+      margin-bottom: scale(12);
+      max-width: scale(340);
+    }
+    @include mobile() {
+      text-align: center;
+      margin-top: scale(14);
+      margin-bottom: scale(24);
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    @include mobile() {
+      height: 100%;
+    }
+
+    img {
+      @include mobile() {
+        height: 100%;
+      }
+    }
+  }
+}

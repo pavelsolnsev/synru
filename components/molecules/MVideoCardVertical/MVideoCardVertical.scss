@@ -1,0 +1,67 @@
+.m-video-card {
+  display: block;
+  background: var(--a-color_white);
+  border-radius: scale(16);
+  height: 100%;
+
+  &__thumb {
+    overflow: hidden;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    border-radius: scale(16);
+  }
+  &__img {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    display: block;
+    object-fit: cover;
+    object-position: top;
+    width: 100%;
+    height: 100%;
+  }
+
+  .a-tag {
+    position: absolute;
+    top: scale(12);
+    left: scale(12);
+    display: none;
+
+    @include desktop(min) {
+      display: block;
+      top: scale(20);
+      left: scale(20);
+    }
+  }
+
+  &__play {
+    position: absolute;
+    bottom: scale(12);
+    left: scale(12);
+
+    @include desktop {
+      left: auto;
+      top: scale(20);
+      right: scale(20);
+    }
+  }
+
+  &__desc {
+    display: grid;
+    gap: scale(8);
+    padding: scale(12);
+
+    @include desktop {
+      gap: scale(4);
+      padding: scale(16) scale(24) scale(24);
+    }
+  }
+
+  &__text {
+    color: var(--a-color_grey_80);
+  }
+}
+

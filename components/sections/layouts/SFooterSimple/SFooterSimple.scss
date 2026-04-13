@@ -1,0 +1,20 @@
+.s-footer-simple {
+  background-color: var(--a-color_grey_20);
+  border-radius: initial;
+  color: var(--a-color_grey_80);
+  :deep() {
+    .l-section__inner {
+      display: flex;
+      flex-direction: column;
+      gap: scale(20);
+    }
+  }
+
+  a {
+    text-decoration: underline;
+  }
+
+  a:hover {
+    color: var(--a-color_red)
+  }
+}

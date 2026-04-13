@@ -1,0 +1,213 @@
+.s-header-second-main {
+  padding: scale(16) var(--layout-h-padding) scale(24);
+  display: flex;
+  align-items: center;
+
+  @include tablet(max) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: scale(16);
+  }
+
+  @include tablet(max) {
+    padding: 0;
+    padding-top: scale(24);
+    padding-bottom: scale(10);
+  }
+
+  :deep() {
+    .a-logo {
+      width: scale(166);
+      height: scale(27);
+      @include desktop() {
+        width: scale(361);
+        height: scale(62);
+      }
+      @include tablet() {
+        padding-left: scale(16);
+      }
+      @include mobile() {
+        padding-left: scale(10);
+      }
+    }
+  }
+
+  &__links {
+    padding-left: scale(70);
+    align-self: flex-start;
+    display: flex;
+    flex-direction: column;
+    gap: scale(16);
+
+    @include tablet(max) {
+      display: none;
+    }
+
+    &__main {
+      display: flex;
+      gap: scale(8);
+    }
+    &__additional {
+      display: flex;
+      gap: scale(8);
+    }
+  }
+
+  &__tools {
+    display: flex;
+    flex-direction: column;
+    margin-left: auto;
+    padding: scale(4) 0;
+    @include desktop() {
+      min-height: scale(96);
+      justify-content: space-between;
+    }
+
+    &__header {
+      display: flex;
+      gap: scale(24);
+      align-items: center;
+      justify-content: flex-end;
+      @include mobile() {
+        padding-right: scale(10);
+        gap: scale(12);
+        height: scale(36);
+      }
+      @include tablet() {
+        gap: scale(12);
+        padding-right: scale(16);
+        height: scale(36);
+      }
+      @include desktop() {
+        height: scale(34);
+      }
+
+      a {
+        @include tablet(max) {
+          display: none;
+        }
+      }
+
+      .a-btn {
+        display: none;
+        flex: none;
+        height: calc(var(--scale) * 32);
+        padding: 0;
+        transition: var(--transition);
+        width: calc(var(--scale) * 32);
+
+        @include tablet(max) {
+          display: flex;
+        }
+      }
+    }
+
+    &__buttons {
+      display: flex;
+      gap: scale(24);
+
+      @include tablet(max) {
+        display: none;
+      }
+    }
+
+    &__burger {
+      cursor: pointer;
+      display: grid;
+      align-items: center;
+      gap: scale(8);
+      border: none;
+      background: transparent;
+      color: var(--a-color_dark);
+      outline: none;
+      grid-auto-flow: column;
+
+      @include desktop() {
+        min-width: scale(86);
+      }
+
+      &:hover {
+        color: var(--a-color_red);
+      }
+
+      &-label {
+        display: none;
+        transition: var(--transition);
+
+        @include desktop {
+          display: inline-block;
+        }
+      }
+
+      &-icon {
+        min-width: scale(24);
+        min-height: scale(24);
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"><path fill="%231C1C1C" d="M0 19v-2.77h24V19H0Zm0-5.61V10.6h24v2.78H0Zm0-5.62V5h24v2.77H0Z"/></svg>');
+        transition: var(--transition);
+
+        @include tablet(max) {
+          min-width: scale(32);
+          min-height: scale(32);
+        }
+
+        &.--menu-opened {
+          min-width: scale(32);
+          min-height: scale(32);
+          background-image: url("data:image/svg+xml,%3Csvg width='32' height='32' viewBox='0 0 32 32' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Crect width='32' height='32' rx='16' fill='%23E9EAEC'/%3E%3Cpath d='M11 21L16 16L21 21M21 11L15.999 16L11 11' stroke='black' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+          background-repeat: no-repeat;
+          background-size: contain;
+        }
+      }
+    }
+  }
+
+  &__nav-links {
+    grid-column: 1 / -1;
+    display: flex;
+    gap: scale(8);
+    align-items: center;
+    flex-wrap: nowrap;
+    overflow: auto;
+    transition: var(--transition);
+    &::-webkit-scrollbar {
+      display: none;
+      opacity: 0;
+      height: 0;
+      width: 0;
+    }
+
+    @include tablet(max) {
+      padding: 0 var(--layout-h-padding);
+    }
+
+    @include desktop() {
+      display: none;
+    }
+
+    a,
+    button {
+      white-space: nowrap;
+      font-size: scale(16);
+      padding: scale(8) scale(16);
+    }
+
+    .--admission-committee {
+      border: scale(1) solid var(--a-color_dark);
+      padding: scale(8) scale(10);
+    }
+
+    .--quiz {
+      background-color: var(--a-color_red);
+      padding: scale(8) scale(10);
+      color: var(--a-color_white);
+    }
+
+    .--active-burger & {
+      @include mobile() {
+        a:nth-child(1) {
+          display: none;
+        }
+      }
+    }
+  }
+}

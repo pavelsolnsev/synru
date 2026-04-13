@@ -1,0 +1,58 @@
+.s-why-us {
+  overflow: hidden;
+  margin-top: var(--layout-v-padding);
+  background-color: var(--a-color_grey_20);
+
+  &__slider {
+    position: relative;
+    overflow: visible;
+  }
+
+  :deep() {
+    .swiper {
+      overflow: visible;
+    }
+
+    .swiper-navigation {
+      button {
+        margin: 0;
+      }
+    }
+  }
+
+  &__card {
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    width: scale(280);
+    min-height: scale(116);
+    height: auto;
+    padding: scale(12);
+    border-radius: scale(12);
+    background-color: var(--a-color_white);
+
+    @include desktop() {
+      width: scale(598);
+      min-height: scale(202);
+      padding: scale(24);
+      border-radius: scale(16);
+    }
+
+    &-title {
+      margin: 0 0 scale(12);
+    }
+
+    &-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin: auto 0 0;
+    }
+
+    &-num {
+      color: var(--a-color_grey_60);
+    }
+  }
+}

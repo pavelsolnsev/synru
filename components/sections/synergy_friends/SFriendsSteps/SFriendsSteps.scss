@@ -1,0 +1,133 @@
+.s-friends-steps {
+  margin: var(--layout-v-padding) 0;
+  :deep() {
+    .swiper {
+      @include tablet(min) {
+        overflow: visible;
+      }
+    }
+
+    .swiper-wrapper {
+      @include mobile() {
+        flex-direction: column;
+        gap: scale(20);
+      }
+
+      @include desktop() {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: scale(20);
+      }
+    }
+
+    .swiper-slide:not(:last-child) {
+      @include tablet() {
+        margin-right: scale(15);
+      }
+    }
+  }
+
+  &__step {
+    background-color: var(--a-color_grey_20);
+    border-radius: var(--border-radius_def);
+    padding: var(--padding_def);
+    position: relative;
+
+    @include tablet() {
+      width: scale(500);
+      height: auto;
+      padding: scale(24);
+    }
+
+    &__wrapper {
+      display: flex;
+      flex-direction: column;
+      @include tablet(min) {
+        height: 100%;
+      }
+    }
+
+    &__num {
+      display: inline-block;
+      font-weight: 700;
+      color: var(--a-color_red_dark);
+      font-size: scale(16);
+      margin-bottom: scale(10);
+    }
+
+    &__title {
+      font-size: scale(19);
+      font-weight: 600;
+      line-height: 1;
+      margin-bottom: scale(10);
+
+      @include tablet() {
+        font-size: scale(26);
+      }
+
+      @include desktop() {
+        font-size: scale(38);
+      }
+    }
+
+    &__description {
+      font-size: scale(15);
+      font-weight: 400;
+      line-height: 115%;
+      opacity: 0.7;
+
+      @include mobile() {
+        max-width: scale(180);
+      }
+
+      @include tablet() {
+        max-width: scale(274);
+        font-size: scale(16);
+        margin-top: auto;
+      }
+
+      @include desktop() {
+        max-width: scale(330);
+        font-size: scale(19);
+        margin-top: auto;
+      }
+    }
+
+    &__image {
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      right: scale(-60);
+      width: scale(252);
+      height: scale(211);
+
+      @include tablet() {
+        right: scale(-70);
+        width: scale(292);
+        height: scale(251);
+      }
+
+      @include desktop() {
+        right: scale(-90);
+        width: scale(370);
+        height: scale(300);
+      }
+
+      &--2 {
+        width: scale(212);
+        height: scale(195);
+        right: scale(-25);
+        @include tablet() {
+          width: scale(262);
+          height: scale(250);
+          right: scale(-30);
+        }
+        @include desktop() {
+          right: scale(-40);
+          width: scale(330);
+          height: scale(300);
+        }
+      }
+    }
+  }
+}

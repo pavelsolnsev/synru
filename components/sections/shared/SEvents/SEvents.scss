@@ -1,0 +1,119 @@
+.s-events {
+  &__slider {
+    position: relative;
+  }
+
+  &__title {
+    margin: 0 0 scale(16);
+    @include desktop {
+      margin: 0 0 scale(30);
+    }
+  }
+  :deep() {
+    .swiper-navigation {
+      @include desktop {
+        top: scale(-94);
+      }
+
+      button {
+        margin: 0;
+      }
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: scale(280);
+    height: auto;
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      max-width: scale(445);
+    }
+
+    &-btn {
+      border-radius: scale(80);
+      width: 100%;
+      margin-top: auto;
+    }
+
+    &-tag {
+      position: absolute;
+      top: scale(12);
+      left: scale(12);
+      padding: scale(6) scale(12);
+      background-color: var(--a-color_white);
+      border-radius: scale(20);
+      z-index: 1;
+
+      &.--date {
+        left: auto;
+        right: scale(12);
+        color: var(--a-color_white);
+        background-color: var(--a-color_red);
+      }
+
+      @include desktop(min) {
+        top: scale(24);
+        left: scale(24);
+        padding: scale(10) scale(20);
+
+        &.--date {
+          left: auto;
+          right: scale(24);
+        }
+      }
+    }
+
+    &-img {
+      display: block;
+      width: 100%;
+      height: scale(180);
+      object-fit: cover;
+
+      @include desktop(min) {
+        height: scale(300);
+      }
+    }
+
+    &-content {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      margin-top: scale(-16);
+      padding: scale(12);
+      background-color: var(--a-color_white);
+      border-radius: scale(16);
+
+      @include desktop(min) {
+        margin-top: scale(-32);
+        padding: scale(24);
+      }
+    }
+
+    &-title {
+      margin-bottom: scale(12);
+
+      @include desktop(min) {
+        margin-bottom: scale(16);
+      }
+    }
+
+    &-desc {
+      margin-bottom: scale(12);
+    }
+
+    &-text {
+      margin-bottom: scale(24);
+      color: var(--a-color_grey_80);
+
+      @include desktop(min) {
+        margin-bottom: scale(32);
+      }
+    }
+  }
+}

@@ -1,0 +1,26 @@
+.output
+.nuxt
+.idea
+.vscode
+.nitro
+.yarn
+.claude
+CLAUDE.md
+package-lock.json
+
+# Node dependencies
+node_modules
+
+# System files
+*.log
+
+*storybook.log
+
+# Secrets and local env (keep .env.example tracked)
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+
+.DS_Store

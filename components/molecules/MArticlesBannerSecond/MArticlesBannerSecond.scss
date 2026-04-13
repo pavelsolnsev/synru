@@ -1,0 +1,42 @@
+.m-articles-banner2 {
+  display: grid;
+  gap: scale(8);
+  padding: scale(12);
+  padding-top: 0;
+  background-color: var(--a-color_white);
+  border-radius: scale(16);
+  transition: opacity var(--transition);
+  cursor: pointer;
+  &:hover {
+    opacity: 0.8;
+  }
+
+  @include desktop(min) {
+    height: min-content;
+    position: sticky;
+    top: var(--headerArticlesHeight);
+    gap: scale(12);
+    padding: scale(16);
+    padding-top: 0;
+  }
+
+  .a-btn {
+    width: 100%;
+
+    @include desktop(min) {
+      min-height: scale(50);
+    }
+  }
+
+  picture {
+    display: block;
+    width: 100%;
+    height: auto;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+  }
+}

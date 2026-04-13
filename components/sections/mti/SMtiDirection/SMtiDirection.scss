@@ -1,0 +1,126 @@
+.s-mti-direction {
+  overflow: visible !important;
+
+  &__cards {
+    margin-top: scale(60);
+    display: flex;
+    flex-wrap: wrap;
+    gap: scale(20);
+
+    @include tablet(max) {
+      margin-top: scale(24);
+      gap: scale(8);
+    }
+
+    @include mobile(max) {
+      flex-direction: column;
+    }
+  }
+
+  &__bg {
+    display: none;
+
+    @include tablet(max) {
+      display: block;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    border-radius: scale(16);
+    box-shadow: 0 3px 7.1px 0 rgba(0, 0, 0, 0.06);
+    padding: scale(24);
+    width: calc(25% - (scale(60) / 4));
+    height: scale(400);
+    align-items: center;
+    text-align: center;
+    background: linear-gradient(
+      180deg,
+      var(--a-color_white) 0%,
+      var(--a-color_white) 40%,
+      rgba(217, 217, 217, 0.26) 70%,
+      rgba(217, 217, 217, 0.52) 100%
+    );
+
+    @include tablet(max) {
+      width: calc(25% - ((scale(8) * 3) / 4));
+      height: scale(240);
+      border-radius: scale(9);
+      box-shadow: 0 1.68px 3.976px 0 rgba(0, 0, 0, 0.06);
+      padding: scale(12);
+    }
+
+    @include mobile(max) {
+      width: 100%;
+      height: scale(140);
+      align-items: start;
+      text-align: start;
+    }
+
+    @include tablet(min) {
+      cursor: pointer;
+    }
+
+    &:hover {
+      .s-mti-direction__img {
+        transform: #{'scale(1.2)'} translate(-40%, -40%);
+      }
+    }
+  }
+
+  &__card-title {
+    font-size: scale(36);
+    font-weight: 600;
+    position: relative;
+    z-index: 1;
+
+    @include tablet(max) {
+      font-size: scale(19);
+    }
+  }
+
+  &__card-subtitle {
+    font-size: scale(14);
+    font-weight: 600;
+    line-height: 120%;
+    color: var(--a-color_grey_80);
+    margin-top: scale(12);
+    position: relative;
+    z-index: 1;
+
+    @include tablet(max) {
+      font-size: scale(10);
+      margin-top: scale(6);
+    }
+
+    @include mobile(max) {
+      max-width: scale(183);
+    }
+  }
+
+  &__btn {
+    margin-top: auto;
+    position: relative;
+    z-index: 1;
+    box-shadow: 0 4px 2px 0 rgba(162, 162, 162, 0.18);
+    width: scale(163);
+    border: 1px solid var(--a-color_grey_60);
+  }
+
+  &__img {
+    position: absolute;
+    top: 55%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    transform-origin: 50% 50%;
+    transition: 0.3s transform;
+    height: auto;
+    width: scale(153);
+
+    @include tablet(max) {
+      display: none;
+    }
+  }
+}

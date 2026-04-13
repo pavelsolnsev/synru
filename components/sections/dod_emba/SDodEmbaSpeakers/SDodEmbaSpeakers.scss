@@ -1,0 +1,134 @@
+.s-dodemba-speakers {
+
+  &__body {
+    margin-top: scale(50);
+
+    @include tablet(max) {
+      margin-top: scale(16);
+    }
+  }
+
+  &__speaker {
+    display: flex;
+    justify-content: space-between;
+    width: calc(50% - scale(10));
+    height: scale(320);
+    gap: scale(79);
+    background-color: var(--a-color_white);
+    padding: scale(24);
+    border-radius: scale(16);
+
+    @include tablet(max) {
+      display: flex;
+      flex-direction: column-reverse;
+      padding: scale(12);
+      gap: 0;
+      justify-content: space-between;
+    }
+
+    @include mobile(max) {
+      width: scale(280);
+      height: scale(302);
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+
+    @include tablet(max) {
+      height: fit-content;
+    }
+  }
+
+  &__mobile-wrapper {
+    flex-shrink: 0;
+
+    @include tablet(max) {
+      display: flex;
+      gap: 14px;
+    }
+
+    @include mobile(max) {
+      gap: scale(11);
+    }
+  }
+
+  &__name {
+    font-size: scale(38);
+    font-weight: 600;
+    line-height: 1em;
+
+    @include tablet(max) {
+      font-size: scale(19);
+    }
+  }
+
+  &__theme {
+    font-size: scale(19);
+    line-height: 120%;
+    font-weight: 600;
+    max-width: scale(312);
+    margin-top: scale(12);
+
+    &:deep(span) {
+      &:first-child {
+        color: var(--a-color_red);
+      }
+    }
+
+    @include tablet(max) {
+      font-size: scale(14);
+      margin-top: scale(8);
+
+      &:deep(br) {
+        display: none;
+      }
+    }
+  }
+
+  &__description {
+    font-size: scale(16);
+    line-height: 120%;
+    font-weight: 600;
+    color: var(--a-color_grey_50);
+    margin-top: auto;
+
+    &_mobile {
+      display: none;
+
+      @include tablet(max) {
+        display: block;
+      }
+    }
+
+    &_desktop {
+      @include tablet(max) {
+        display: none;
+      }
+    }
+
+    @include tablet(max) {
+      margin-top: 0;
+      font-size: scale(12);
+    }
+  }
+
+  &__img {
+    width: scale(200);
+    height: scale(272);
+
+    &:deep(img) {
+      object-fit: contain;
+      object-position: center;
+      width: 100%;
+      height: 100%;
+    }
+
+    @include tablet(max) {
+      width: scale(126);
+      height: scale(172);
+    }
+  }
+}

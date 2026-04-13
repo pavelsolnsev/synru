@@ -1,0 +1,51 @@
+.s-teachers {
+  @include mobile {
+    :deep() {
+      .l-section__title .red {
+        font-size: scale(36);
+        overflow-wrap: break-word;
+        hyphens: auto;
+      }
+    }
+
+    :deep() {
+      .l-section__title {
+        font-size: scale(30);
+        overflow-wrap: break-word;
+        hyphens: auto;
+      }
+    }
+  }
+
+  @include desktop {
+    :deep() {
+      .swiper-navigation {
+        top: scale(-95);
+      }
+      button {
+        margin: 0;
+      }
+    }
+  }
+
+  :deep() {
+    .swiper {
+      overflow: visible;
+    }
+  }
+  .swiper-pagination {
+    @include desktop(min, $p_xl) {
+      margin-top: scale(40);
+    }
+  }
+
+  &__navigation {
+    @include desktop(min, $p_xl) {
+      margin-bottom: scale(40);
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: scale(24);
+  }
+}

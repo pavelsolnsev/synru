@@ -1,0 +1,11 @@
+.a-card-thmb {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid var(--a-color_grey_40);
+  border-radius: scale(16);
+  svg {
+    width: scale(100);
+    height: scale(100);
+  }
+}

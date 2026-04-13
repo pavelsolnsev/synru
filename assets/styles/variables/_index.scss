@@ -1,0 +1,25 @@
+// Variables
+@import "colors";
+@import "grid";
+@import "padding";
+@import "rounding";
+@import "articles";
+
+:root {
+  @include mobile() {
+    --scale: 100vw / 360;
+  }
+
+  @include tablet(min) {
+    --scale: 100vw / 768;
+  }
+  @include desktop(min) {
+    --scale: 100vw / 1920;
+  }
+  @include extra() {
+    --scale: 1px;
+  }
+
+  --layout-width: 1920px;
+  --transition: 0.2s;
+}

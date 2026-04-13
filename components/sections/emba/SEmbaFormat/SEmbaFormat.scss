@@ -1,0 +1,46 @@
+:deep() {
+  .m-article-card {
+
+    &__wrap {
+      min-height: scale(108);
+      
+      @include desktop {
+        min-height: scale(180);
+        margin-top: scale(-64);
+      }
+    }
+
+    &__img {
+      @include desktop {
+        height: scale(300);
+      }
+    }
+
+    &__title {
+      margin-bottom: scale(16);
+
+      @include desktop {
+        margin-bottom: scale(24);
+      }
+    }
+
+    &__text {
+      color: var(--a-color_grey_80)
+    }
+  }
+}
+
+.s-emba-format {
+  &__content {
+    display: grid;
+    gap: var(--gap_def);
+
+    @include tablet(min) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktop(min) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+}

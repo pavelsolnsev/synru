@@ -1,0 +1,137 @@
+.m-form {
+  display: grid;
+  position: relative;
+  background-color: var(--a-color_dark);
+  border-radius: scale(48);
+  z-index: 1;
+  overflow: hidden;
+  @include desktop() {
+    grid-template-columns: 1fr scale(715);
+    padding: scale(104) scale(80);
+  }
+
+  @include tablet() {
+    padding: scale(24) scale(16);
+    border-radius: scale(16);
+  }
+
+  @include mobile() {
+    padding: scale(24) scale(10);
+    border-radius: scale(16);
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+    gap: scale(32);
+
+    @include tablet(max) {
+      gap: scale(24);
+      margin-bottom: scale(32);
+    }
+  }
+
+  &__title {
+    line-height: 100%;
+    font-weight: 600;
+    color: var(--a-color_white);
+    @include desktop() {
+      font-size: scale(64);
+    }
+    @include tablet(max) {
+      font-size: scale(32);
+    }
+  }
+
+  &__subtitle {
+    font-weight: scale(600);
+    line-height: 130%;
+    color: #7d7d7d;
+    @include desktop() {
+      font-size: scale(24);
+    }
+    @include tablet(max) {
+      font-size: scale(16);
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    color: var(--a-color_white);
+
+    :deep() {
+      .m-form__content__phone {
+        background-color: var(--a-color_white);
+        border-radius: calc(var(--scale) * 12);
+      }
+    }
+    &__name {
+      margin-bottom: scale(16);
+    }
+    &__phone {
+      margin-bottom: scale(24);
+      @include tablet() {
+        margin-bottom: scale(16);
+      }
+    }
+    &__privacy {
+      margin-bottom: scale(48);
+      font-weight: 500;
+      font-size: scale(12);
+      @include desktop() {
+        max-height: scale(32);
+      }
+      @include tablet(max) {
+        margin-bottom: scale(32);
+      }
+
+      :deep() {
+        .a-chekbox__label {
+          line-height: scale(18);
+          @include tablet(max) {
+            color: #7d7d7d;
+          }
+        }
+
+        a {
+          text-decoration: underline;
+        }
+      }
+    }
+
+    .a-btn-main {
+      @include tablet() {
+        min-height: scale(51);
+      }
+      @include mobile() {
+        width: 100%;
+      }
+      @include desktop() {
+        width: scale(385);
+        height: scale(60);
+        font-size: scale(24);
+      }
+    }
+  }
+
+  &__logo {
+    display: none;
+    @include desktop() {
+      display: block;
+      position: absolute;
+      bottom: scale(24);
+      right: scale(40);
+      z-index: -1;
+    }
+  }
+
+  :deep() {
+    .a-input {
+      @include mobile() {
+        height: scale(60);
+      }
+    }
+  }
+}

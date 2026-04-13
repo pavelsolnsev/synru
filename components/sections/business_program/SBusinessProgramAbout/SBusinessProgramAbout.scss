@@ -1,0 +1,30 @@
+:deep() {
+  .swiper {
+    overflow: visible;
+  }
+  .m-card-text {
+    min-width: 0;
+    &__title + .m-card-text__text {
+      margin-top: scale(16);
+      @include desktop {
+        margin-top: scale(16);
+      }
+    }
+    &__bottom {
+      padding-top: scale(16);
+      flex-wrap: nowrap;
+      @include mobile() {
+        flex-wrap: wrap;
+      }
+    }
+    &__tags {
+      display: flex;
+      flex-direction: column;
+      @include tablet(min) {
+        flex-direction: row;
+        flex-wrap: wrap;
+      }
+    }
+  }
+
+}

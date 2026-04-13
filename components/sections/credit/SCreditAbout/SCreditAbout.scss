@@ -1,0 +1,123 @@
+.s-about-credit {
+  margin-top: scale(-20);
+
+  @include desktop(min) {
+    margin-top: scale(-40);
+  }
+
+  :deep() {
+    .l-section__inner {
+      display: flex;
+      flex-direction: column;
+      gap: scale(8);
+
+      @include desktop(min) {
+        display: grid;
+        gap: scale(20);
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .m-card-text {
+      &__bottom {
+        padding-top: scale(32);
+        flex-grow: 1;
+
+        @include desktop(min) {
+          margin-top: 0;
+          padding-top: scale(18);
+          align-items: flex-start;
+        }
+      }
+
+      &__block {
+        display: grid;
+        gap: scale(16);
+
+        @include desktop() {
+          height: 100%;
+        }
+
+        ul {
+          display: grid;
+          gap: scale(8);
+
+          li {
+            &::before {
+              top: scale(4);
+            }
+          }
+        }
+
+        .a-btn {
+          width: 100%;
+
+          @include tablet(min) {
+            max-width: scale(352);
+          }
+
+          @include desktop(min) {
+            max-width: scale(252);
+            margin-top: auto;
+          }
+        }
+      }
+    }
+
+    .swiper {
+      height: 100%;
+      overflow: visible;
+    }
+
+    .swiper-wrapper {
+      @include desktop(min) {
+        display: grid;
+        gap: scale(20);
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .swiper-slide {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      gap: scale(16);
+      width: scale(280);
+      height: auto;
+      min-height: scale(156);
+      padding: var(--padding_def);
+      background-color: var(--a-color_grey_40);
+      border-radius: scale(16);
+
+      @include desktop(min) {
+        width: 100%;
+        min-height: scale(230);
+      }
+
+      .ico {
+        position: absolute;
+        right: scale(12);
+        bottom: scale(12);
+        width: scale(32);
+        height: scale(32);
+        color: var(--a-color_white);
+        background-color: var(--a-color_red);
+        border-radius: 50%;
+
+        @include desktop(min) {
+          width: scale(36);
+          height: scale(36);
+          right: scale(24);
+          bottom: scale(24);
+        }
+      }
+    }
+  }
+
+  &__slider-title {
+    margin-bottom: auto;
+  }
+  &__slider-text {
+    padding-right: scale(44);
+  }
+}

@@ -1,0 +1,344 @@
+.s-intro {
+  padding-top: 0;
+  padding-bottom: 0;
+  margin-bottom: scale(28);
+  @include tablet() {
+    margin-bottom: scale(10);
+  }
+  @include desktop() {
+    margin-bottom: scale(40);
+  }
+  :deep() {
+    .l-section__inner {
+      display: grid;
+      gap: scale(8);
+      position: relative;
+
+      @include desktop() {
+        padding: scale(24);
+        background-color: var(--a-color_grey_40);
+        border-radius: scale(16);
+        gap: scale(40);
+      }
+    }
+
+    .s-intro__slider .swiper {
+      overflow: visible;
+    }
+  }
+
+  :deep() {
+    .m-breadcrumbs {
+      position: static;
+      margin: 0 0 scale(32);
+      padding: 0;
+      &__link {
+        a {
+          color: var(--a-color_grey_80);
+        }
+        &--last * {
+          color: var(--a-color_dark);
+        }
+      }
+    }
+  }
+
+  &__wrap {
+    position: relative;
+    display: grid;
+    gap: scale(8);
+
+    @include mobile {
+      margin: 0 scale(-12);
+    }
+
+    @include tablet() {
+      grid-template-columns: 1fr auto;
+      background-color: var(--a-color_grey_40);
+      padding: scale(12);
+      border-radius: scale(16);
+    }
+
+    @include desktop(min) {
+      grid-template-columns: 1fr auto;
+      column-gap: scale(20);
+    }
+  }
+
+  &__desc {
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding: scale(12);
+    margin-top: scale(190);
+    margin-top: scale(210);
+    background-color: rgba(28, 28, 28, 0.8);
+    border-radius: scale(16);
+    -webkit-backdrop-filter: blur(22px);
+    backdrop-filter: blur(22px);
+    color: var(--a-color_white);
+
+    @include tablet(min) {
+      position: static;
+      min-width: 0;
+      margin: 0;
+      background-color: var(--a-color_grey_40);
+      color: var(--a-color_dark);
+      padding: 0;
+    }
+
+    @include desktop(min) {
+      padding: 0;
+    }
+  }
+
+  &__promo {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    border-radius: scale(16);
+    @include desktop() {
+      height: scale(432);
+      width: scale(442);
+    }
+    @include tablet(min) {
+      position: static;
+    }
+    @include desktop(min) {
+      background-color: var(--a-color_grey_20);
+      display: flex;
+    }
+
+    .faculty-icon {
+      display: none;
+      width: auto;
+      height: scale(220);
+      margin: auto;
+
+      @include desktop(min) {
+        flex: 1;
+        display: block;
+      }
+    }
+  }
+
+  &__tags {
+    display: flex;
+    align-items: center;
+    gap: scale(16);
+    margin: 0 0 scale(12);
+    @include tablet(min) {
+      margin-bottom: scale(16);
+    }
+    @include desktop(min) {
+      margin-bottom: scale(24);
+    }
+  }
+
+  &__tag {
+    display: flex;
+    align-items: center;
+    gap: scale(4);
+
+    .ico {
+      width: scale(16);
+      height: scale(16);
+    }
+
+    &:last-child {
+      .ico {
+        width: scale(18);
+        height: scale(18);
+      }
+    }
+  }
+
+  &__title {
+    margin: 0 0 scale(8);
+    text-align: center;
+    @include mobile() {
+      margin-bottom: scale(24);
+    }
+    @include desktop() {
+      margin-bottom: scale(40);
+      text-align: left;
+    }
+    @include tablet() {
+      text-align: left;
+      margin-bottom: scale(64);
+    }
+  }
+
+  &__form {
+    &-text {
+      margin-bottom: scale(12);
+      @include mobile() {
+        text-align: center;
+      }
+      @include desktop() {
+        margin-top: auto;
+      }
+    }
+  }
+
+  :deep() {
+    .m-quiz-form {
+      @include desktop() {
+        h3 {
+          font-size: scale(50);
+        }
+      }
+      .a-chekbox__label {
+        color: var(--a-color_grey_80);
+        &::before {
+          background-color: var(--a-color_grey_60);
+        }
+        @include mobile() {
+          color: var(--a-color_grey_20);
+        }
+      }
+    }
+  }
+
+  &__text {
+    margin-bottom: scale(24);
+    text-align: center;
+
+    @include tablet(min) {
+      text-align: left;
+      margin: 0 0 scale(12);
+    }
+
+    @include desktop(min) {
+      margin-bottom: scale(24);
+    }
+  }
+
+  .a-btn {
+    margin-top: auto;
+
+    @include tablet(min) {
+      margin-top: 0;
+    }
+
+    @include desktop(min) {
+      max-width: scale(313);
+    }
+  }
+
+  &__image {
+    display: block;
+    width: 100%;
+    height: 50%;
+    border-radius: scale(16);
+    overflow: hidden;
+
+    @include tablet(min) {
+      height: scale(250);
+      width: scale(250);
+    }
+    @include desktop(min) {
+      height: scale(432);
+      width: scale(442);
+    }
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__slider {
+    overflow: hidden;
+
+    @include tablet {
+      padding: 0 scale(16);
+      margin: 0 scale(-16);
+    }
+    :deep() {
+      .swiper-wrapper {
+        @include mobile {
+          display: grid;
+          gap: scale(8);
+          pointer-events: none;
+        }
+
+        @include desktop(min) {
+          gap: scale(10);
+        }
+      }
+      .swiper-slide {
+        height: initial;
+      }
+    }
+  }
+
+  &__info-item {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: scale(12);
+    min-height: scale(40);
+    padding: scale(12);
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(12);
+
+    @include mobile {
+      &:not(:last-child) {
+        margin: 0;
+      }
+    }
+    @include tablet {
+      width: 100%;
+      max-width: scale(178);
+      &.--forms {
+        flex: 1;
+        max-width: 100%;
+        min-width: scale(309);
+      }
+    }
+    @include tablet(min) {
+      flex-direction: column;
+      align-items: flex-start;
+      justify-content: flex-start;
+    }
+
+    @include desktop(min) {
+      flex: 1;
+      padding: scale(16) scale(18);
+      background-color: rgba(245, 245, 246, 0.92);
+      border-radius: scale(16);
+
+      &:not(:last-child) {
+        margin: 0;
+      }
+    }
+  }
+
+  &__info-item-title {
+    color: var(--a-color_grey_80);
+  }
+
+  &__info-item-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: scale(4);
+    height: min-content;
+    margin-top: auto;
+
+    .a-tag {
+      border-color: var(--a-color_grey_60);
+    }
+  }
+
+  &__info-item-text {
+    @include tablet(min) {
+      margin-top: auto;
+    }
+  }
+}

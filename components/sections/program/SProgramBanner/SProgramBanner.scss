@@ -1,0 +1,39 @@
+.s_banner__years {
+  position: absolute;
+  left: scale(12);
+  bottom: scale(12);
+  display: flex;
+  align-items: center;
+  gap: scale(16);
+  min-width: scale(260);
+  padding: scale(8);
+  padding-left: scale(24);
+  background: rgba(255, 255, 255, 0.01);
+  border-radius: scale(40);
+  border: 1px solid var(--a-color_grey_80);
+  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(22px);
+
+  @include desktop(min) {
+    left: scale(32);
+    bottom: scale(32);
+  }
+
+  .ico {
+    width: scale(24);
+    height: scale(24);
+    color: var(--a-color_grey_80);
+
+    @include desktop(min) {
+      width: scale(32);
+      height: scale(32);
+    }
+  }
+
+  span:last-child {
+    padding: scale(10) scale(20);
+    color: var(--a-color_dark);
+    background-color: var(--a-color_white);
+    border-radius: scale(40);
+  }
+}

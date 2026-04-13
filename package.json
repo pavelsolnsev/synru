@@ -1,0 +1,63 @@
+{
+  "name": "edu-portfolio-frontend",
+  "private": true,
+  "description": "Nuxt 3 демо-фронт для портфолио (без привязки к прод-доменам)",
+  "scripts": {
+    "build": "nuxt build",
+    "dev": "nuxt dev --port 3333",
+    "dev:host": "nuxt dev --port 3333 --host",
+    "start": "node .output/server/index.mjs",
+    "generate": "nuxt generate",
+    "preview": "nuxt preview",
+    "postinstall": "nuxt prepare",
+    "lint": "eslint --ext .ts,.js,.vue .",
+    "lint:fix": "eslint . --fix",
+    "test": "vitest"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@nuxt/eslint": "^0.7.3",
+    "@nuxt/test-utils": "^3.15.1",
+    "@stylistic/eslint-plugin": "^2.12.1",
+    "@vite-pwa/nuxt": "1.1.0",
+    "@vitejs/plugin-vue": "^5.2.1",
+    "@vue/test-utils": "^2.4.6",
+    "@vueuse/core": "^12.0.0",
+    "@vueuse/nuxt": "^12.0.0",
+    "babel-loader": "^9.2.1",
+    "happy-dom": "^15.11.7",
+    "jest-mock": "^29.7.0",
+    "nuxt": "^3.16.1",
+    "nuxt-vitalizer": "^0.10.0",
+    "playwright-core": "^1.49.1",
+    "sass": "1.72.0",
+    "sass-loader": "^14.1.1",
+    "swiper": "^11.1.15",
+    "typescript": "5.7.2",
+    "unplugin-auto-import": "^0.19.0",
+    "vite-svg-loader": "^5.1.0",
+    "vitest": "^2.1.8",
+    "vue-loader": "^17.4.2",
+    "vue-tsc": "^2.1.10"
+  },
+  "dependencies": {
+    "@fancyapps/ui": "^5.0.36",
+    "2gis-maps": "^3.7.4",
+    "isomorphic-dompurify": "^2.26.0",
+    "nuxt-swiper": "^1.2.2",
+    "smooth-scroll": "^16.1.3",
+    "vue-dompurify-html": "^5.3.0",
+    "@maskito/core": "^3.9.1",
+    "@maskito/kit": "^3.9.1",
+    "@maskito/phone": "^3.9.1",
+    "libphonenumber-js": "^1.12.9",
+    "zod": "^4.0.15"
+  },
+  "resolutions": {
+    "@asamuzakjp/css-color": "^4.1.0"
+  },
+  "overrides": {
+    "@asamuzakjp/css-color": "^4.1.0"
+   },
+  "packageManager": "yarn@1.22.22+sha512.a6b2f7906b721bba3d67d4aff083df04dad64c399707841b7acf00f6b133b7ac24255f2652fa22ae3534329dc6180534e98d17432037ff6fd140556e2bb3137e"
+}

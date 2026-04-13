@@ -1,0 +1,138 @@
+  .s-course-info {
+    &__prices {
+      display: grid;
+      align-items: end;
+      gap: var(--gap_def);
+
+      @include tablet(min) {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      @include desktop(min) {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+
+      &-item {
+        overflow: hidden;
+        position: relative;
+        padding: var(--padding_def);
+        background-color: var(--a-color_white);
+        border-radius: scale(16);
+        height: min-content;
+
+        @include tablet() {
+          height: 100%;
+        }
+
+        img {
+          position: absolute;
+          top: var(--padding_def);
+          right: var(--padding_def);
+          height: scale(26);
+          width: auto;
+
+          @include desktop(min) {
+            position: static;
+            height: scale(50);
+            margin-bottom: auto;
+            object-fit: contain;
+            object-position: left;
+          }
+        }
+      }
+
+      &-item-title {
+        margin-top: scale(6);
+        margin-bottom: scale(24); 
+      }
+
+      &-tag {
+        width: max-content;
+        padding: scale(2) scale(8);
+        color: var(--a-color_white);
+        background-color: var(--a-color_dark);
+        border-radius: scale(16);
+
+        @include desktop(min) {
+          padding: scale(4) scale(10);
+        }
+      }
+
+      &-item-flag {
+        top: scale(30);
+        right: scale(-90);
+        position: absolute;
+        rotate: 45deg;
+        width: scale(300);
+        padding: scale(8);
+        text-align: center;
+        color: var(--a-color_white);
+        background-color: var(--a-color_red);
+      }
+
+      &-info {
+        display: flex;
+        flex-direction: column;
+        gap: scale(24);
+        padding: scale(8);
+        background-color: var(--a-color_grey_20);
+        border-radius: scale(16);
+
+        @include desktop(min) {
+          position: relative;
+          overflow: hidden;
+          padding: scale(12);
+          min-height: calc(var(--height) + scale(180));
+        }
+      }
+
+      &-level {
+        margin-right: scale(6);
+        width: max-content;
+        padding: scale(2) scale(8);
+        background-color: var(--a-color_white);
+        border-radius: scale(16);
+
+        @include desktop(min) {
+          padding: scale(4) scale(10);
+          margin-right: scale(10);
+        }
+      }
+
+      &-exp {
+        color: var(--a-color_grey_80);
+      }
+    }
+  &__jobs {
+    display: grid;
+    gap: scale(8);
+
+    li {
+      display: flex;
+      gap: scale(12);
+      position: relative;
+
+      @include tablet(max) {
+        gap: scale(6);
+      }
+
+      &:before {
+        display: block;
+        content: "";
+        min-width: scale(8);
+        width: scale(8);
+        height: scale(8);
+        margin-top: scale(8);
+        background-color: var(--a-color_red);
+        border-radius: scale(2);
+
+        @include tablet(max) {
+          min-width: scale(6);
+          width: scale(6);
+          height: scale(6);
+          margin-top: scale(6);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,62 @@
+.m-app-links {
+  position: relative;
+
+  &__title {
+    margin: 0 0 rem(8);
+
+    @include tablet(min, $p_md) {
+      margin: 0 0 rem(14);
+    }
+    @include tablet(min, $p_lg) {
+      margin: 0 rem(8) 0 0;
+    }
+    br {
+      display: none;
+      @include tablet(min, $p_lg) {
+        display: block;
+      }
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    gap: scale(12);
+    grid-template-columns: 1fr 1fr;
+
+    @include desktop {
+      gap: scale(20);
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: scale(40);
+    border-radius: scale(8);
+    background-color: var(--a-color_dark);
+    outline: none;
+    transition: var(--transition);
+
+    @include desktop {
+      border-radius: scale(12);
+      height: scale(50);
+    }
+
+    &:hover {
+      background-color: var(--a-color_dark);
+      opacity: 0.8;
+    }
+
+    img,
+    svg {
+      width: auto;
+      height: scale(21);
+      vertical-align: top;
+
+      @include desktop {
+        height: scale(27);
+      }
+    }
+  }
+}

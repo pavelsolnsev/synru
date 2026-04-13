@@ -1,0 +1,120 @@
+.s-reviews-filter {
+  :deep() {
+    .m-review-card {
+      width: 100%;
+      max-width: 100%;
+      border-radius: scale(16);
+
+      @include desktop(min) {
+        grid-column: span 2;
+      }
+    }
+
+    .a-btn.s-reviews-filter__show-btn {
+      display: flex;
+      margin: scale(40) auto 0;
+    }
+
+    .m-video-card {
+      overflow: hidden;
+      position: relative;
+      min-height: scale(420);
+
+      @include desktop(min) {
+        min-height: scale(480);
+      }
+
+      &__desc {
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1;
+        padding-top: scale(100);
+        background: linear-gradient(
+          180deg,
+          rgba(28, 28, 28, 0) 11.88%,
+          rgba(28, 28, 28, 0.65) 52.17%,
+          rgba(28, 28, 28, 0.91) 77.84%,
+          #1c1c1c 100%
+        );
+      }
+
+      &__title {
+        color: var(--a-color_white);
+      }
+    }
+
+    .a-input.s-reviews-filter__select {
+      @include tablet(min) {
+        max-width: scale(364);
+      }
+
+      @include desktop(min) {
+        margin-left: auto;
+        max-width: scale(400);
+      }
+    }
+  }
+
+  &__filters {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--gap_def);
+    margin-bottom: scale(24);
+
+    @include desktop(min) {
+      flex-direction: row;
+      margin-bottom: scale(40);
+    }
+
+    &__level {
+      display: flex;
+      width: 100%;
+      gap: scale(8);
+
+      @include desktop() {
+        gap: scale(12);
+      }
+    }
+
+    &__level__tabs {
+      display: flex;
+      overflow: auto;
+      gap: scale(8);
+
+      @include desktop() {
+        gap: scale(12);
+      }
+
+      &::-webkit-scrollbar {
+        display: none;
+        opacity: 0;
+        height: 0;
+        width: 0;
+      }
+    }
+  }
+
+  &__level-item {
+    width: auto;
+  }
+
+  &__content {
+    display: grid;
+    gap: var(--gap_def);
+    grid-auto-flow: dense;
+    grid-template-columns: 1fr 1fr;
+
+    @include desktop(min) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+  }
+
+  &__review {
+    &.--hidden {
+      display: none;
+    }
+  }
+}

@@ -1,0 +1,137 @@
+.s-reserve-about-program {
+  background-color: var(--a-color_grey_20);
+
+  &__slider {
+    margin-bottom: scale(28);
+
+    @include desktop(min) {
+      margin-bottom: scale(48);
+    }
+  }
+
+  &__slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: scale(220);
+    height: auto;
+    min-height: scale(130);
+    padding: var(--padding_def);
+    background-color: var(--a-color_white);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 352 200"><g clip-path="url(%23a)"><path stroke="%23ECEDF0" stroke-width="5" d="M161.16 200c-1.76-24.63 10.52-73.88 73.63-73.88 63.1 0 87.33-61.24 91.55-91.86C338.06-33.14 374.34-60 443-60"/><path stroke="url(%23b)" stroke-width="5" d="M161.16 200c-1.76-24.63 10.52-73.88 73.63-73.88 63.1 0 87.33-61.24 91.55-91.86C338.06-33.14 374.34-60 443-60"/></g><defs><linearGradient id="b" x1="302" x2="302" y1="37.5" y2="200" gradientUnits="userSpaceOnUse"><stop stop-color="%23fff" stop-opacity="0"/><stop offset="1" stop-color="%23fff"/></linearGradient><clipPath id="a"><rect width="352" height="200" fill="%23fff" rx="16"/></clipPath></defs></svg>');
+    background-size: cover;
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      width: scale(350);
+      min-height: scale(200);
+      padding: scale(16);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    .a-tag {
+      position: absolute;
+      top: scale(12);
+      right: scale(12);
+
+      @include desktop(min) {
+        top: scale(16);
+        right: scale(16);
+      }
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: var(--gap_def);
+
+    @include mobile(max) {
+      background-color: var(--a-color_red);
+      border-radius: scale(16);
+      overflow: hidden;
+    }
+
+    @include tablet(min) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding_def);
+    color: var(--a-color_white);
+    background-color: var(--a-color_red);
+    background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 510 500"><g fill="%23ED131C" filter="url(%23a)"><path d="M306 286c5 4 7 10 7 16v32c0 19-24 29-38 15l-82-82c-9-8-9-22 0-31l82-82c14-14 38-4 38 16v32c0 6-2 11-6 15l-19 19c-9 9-9 23 0 31l18 19Z"/><path fill-rule="evenodd" d="M60 479c-12 0-22-10-22-22V46c0-12 10-22 22-22h411c12 0 22 10 22 22v411c0 12-10 22-22 22H60Z" clip-rule="evenodd"/></g><g filter="url(%23b)"><path fill="%23ED131C" d="M339 308v125c0 2-3 3-4 1L154 253v-3L335 69c2-2 4-1 4 1v126l-56 56 56 56Z"/></g><defs><filter id="a" width="509.6" height="509.6" x="0" y="-3" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="-11"/><feGaussianBlur stdDeviation="13.6"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix values="0 0 0 0 0.531836 0 0 0 0 0.0249038 0 0 0 0 0.0447835 0 0 0 0.2 0"/><feBlend in2="BackgroundImageFix" result="effect1_dropShadow_2136_7078"/><feBlend in="SourceGraphic" in2="effect1_dropShadow_2136_7078" result="shape"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="7"/><feGaussianBlur stdDeviation="5.7"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix values="0 0 0 0 0.8375 0 0 0 0 0.0628125 0 0 0 0 0.094795 0 0 0 1 0"/><feBlend in2="shape" result="effect2_innerShadow_2136_7078"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="-7"/><feGaussianBlur stdDeviation="6.5"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 0.3125 0 0 0 0 0.340883 0 0 0 1 0"/><feBlend in2="effect2_innerShadow_2136_7078" result="effect3_innerShadow_2136_7078"/></filter><filter id="b" width="240.7" height="421.3" x="115" y="41" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="-11"/><feGaussianBlur stdDeviation="13.6"/><feComposite in2="hardAlpha" operator="out"/><feColorMatrix values="0 0 0 0 0.531836 0 0 0 0 0.0249038 0 0 0 0 0.0447835 0 0 0 0.2 0"/><feBlend in2="BackgroundImageFix" result="effect1_dropShadow_2136_7078"/><feBlend in="SourceGraphic" in2="effect1_dropShadow_2136_7078" result="shape"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="7"/><feGaussianBlur stdDeviation="5.7"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix values="0 0 0 0 0.8375 0 0 0 0 0.0628125 0 0 0 0 0.094795 0 0 0 1 0"/><feBlend in2="shape" result="effect2_innerShadow_2136_7078"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="-7"/><feGaussianBlur stdDeviation="6.5"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix values="0 0 0 0 1 0 0 0 0 0.3125 0 0 0 0 0.340883 0 0 0 1 0"/><feBlend in2="effect2_innerShadow_2136_7078" result="effect3_innerShadow_2136_7078"/></filter></defs></svg>');
+    background-position: center  right scale(24);
+    background-size: auto calc(100% - scale(24));
+    background-repeat: no-repeat;
+    border-radius: scale(16);
+
+    @include tablet(max) {
+      background-position: center  right scale(12);
+      background-size: auto calc(100% - scale(12));
+    }
+
+    @include desktop(min) {
+      min-height: scale(500);
+    }
+
+    &-info {
+      display: grid;
+      align-items: center;
+      grid-template-columns: scale(48) scale(48) 1fr;
+      gap: scale(12);
+      margin-top: auto;
+
+      @include mobile(max) {
+        display: none;
+      }
+
+      @include tablet(max) {
+        margin-top: scale(6);
+        grid-template-columns: 1fr;
+
+        br {
+          display: none;
+        }
+      }
+
+      .ico {
+        width: scale(48);
+        height: scale(48);
+        color: var(--a-color_red);
+        background-color: var(--a-color_white);
+        border-radius: 50%;
+
+        @include tablet(max) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__card-title {
+    margin: scale(14) 0;
+
+    @include tablet() {
+      margin: scale(6) 0;
+    }
+  }
+
+  &__card-subtitle {
+    max-width: scale(618);
+
+    @include mobile(max) {
+      display: none;
+    }
+  }
+
+  &__video {
+    min-height: scale(216);
+  }
+}

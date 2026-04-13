@@ -1,0 +1,112 @@
+.s-dz-advantages {
+
+  &__grid {
+    gap: scale(8);
+    display: grid;
+    @include desktop {
+      gap: scale(20);
+      grid-template-columns: auto 1fr;
+    }
+  }
+
+  &__info {
+    overflow: hidden;
+    position: relative;
+    min-width: 0;
+    width: 100%;
+    height: scale(220);
+    padding: scale(12);
+    border-radius: scale(16);
+    color: var(--a-color_white);
+    @include desktop {
+      width: scale(600);
+      height: scale(340);
+      padding: scale(24);
+    }
+
+    picture {
+      position: absolute;
+      z-index: -1;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__slider {
+    min-width: 0;
+    padding: 0 var(--layout-h-padding);
+    margin: 0 calc(-1 * var(--layout-h-padding));
+    @include desktop {
+      margin: 0;
+      padding: 0;
+    }
+    .swiper { overflow: visible }
+    [wrapperclass] {
+      @include desktop {
+        gap: scale(20);
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        height: 100%;
+      }
+    }
+  }
+
+  &__slide {
+    gap: scale(16);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 0;
+    width: scale(280);
+    min-height: scale(128);
+    padding: scale(12);
+    margin: 0;
+    border-radius: scale(16);
+    background-color: var(--a-color_grey_40);
+    @include desktop {
+      gap: scale(24);
+      flex-direction: row;
+      align-items: center;
+      justify-content: flex-start;
+      width: 100%;
+      padding: scale(24);
+    }
+  }
+
+  &__icon {
+    position: relative;
+    flex: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: scale(32);
+    height: scale(32);
+    @include desktop {
+      width: scale(40);
+      height: scale(40);
+    }
+    &:before {
+      content: '';
+      position: absolute;
+      width: 90%;
+      height: 90%;
+      border-radius: 50%;
+      box-shadow: 0px 0px 21.1px 0px #ED131C80;
+      @include desktop {
+        box-shadow: 0px 0px 44px 0px #ED131C80;
+      }
+    }
+    svg {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+    }
+  }
+}

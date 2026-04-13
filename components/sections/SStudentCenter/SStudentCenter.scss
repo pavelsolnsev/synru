@@ -1,0 +1,142 @@
+.s-student-center {
+  background-color: var(--a-color_grey_20);
+  &__wrap {
+    display: grid;
+    gap: scale(8);
+    margin-bottom: scale(24);
+
+    @include tablet(min) {
+      &:not(.--contancts) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    @include desktop(min) {
+      gap: scale(20);
+      margin-bottom: scale(48);
+    }
+
+    &.--contancts {
+      margin-top: scale(16);
+
+      @include desktop(min) {
+        margin-top: scale(30);
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+
+  &__slider {
+    margin-top: scale(16);
+    margin-bottom: scale(24);
+
+    @include desktop(min) {
+      margin-top: scale(30);
+      margin-bottom: scale(48);
+    }
+  }
+
+  &__cart {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: scale(120);
+    padding: var(--padding_def);
+    background-color: var(--a-color_grey_40);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      height: scale(200);
+    }
+
+    span {
+      color: var(--a-color_red)
+    }
+
+    svg {
+      position: absolute;
+      bottom: scale(12);
+      right: scale(12);
+      width: scale(36);
+      height: scale(36);
+      color: var(--a-color_white);
+      background-color: var(--a-color_red);
+      border-radius: 50%;
+
+      @include desktop(min) {
+        width: scale(48);
+        height: scale(48);
+      }
+
+    }
+  }
+
+  &__label {
+    color: var(--a-color_grey_80);
+    margin-bottom: scale(8);
+  }
+
+  &__columns {
+    display: grid;
+    gap: scale(8);
+
+    @include tablet(min) {
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    }
+
+    @include desktop(min) {
+      grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+      gap: scale(20);
+    }
+    &-bottom{
+      display: flex;
+      flex-direction: column;
+    }
+
+    .a-btn {
+      display: flex;
+    }
+  }
+
+  .swiper-slide {
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: scale(12);
+    max-width: scale(280);
+    height: scale(166);
+    padding: var(--padding_def);
+    background-color: var(--a-color_grey_40);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      max-width: scale(352);
+      height: scale(310);
+    }
+
+    &__text {
+      @include tablet(max) {
+        max-width: scale(190);
+      }
+    }
+
+    img {
+      z-index: -1;
+      position: absolute;
+      bottom: scale(-16);
+      right: scale(-10);
+      width: scale(120);
+      height: scale(120);
+
+      @include desktop(min) {
+        bottom: scale(8);
+        right: scale(8);
+        width: scale(160);
+        height: scale(160);
+      }
+    }
+  }
+}

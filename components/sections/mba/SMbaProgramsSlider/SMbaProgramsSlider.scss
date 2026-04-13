@@ -1,0 +1,70 @@
+.s-mba-programs-slider {
+
+  &__slider {
+    overflow: visible;
+  }
+
+  &__slide {
+    width: scale(445);
+    height: scale(327);
+    border-radius: scale(16);
+    box-shadow: 0 3px 7.1px 0 rgba(0, 0, 0, 0.06);
+    overflow: hidden;
+
+    @include tablet(max) {
+      width: scale(280);
+      height: scale(147);
+    }
+
+  }
+
+  &__link {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    padding: scale(24);
+    background-color: var(--a-color_white);
+    transition: background-color 0.3s;
+
+    @include tablet(max) {
+      padding: scale(12);
+    }
+
+    &:hover {
+      background-color: var(--a-color_red);
+
+      .s-mba-programs-slider__types,
+      .s-mba-programs-slider__title {
+        color: var(--a-color_white);
+      }
+
+      .s-mba-programs-slider__btn {
+        background-color: var(--a-color_dark);
+        color: var(--a-color_white);
+      }
+    }
+  }
+
+  &__types {
+    display: flex;
+    gap: scale(8);
+    flex-wrap: wrap;
+    color: var(--a-color_grey_80);
+    transition: color 0.3s;
+  }
+
+  &__title {
+    margin-top: scale(13);
+    transition: color 0.3s;
+  }
+
+  &__btn {
+    margin-top: auto;
+    width: fit-content;
+
+    &:hover {
+      background-color: var(--a-color_grey_dark) !important;
+    }
+  }
+}

@@ -1,0 +1,102 @@
+.s-interesting {
+  overflow: hidden;
+  padding: 0 var(--layout-h-padding);
+  margin: 0 calc(-1 * var(--layout-h-padding));
+  @include desktop() {
+    padding: 0;
+    margin: 0;
+  }
+
+  &__heading {
+    gap: scale(16);
+    display: flex;
+    align-items: center;
+    margin: 0 0 scale(16);
+
+    @include desktop() {
+      gap: scale(24);
+      margin: 0 0 scale(24);
+    }
+
+    svg {
+      width: scale(32);
+      height: scale(32);
+      padding: scale(4);
+      border-radius: 50%;
+      background-color: var(--a-color_white);
+      color: var(--a-color_red);
+    }
+
+    @include desktop() {
+      svg {
+        width: scale(60);
+        height: scale(60);
+        padding: scale(8);
+      }
+    }
+  }
+
+  &__slider {
+    position: relative;
+  }
+
+  :deep() {
+    .swiper {
+      overflow: visible;
+    }
+
+    .swiper-slide {
+      height: auto;
+      width: scale(321);
+
+      @include desktop() {
+        width: scale(445);
+      }
+    }
+
+    .swiper-navigation {
+      top: scale(-80);
+
+      button {
+        margin: 0;
+      }
+    }
+
+    .m-article-card {
+      &__link {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+      }
+
+      &__wrap {
+        min-height: unset;
+        background-color: var(--a-color_white);
+        .--bg-white {
+          background-color: var(--a-color_grey_10);
+        }
+        @include desktop() {
+          padding: scale(24);
+        }
+      }
+
+      &__img {
+        height: scale(172);
+        @include desktop() {
+          height: scale(220);
+        }
+      }
+
+      .a-tag {
+        margin: 0 0 scale(12);
+      }
+
+      &__title {
+        margin: 0 0 scale(16);
+        @include desktop() {
+          margin: 0 0 scale(24);
+        }
+      }
+    }
+  }
+}

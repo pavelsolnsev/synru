@@ -1,0 +1,27 @@
+.m-quiz-nav-links {
+  :deep() {
+    .swiper {
+      overflow: visible;
+    }
+
+    .swiper-slide {
+      cursor: pointer;
+      white-space: nowrap;
+      padding: scale(16) scale(32);
+      font-weight: 600;
+      font-size: scale(24);
+      line-height: 120%;
+      border: scale(1) solid var(--a-color_grey_60);
+      border-radius: scale(12);
+      height: scale(61);
+      width: fit-content;
+      color: var(--a-color_dark);
+      @include tablet(max) {
+        font-size: scale(18);
+        padding: scale(16) scale(16);
+        height: scale(54);
+        background-color: var(--a-color_grey_20);
+      }
+    }
+  }
+}

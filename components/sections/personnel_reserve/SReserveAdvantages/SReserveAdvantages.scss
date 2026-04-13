@@ -1,0 +1,76 @@
+.s-reserve-advantages {
+  &__content {
+    display: grid;
+    gap: var(--gap_def);
+    margin-bottom: var(--gap_def);
+
+    @include tablet(max) {
+      position: relative;
+      background-color: var(--a-color_white);
+      border-radius: scale(16);
+      overflow: hidden;
+    }
+    
+    @include desktop(min) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  :deep() {
+    @include tablet(max) {
+      .m-card-text {
+        position: static;
+      }
+      .m-card-text__bottom {
+        position: absolute;
+        bottom: scale(12);
+        right: scale(12);
+      }
+    }
+  }
+
+  &__slide {
+    z-index: 1;
+    position: relative;
+    display: grid;
+    gap: scale(24);
+    height: auto;
+    min-height: scale(120);
+    width: scale(280);
+    padding: var(--padding_def);
+    background-color: var(--a-color_grey_40);
+    border-radius: scale(16);
+    overflow: hidden;
+
+    @include desktop(min) {
+      gap: scale(20);
+      width: scale(352);
+      min-height: scale(338);
+    }
+
+    &-text {
+      @include tablet(max) {
+        max-width: scale(200);
+      }
+    }
+
+    img {
+      width: scale(80);
+      height: scale(80);
+      margin-left: auto;
+      margin-top: auto;
+
+      @include tablet(max) {
+        z-index: -1;
+        position: absolute;
+        right: scale(-12);
+        bottom: scale(14);
+      }
+
+      @include desktop(min) {
+        width: scale(64);
+        height: scale(64);
+      }
+    }
+  }
+}

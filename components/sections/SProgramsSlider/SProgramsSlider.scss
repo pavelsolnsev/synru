@@ -1,0 +1,44 @@
+.s-programs-slider {
+  overflow: hidden;
+
+  :deep() {
+    .l-section__inner {
+      position: relative;
+    }
+
+    .swiper {
+      overflow: visible;
+    }
+
+    .swiper-navigation {
+      @include desktop(min) { 
+        top: scale(24)
+      }
+    }
+
+    .specialty-card__title {
+      @include desktop(min) {
+        font-size: scale(32);
+        line-height: scale(38);
+      }
+    }
+  }
+
+  &__slide {
+    max-width: scale(280); 
+    
+    @include mobile() {
+      height: scale(185);
+    }
+
+    @include desktop(min) {
+      max-width: scale(445);
+    }
+
+    :deep() {
+      .specialty-card {
+        height: 100%;
+      }
+    }
+  }
+}

@@ -1,0 +1,37 @@
+:deep() {
+  .swiper-wrapper {
+    @include mobile {
+      display: grid;
+      gap: scale(12);
+    }
+  }
+}
+
+.s-emba-target {
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: scale(24);
+    height: auto;
+    padding: var(--padding_def);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include tablet(min) {
+      width: scale(268);
+    }
+
+    @include desktop(min) {
+      width: scale(350);
+      gap: scale(32);
+    }
+
+    img {
+      width: 100%;
+      height: scale(184);
+      margin-top: auto;
+      border-radius: scale(12);
+      object-fit: cover;
+    }
+  }
+}

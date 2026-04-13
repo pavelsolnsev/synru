@@ -1,0 +1,89 @@
+.s-for-whom {
+  margin: 0 calc(-1 * var(--layout-h-padding));
+  background-color: var(--a-color_white);
+  @include tablet(min) {
+    margin: 0;
+    padding: calc(var(--scale) * 20) var(--padding_def);
+  }
+  @include desktop() {
+    padding: var(--padding_def);
+    border-radius: calc(var(--scale) * 16);
+  }
+  
+  &__list {
+    gap: scale(10);
+    display: grid;
+    @include tablet(min) {
+      gap: scale(8);
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include desktop() {
+      gap: scale(20);
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    position: relative;
+    overflow: hidden;
+    gap: scale(16);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    min-height: scale(170);
+    padding: scale(12);
+    border-radius: scale(16);
+    background: var(--a-color_grey_10) #{__cdnUrl('synergy-ru/content/mediacenter/ai-prof/for_whom/sm.webp')} no-repeat 100% 100% / cover;
+    @include tablet(min) {
+      background-image: #{__cdnUrl('synergy-ru/content/mediacenter/ai-prof/for_whom/md.webp')};
+      background-size: contain;
+      &:last-child:nth-child(odd) { grid-column: 1 / -1 }
+    }
+    @include desktop() {
+      min-height: scale(240);
+      padding: scale(24);
+      background-image: #{__cdnUrl('synergy-ru/content/mediacenter/ai-prof/for_whom/lg.webp')};
+      &:last-child:nth-child(odd) { grid-column: unset }
+    }
+
+    &-text {
+      max-width: scale(600);
+      padding-right: scale(115);
+      @include desktop() {
+        padding-right: scale(165);
+      }
+    }
+
+    &-img {
+      position: absolute;
+      left: auto;
+      top: auto;
+      right: scale(4);
+      bottom: scale(6);
+      display: block;
+      width: scale(82);
+      height: scale(82);
+      @include desktop() {
+        width: scale(160);
+        height: scale(160);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  .a-btn {
+    display: flex;
+    width: 100%;
+    max-width: scale(390);
+    margin: scale(24) auto 0;
+    @include desktop() {
+      max-width: scale(565);
+      margin: scale(40) auto 0;
+    }
+  }
+}

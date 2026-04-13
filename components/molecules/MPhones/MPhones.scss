@@ -1,0 +1,47 @@
+.m-phones {
+  display: inline-flex;
+
+  a {
+    margin-left: rem(16);
+    font-weight: 600;
+    white-space: nowrap;
+    transition: color 0.2s;
+    &:hover {
+      color: var(--a-color_red);
+    }
+    &:first-of-type {
+      margin-left: 0;
+    }
+
+    .icon-sprite {
+      width: rem(15);
+      height: rem(15);
+    }
+  }
+
+  @include tablet(max, $p_lg) {
+    &_mobile {
+      > a {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: rem(38);
+        height: rem(38);
+        font-size: 0;
+        transition: color 0.2s;
+        &:hover {
+          color: var(--a-color_red);
+        }
+
+        &:not(:first-of-type) {
+          display: none;
+        }
+
+        .icon-sprite {
+          width: rem(20);
+          height: rem(20);
+        }
+      }
+    }
+  }
+}

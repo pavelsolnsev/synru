@@ -1,0 +1,85 @@
+.s-how-proceed-third {
+  position: relative;
+  overflow: hidden;
+
+  @include tablet(max) {
+    padding-top: scale(40);
+    padding-bottom: scale(40);
+  }
+
+  :deep() {
+    .m-switcher__btns {
+      height: scale(32);
+
+      @include desktop() {
+        height: scale(60);
+      }
+    }
+  }
+
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: scale(24);
+    border-radius: scale(16);
+    @include desktop() {
+      flex-direction: row;
+      justify-content: space-between;
+      padding: scale(24);
+      position: relative;
+    }
+  }
+
+  &__img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+
+    img {
+      border-radius: scale(16);
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__text {
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    margin-bottom: scale(24);
+    @include tablet() {
+      margin-bottom: scale(12);
+    }
+  }
+
+  &__description {
+    @include desktop() {
+      margin-top: auto;
+      max-width: scale(580);
+    }
+  }
+
+  &__levels {
+    display: flex;
+    flex-direction: column;
+    gap: scale(8);
+
+    @include desktop() {
+      max-width: scale(886);
+    }
+
+    &__text {
+      padding: var(--padding_def);
+      background-color: var(--a-color_white);
+      border-radius: scale(16);
+
+      @include desktop() {
+        min-height: scale(208);
+      }
+    }
+  }
+}

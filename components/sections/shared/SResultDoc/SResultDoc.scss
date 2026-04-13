@@ -1,0 +1,104 @@
+.s-result-doc {
+  &__wrapper {
+    display: grid;
+    gap: scale(8);
+    @include tablet() {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktop() {
+      grid-template-columns: auto scale(445);
+      gap: scale(20);
+    }
+  }
+
+  &__text {
+    position: relative;
+    padding: var(--padding_def);
+    border-radius: scale(16);
+    display: flex;
+    flex-direction: column;
+    gap: scale(20);
+    overflow: hidden;
+    min-height: scale(208);
+
+    &__bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+      height: 100%;
+      width: 100%;
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__title {
+      @include tablet(max) {
+        font-size: scale(38);
+      }
+    }
+
+    &__description {
+      margin-top: auto;
+      @include desktop() {
+        max-width: scale(1084);
+      }
+    }
+  }
+
+  &__item {
+    position: relative;
+    padding: var(--padding_def);
+    border-radius: scale(16);
+    background-color: var(--a-color_white);
+    min-height: scale(320);
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    @include desktop() {
+      min-height: scale(477);
+    }
+
+    &:hover {
+      background-color: var(--a-color_grey_20);
+      cursor: pointer;
+    }
+
+    svg {
+      position: absolute;
+      top: scale(8);
+      right: scale(9);
+      width: scale(24);
+      height: scale(24);
+      background-color: var(--a-color_black);
+      border-radius: 50%;
+      color: var(--a-color_white);
+
+      @include desktop() {
+        top: scale(20);
+        right: scale(20);
+        width: scale(32);
+        height: scale(32);
+      }
+    }
+
+    &__image {
+      margin-top: auto;
+      margin-bottom: scale(26);
+      width: scale(180);
+      height: scale(208);
+
+      @include desktop() {
+        width: scale(288);
+        height: scale(329);
+        margin-bottom: scale(32);
+      }
+    }
+  }
+}

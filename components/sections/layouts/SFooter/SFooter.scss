@@ -1,0 +1,228 @@
+.s-footer {
+  .a-logo {
+    width: fit-content;
+    height: scale(24);
+
+    @include tablet() {
+      width: fit-content;
+    }
+
+    @include desktop(min) {
+      height: scale(32);
+      width: fit-content;
+    }
+  }
+
+  &__top {
+    overflow: hidden;
+    display: flex;
+    gap: scale(24);
+    flex-direction: column;
+    margin-bottom: scale(24);
+
+    @include tablet(min) {
+      margin-bottom: scale(30);
+    }
+
+    @include desktop(min) {
+      flex-direction: row;
+      justify-content: space-between;
+      margin-bottom: scale(28);
+    }
+  }
+
+  &__levels {
+    overflow: visible;
+    .swiper-slide {
+      width: auto;
+      margin-right: scale(8);
+
+      @include desktop(min) {
+        margin-right: scale(12);
+      }
+    }
+  }
+
+  &__col {
+    @include tablet(min) {
+      &:nth-child(1) {
+        grid-row: 1;
+      }
+      &:nth-child(2) {
+        grid-row: 1/3;
+      }
+      &:nth-child(3) {
+        grid-column: 1;
+        grid-row: 2/4;
+      }
+    }
+    @include desktop(min) {
+      &:nth-child(2) {
+        grid-column: 4;
+        grid-row: 1/3;
+      }
+      &:nth-child(3) {
+        grid-column: 2;
+        grid-row: 1;
+      }
+      &:nth-child(4) {
+        grid-column: 3;
+        grid-row: 1;
+      }
+    }
+  }
+
+  .m-accordion {
+    height: 100%;
+    padding: scale(16) scale(12);
+    background: var(--a-color_grey_20);
+    border-radius: scale(8);
+
+    @include tablet(min) {
+      padding: scale(12);
+    }
+
+    @include desktop(min) {
+      padding: scale(24) scale(24) scale(36);
+      border-radius: scale(16);
+    }
+
+    a {
+      text-decoration: underline;
+      word-wrap: break-word;
+      transition: var(--transition);
+      &:hover {
+        color: var(--a-color_red);
+        text-decoration: none;
+      }
+    }
+
+    &__header {
+      @include tablet(min, $p_md) {
+        margin-bottom: scale(20);
+      }
+      transition: var(--transition);
+    }
+
+    @include mobile(max, 767px) {
+      &.--open .m-accordion__header {
+        margin-bottom: scale(10);
+      }
+      &.--open .m-accordion__wrap {
+        padding-top: scale(8);
+      }
+    }
+
+    &__wrap {
+      display: grid;
+      gap: scale(12);
+      transition: var(--transition);
+    }
+
+    @include tablet(min, $p_md) {
+      &__icon {
+        display: none;
+      }
+
+      &__content {
+        grid-template-rows: 1fr !important;
+      }
+    }
+  }
+
+  &__main {
+    position: relative;
+    display: grid;
+    gap: scale(8);
+
+    @include tablet {
+      grid-template-columns: 1fr 1fr;
+      grid-template-rows: max-content auto 1fr;
+    }
+
+    @include desktop {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: scale(20);
+    }
+  }
+
+  &__contacts {
+    @include tablet(min, $p_md) {
+      grid-column: 1/3;
+    }
+
+    &.m-accordion {
+      @include desktop {
+        grid-column: 1/4;
+        grid-row: 2/4;
+        padding-bottom: scale(82);
+      }
+    }
+  }
+
+  &__links {
+    display: grid;
+    margin-top: scale(4);
+    gap: scale(16);
+
+    @include tablet(min) {
+      gap: scale(24);
+      margin-top: scale(8);
+      grid-column: 2;
+    }
+
+    @include tablet($p_md, $p_xl) {
+      .m-app-links {
+        display: none;
+      }
+    }
+
+    @include desktop(min) {
+      gap: scale(20);
+      grid-column: 4;
+      grid-row: 3/4;
+      margin-top: 0;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: scale(20);
+    opacity: 0.5;
+    margin-top: scale(16);
+
+    @include tablet(min, $p_md) {
+      margin-top: scale(8);
+      gap: scale(8);
+      grid-column: 1;
+      grid-row: 5;
+    }
+
+    @include desktop {
+      bottom: scale(18);
+      left: scale(24);
+      position: absolute;
+      gap: scale(8);
+      width: 100%;
+      grid-column: 1/4;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      padding-right: scale(44);
+    }
+  }
+
+  .disclaimer {
+    order: -1;
+
+    a {
+      text-decoration: underline;
+    }
+
+    @include desktop {
+      order: 0;
+    }
+  }
+}

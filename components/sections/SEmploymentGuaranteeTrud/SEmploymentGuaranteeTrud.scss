@@ -1,0 +1,99 @@
+.s-employment-guarantee-trud {
+  background-color: var(--a-color_grey_20);
+
+  &__content {
+    display: grid;
+    gap: var(--gap_def);
+
+    @include desktop(min) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+    
+    &__content-item {
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      gap: scale(16);
+      flex-direction: column;
+      justify-content: space-between;
+      padding: var(--padding_def);
+      background-color: var(--a-color_white);
+      border-radius: scale(16);
+
+      &__text {
+        display: grid;
+        align-items: end;
+        gap: scale(16);
+
+        @include desktop(min) {
+          column-gap: 0;
+        }
+
+        :deep() {
+          .a-btn {
+            @include desktop(min) {
+              grid-column: 2;
+              grid-row: 1 / 3;
+              min-width: scale(308);
+            }
+          }
+        }
+      }
+
+      @include desktop(min) {
+        &:not(.--second) {
+          grid-column: span 2;
+          min-height: scale(450);
+        }
+      }
+
+      &.--picture {
+        @include tablet(max) {
+          order: -1;
+          height: scale(220);
+        }
+      }
+
+      &.--second {
+        background-color: var(--a-color_grey_40);
+
+        @include desktop(min) {
+          min-height: scale(304);
+
+          .--text {
+            padding-right: scale(64);
+          }
+        }
+      }
+
+      img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        top: 0;
+        left: 0;
+      }
+
+      svg {
+        position: absolute;
+        right: var(--padding_def);
+        width: scale(32);
+        height: scale(32);
+        color: var(--a-color_white);
+        background-color: var(--a-color_red);
+        border-radius: scale(10);
+
+        @include tablet(max) {
+          top: var(--padding_def);
+        }
+
+        @include desktop(min) {
+          bottom: var(--padding_def);
+          width: scale(48);
+          height: scale(48);
+        }
+      }
+    }
+}

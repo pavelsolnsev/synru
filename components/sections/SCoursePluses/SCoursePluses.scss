@@ -1,0 +1,105 @@
+.s-course-pluses {
+  &__list {
+    display: grid;
+    gap: var(--gap_def);
+
+    @include tablet(min) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktop(min) {
+      grid-template-columns: repeat(auto-fit, minmax(scale(250), 1fr));
+    }
+
+    &.--col4 {
+      margin-top: var(--gap_def);
+
+      @include desktop(min) {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+
+  &__first-item {
+    @include tablet(max) {
+      display: none;
+
+      &:has(.s-course-pluses__first-item-content) {
+        display: block;
+      }
+    }
+
+    img {
+      border-radius: scale(16);
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+
+      @include desktop(min) {
+        height: 100%;
+        &:has(+.s-course-pluses__first-item-content) {
+          max-height: scale(340);
+        }
+      }
+    }
+
+    &-content {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      gap: scale(24);
+      grid-template-rows: 1fr min-content;
+      min-height: scale(150);
+      margin-top: scale(-30);
+      padding: var(--padding_def);
+      background-color: var(--a-color_grey_20);
+      border-radius: scale(16);
+
+      @include desktop(min) {
+        grid-template-rows: min-content 1fr;
+        min-height: scale(240);
+      }
+    }
+    
+  }
+
+  &__second-item {
+    position: relative;
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
+    gap: scale(24);
+    padding: var(--padding_def);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      gap: scale(12);
+    }
+
+    &-title {
+      @include tablet(max) {
+        padding-right: scale(30);
+      }
+    }
+
+    .ico {
+      width: scale(26);
+      height: scale(26);
+      color: var(--a-color_white);
+      background-color: var(--a-color_red);
+      border-radius: 50%;
+
+      @include tablet(max) {
+        position: absolute;
+        top: var(--padding_def);
+        right: var(--padding_def);
+      }
+
+      @include desktop(min) {
+        width: scale(34);
+        height: scale(34);
+        margin-left: auto;
+      }
+    }
+  }
+}

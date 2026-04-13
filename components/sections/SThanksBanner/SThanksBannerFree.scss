@@ -1,0 +1,365 @@
+.s-thanks-banner {
+
+  &__wrap {
+    display: grid;
+    gap: var(--gap_def);
+
+    @include tablet(min) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+  
+
+  &__block-text {
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-height: scale(280);
+    padding: scale(12);
+    color: var(--a-color_white);
+    background-color: var(--a-color_red);
+    border-radius: scale(16);
+    margin: 0 scale(-12);
+
+    @include tablet(min) {
+      min-height: scale(277);
+      margin: 0;
+    }
+
+    @include desktop(min) {
+      min-height: scale(440);
+      padding: scale(24);
+    }
+
+    picture {
+      z-index: -1;
+      position: absolute;
+      left: 0;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &-title {
+      margin-bottom: scale(35);
+    }
+
+    &-desc {
+      margin-top: auto;
+      margin-bottom: scale(12);
+
+      @include desktop(min) {
+        margin-bottom: scale(24);
+        padding-right: scale(14);
+        max-width: scale(760);
+      }
+
+      a {
+        font-size: scale(36);
+        text-decoration: underline;
+        &:hover {
+          text-decoration: none;
+        }
+      }
+    }
+
+    .a-btn {
+      @include desktop(min) {
+        max-width: scale(400);
+      }
+    }
+  }
+  
+
+  &__block-video {
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    min-height: scale(240);
+    height: auto;
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+    margin: 0 scale(-12) scale(-8);
+
+    @include tablet(min) {
+      margin: 0;
+    }
+
+    img {
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top left;
+    }
+
+    &-play {
+      z-index: 1;
+      position: absolute;
+      right: scale(12);
+      bottom: scale(12);
+      display: flex;
+      align-items: center;
+      gap: scale(8);
+      
+
+      @include desktop(min) {
+        top: 50%;
+        right: 50%;
+        flex-direction: column-reverse;
+        justify-content: center;
+        gap: scale(12);
+        transform: translate(50%, -50%);
+      }
+
+      &-text {
+        position: relative;
+        padding: scale(6) scale(12);
+        color: var(--a-color_white);
+        background-color: var(--a-color_red);
+        border-radius: scale(16);
+
+        svg {
+          display: none;
+          height: scale(12);
+          width: scale(13);
+
+          @include desktop(min) {
+            display: block;
+            position: absolute;
+            top: scale(-10);
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+
+        @include desktop(min) {
+          padding: scale(10) scale(20);
+        }
+      }
+
+      .a-play {
+        &:hover {
+          color: var(--a-color_white);
+          background-color: var(--a-color_dark);
+        }
+        @include desktop(min) {
+          width: scale(80);
+          height: scale(80);
+        }
+      }
+    }
+
+    &-chat {
+      z-index: 1;
+      position: absolute;
+      width: scale(138);
+      height: scale(101);
+
+      @include desktop(min) {
+        width: scale(253);
+        height: scale(162);
+      }
+
+      img {
+        position: absolute;
+        width: 100%;
+        height: auto;
+        left: 0;
+        bottom: 0;
+      }
+    }
+  }
+
+
+  &__block-info {
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    padding: scale(40) scale(12);
+    margin: 0 scale(-12);
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(16);
+
+    @include tablet(min) {
+      margin: 0 scale(-16);
+      grid-column: 1/3;
+    }
+
+    @include desktop(min) {
+      margin: 0;
+      padding: scale(24) scale(24) scale(29);
+    }
+
+    img {
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      right: scale(24);
+      width: scale(175);
+      height: scale(40);
+
+      @include tablet(min) {
+        right: scale(14);
+        width: scale(160);
+        height: scale(46);
+      }
+
+      @include desktop(min) {
+        right: scale(29);
+        width: scale(997);
+        height: scale(144);
+      }
+    }
+
+    &-title {
+      margin-bottom: scale(24);
+      @include tablet(min) {
+        padding-right: scale(145);
+      }
+      @include desktop(min) {
+        margin-bottom: scale(64);
+        padding-right: scale(550);
+      }
+
+      a {
+        text-decoration-line: underline;
+        text-decoration-skip-ink: none;
+        text-decoration-style: solid;
+        text-decoration-thickness: 2px;
+        text-underline-offset: auto;
+        text-underline-position: from-font;
+        transition: var(--transition);
+
+        @include desktop(min) {
+          text-decoration-thickness: 3px;
+        }
+        &:hover {
+          color: var(--a-color_red);
+        }
+      }
+    }
+  }
+
+
+  &__info-cards {
+    display: grid;
+    gap: var(--gap_def);
+    grid-template-columns: 1fr 1fr;
+
+    @include tablet(min) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    @include desktop(min) {
+      grid-template-columns: repeat(5, 1fr);
+    }
+
+    .a-btn {
+      display: flex;
+      flex-direction: row-reverse;
+      align-items: center;
+      justify-content: center;
+      gap: scale(10);
+      grid-column: 1/3;
+      width: 100%;
+      max-width: scale(368);
+      margin: scale(16) auto 0;
+
+      @include tablet(max) {
+        br {
+          display: none;
+        }
+      }
+
+      @include tablet(min) {
+        grid-column: 1/5;
+      }
+
+      @include desktop(min) {
+        flex-direction: column;
+        grid-column: 5;
+        height: auto;
+        margin: 0;
+        text-align: center;
+      }
+
+      .ico {
+        width: scale(24);
+        height: scale(24);
+        animation: wiggle 2s linear infinite;
+
+        @include desktop(min) {
+          width: scale(46);
+          height: scale(46);
+        }
+      }
+    }
+  }
+
+
+  &__info-card {
+    display: flex;
+    flex-direction: column;
+    min-height: scale(124);
+    padding: scale(12);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+    
+    @include desktop(min) {
+      min-height: scale(210);
+      padding: scale(24);
+    }
+
+    .ico {
+      display: block;
+      width: scale(36);
+      height: scale(36);
+      margin-bottom: auto;
+      color: var(--a-color_white);
+      background-color: var(--a-color_red);
+      border-radius: 50%;
+
+      @include desktop(min) {
+        width: scale(48);
+        height: scale(48);
+      }
+    }
+  }
+}
+
+
+@keyframes wiggle {
+  0%, 7% {
+    transform: rotateZ(0);
+  }
+  15% {
+    transform: rotateZ(-15deg);
+  }
+  20% {
+    transform: rotateZ(10deg);
+  }
+  25% {
+    transform: rotateZ(-10deg);
+  }
+  30% {
+    transform: rotateZ(6deg);
+  }
+  35% {
+    transform: rotateZ(-4deg);
+  }
+  40%, 100% {
+    transform: rotateZ(0);
+  }
+}

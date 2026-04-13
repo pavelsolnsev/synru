@@ -1,0 +1,89 @@
+.m-section {
+  overflow: hidden;
+  padding: var(--layout-v-padding) var(--layout-h-padding);
+  border-radius: scale(16);
+  @include desktop(min) {
+    border-radius: scale(28);
+  }
+
+  &.px-0 {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  &.py-0 {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  &.p-0 {
+    padding: 0;
+  }
+  &.br-0 {
+    border-radius: 0;
+  }
+
+  @include tablet() {
+    padding: var(--layout-v-padding) 160px;
+    width: 100%;
+  }
+
+  &_withSides {
+    position: relative;
+
+    @include tablet() {
+      &::before {
+        content: '';
+        width: 160px;
+        height: 100%;
+        position: absolute;
+        z-index: 10;
+        left: 0;
+        top: 0;
+        transform: rotate(180deg);
+        background: linear-gradient(270deg, rgba(245, 245, 246, 0.90) 57.69%, rgba(245, 245, 246, 0.00) 100%), linear-gradient(272deg, rgba(245, 245, 246, 0.97) 30.82%, rgba(245, 245, 246, 0.78) 68.71%, rgba(245, 245, 246, 0.00) 98.65%);
+      }
+      &::after {
+        content: '';
+        width: 160px;
+        height: 100%;
+        position: absolute;
+        z-index: 10;
+        right: 0;
+        top: 0;
+        background: linear-gradient(270deg, rgba(245, 245, 246, 0.90) 57.69%, rgba(245, 245, 246, 0.00) 100%), linear-gradient(272deg, rgba(245, 245, 246, 0.97) 30.82%, rgba(245, 245, 246, 0.78) 68.71%, rgba(245, 245, 246, 0.00) 98.65%);
+      }
+    }
+  }
+
+  &__inner {
+    width: 100%;
+    @include extra() {
+      overflow: hidden;
+    }
+  }
+
+  &__title {
+    margin-bottom: scale(24);
+
+    @include desktop(min, $p_xl) {
+      max-width: scale(1470);
+      margin-bottom: scale(50);
+    }
+
+    h2:has(+ span) {
+      display: inline;
+    }
+
+    &-nums {
+      padding: scale(7) scale(12);
+      border-radius: scale(40);
+      background-color: var(--a-color_grey_40);
+      letter-spacing: 0;
+      position: relative;
+      bottom: scale(10);
+      @include desktop(min) {
+        padding: scale(10) scale(20);
+        bottom: scale(35);
+      }
+    }
+  }
+}

@@ -1,0 +1,201 @@
+.s-direction-filter-courses {
+  scroll-margin-top: scale(74);
+
+  :deep() {
+    .m-filters-tabs-slider {
+      position: static;
+    }
+
+    .m-filter-tab {
+      width: max-content;
+    }
+
+    @include desktop(min) {
+      .s-courses-list__grid {
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+      }
+    }
+  }
+
+  &__switcher {
+    display: grid;
+    grid-template-columns: repeat(3, max-content);
+    justify-content: space-between;
+    background-color: var(--a-color_white);
+    border: 1px solid var(--a-color_grey_60);
+    border-radius: scale(8);
+
+    @include mobile() {
+      width: 100%;
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include tablet(min) {
+      max-width: scale(331);
+    }
+
+    @include desktop(min) {
+      max-width: scale(414);
+      border-radius: scale(12);
+    }
+  }
+
+  &__switcher-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: scale(36);
+    padding: scale(0) scale(10);
+    border-radius: scale(8);
+    margin: -1px;
+    cursor: pointer;
+    transition: var(--transition);
+
+
+    @include desktop(min) {
+      height: scale(48);
+      border-radius: scale(12);
+      padding: scale(0) scale(20);
+    }
+
+    &.checked {
+      z-index: 1;
+      background-color: var(--a-color_dark);
+      color: var(--a-color_white);
+    }
+  }
+
+    &__free-btn {
+    cursor: pointer;
+    display: flex;
+    gap: scale(4);
+    align-items: center;
+    justify-content: center;
+    height: scale(32);
+    padding: scale(0) scale(16);
+    color: var(--a-color_red);
+    background-color: var(--a-color_white);
+    border: 1px solid var(--a-color_red);
+    border-radius: scale(8);
+    transition: var(--transition);
+
+    &.checked {
+      background-color: var(--a-color_red);
+      color: var(--a-color_white);
+    }
+
+    @include mobile() {
+      order: 1;
+    }
+
+    @include desktop(min) {
+      height: scale(48);
+      border-radius: scale(12);
+    }
+
+    svg {
+      display: block;
+      height: scale(12);
+
+      @include desktop(min) {
+        height: scale(18);
+      }
+    }
+  }
+
+  &__filters {
+    display: flex;
+    flex-wrap: wrap;
+    gap: scale(12);
+    margin-bottom: scale(24);
+
+    @include desktop(min) {
+      gap: scale(20);
+    }
+  }
+
+  &__tags {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: scale(8);
+
+    @include desktop(min) {
+      gap: scale(12);
+    }
+  }
+
+  &__tag {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: scale(8);
+    height: scale(32);
+    padding: scale(0) scale(16);
+    color: var(--a-color_dark);
+    background-color: var(--a-color_white);
+    border: 1px solid var(--a-color_grey_60);
+    border-radius: scale(8);
+    transition: var(--transition);
+
+    &:hover {
+      border-color: var(--a-color_dark);
+    }
+
+    &.checked {
+      border-color: var(--a-color_dark);
+      background-color: var(--a-color_dark);
+      color: var(--a-color_white);
+
+      // .ico-mono-lightning {
+      //   color: var(--a-color_white);
+      // }
+    }
+
+    @include desktop(min) {
+      height: scale(48);
+      border-radius: scale(12);
+    }
+
+    svg {
+      min-width: scale(12);
+      max-width: scale(12);
+
+      &.ico-mono-lightning {
+        color: var(--a-color_red);
+      }
+
+      @include desktop(min) {
+        min-width: scale(17);
+        max-width: scale(17);
+      }
+    }
+  }
+
+  &__reset-btn {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: scale(32);
+    padding: scale(0) scale(16);
+    color: var(--a-color_dark);
+    background-color: var(--a-color_grey_40);
+    border: 1px solid var(--a-color_grey_40);
+    border-radius: scale(8);
+    transition: var(--transition);
+
+    @include mobile() {
+      order: 2;
+      margin-left: auto;
+    }
+
+    @include desktop(min) {
+      height: scale(48);
+      border-radius: scale(12);
+      min-width: scale(190);
+    }
+  }
+}

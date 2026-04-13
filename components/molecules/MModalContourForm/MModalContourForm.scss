@@ -1,0 +1,70 @@
+.m-modal-contour-form {
+  width: scale(1185);
+  height: scale(329);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  position: relative;
+  background-color: var(--a-color_white);
+  padding: scale(23) 0 scale(40) scale(40);
+  border-radius: scale(16);
+  overflow: hidden;
+
+  @include tablet(max) {
+    padding: scale(12);
+    min-height: scale(399);
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__title {
+    max-width: scale(721);
+    position: relative;
+    z-index: 2;
+  }
+
+  &__form {
+    max-width: scale(721);
+    position: relative;
+    z-index: 2;
+
+    &:deep(.a-chekbox__label) {
+      color: #6E6E6E;
+    }
+
+    &:deep(input[name="phone"]) {
+      height: scale(54)!important;
+
+      @include tablet(max) {
+        height: scale(48)!important;
+      }
+    }
+
+    &:deep(.a-btn) {
+      height: scale(54)!important;
+      width: scale(208);
+      flex-shrink: 0;
+      font-size: scale(18);
+
+      @include tablet(max) {
+        height: scale(48)!important;
+        width: 100%;
+        font-size: scale(15);
+      }
+    }
+  }
+}

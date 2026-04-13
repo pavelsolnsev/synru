@@ -1,0 +1,12 @@
+.a-apply-btn.a-menu-link {
+  padding: scale(8) scale(16);
+  border-radius: scale(40);
+  white-space: nowrap;
+  @include desktop() {
+    padding: scale(8) scale(20);
+  }
+
+  .--no-quiz & {
+    display: none;
+  }
+}

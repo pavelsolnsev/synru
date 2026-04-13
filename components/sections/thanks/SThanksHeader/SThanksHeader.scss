@@ -1,0 +1,30 @@
+:deep() {
+  .s-header {
+    &__nav {
+      display: none !important;
+    }
+    &__menu {
+      display: none !important;
+    }
+    &__burger {
+      display: none !important;
+    }
+    &__tools {
+      a.--priemnaya-komissiya {
+        display: none !important;
+      }
+    }
+  }
+}
+header {
+  padding-bottom: scale(65) !important;
+
+  @include desktop(min) {
+    padding-bottom: scale(95) !important;
+  }
+}
+:deep() {
+  .s-header {
+    height: initial !important;
+  }
+}

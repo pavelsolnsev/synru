@@ -1,0 +1,118 @@
+.s-international-contour-guarantee {
+  &__body {
+    display: flex;
+    justify-content: space-between;
+
+    @include tablet(max) {
+      flex-direction: column;
+      gap: scale(8);
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+    }
+  }
+
+  &__left {
+    position: relative;
+    width: scale(879);
+    height: auto;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: end;
+    padding: scale(37);
+    border-radius: scale(16);
+    overflow: hidden;
+    color: var(--a-color_white);
+
+    @include tablet(max) {
+      width: 100%;
+      height: scale(177);
+      padding: scale(17);
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 2;
+    font-size: scale(98);
+    font-weight: 600;
+    line-height: 90%;
+
+    @include tablet(max) {
+      font-size: scale(38);
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: scale(20);
+    width: scale(941);
+
+    @include tablet(max) {
+      gap: scale(8);
+      width: 100%;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    padding: scale(24);
+    justify-content: space-between;
+    width: 100%;
+    height: scale(160);
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(16);
+
+    @include tablet(max) {
+      height: scale(139);
+      padding: scale(12);
+
+      &:deep(br) {
+        display: none;
+      }
+    }
+  }
+
+  &__card-title {
+    @include tablet(max) {
+      font-size: scale(17);
+    }
+  }
+
+  &__top {
+    display: flex;
+    align-items: center;
+    gap: scale(24);
+
+    @include tablet(max) {
+      gap: scale(16);
+    }
+  }
+
+  &__icon {
+    width: scale(40);
+    height: scale(40);
+    filter: drop-shadow(0px 0px 22px rgba(237, 19, 28, 0.5));
+
+    @include tablet(max) {
+      width: scale(32);
+      height: scale(32);
+    }
+  }
+}

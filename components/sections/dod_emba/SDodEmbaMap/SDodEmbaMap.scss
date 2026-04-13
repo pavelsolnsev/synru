@@ -1,0 +1,120 @@
+.s-dodemba-map {
+
+  &__body {
+    margin-top: scale(50);
+    display: flex;
+    gap: scale(20);
+
+    @include tablet(max) {
+      gap: scale(8);
+      margin-top: scale(24);
+    }
+
+    @include mobile(max) {
+      flex-direction: column;
+    }
+  }
+
+  &__info,
+  &__map {
+    height: scale(347);
+    width: calc(50% - scale(10));
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(16);
+    overflow: hidden;
+    position: relative;
+
+    @include tablet(max) {
+      width: calc(50% - scale(4));
+      height: scale(209);
+    }
+
+    @include mobile(max) {
+      width: 100%;
+    }
+  }
+
+  &__info {
+    padding: scale(24);
+    position: relative;
+
+    @include tablet(max) {
+      padding: scale(12);
+      display: flex;
+      flex-direction: column;
+    }
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column;
+    gap: scale(8);
+
+    @include tablet(max) {
+      gap: scale(4);
+    }
+
+    &_second {
+      margin-top: scale(24);
+    }
+  }
+
+  &__label {
+    font-size: scale(16);
+    font-weight: 600;
+    color: var(--a-color_grey_100);
+
+    @include tablet(max) {
+      font-size: scale(13);
+    }
+  }
+
+  &__value {
+    font-size: scale(38);
+    font-weight: 600;
+    line-height: 1em;
+
+    @include tablet(max) {
+      font-size: scale(19);
+    }
+  }
+
+  &__btn {
+    margin-top: scale(49);
+    width: 100%;
+    height: scale(56);
+    font-size: scale(15);
+    border-radius: scale(80);
+
+    @include tablet(max) {
+      font-size: scale(12);
+      height: scale(40);
+      margin-top: auto;
+    }
+  }
+
+  &__btn-icon {
+    width: scale(24);
+    height: scale(24);
+
+    @include tablet(max) {
+      width: scale(20);
+      height: scale(20);
+    }
+  }
+
+  &__icon {
+    position: absolute;
+    top: scale(24);
+    right: scale(24);
+    width: scale(40);
+    height: scale(40);
+
+    @include tablet(max) {
+      top: scale(12);
+      right: scale(12);
+      width: scale(36);
+      height: scale(36);
+    }
+  }
+}

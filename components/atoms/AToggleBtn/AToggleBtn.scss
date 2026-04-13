@@ -1,0 +1,45 @@
+.toggle {
+  cursor: pointer;
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: scale(36);
+  height: scale(22);
+  padding: scale(3) scale(4);
+  background-color: var(--a-color_grey_40);
+  border-radius: scale(100);
+  transition: var(--transition);
+
+  &:has(input:checked) {
+    background-color: var(--a-color_red);
+  }
+
+  @include desktop(min) {
+    width: scale(64);
+    height: scale(40);
+    padding: scale(8);
+  }
+
+  input {
+    cursor: pointer;
+    appearance: none;
+    width: scale(16);
+    height: scale(16);
+    background-color: var(--a-color_white);
+    border-radius: 50%;
+    transition: var(--transition);
+
+    @include desktop(min) {
+      width: scale(24);
+      height: scale(24);
+    }
+
+    &:checked {
+      transform: translateX(scale(12));
+
+      @include desktop(min) {
+        transform: translateX(scale(24));
+      }
+    }
+  }
+}

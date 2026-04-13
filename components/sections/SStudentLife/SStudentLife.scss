@@ -1,0 +1,57 @@
+.s-student-life {
+  position: relative;
+  &__slider {
+    position: relative;
+    overflow: visible;
+
+    .swiper {
+      overflow: visible;
+      &-slide {
+        width: scale(280);
+        height: auto;
+        @include desktop() {
+          width: scale(750);
+        }
+      }
+    }
+
+    .swiper-navigation {
+      button {
+        margin: 0;
+      }
+    }
+
+    &_small {
+      .swiper {
+        &-slide {
+          @include desktop() {
+            width: scale(600);
+          }
+        }
+      }
+    }
+  }
+
+  &__slide {
+    overflow: hidden;
+    width: 100%;
+    height: scale(180);
+    border-radius: var(--border-radius_def);
+    @include desktop() {
+      height: scale(500);
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    &_small {
+      @include desktop() {
+        height: scale(400);
+      }
+    }
+  }
+
+}
+

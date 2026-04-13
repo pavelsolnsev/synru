@@ -1,0 +1,145 @@
+.s-info-banner {
+  :deep() {
+    .l-section__inner {
+      z-index: 1;
+      position: relative;
+      border-radius: scale(16);
+      overflow: hidden;
+      
+      @include tablet(min) {
+        padding: var(--padding_def);
+        background-color: var(--a-color_grey_20);
+        display: grid;
+        min-height: scale(237);
+      }
+
+      @include desktop(min) {
+        min-height: scale(500);
+      }
+    }
+
+    .ruble {
+      position: relative;
+
+      &:after {
+        content: '';
+        width: 29%;
+        height: 7%;
+        background-color: currentColor;
+        position: absolute;
+        left: -7%;
+        top: 51%;
+      }
+
+      &:before {
+        content: '';
+        width: 67%;
+        height: 5%;
+        background-color: currentColor;
+        position: absolute;
+        left: -7%;
+        top: 63%;
+      }
+    }
+
+    .a-tag {
+      background-color: var(--a-color_white);
+      border-color: var(--a-color_grey_80);
+    }
+
+    .a-btn {
+      @include tablet(min) {
+        max-width: scale(312);
+      }
+      @include desktop(min) {
+        max-width: scale(420);
+      }
+    }
+  }
+
+  &__picture {
+    @include tablet(min) {
+      z-index: -1;
+      position: absolute;
+      inset: 0;
+      height: 100%;
+      width: 100%;
+    }
+
+    img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top right;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+
+    @include mobile() {
+      z-index: 2;
+      position: relative;
+      padding: var(--padding_def);
+      margin-top: scale(-20);
+      background-color: var(--a-color_grey_20);
+      border-radius: scale(16);
+    }
+
+    @include tablet(min) {
+      height: 100%;
+      max-width: scale(468);
+    }
+
+    @include desktop(min) {
+      max-width: scale(972);
+    }
+  }
+
+  &__title {
+    margin-bottom: scale(16);
+
+    @include tablet(min) {
+      margin-bottom: scale(12);
+    }
+
+    @include desktop(min) {
+      margin-bottom: scale(24);
+    }
+  }
+
+  &__text {
+    @include tablet(min) {
+      margin-top: auto;
+      max-width: scale(395);
+    }
+
+    @include desktop(min) {
+      max-width: 100%;
+    }
+
+    &:has(+ .s-info-banner__tags) {
+      margin-bottom: scale(24);
+
+      @include tablet(min) {
+        margin-top: 0;
+        margin-bottom: auto;
+      }
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: scale(8);
+    margin-bottom: scale(16);
+
+    @include tablet(min) {
+      margin-top: scale(24);
+      margin-bottom: scale(12);
+      max-width: scale(680);
+    }
+  }
+}

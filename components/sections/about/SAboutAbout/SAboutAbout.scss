@@ -1,0 +1,77 @@
+.s-about {
+  :deep() {
+    .m-card-text {
+      background-color: var(--a-color_grey_40);
+      @include mobile(max) {
+        padding-bottom: scale(52);
+      }
+    }
+    .s-about__slider {
+      @include mobile(max) {
+        display: grid;
+        gap: scale(8);
+        grid-template-columns: 1fr 1fr;
+
+        .swiper-slide {
+          width: 100% !important;
+          min-height: scale(140) !important;
+        }
+      }
+    }
+    .s-about__card {
+      @include desktop() {
+        min-height: scale(272);
+      }
+      &.--bg-img img {
+        object-position: right;
+      }
+    }
+  }
+
+  &__block-content {
+    position: absolute;
+    bottom: scale(12);
+    right: scale(12);
+    left: scale(12);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include tablet(min) {
+      justify-content: flex-end;
+      gap: scale(12);
+    }
+
+    @include desktop(min) {
+      bottom: scale(24);
+      right: scale(24);
+    }
+
+    :deep() {
+      .a-btn {
+        height: calc(var(--scale)* 32);
+        width: 100%;
+        border-radius: calc(var(--scale)* 40);
+        
+        @include tablet(min) {
+          width: calc(var(--scale)* 162);
+        }
+
+        @include desktop(min) {
+          height: calc(var(--scale)* 52);
+          width: calc(var(--scale)* 214);
+        }
+      }
+    }
+
+    img {
+      min-width: scale(80);
+      height: scale(32);
+
+      @include desktop(min) {
+        min-width: scale(128);
+        height: scale(48);
+      }
+    }
+  }
+}

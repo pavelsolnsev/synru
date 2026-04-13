@@ -1,0 +1,6 @@
+:root {
+  --headerArticlesHeight: #{scale(100)};
+  @include desktop() {
+    --headerArticlesHeight: #{scale(82)};
+  }
+}

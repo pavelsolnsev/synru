@@ -1,0 +1,96 @@
+.s-second-burger-mobile {
+  &__admission-committee {
+    color: var(--a-color_dark);
+    font-weight: 600;
+    font-size: scale(16);
+    line-height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: scale(8) 0;
+    border: scale(1) solid var(--a-color_dark);
+    border-radius: scale(20);
+    margin-bottom: scale(24);
+  }
+
+  &__additional-items {
+    padding: scale(16) scale(10);
+    background-color: var(--a-color_grey_20);
+    border-radius: var(--border-radius_def);
+    display: flex;
+    flex-direction: column;
+    gap: scale(8);
+
+    a {
+      display: inline-block;
+      padding: scale(10);
+      font-weight: 600;
+      font-size: scale(16);
+    }
+  }
+
+  &__button {
+    margin: scale(24) 0 scale(26);
+  }
+
+  &__menu {
+    margin: scale(8) 0;
+    max-height: scale(608);
+    &.--active {
+      background-color: var(--a-color_white);
+      padding: scale(16) scale(10);
+      border-radius: var(--border-radius_def);
+      overflow: auto;
+    }
+
+    &__title {
+      font-weight: 600;
+      font-size: scale(16);
+      line-height: 120%;
+      color: var(--a-color_red);
+      padding-top: calc(var(--scale) * 10);
+      margin-bottom: scale(24);
+    }
+
+    &__items {
+      display: flex;
+      flex-direction: column;
+      gap: scale(8);
+    }
+
+    &__item {
+      display: flex;
+      justify-content: space-between;
+      padding: calc(var(--scale) * 16) calc(var(--scale) * 10);
+      background-color: var(--a-color_grey_20);
+      border-radius: var(--border-radius_def);
+
+      span {
+        font-weight: 600;
+        font-size: calc(var(--scale) * 16);
+        line-height: 120%;
+      }
+
+      svg {
+        width: scale(16);
+        height: scale(16);
+      }
+
+      &-desc {
+        display: flex;
+        flex-direction: column;
+        gap: scale(10);
+
+        span {
+          font-weight: 600;
+          font-size: scale(16);
+          line-height: 120%;
+        }
+        span:nth-child(1) {
+          color: rgba(28, 28, 28, 0.5);
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+.s-reviews {
+  &__slider {
+    overflow: visible;
+    position: relative;
+  }
+  :deep() {
+    .swiper-navigation {
+      button {
+        margin: 0;
+      }
+    }
+  }
+}

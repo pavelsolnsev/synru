@@ -1,0 +1,50 @@
+.s-why {
+  overflow: hidden;
+
+  .swiper {
+    &-wrapper {
+      overflow: visible;
+    }
+    &-slide {
+      width: scale(280);
+      height: auto;
+      @include desktop(min) {
+        width: scale(444);
+      }
+    }
+    &-slide:not(:last-child) {
+      margin-right: scale(8);
+      @include desktop(min) {
+        margin-right: scale(20);
+      }
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 100%;
+    padding: scale(12);
+    border-radius: scale(16);
+    background-color: var(--a-color_white);
+    @include desktop(min) {
+      padding: scale(24);
+    }
+
+    &-title {
+      height: scale(50);
+      @include tablet(min) {
+        height: scale(60);
+      }
+      @include desktop(min) {
+        height: scale(120);
+      }
+    }
+
+    &-num {
+      margin-bottom: scale(5);
+      color: var(--a-color_red);
+    }
+  }
+}

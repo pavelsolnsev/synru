@@ -1,0 +1,46 @@
+.s-quiz-students {
+  @include desktop(min) {
+    min-height: scale(590) !important;
+  }
+  .m-app-links {
+    width: 100%;
+
+    @include tablet(min) {
+      max-width: scale(336);
+    }
+
+    @include desktop(min) {
+      max-width: scale(420);
+    }
+
+    &__item {
+      height: scale(48) !important;
+      background-color: var(--a-color_grey_100) !important;
+
+      @include tablet(min) {
+        height: scale(40) !important;
+      }
+
+      @include desktop(min) {
+        height: scale(50) !important;
+      }
+    }
+  }
+  .s-quiz {
+    &__btns {
+      display: none;
+    }
+    &__intro-description {
+      margin-bottom: scale(24);
+  
+      @include mobile() {
+        br {
+          display: none;
+        }
+      }
+    }
+    &__intro-block {
+      margin: 0 !important;
+    }
+  }
+}

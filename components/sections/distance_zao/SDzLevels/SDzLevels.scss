@@ -1,0 +1,47 @@
+.s-dz-levels {
+
+  &__list {
+    gap: scale(8);
+    display: grid;
+    @include desktop {
+      gap: scale(20);
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    overflow: hidden;
+    position: relative;
+    gap: scale(16);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: scale(100);
+    padding: scale(12);
+    padding-right: scale(88);
+    border-radius: scale(12);
+    box-shadow: 0 scale(3) scale(7) 0 #0000000F;
+    @include desktop {
+      min-height: scale(220);
+      padding: scale(24);
+      padding-right: scale(186);
+    }
+
+    picture {
+      z-index: -1;
+      background-color: var(--a-color_white);
+      :deep(img) {
+        object-fit: contain;
+        object-position: right center;
+      }
+    }
+
+    .a-btn {
+      width: scale(164);
+      @include desktop {
+        width: scale(148);
+        height: scale(48);
+      }
+    }
+  }
+}

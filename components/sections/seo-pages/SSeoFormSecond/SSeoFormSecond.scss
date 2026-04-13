@@ -1,0 +1,166 @@
+.s-form {
+  &__wrap {
+    overflow: hidden;
+    display: grid;
+    gap: scale(8);
+    @include tablet(min) {
+      grid-template-columns: 1fr 1fr;
+    }
+    @include desktop() {
+      gap: scale(20);
+    }
+  }
+
+  &__content {
+    min-height: scale(368);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding_def);
+    border-radius: var(--border-radius_def);
+
+    @include tablet() {
+      min-height: scale(393);
+    }
+    @include desktop() {
+      min-height: scale(572);
+    }
+  }
+
+  &__title {
+    margin-bottom: scale(24);
+    @include tablet() {
+      margin-bottom: scale(21);
+    }
+  }
+
+  &__description {
+    margin-bottom: scale(12);
+    @include desktop() {
+      margin-bottom: scale(16);
+      margin-top: auto;
+    }
+  }
+
+  &__items {
+    display: flex;
+    flex-direction: column;
+    gap: scale(8);
+
+    @include tablet() {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktop() {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    padding: var(--padding_def);
+    border-radius: scale(17);
+    background-color: var(--a-color_white);
+    display: flex;
+    gap: scale(12);
+
+    @include tablet(min) {
+      flex-direction: column-reverse;
+      align-items: flex-end;
+      justify-content: flex-end;
+      gap: scale(8);
+    }
+
+    @include desktop() {
+      min-height: scale(220);
+      padding: scale(16);
+    }
+
+    &:nth-child(3) {
+      @include tablet() {
+        grid-column: 1 / -1;
+      }
+    }
+
+    &__text {
+      @include tablet(min) {
+        margin-top: auto;
+      }
+      @include desktop() {
+        font-size: scale(19);
+      }
+    }
+
+    &__icon {
+      background-image: url("data:image/svg+xml;charset=UTF-8,%3csvg xmlns='http://www.w3.org/2000/svg' width='36' height='36' fill='none' viewBox='0 0 36 36'%3e%3cpath fill='%23ED131C' d='M17.634.799a1.04 1.04 0 0 1 1.505 0l2.139 2.267a1.04 1.04 0 0 0 1.13.252l2.934-1.137a1.029 1.029 0 0 1 1.356.638l.92 2.949c.123.395.483.676.905.705l3.15.219c.596.041 1.03.572.938 1.149l-.482 3.046a.991.991 0 0 0 .503 1.02l2.74 1.531c.519.29.673.951.335 1.432l-1.789 2.54a.98.98 0 0 0 0 1.132l1.789 2.54a.986.986 0 0 1-.335 1.433l-2.74 1.532a.991.991 0 0 0-.503 1.019l.482 3.047c.091.576-.342 1.107-.938 1.148l-3.15.22c-.422.028-.782.309-.905.704l-.92 2.95c-.174.558-.8.852-1.355.637l-2.935-1.137a1.04 1.04 0 0 0-1.13.252l-2.139 2.267c-.405.43-1.1.43-1.505 0l-2.139-2.267a1.04 1.04 0 0 0-1.13-.252l-2.934 1.137a1.029 1.029 0 0 1-1.356-.637l-.92-2.95a1.018 1.018 0 0 0-.905-.705l-3.15-.219c-.596-.041-1.029-.572-.938-1.148l.483-3.047a.991.991 0 0 0-.503-1.02l-2.74-1.53a.986.986 0 0 1-.335-1.433l1.788-2.54a.98.98 0 0 0 0-1.132l-1.788-2.54a.985.985 0 0 1 .335-1.433l2.74-1.532a.991.991 0 0 0 .503-1.019l-.483-3.046c-.091-.577.342-1.108.939-1.149l3.149-.219c.422-.03.783-.31.906-.705l.92-2.95c.173-.558.8-.852 1.355-.637l2.935 1.137a1.04 1.04 0 0 0 1.13-.252L17.633.8Z'/%3e%3c/svg%3e");
+      background-size: 100%;
+      background-repeat: no-repeat;
+      width: scale(22);
+      height: scale(22);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+      color: var(--a-color_white);
+
+      @include desktop() {
+        width: scale(40);
+        height: scale(40);
+      }
+
+      svg {
+        width: scale(12);
+        height: scale(12);
+        @include desktop() {
+          width: scale(22);
+          height: scale(22);
+        }
+      }
+    }
+  }
+
+  &__image {
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__form {
+    background-color: var(--a-color_white);
+    border-radius: var(--border-radius_def);
+
+    .m-form {
+      padding: scale(20) scale(12);
+
+      @include tablet() {
+        padding: scale(12);
+      }
+      @include desktop() {
+        padding: scale(24);
+      }
+    }
+
+    :deep() {
+      @include tablet(min) {
+        .m-form__title + .m-form__content {
+          margin: auto 0 scale(24);
+        }
+        .m-form__title + .m-form__content + .m-form__bottom {
+          margin-top: 0;
+        }
+      }
+    }
+  }
+}

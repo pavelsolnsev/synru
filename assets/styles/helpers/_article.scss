@@ -1,0 +1,23 @@
+@mixin reset-img() {
+  @include mobile(min) {
+    margin: unset;
+    padding: 0;
+    border: unset;
+    border-radius: unset;
+    box-shadow: unset;
+  }
+}
+
+@mixin reset-margin() {
+  &:first-child {
+    margin-top: 0;
+  }
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+@mixin default-margin() {
+  margin-top: scale(24);
+  margin-bottom: scale(24);
+}

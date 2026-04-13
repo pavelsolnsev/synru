@@ -1,0 +1,85 @@
+.s-prices {
+  position: relative;
+  &__slider {
+    position: relative;
+  }
+
+  &__description {
+    margin-bottom: scale(15);
+
+    @include desktop() {
+      margin-bottom: scale(20);
+    }
+  }
+
+  &__grid {
+    display: none;
+    @include tablet(max) {
+      display: grid;
+      gap: scale(8);
+    }
+
+    @include tablet() {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    .m-card-tag-title {
+      display: none;
+      width: 100%;
+      &.--show {
+        display: block;
+      }
+    }
+
+    .a-btn {
+      margin-top: scale(10);
+      @include tablet() {
+        grid-column: 1 / -1;
+      }
+    }
+  }
+
+  :deep() {
+    .l-section__title {
+      margin-bottom: scale(15);
+
+      @include desktop() {
+        margin-bottom: scale(20);
+      }
+    }
+    .swiper {
+      overflow: visible;
+      @include tablet(max) {
+        display: none;
+      }
+    }
+    .swiper-navigation {
+      top: scale(-70);
+      button {
+        margin: 0;
+      }
+    }
+    .m-card-tag-title {
+      @include desktop(min) {
+        width: scale(351);
+      }
+      picture {
+        z-index: 0;
+      }
+      &__title {
+        z-index: 1;
+        @include tablet(max) {
+          font-size: scale(38);
+        }
+        .ico {
+          height: scale(26);
+          margin-left: scale(-8);
+          filter: brightness(0) invert(1);
+          @include desktop(min) {
+            height: scale(34);
+          }
+        }
+      }
+    }
+  }
+}

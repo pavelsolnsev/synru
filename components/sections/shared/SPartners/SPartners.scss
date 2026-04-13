@@ -1,0 +1,94 @@
+.s-partners {
+  overflow: hidden;
+
+  &__description {
+    margin: 0 0 rem(24);
+    @include desktop(min, $p_xl) {
+      margin: rem(-16) 0 rem(24);
+    }
+    p {
+      margin: 0 0 rem(8);
+    }
+  }
+
+  &__sliders {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap_def);
+  }
+  :deep() {
+    .swiper {
+      overflow: visible;
+      width: 100%;
+      &-wrapper {
+        transition-timing-function: linear;
+        width: fit-content;
+      }
+      &-slide {
+        width: scale(160);
+        height: scale(64);
+        @include desktop {
+          width: scale(352);
+          height: scale(144);
+        }
+      }
+    }
+    .swiper-backface-hidden .swiper-slide {
+      transform: initial !important; /* Important is optional, as long as this snippet is after the original */
+    }
+  }
+
+  &__slider {
+    position: relative;
+    height: scale(64);
+
+    @include desktop {
+      height: scale(144);
+    }
+  }
+  
+  &__item {
+    --slide-width: #{scale(160)};
+    --slide-gap: var(--gap_def);
+    --total-width: calc(var(--slide-width) + var(--slide-gap));
+    --speed: calc(5s * var(--slide-count));
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    left: max(calc(var(--total-width) * (var(--slide-count) - 1)), 100%);
+    transform: translateX(0);
+    animation: scrollLeft var(--speed) linear infinite;
+    animation-delay: calc(var(--speed) / var(--slide-count) * var(--n) - var(--speed));
+    width: var(--slide-width);
+    padding: scale(13) scale(10);
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(12);
+    will-change: transform;
+
+    &.--toRight {
+      animation-direction: reverse;
+    }
+
+    @include desktop {
+      --slide-width: #{scale(352)};
+      padding: scale(40) scale(59);
+      border-radius: scale(16);
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+      margin: 0 auto;
+    }
+
+    @keyframes scrollLeft {
+      to {
+        transform: translateX(calc(-1 * (max(calc(var(--total-width) * (var(--slide-count) - 1)), 100%) + var(--total-width))));
+      }
+    }
+  }
+}

@@ -1,0 +1,15 @@
+.s-header-second-burger {
+  padding: 0 var(--layout-h-padding);
+  padding-top: scale(10);
+  padding-bottom: var(--layout-h-padding);
+  background-color: var(--a-color_grey_10);
+
+  @include tablet(max) {
+    overflow-y: auto;
+    height: 100%;
+    padding-top: scale(14);
+  }
+  @include desktop() {
+    border-radius: scale(16);
+  }
+}

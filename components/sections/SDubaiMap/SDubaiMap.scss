@@ -1,0 +1,21 @@
+:deep() {
+  .a-btn {
+    width: 100%;
+    margin-top: scale(12);
+
+    @include tablet(min) {
+      margin-top: scale(24);
+    }
+
+    @include desktop {
+      height: scale(82);
+    }
+  }
+}
+
+.s-dubai-map {
+  picture {
+    width: 100%;
+    height: auto;
+  }
+}

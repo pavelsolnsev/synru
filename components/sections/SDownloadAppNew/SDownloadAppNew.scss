@@ -1,0 +1,21 @@
+.s-download-app-new {
+  &__grid {
+    display: grid;
+    gap: scale(8);
+
+    @include desktop(min) {
+      grid-template-columns: 1fr 1fr;
+      gap: scale(20);
+    }
+  }
+
+
+  &__grid.--one-column {
+
+    @include desktop() {
+      grid-template-columns: 1fr;
+      padding: 0;
+    }
+  }
+
+}

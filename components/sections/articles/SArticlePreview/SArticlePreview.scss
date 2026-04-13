@@ -1,0 +1,22 @@
+.s-article-preview {
+  position: relative;
+  gap: scale(12);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  @include tablet(min) {
+    flex-wrap: nowrap;
+    flex-direction: row;
+  }
+  @include desktop {
+    gap: scale(20);
+  }
+
+  .m-promo-small {
+    @include tablet(min) {
+      position: sticky;
+      top: var(--headerArticlesHeight);
+      align-self: auto;
+    }
+  }
+}

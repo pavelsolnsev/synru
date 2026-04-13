@@ -1,0 +1,10 @@
+.s-form__desc img {
+  display: block;
+  width: scale(60);
+  height: scale(60);
+  margin-bottom: scale(12);
+
+  @include desktop(min) {
+    margin-bottom: scale(16);
+  }
+}

@@ -1,0 +1,366 @@
+.s-widjet {
+  display: flex;
+  position: fixed;
+  align-items: end;
+  padding: scale(10);
+  transition: var(--transition);
+  visibility: hidden;
+  
+  @include tablet(max) {
+    inset: scale(56) 0 0;
+    background: rgba(224, 225, 229, 0);
+    backdrop-filter: blur(0);
+    -webkit-backdrop-filter: blur(0);
+  }
+
+  @include desktop(min) {
+    right: var(--layout-h-padding);
+    bottom: var(--layout-h-padding);
+    width: scale(600);
+  }
+
+  .send-success {
+    text-align: center;
+  }
+
+  &._active {
+    visibility: visible;
+
+    @include tablet(max) {
+      background: rgba(224, 225, 229, 0.70);
+      backdrop-filter: blur(9px);
+      -webkit-backdrop-filter: blur(9px);
+    }
+  }
+
+  html.--visible-nav & {
+    top: scale(120);
+  }
+
+  &__head {
+    display: flex;
+    align-items: start;
+    justify-content: space-between;
+    padding: var(--padding_def);
+    padding-top: scale(24);
+    color: var(--a-color_white);
+    text-align: center;
+  }
+
+  &__logo,
+  &__close {
+    padding: scale(2);
+    min-width: scale(25);
+    max-width: scale(25);
+    height: scale(25);
+    background-color: var(--a-color_white);
+    border-radius: 50%;
+
+    @include desktop(min) {
+      min-width: scale(38);
+      max-width: scale(38);
+      height: scale(38);
+    }
+
+    img, svg {
+      width: 100%;
+      height: 100%;
+      transform: scaleX(-1);
+    }
+  }
+
+  &__close {
+    cursor: pointer;
+    padding: 0;
+  }
+
+  &__content { 
+    position: relative;
+    width: 100%;
+    margin-top: auto;
+    background-color: var(--a-color_red);
+    border-radius: scale(16);
+    transition: var(--transition);
+    transform: translateY(120%);
+
+    .s-widjet._active & {
+      transform: translateY(0);
+    }
+  }
+
+  &__wrap {
+    padding: var(--padding_def);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+  }
+
+  &__btns {
+    display: grid;
+    gap: scale(8);
+    grid-template-columns: 1fr 1fr;
+
+    @include desktop(min) {
+      gap: scale(12);
+    }
+
+    .a-btn {
+      height: scale(46);
+      border-radius: scale(12);
+      border-color: var(--a-color_red);
+
+      @include desktop(min) {
+        height: scale(55);
+        display: none;
+      }
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        color: var(--a-color_red);
+
+        &:hover {
+          color: var(--a-color_white);
+          background-color: var(--a-color_red);
+        }
+        &:active {
+          background-color: var(--a-color_red_dark);
+          border-color: var(--a-color_red_dark);
+        }
+      }
+  
+      img,
+      .ico {
+        width: scale(16);
+        height: scale(16);
+        margin-left: scale(5);
+
+        @include desktop(min) {
+          margin-left: scale(8);
+        }
+      }
+    }
+
+    .a-btn.s-widjet__open-form {
+      @include desktop(min) {
+        display: flex;
+        grid-column: 1/3;
+      }
+    }
+  }
+
+  &__chat {
+    position: relative;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    grid-column: 1/3;
+    height: scale(69);
+    padding: scale(12);
+    text-align: left;
+    color: var(--a-color_dark);
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(12);
+    border: 0;
+
+    span:last-child {
+      color: var(--a-color_grey_80);
+    }
+
+    @include desktop(min) {
+      height: scale(93);
+    }
+
+    .ico {
+      position: absolute;
+      right: scale(12);
+      top: 50%;
+      height: scale(16);
+      width: scale(10);
+      transform: translateY(-50%);
+    }
+  }
+
+  &__title {
+    text-align: center;
+    margin-bottom: scale(32);
+  }
+
+  #widjet-form {
+    display: none;
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .m-form .a-btn {
+    background-color: var(--a-color_dark);
+  }
+}
+
+.s-widjet-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  position: fixed;
+  right: var(--layout-h-padding);
+  bottom: scale(60);
+  width: scale(48);
+  height: scale(48);
+  background-color: var(--a-color_red);
+  border-radius: 50%;
+  transition: var(--transition);
+  box-shadow: 0 0 0 0 rgba(var(--a-color_red_rgb), .5);
+  animation: pulse 1.5s infinite;
+
+  &._showUpBtn {
+    bottom: scale(120);
+  }
+
+  @include tablet(min) {
+    bottom: scale(40);
+    &._showUpBtn {
+      bottom: scale(100);
+    }
+  }
+
+  @include desktop(min) {
+    bottom: scale(40);
+
+    &._showUpBtn {
+      bottom: scale(120);
+    }
+  }
+
+  &._active,
+  html.with-fancybox & {
+    visibility: hidden !important;
+  }
+
+  &:hover {
+    animation: none;
+  }
+
+  img {
+    width: 90%;
+    height: 90%;
+    transform-origin: center;
+  }
+
+  svg {
+    width: 60%;
+    height: 60%;
+  }
+
+  @include mobile() {
+    opacity: 0;
+    visibility: hidden;
+    translate: 0 100%; 
+
+    html.--visible-bottom-btns & {
+      translate: 0 0; 
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @include desktop(min) {
+    width: scale(100);
+    height: scale(100);
+  }
+
+  &:hover {
+    animation: none;
+  }
+
+  img {
+    width: 90%;
+    height: 90%;
+    transform-origin: center;
+  }
+
+  svg {
+    width: 60%;
+    height: 60%;
+  }
+
+  @include mobile() {
+    opacity: 0;
+    visibility: hidden;
+    translate: 0 100%; 
+
+    html.--visible-bottom-btns & {
+      translate: 0 0; 
+      opacity: 1;
+      visibility: visible;
+    }
+  }
+
+  @include desktop(min) {
+    width: scale(100);
+    height: scale(100);
+  }
+}
+
+.__jivoMobileButton,
+#jvLabelWrap {
+  display: none !important;
+}
+
+.jv-desktop {
+  visibility: hidden !important;
+}
+
+@keyframes pulse {
+  0% {
+    scale: .9;
+  }
+  70% {
+    scale: 1;
+    box-shadow: 0 0 0 25px rgba(var(--a-color_red_rgb), 0);
+  }
+    100% {
+      scale: .9;
+    box-shadow: 0 0 0 0 rgba(var(--a-color_red_rgb), 0);
+  }
+}
+
+:deep() {
+  .icon1, .icon2, .icon3 {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  .icon1 { animation: iconRotate 9s 3 forwards, final 1s 1 forwards 27s; }
+  .icon2 { animation: iconRotate 9s 3 forwards 3s; }
+  .icon3 { animation: iconRotate 9s 3 forwards 6s; }
+}
+
+
+@keyframes iconRotate {
+  0% {
+    opacity: 0;
+    transform: rotate(-45deg);
+  }
+  25% {
+    opacity: 1;
+    transform: rotate(15deg);
+  }
+  50% {
+    opacity: 0;
+    transform: rotate(-45deg);
+  }
+  100% {
+    opacity: 0;
+    transform: rotate(-45deg);
+  }
+}
+@keyframes final {
+  0% {
+    opacity: 0;
+    transform: rotate(-45deg);
+  }
+  100% {
+    opacity: 1;
+    transform: rotate(0deg);
+  }
+}

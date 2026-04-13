@@ -1,0 +1,123 @@
+.s-foreign-documents {
+  :deep() {
+    .swiper {
+      overflow: visible;
+    }
+  }
+  &__wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: scale(24);
+
+    @include desktop() {
+      gap: scale(59);
+    }
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    gap: scale(24);
+
+    @include desktop() {
+      flex-direction: row;
+      gap: scale(59);
+    }
+  }
+
+  &__attention {
+    display: flex;
+    flex-direction: column;
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(16);
+    padding: var(--padding_def);
+    gap: scale(16);
+    @include mobile() {
+      min-height: scale(146);
+    }
+    @include desktop() {
+      border-radius: scale(12);
+      max-width: scale(786);
+      justify-content: center;
+      padding-left: scale(40);
+      padding-right: scale(40);
+    }
+
+    &__title {
+      color: var(--a-color_red);
+    }
+  }
+
+  &__document {
+    padding: var(--padding_def);
+    border-radius: var(--border-radius_def);
+    position: relative;
+    background-color: var(--a-color_red);
+    color: var(--a-color_white);
+    width: scale(280);
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: scale(16);
+    overflow: hidden;
+
+    @include desktop() {
+      width: scale(445);
+      gap: scale(22);
+    }
+    &__image {
+      position: absolute;
+      bottom: 0;
+      right: 0;
+      z-index: -1;
+      width: scale(134);
+      height: scale(117);
+
+      @include desktop() {
+        width: scale(240);
+        height: scale(210);
+        right: scale(10);
+        bottom: scale(-5);
+      }
+    }
+
+    &__title {
+      max-width: scale(330);
+
+      @include tablet(max) {
+        max-width: scale(224);
+      }
+    }
+
+    &__bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: auto;
+    }
+
+    &__desc {
+      max-width: scale(330);
+
+      @include tablet(max) {
+        max-width: scale(220);
+      }
+    }
+
+    &__num {
+      width: scale(32);
+      height: scale(32);
+      background-color: var(--a-color_black);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      align-self: flex-end;
+      flex-shrink: 0;
+      @include desktop() {
+        width: scale(48);
+        height: scale(48);
+      }
+    }
+  }
+}

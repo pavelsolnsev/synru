@@ -1,0 +1,142 @@
+.s-credit__prices:deep() {
+  .swiper {
+    overflow: visible;
+  }
+
+  .swiper-navigation {
+    button {
+      margin: 0;
+    }
+  }
+  .m-card-text {
+    min-height: auto;
+    color: var(--a-color_white);
+    background-color: var(--a-color_red);
+
+    @include tablet(min) {
+      min-height: scale(320);
+    }
+
+    @include desktop(min) {
+      min-height: scale(432);
+    }
+
+    &__title {
+      & + .m-card-text__text {
+        @include desktop(min) {
+          margin-top: scale(16);
+        }
+      }
+    }
+
+    &__text {
+      a {
+        text-decoration: underline;
+        transition: var(--transition);
+
+        &:hover {
+          color: var(--a-color_dark);
+        }
+      }
+    }
+
+    .a-btn {
+      display: flex;
+      width: 100%;
+    }
+
+    &__bottom {
+      position: relative;
+      padding-top: scale(36);
+
+      @include desktop(min) {
+        display: flex;
+        justify-content: space-between;
+      }
+    }
+
+    &__block {
+      margin-bottom: 0;
+
+      @include desktop(min) {
+        max-width: scale(420);
+      }
+    }
+
+    &__icons {
+      @include tablet(max) {
+        display: none;
+      }
+    }
+
+    &__icon {
+      background-color: var(--a-color_dark);
+    }
+
+    &__tags {
+      display: grid;
+      gap: scale(8);
+
+      .a-tag {
+        border-color: var(--a-color_white);
+      }
+
+      @include desktop(min) {
+        display: flex;
+      }
+    }
+  }
+
+  .s-credit__prices {
+    margin-top: scale(16);
+
+    @include desktop(min) {
+      margin-top: scale(40);
+    }
+  }
+
+  .m-card-tag-title {
+    color: var(--a-color_dark);
+    background-color: var(--a-color_white);
+    transition: var(--transition);
+
+    &:hover {
+      color: var(--a-color_white);
+      background-color: var(--a-color_red);
+
+      .ico-rub {
+        filter: invert(1);
+      }
+
+      .a-tag {
+        border-color: var(--a-color_red_dark2);
+        background-color: var(--a-color_red_dark2);
+      }
+
+      picture {
+        opacity: 0.2;
+      }
+    }
+
+    picture {
+      transition: var(--transition);
+    }
+
+    @include desktop(min) {
+      padding: scale(21);
+    }
+
+    .a-tag {
+      background-color: var(--a-color_red);
+    }
+
+    .ico {
+      height: scale(12);
+      transition: var(--transition);
+
+      @include desktop(min) {
+        height: scale(28);
+      }
+    }
+  }
+}

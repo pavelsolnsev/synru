@@ -1,0 +1,89 @@
+.about-practice {
+  &__title-logo {
+    display: inline-block;
+    width: scale(20);
+    height: scale(20);
+
+    @include desktop(min) {
+      width: scale(48);
+      height: scale(48);
+    }
+  }
+
+  &__title {
+    @include mobile() {
+      font-size: scale(24);
+      margin-bottom: scale(20);
+    }
+
+    @include tablet(min) {
+      margin-bottom: scale(24);
+    }
+  }
+
+  &__slide {
+    position: relative;
+    max-width: scale(280);
+    padding: var(--padding_def);
+    padding-right: scale(48);
+    height: auto;
+    min-height: scale(96);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      max-width: scale(445);
+      min-height: scale(132);
+      padding-right: scale(80);
+    }
+
+    svg {
+      position: absolute;
+      right: var(--padding_def);
+      bottom: var(--padding_def);
+      width: scale(28);
+      height: scale(28);
+      background-color: var(--a-color_grey_40);
+      border-radius: 50%;
+
+
+      @include desktop(min) {
+        bottom: scale(20);
+        width: scale(48);
+        height: scale(48);
+      }
+    }
+  }
+
+  &__icons {
+    z-index: 1;
+    position: relative;
+    display: inline-block;
+    min-width: scale(91);
+    height: scale(24);
+    background-color: var(--a-color_white);
+    border-radius: scale(4);
+    border: 1px solid var(--a-color_grey_40);
+    vertical-align: middle;
+
+    @include desktop(min) {
+      height: scale(64);
+      min-width: scale(234);
+      border-radius: scale(16);
+    }
+
+    img {
+      position: absolute;
+      object-fit: contain;
+      inset: scale(1);
+      width: calc(100% - scale(2));
+      height: calc(100% - scale(2));
+
+      @include desktop(min) {
+        inset: scale(4);
+        width: calc(100% - scale(8));
+        height: calc(100% - scale(8));
+      }
+    }
+  }  
+}

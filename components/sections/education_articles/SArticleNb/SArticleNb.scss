@@ -1,0 +1,39 @@
+.s-article-nb {
+  position: relative;
+  margin: scale(16) 0;
+  padding-left: scale(16);
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: scale(4);
+    border-radius: scale(20);
+    background-color: var(--a-color_red);
+  }
+
+  @include desktop() {
+    margin: scale(24) 0;
+    padding-left: scale(46);
+    &:after {
+      left: scale(24);
+      width: scale(6);
+    }
+  }
+
+  p {
+    margin: scale(12) 0 0;
+    @include desktop() {
+      margin: scale(16) 0 0;
+    }
+    &:first-child {
+      margin-top: 0;
+    }
+  }
+}

@@ -1,0 +1,22 @@
+.m-burger-back-button {
+  border: none;
+  background: none;
+  display: flex;
+  align-items: center;
+  gap: scale(8);
+  height: scale(24);
+  color: var(--a-color_dark);
+  cursor: pointer;
+
+  svg {
+    transform: rotate(180deg);
+    width: scale(16);
+    height: scale(16);
+  }
+
+  span {
+    font-weight: 600;
+    font-size: scale(16);
+    line-height: 120%;
+  }
+}

@@ -1,0 +1,132 @@
+.s-main-banner-ny {
+  position: relative;
+  overflow: hidden;
+  border-radius: scale(16);
+  @include mobile(max) {
+    padding: scale(307) 0 0;
+  }
+  @include tablet(min) {
+    margin: 0 var(--layout-h-padding) var(--layout-v-padding);
+  }
+
+  picture {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    z-index: -1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(32, 45, 69, 0.8);
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top right;
+    }
+    @include tablet(min) {
+      img {  object-position: bottom right }
+    }
+  }
+
+  &__content {
+    width: 100%;
+    padding: scale(24) scale(12) scale(12);
+    color: var(--a-color_white);
+    @include mobile(max) {
+      border-radius: scale(16);
+      box-shadow: 0 scale(-10) scale(40) 0 #00000059;
+      background: var(--a-color_red) #{__cdnUrl('synergy-api/uploads/content/s-main-banner-ny/bg_2.webp')} no-repeat 0 0;
+      background-size: cover;
+    }
+    @include tablet(min) {
+      width: scale(514);
+      padding: scale(40) scale(12) scale(24);
+    }
+    @include desktop {
+      width: scale(1032);
+      padding: scale(30) scale(24) scale(24);
+    }
+  }
+
+  &__title {
+    margin: 0 0 scale(24);
+    font-weight: 800;
+    font-family: "Synergy", sans-serif;
+    font-size: scale(44);
+    letter-spacing: -0.04em;
+    line-height: 1;
+    text-transform: uppercase;
+
+    @include tablet(min) {
+      margin: 0 0 scale(28);
+      font-weight: 700;
+      font-size: scale(56);
+    }
+    @include desktop {
+      line-height: 1.1;
+      margin: 0 0 scale(36);
+      font-size: scale(100);
+    }
+    span {
+      position: relative;
+      display: inline-block;
+    }
+    // span:first-child:after {
+    //   content: '';
+    //   position: absolute;
+    //   right: scale(-16);
+    //   top: scale(-8);
+    //   display: block;
+    //   width: scale(40);
+    //   height: scale(40);
+    //   background: #{__cdnUrl('synergy-api/uploads/content/s-main-banner-ny/hat.webp')} no-repeat 0 0;
+    //   background-size: contain;
+    //   @include tablet(min) {
+    //     right: scale(-24);
+    //     top: scale(-14);
+    //     width: scale(54);
+    //     height: scale(54);
+    //   }
+    //   @include desktop {
+    //     right: scale(-44);
+    //     top: scale(-24);
+    //     width: scale(102);
+    //     height: scale(102);
+    //   }
+    // }
+  }
+
+  &__description {
+    margin: 0 0 scale(12);
+    font-weight: 700;
+    font-family: "Synergy", sans-serif;
+    font-size: scale(36);
+    letter-spacing: -0.04em;
+    line-height: .9;
+    text-transform: lowercase;
+    @include tablet(min) {
+      margin: 0 0 scale(16);
+      font-size: scale(40);
+    }
+    @include desktop {
+      margin: 0 0 scale(42);
+      font-size: scale(88);
+    }
+  }
+
+  :deep(.a-btn.a-btn--primary) {
+    width: 100%;
+    @include tablet(min) {
+      width: scale(266);
+      background-color: var(--a-color_red);
+      &:hover { background-color: var(--a-color_red_dark) }
+    }
+    @include desktop() {
+      width: scale(518);
+      height: scale(78);
+      font-size: scale(26);
+    }
+  }
+}

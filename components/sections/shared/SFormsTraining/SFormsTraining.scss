@@ -1,0 +1,64 @@
+.s-forms-training {
+  overflow: hidden;
+
+  :deep() {
+    .swiper-navigation {
+      button {
+        margin: 0;
+      }
+    }
+  }
+
+  &__slider {
+    overflow: visible;
+    position: relative;
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    max-width: scale(280);
+    padding: scale(12);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    &:last-child {
+      margin-right: 0;
+    }
+
+    @include desktop(min) {
+      max-width: scale(444);
+      padding: scale(24);
+      margin-right: var(--gap_def);
+    }
+  }
+
+  &__item-title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: scale(24);
+
+    @include desktop(min) {
+      margin-bottom: scale(36);
+    }
+
+    .ico {
+      width: scale(32);
+      height: scale(32);
+      background-color: var(--a-color_red);
+      border-radius: 50%;
+      color: #fff;
+
+      @include desktop(min) {
+        width: scale(48);
+        height: scale(48);
+      }
+    }
+  }
+
+  &__item-content {
+    margin-top: auto;
+  }
+}

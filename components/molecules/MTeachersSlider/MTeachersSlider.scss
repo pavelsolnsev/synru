@@ -1,0 +1,23 @@
+.m-teachers {
+  &__slider {
+    overflow: visible;
+    position: relative;
+    :deep() {
+      .swiper {
+        overflow: visible;
+        &-slide {
+          width: scale(280);
+          height: auto;
+          @include desktop() {
+            width: scale(755);
+          }
+        }
+      }
+      .swiper-navigation {
+        button {
+          margin: 0;
+        }
+      }
+    }
+  }
+}

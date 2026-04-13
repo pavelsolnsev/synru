@@ -1,0 +1,57 @@
+.ratings {
+  &__list {
+    &-wrap {
+      display: grid;
+      gap: var(--gap_def);
+
+      @include tablet(min) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+      @include desktop(min) {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .s-ratings__slide {
+      overflow: hidden;
+      position: relative;
+      height: scale(183);
+      border-radius: scale(16);
+
+      @include desktop(min) {
+        height: scale(320);
+      }
+
+      &:hover {
+        background-color: var(--a-color_grey_20);
+      }
+
+      :deep() {
+        .m-rating-card__name {
+          @include tablet() {
+            max-width: scale(250);
+          }
+          @include desktop() {
+            max-width: scale(400);
+          }
+        }
+
+        .m-rating-card__image {
+          @include desktop() {
+            width: calc(var(--scale) * 220);
+            height: calc(var(--scale) * 188);
+            bottom: scale(10);
+            right: scale(0);
+          }
+
+          @include tablet() {
+            width: calc(var(--scale) * 130);
+            height: calc(var(--scale) * 110);
+            bottom: scale(10);
+            right: scale(0);
+          }
+        }
+      }
+    }
+  }
+}

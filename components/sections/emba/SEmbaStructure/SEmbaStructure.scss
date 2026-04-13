@@ -1,0 +1,213 @@
+.s-emba-structure {
+  &__list {
+    display: grid;
+    gap: var(--gap_def);
+
+    @include tablet(min) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktop(min) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    z-index: 1;
+    position: relative;
+    display: flex;
+    gap: scale(4);
+    flex-direction: column;
+    min-height: scale(440);
+    padding: var(--padding_def);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+    overflow: hidden;
+
+    @include desktop(min) {
+      min-height: scale(630);
+    }
+
+    &.--red {
+      color: var(--a-color_white);
+      background-color: var(--a-color_red);
+
+      .s-emba-structure__item-num {
+        background-color: var(--a-color_dark);
+      }
+      .s-emba-structure__item-teachers-title {
+        color: var(--a-color_white);
+      }
+      .s-emba-structure__item-teacher-image {
+        background-color: var(--a-color_red_dark);
+      }
+
+      .s-emba-structure__item-desc {
+        width: scale(244);
+
+        @include desktop(min) {
+          width: scale(306);
+        }
+      }
+      .s-emba-structure__item-tags {
+        .a-tag {
+          border-color: var(--a-color_white);
+        }
+      }
+    }
+
+    &:first-child {
+      color: var(--a-color_white);
+      background-color: var(--a-color_grey_dark);
+
+      .s-emba-structure__item-teacher-image {
+        background-color: var(--a-color_grey_100);
+      }
+    }
+
+    &:last-child {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      gap: scale(12);
+      color: var(--a-color_white);
+      background-color: var(--a-color_dark);
+
+      @include tablet(min) {
+        grid-column: 1/3;
+        min-height: scale(286);
+      }
+
+      @include desktop(min) {
+        grid-column: 1/5;
+        min-height: scale(358);
+      }
+
+      .s-emba-structure__item-right {
+        position: static;
+      }
+      .s-emba-structure__item-desc {
+        max-width: scale(314);
+
+        @include desktop(min) {
+          max-width: scale(400);
+        }
+      }
+    }
+  }
+
+  &__item-tags {
+    display: grid;
+    gap: scale(8);
+    grid-template-columns: 1fr 1fr;
+    width: scale(244);
+    margin-bottom: scale(20);
+
+    @include desktop(min) {
+      gap: scale(12);
+      width: scale(306);
+      margin-bottom: scale(32);
+    }
+
+    .a-tag {
+      width: 100%;
+      border-radius: scale(5);
+      border-color: var(--a-color_grey_80);
+
+      @include desktop(min) {
+        border-radius: scale(9);
+      }
+    }
+  }
+
+  &__item-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: scale(56);
+    height: scale(50);
+    color: var(--a-color_white);
+    background-color: var(--a-color_red);
+    border-radius: scale(12);
+
+    @include desktop(min) {
+      width: scale(75);
+      height: scale(70);
+    }
+  }
+
+  &__item-right {
+    position: absolute;
+    top: scale(12);
+    right: scale(12);
+    display: grid;
+    gap: scale(8);
+    width: scale(56);
+
+    @include desktop(min) {
+      top: scale(24);
+      right: scale(24);
+      width: scale(75);
+    }
+  }
+
+  &__item-desc {
+    display: grid;
+    gap: scale(8);
+
+    @include desktop(min) {
+      gap: scale(12);
+    }
+  }
+
+  &__item-bg {
+    z-index: -1;
+    position: absolute;
+    inset: 0;
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__item-teachers {
+    display: grid;
+    gap: scale(8);
+    grid-template-columns: repeat(4, 1fr);
+    margin-top: auto;
+
+    &-title {
+      grid-column: 1/5;
+      color: var(--a-color_grey_80);
+    }
+  }
+
+  &__item-teacher {
+    display: flex;
+    flex-direction: column;
+    gap: scale(4);
+
+    &-image {
+      overflow: hidden;
+      height: scale(70);
+      margin-top: auto;
+      background-color: var(--a-color_grey_20);
+      border-radius: scale(6);
+      
+      @include desktop(min) {
+        height: scale(90);
+      }
+      
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+      }
+    }
+  }
+}

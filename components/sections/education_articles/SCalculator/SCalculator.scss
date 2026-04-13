@@ -1,0 +1,212 @@
+.s-calculator {
+  display: grid;
+  gap: scale(40);
+  @include desktop(min) {
+    gap: scale(50);
+  }
+
+  &__inner {
+    min-width: 0;
+    margin: 0 calc(-1 * var(--padding_def));
+    padding: var(--padding_def);
+    border-radius: scale(16);
+    background-color: var(--a-color_white);
+    @include desktop(min) {
+      margin: 0;
+    }
+  }
+
+  &__description {
+    margin: scale(16) 0;
+    @include desktop(min) {
+      margin: scale(32) 0 scale(24);
+      margin-right: scale(120);
+    }
+    p {
+      margin: 0 0 scale(8);
+    }
+    p:last-child {
+      margin: 0;
+    }
+  }
+
+  &__form {
+    display: grid;
+    grid-gap: scale(8);
+    @include tablet(min) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include desktop(min) {
+      grid-gap: scale(24);
+      grid-template-columns: repeat(3, 1fr);
+      margin-top: scale(50);
+    }
+
+    &-btn {
+      width: 100%;
+      margin: scale(16) auto scale(8);
+      @include tablet(min) {
+        height: auto;
+        min-height: scale(48);
+        margin: 0;
+      }
+    }
+  }
+
+  &__lesson {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    min-width: 100%;
+    padding: scale(12);
+    border-radius: scale(16);
+    background-color: var(--a-color_grey_10);
+    @include tablet(min) {
+      padding: scale(16);
+    }
+
+    &-label {
+      display: flex;
+      flex-direction: column;
+      width: scale(180);
+      padding-right: scale(16);
+      @include tablet(min) {
+        width: auto;
+      }
+      &-min {
+        margin-top: scale(4);
+        color: var(--a-color_grey_70);
+      }
+    }
+
+    &-input {
+      overflow: hidden;
+      position: relative;
+      flex: none;
+      gap: 0 scale(8);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      width: scale(94);
+      height: scale(41);
+      padding: scale(6) scale(8);
+      border-radius: scale(8);
+      background-color: var(--a-color_white);
+      @include desktop(min) {
+        width: scale(105);
+        height: scale(55);
+      }
+
+      button {
+        position: relative;
+        display: flex;
+        align-items: flex-end;
+        justify-content: center;
+        width: scale(36);
+        height: auto;
+        border: none;
+        background-color: transparent;
+        color: var(--a-color_grey_60);
+        text-align: center;
+        transition: var(--transition);
+        cursor: pointer;
+        &:first-of-type {
+          transform: rotate(180deg);
+        }
+        &:hover {
+          color: var(--a-color_dark);
+          z-index: 1;
+        }
+        svg {
+          width: scale(16);
+          height: scale(12);
+        }
+      }
+      input {
+        grid-row: 1/3;
+        width: 100%;
+        height: 100%;
+        border: none;
+        background-color: transparent;
+        text-align: right;
+        outline: none;
+        -moz-appearance: textfield;
+        -webkit-appearance: textfield;
+        appearance: textfield;
+        &::-webkit-outer-spin-button,
+        &::-webkit-inner-spin-button {
+          display: none;
+        }
+        &::-webkit-input-placeholder {
+          color: var(--a-color_grey_70);
+        }
+        &::-moz-placeholder {
+          color: var(--a-color_grey_70);
+        }
+        &:-moz-placeholder {
+          color: var(--a-color_grey_70);
+        }
+        &:-ms-input-placeholder {
+          color: var(--a-color_grey_70);
+        }
+      }
+    }
+  }
+
+  &__results {
+    $results: &;
+    // display: none;
+    min-width: 0;
+    @include desktop(min) {
+      position: relative;
+    }
+
+    &-slider {
+      margin: scale(16) calc(-1 * var(--layout-h-padding)) 0;
+      padding: 0 var(--layout-h-padding);
+      @include desktop(min) {
+        position: static;
+        margin: scale(24) 0 0;
+        padding: 0;
+      }
+    }
+
+    :deep() {
+      .swiper-wrapper {
+        max-height: scale(402);
+        @include desktop(min) {
+          max-height: scale(334);
+        }
+      }
+      .swiper-slide {
+        width: scale(320);
+        height: scale(185);
+        @include tablet(min) {
+          width: scale(364);
+        }
+        @include desktop(min) {
+          width: scale(600);
+          height: scale(334);
+        }
+      }
+      .specialty-card {
+        height: 100%;
+        &:hover {
+          transform: none;
+        }
+      }
+
+      .swiper-navigation {
+        @include desktop(min) {
+          top: 0;
+          bottom: auto;
+        }
+      }
+
+      @include desktop(min) {
+        .swiper-wrapper {
+          max-height: scale(700);
+        }
+      }
+    }
+  }
+}

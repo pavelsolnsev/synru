@@ -1,0 +1,113 @@
+.s-magistracy-about {
+  &__body {
+    display: flex;
+    gap: scale(20);
+
+    @include tablet(max) {
+      flex-direction: column;
+      gap: scale(8);
+    }
+  }
+
+  &__main-info {
+    position: relative;
+    padding: scale(24);
+    border-radius: scale(16);
+    width: scale(910);
+    height: scale(572);
+    flex-shrink: 0;
+    overflow: hidden;
+
+    @include tablet(max) {
+      padding: scale(12);
+      width: 100%;
+      height: scale(240);
+      border-radius: scale(12);
+    }
+  }
+
+  &__title {
+    position: relative;
+    z-index: 1;
+    max-width: scale(441);
+
+    @include tablet(max) {
+      max-width: scale(399);
+    }
+
+    @include mobile(max) {
+      max-width: scale(210);
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-wrap: wrap;
+    gap: scale(20);
+
+    @include tablet(max) {
+      flex-wrap: nowrap;
+      gap: scale(8);
+    }
+
+    @include mobile(max) {
+      flex-wrap: wrap;
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc(50% - scale(10));
+    height: scale(276);
+    padding: scale(24);
+    position: relative;
+    border-radius: scale(16);
+    overflow: hidden;
+
+    &:nth-child(3),&:nth-child(4) {
+      color: var(--a-color_white);
+    }
+
+    @include tablet(max) {
+      width: calc(25% - ((scale(8) * 3) / 4));
+      height: scale(140);
+      padding: scale(12);
+      border-radius: scale(12);
+    }
+
+    @include mobile(max) {
+      width: calc(50% - scale(4));
+    }
+  }
+
+  &__card-subtitle, &__card-title {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__card-subtitle {
+    font-weight: 600;
+
+    @include tablet(max) {
+     font-size: scale(12);
+    }
+  }
+
+  &__card-bg {
+    position: absolute;
+    z-index: 0;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+  }
+
+  &__img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center right;
+  }
+}

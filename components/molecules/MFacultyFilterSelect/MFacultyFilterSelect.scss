@@ -1,0 +1,9 @@
+:deep() {
+  .a-uikit-select__list-option {
+    &.--help {
+      background-color: var(--a-color_grey_40);
+      border-radius: scale(8);
+      margin-right: scale(8);
+    }
+  }
+}

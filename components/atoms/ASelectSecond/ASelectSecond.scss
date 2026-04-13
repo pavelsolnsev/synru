@@ -1,0 +1,52 @@
+.a-input {
+  display: inline-block;
+  width: 100%;
+  padding: 0 scale(16);
+  height: scale(48);
+  color: var(--a-color_dark);
+  border: rem(1) solid var(--a-color_grey_20);
+  border-radius: scale(8);
+  background: var(--a-color_grey_20);
+  transition: var(--transition);
+  outline: none !important;
+
+  &::placeholder {
+    color: var(--a-color_grey_80);
+  }
+
+  &:focus {
+    border: scale(1) solid var(--a-color_grey_80);
+  }
+
+  @include desktop() {
+    height: scale(54);
+    padding: scale(16) scale(20);
+    border-radius: scale(12);
+  }
+
+  &.error {
+    box-shadow: 0 0 rem(2) var(--a-color_red);
+  }
+}
+
+select.a-input {
+  background-color: var(--a-color_white);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  -o-appearance: none;
+  appearance: none;
+  color: var(--a-color_dark);
+  background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 17"><path fill="%231C1C1C" d="m15.2 5.7-6.97 6.96L1.26 5.7l1.48-1.48 5.49 5.48 5.48-5.48 1.48 1.48Z"/></svg>');
+  background-position: calc(100% - 16px) center;
+  background-repeat: no-repeat;
+  background-size: scale(16);
+
+  @include desktop(min) {
+    padding: 0 scale(20);
+  }
+
+  &::-ms-expand {
+    display: none;
+  }
+}
+

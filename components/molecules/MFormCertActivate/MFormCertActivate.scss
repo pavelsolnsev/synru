@@ -1,0 +1,142 @@
+.m-form-activate {
+  position: relative;
+  z-index: 1;
+  padding: scale(24);
+  border: 1px solid var(--glass-stroke, rgba(255, 255, 255, 0.50));
+  background: rgba(249, 249, 249, 0.70);
+  box-shadow: scale(-5) scale(-6) scale(26.5) 0 rgba(98, 42, 42, 0.05);
+  border-radius: scale(16);
+  backdrop-filter: blur(scale(10));
+  width: scale(866);
+  height: scale(436);
+
+  @include tablet(max) {
+    width: scale(312);
+    padding: scale(12);
+    height: auto;
+  }
+
+  @include mobile(max) {
+    width: 100%;
+    height: scale(353);
+  }
+
+  &__title {
+    font-size: scale(64);
+    line-height: 100%;
+    letter-spacing: scale(-1.28);
+
+    @include tablet(max) {
+      font-size: scale(26);
+    }
+  }
+
+  &__form {
+    margin-top: scale(23.5);
+
+    @include tablet(max) {
+      margin-top: scale(24);
+    }
+  }
+
+  &__phone,
+  &__email {
+    margin-top: scale(8);
+
+    @include tablet(max) {
+      margin-top: scale(4);
+    }
+  }
+
+  &__custom-input {
+    background-color: var(--a-color_white) !important;
+    height: scale(54) !important;
+    font-weight: 500 !important;
+
+    @include tablet(max) {
+      height: scale(48) !important;
+    }
+  }
+
+  &__wrapper {
+    margin-top: scale(12);
+    display: flex;
+    gap: scale(20);
+
+    @include tablet(max) {
+      margin-top: scale(8);
+      gap: scale(10);
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: scale(13);
+    width: 100%;
+  }
+
+  &__custom-label {
+    font-size: scale(14);
+    font-weight: 500;
+
+    @include tablet(max) {
+      font-size: scale(10);
+    }
+  }
+
+  &__amount {
+    padding: scale(16) scale(20);
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(12);
+    font-size: scale(19);
+    line-height: 1.2em;
+    color: var(--a-color_grey_80);
+
+    @include tablet(max) {
+      padding: scale(16) scale(12);
+      font-size: scale(14);
+    }
+  }
+
+  &__submit {
+    margin-top: scale(23);
+    width: 100%;
+
+    @include tablet(max) {
+      margin-top: scale(24);
+    }
+  }
+
+  &__checkbox {
+    margin-top: scale(16);
+  }
+
+  &__ruble {
+    position: relative;
+
+    &:after {
+      content: '';
+      width: 29%;
+      height: 7%;
+      background-color: currentColor;
+      position: absolute;
+      left: -7%;
+      top: 51%;
+
+      @include mobile(max) {
+        top: 52%;
+      }
+    }
+
+    &:before {
+      content: '';
+      width: 67%;
+      height: 5%;
+      background-color: currentColor;
+      position: absolute;
+      left: -7%;
+      top: 65%;
+    }
+  }
+}

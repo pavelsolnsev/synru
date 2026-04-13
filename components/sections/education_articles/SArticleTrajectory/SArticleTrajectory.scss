@@ -1,0 +1,103 @@
+.s-article-trajectory {
+  overflow-y: hidden;
+
+  margin-left: calc(-1 * var(--layout-h-padding));
+  margin-right: calc(-1 * var(--layout-h-padding));
+  padding: 0 var(--layout-h-padding);
+  @include default-margin;
+
+  @include desktop() {
+    margin: scale(40) scale(-24);
+    padding: 0 scale(24);
+  }
+
+  h4 {
+    @include desktop() {
+      margin: scale(16) 0 scale(24);
+    }
+    margin: scale(16) 0;
+  }
+
+  &__slider {
+    position: relative;
+  }
+
+  :deep() {
+    .swiper-slide {
+      overflow: hidden;
+      z-index: 1;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      width: scale(250);
+      height: auto;
+      min-height: scale(129);
+      padding: var(--padding_def);
+      background-color: var(--a-color_grey_20);
+      border-radius: scale(16);
+
+      &::after {
+        z-index: -1;
+        position: absolute;
+        top: 50%;
+        right: scale(-16);
+        content: "";
+        display: block;
+        width: scale(140);
+        height: scale(140);
+        transform: translateY(-50%);
+        background-size: 100%;
+        background-image: url('data:image/svg+xml, <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 260 261"><g fill="%23ECEDF0" filter="url(%23a)"><path fill-rule="evenodd" d="m76 0 184 76-75 185L0 185 76 0Zm8 19L18 177l159 66 65-159L84 19Zm6 16 136 56-56 135-135-55L90 35Zm8 18L53 163l70 29-35-79 80-31-70-29Zm81 33-17 41-20 8 9 21-17 40 29 12 45-110-29-12Zm-72 35 22 51 7-16-13-28 29-11 6-16-51 20Z" clip-rule="evenodd"/><path fill-rule="evenodd" d="M18 177 84 19l158 65-65 159-159-66ZM90 35l136 56-56 135-135-55L90 35Z" clip-rule="evenodd"/><path d="m129 172-22-51 51-20-6 16-29 11 13 28-7 16Z"/></g><defs><filter id="a" width="273" height="267" x="-6" y="0" color-interpolation-filters="sRGB" filterUnits="userSpaceOnUse"><feFlood flood-opacity="0" result="BackgroundImageFix"/><feBlend in="SourceGraphic" in2="BackgroundImageFix" result="shape"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="-6"/><feGaussianBlur stdDeviation="7.3"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix values="0 0 0 0 0.98903 0 0 0 0 0.98903 0 0 0 0 0.98903 0 0 0 1 0"/><feBlend in2="shape" result="effect1_innerShadow_195_760"/><feColorMatrix in="SourceAlpha" result="hardAlpha" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0"/><feOffset dx="7" dy="6"/><feGaussianBlur stdDeviation="4.4"/><feComposite in2="hardAlpha" k2="-1" k3="1" operator="arithmetic"/><feColorMatrix values="0 0 0 0 0.550342 0 0 0 0 0.550342 0 0 0 0 0.550342 0 0 0 0.15 0"/><feBlend in2="effect1_innerShadow_195_760" result="effect2_innerShadow_195_760"/></filter></defs></svg>');
+
+        @include desktop(min) {
+          width: scale(260);
+          height: scale(260);
+          right: scale(-100);
+        }
+      }
+
+      @include desktop(min) {
+        width: scale(378);
+        min-height: scale(194);
+
+        &:not(:last-child) {
+          margin-right: scale(12);
+        }
+      }
+    }
+
+    .swiper-navigation {
+      @include desktop(min) {
+        top: scale(-62);
+      }
+
+      button {
+        margin: 0;
+      }
+
+      .swiper-button-prev,
+      .swiper-button-next {
+        &:hover {
+          background-color: var(--a-color_grey_10);
+        }
+      }
+    }
+  }
+
+  & &__item-num {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: scale(24);
+    height: scale(24);
+    color: var(--a-color_white);
+    background-color: var(--a-color_red);
+    border-radius: 50%;
+
+    @include desktop(min) {
+      width: scale(32);
+      height: scale(32);
+    }
+  }
+}

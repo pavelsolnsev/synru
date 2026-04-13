@@ -1,0 +1,103 @@
+.s-menu {
+  gap: scale(8);
+  // display: none;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: scale(16) var(--layout-h-padding);
+  border-radius: var(--border-radius_def);
+  background-color: var(--a-color_white);
+
+  &.--visible {
+    display: flex;
+  }
+
+  @include desktop() {
+    padding: scale(24);
+    background-color: var(--a-color_grey_10);
+  }
+
+  &__title {
+    margin-bottom: scale(4);
+    @include desktop() {
+      margin-bottom: scale(16);
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: scale(8);
+    width: 100%;
+
+    @include desktop(min) {
+      gap: scale(12);
+    }
+  }
+
+  :deep() {
+    a {
+      position: relative;
+      gap: scale(8);
+      display: flex;
+      align-items: center;
+      padding-left: scale(16);
+      text-decoration-line: underline;
+      text-decoration-style: dotted;
+      text-decoration-color: var(--a-color_grey_60);
+      transition: var(--transition);
+
+      &:hover {
+        text-decoration-style: solid;
+        text-decoration-color: var(--a-color_dark);
+      }
+
+      @include desktop() {
+        gap: scale(8);
+        padding-left: scale(24);
+      }
+
+      &:before {
+        position: absolute;
+        left: 0;
+        top: scale(4);
+        flex: none;
+        content: "";
+        display: block;
+        width: scale(7);
+        height: scale(7);
+        border-radius: scale(2);
+        background-color: var(--a-color_red);
+        @include desktop() {
+          top: auto;
+        }
+      }
+    }
+  }
+
+  ul.--subitem {
+    display: grid;
+    gap: scale(16);
+    padding: scale(8) scale(14);
+    margin-top: scale(8);
+    background-color: var(--a-color_grey_10);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      margin-top: scale(12);
+      padding: scale(16) scale(24);
+      background-color: var(--a-color_grey_20);
+    }
+
+    a {
+      padding: 0;
+      color: var(--a-color_grey_80);
+
+      &:before {
+        content: none;
+      }
+
+      &:hover {
+        color: var(--a-color_dark);
+      }
+    }
+  }
+}

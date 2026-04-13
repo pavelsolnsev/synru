@@ -1,0 +1,35 @@
+div {
+  width: 100%;
+}
+.a-input {
+  display: inline-block;
+  width: 100%;
+  padding: 0 scale(24);
+  height: scale(60);
+  color: var(--a-color_dark);
+  border: none;
+  border-radius: scale(12);
+  background: var(--a-color_white);
+  transition: var(--transition);
+  outline: none !important;
+  font-weight: 500;
+  font-size: scale(20);
+  line-height: 100%;
+  @include tablet(max) {
+    border-radius: scale(16);
+    font-size: scale(16);
+    height: scale(52);
+  }
+  &::placeholder {
+    color: var(--a-color_grey_50);
+  }
+
+  &:focus,
+  &:hover {
+    border: scale(1) solid var(--a-color_grey_80);
+  }
+
+  &.error {
+    box-shadow: 0 0 rem(2) var(--a-color_red);
+  }
+}

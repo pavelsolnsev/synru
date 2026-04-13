@@ -1,0 +1,72 @@
+.s-credit-how-get-and-pay {
+  background-color: var(--a-color_grey_20);
+  margin-bottom: scale(20);
+  .a-btn {
+    margin-top: scale(24);
+    @include tablet(max) {
+      width: 100%;
+    }
+    @include desktop() {
+      margin-top: scale(40);
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+    }
+  }
+
+  &__button {
+    &-mobile {
+      display: none;
+      @include mobile() {
+        display: block;
+      }
+    }
+
+    &-large {
+      display: none;
+      @include tablet(min) {
+        display: block;
+      }
+    }
+  }
+  :deep() {
+    .s-how-get-credit {
+      padding: 0;
+      .l-section__title {
+        margin-top: scale(24);
+        @include desktop() {
+          margin-top: scale(34);
+        }
+      }
+    }
+    .s-pay-credit {
+      padding: 0;
+      margin-top: scale(24);
+      border-radius: initial;
+      &__title {
+        @include tablet() {
+          margin-top: scale(32);
+        }
+        @include desktop() {
+          margin-top: scale(40);
+        }
+      }
+      @include desktop() {
+        margin-top: 0;
+      }
+      .l-section__title {
+        font-weight: 600;
+        font-size: scale(24);
+        line-height: 120%;
+        @include tablet() {
+          margin-top: scale(10);
+        }
+        @include desktop() {
+          font-size: scale(48);
+          margin-bottom: scale(32);
+          margin-top: scale(40);
+        }
+      }
+    }
+  }
+}

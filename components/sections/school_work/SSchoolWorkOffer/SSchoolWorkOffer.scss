@@ -1,0 +1,202 @@
+.s-school-work-offer {
+
+  @include mobile(max) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &__top {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: scale(540);
+    padding: scale(24);
+    position: relative;
+    overflow: hidden;
+    border-radius: scale(16);
+    color: var(--a-color_white);
+
+    @include tablet(max) {
+      height: scale(273);
+      padding: scale(12);
+    }
+
+    @include mobile(max) {
+      height: scale(472);
+    }
+  }
+
+  &__title {
+    max-width: scale(721);
+    margin-top: scale(20);
+    position: relative;
+    z-index: 2;
+
+    @include tablet(max) {
+      max-width: 100%;
+      margin-top: scale(12);
+    }
+  }
+
+  &__subtitle {
+    max-width: scale(721);
+    position: relative;
+    z-index: 2;
+
+    @include tablet(max) {
+      max-width: 100%;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    gap: scale(12);
+    flex-wrap: wrap;
+    width: scale(673);
+    margin-top: auto;
+    position: relative;
+    z-index: 2;
+
+    @include tablet(max) {
+      width: scale(227);
+    }
+  }
+
+  &__tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: scale(10) scale(20);
+    width: fit-content;
+    height: auto;
+    font-size: scale(16);
+    line-height: 120%;
+    font-weight: 600;
+    color: var(--a-color_white);
+    border-radius: scale(8);
+    backdrop-filter: blur(22px);
+    background: rgba(255, 255, 255, 0.19);
+
+    @include tablet(max) {
+      padding: scale(6) scale(12);
+      font-size: scale(13);
+    }
+  }
+
+  &__cards-title {
+    margin-top: scale(50);
+
+    @include tablet(max) {
+      margin-top: scale(24);
+    }
+
+    @include mobile(max) {
+      padding: 0 scale(12);
+    }
+  }
+
+  &__cards {
+    display: flex;
+    gap: scale(20);
+    margin-top: scale(40);
+
+    @include tablet(max) {
+      gap: scale(10);
+      margin-top: scale(24);
+    }
+
+    @include mobile(max) {
+      flex-direction: column;
+      padding: 0 scale(12);
+    }
+  }
+
+  &__card {
+    width: calc((100% / 3) - scale(40) / 3);
+    height: scale(244);
+    padding: scale(24);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: scale(16);
+    position: relative;
+    overflow: hidden;
+    background-color: var(--a-color_grey_40);
+
+    @include tablet(max) {
+      width: calc(100% / 3 - scale(20) / 3);
+      height: scale(129);
+      padding: scale(12);
+    }
+
+    @include mobile(max) {
+      height: scale(118);
+      width: 100%;
+    }
+  }
+
+  &__card-title {
+    max-width: scale(361);
+    position: relative;
+    z-index: 2;
+
+    @include tablet(max) {
+      max-width: scale(177);
+    }
+
+    @include mobile(max) {
+      max-width: 100%;
+    }
+  }
+
+  &__index {
+    width: scale(48);
+    height: scale(48);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--a-color_white);
+    border-radius: 100%;
+    font-size: scale(26);
+    font-weight: 600;
+
+    @include tablet(max) {
+      width: scale(32);
+      height: scale(32);
+      font-size: scale(17);
+    }
+  }
+
+  &__card-bg {
+    position: absolute;
+    z-index: 1;
+    bottom: 0;
+    right: scale(-30);
+
+    @include tablet(max) {
+      height: scale(97);
+      bottom: scale(12);
+      right: 0;
+    }
+
+    @include mobile(max) {
+      top: scale(13);
+      right: scale(13);
+    }
+  }
+
+  &__card-element {
+    position: absolute;
+    z-index: 0;
+    bottom: 0;
+    right: 0;
+
+    @include tablet(max) {
+      width: 50%;
+    }
+
+    @include mobile(max) {
+      width: 30%;
+    }
+  }
+}

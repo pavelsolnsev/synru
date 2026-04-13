@@ -1,0 +1,78 @@
+// @import "../../../../blocks/_ui/atoms/a_play/a_play";
+
+.video-gallery {
+  position: relative;
+  :deep() {
+    .swiper-navigation {
+      button {
+        margin: 0;
+      }
+    }
+
+    .m-video-card {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+      width: scale(320);
+      height: scale(220);
+
+      @include desktop(min) {
+        width: scale(648);
+        height: scale(360);
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: scale(118);
+        background: linear-gradient(
+          180deg,
+          rgba(28, 28, 28, 0) 11.88%,
+          rgba(28, 28, 28, 0.65) 52.17%,
+          rgba(28, 28, 28, 0.91) 77.84%,
+          #1c1c1c 100%
+        );
+        z-index: 2;
+      }
+
+      &__play.a-play {
+        z-index: 4;
+        top: scale(12);
+        right: scale(12);
+        width: scale(36);
+        height: scale(36);
+        left: auto;
+        bottom: auto;
+
+        @include desktop(min) {
+          top: scale(24);
+          right: scale(24);
+          width: scale(48);
+          height: scale(48);
+        }
+      }
+
+      &__desc {
+        z-index: 3;
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        width: 100%;
+        display: grid;
+        gap: scale(12);
+      }
+
+      &__title {
+        color: var(--a-color_white);
+      }
+
+      &__text {
+        color: var(--a-color_grey_70);
+      }
+    }
+  }
+}

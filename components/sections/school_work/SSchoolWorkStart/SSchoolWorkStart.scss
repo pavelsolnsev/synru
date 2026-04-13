@@ -1,0 +1,86 @@
+.s-school-work-start {
+  &__body {
+    display: flex;
+    justify-content: space-between;
+    height: scale(436);
+    padding: scale(22) scale(24);
+    background-color: var(--a-color_grey_40);
+    border-radius: scale(16);
+
+    @include tablet(max) {
+      height: scale(238);
+      padding: scale(12);
+      gap: scale(24);
+    }
+
+    @include mobile(max) {
+      height: auto;
+      flex-direction: column;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+  }
+
+  &__title {
+    max-width: scale(560);
+
+    @include tablet(max) {
+      max-width: 100%;
+    }
+  }
+
+  &__subtitle {
+    max-width: scale(700);
+    font-size: scale(26);
+    font-weight: 600;
+    line-height: 120%;
+    margin-top: scale(21);
+
+    @include tablet(max) {
+      margin-top: scale(24);
+      font-size: scale(18);
+    }
+
+    &:deep(.white) {
+      display: inline-flex;
+      background-color: var(--a-color_white);
+      color: var(--a-color_black);
+      padding: 0 scale(12);
+      border-radius: scale(8);
+    }
+  }
+
+  &__photo {
+    position: relative;
+    width: scale(886);
+    border-radius: scale(16);
+    overflow: hidden;
+    flex-shrink: 0;
+
+    @include tablet(max) {
+      width: scale(375);
+    }
+
+    @include mobile(max) {
+      width: 100%;
+      height: scale(214);
+    }
+  }
+
+  &__btn {
+    margin-top: auto;
+    width: scale(412);
+
+    @include tablet(max) {
+      width: 100%;
+    }
+
+    @include mobile(max) {
+      margin-top: scale(24);
+    }
+  }
+}

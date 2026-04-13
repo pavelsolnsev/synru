@@ -1,0 +1,107 @@
+.m-quiz-form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  box-sizing: border-box;
+  gap: scale(10);
+  @include tablet() {
+    gap: scale(8);
+  }
+  @include desktop() {
+    gap: scale(12);
+  }
+  :deep() {
+    .a-input,
+    .a-btn {
+      width: 100%;
+      margin: 0;
+      white-space: nowrap;
+    }
+    .a-input {
+      @include tablet(min) {
+        max-width: scale(266) !important;
+      }
+
+      @include desktop(min) {
+        max-width: scale(563) !important;
+        height: scale(78) !important;
+      }
+    }
+    .a-btn {
+      @include tablet(min) {
+        max-width: scale(180) !important;
+      }
+
+      @include desktop(min) {
+        max-width: scale(518) !important;
+        height: scale(78) !important;
+      }
+    }
+    .a-chekbox__label {
+      display: inline-block;
+      text-align: left;
+      font-size: scale(14);
+      font-weight: 500;
+      line-height: 1.2;
+      &::before {
+        width: scale(16);
+        height: scale(16);
+      }
+      color: var(--a-color_grey_20);
+      br {
+        display: none;
+      }
+      @include mobile {
+        br {
+          display: block;
+        }
+      }
+      @include tablet() {
+        max-width: scale(427);
+        display: block;
+        font-weight: 600;
+        font-size: scale(12);
+        line-height: 1.2;
+      }
+      @include tablet(max) {
+        margin-left: scale(8);
+      }
+      .m-quiz-form__privacy-link {
+        @include mobile {
+          a {
+            text-decoration: underline;
+          }
+        }
+      }
+    }
+
+    .widget-form-privacy {
+      display: none !important;
+    }
+    .a-btn[disabled] {
+      cursor: not-allowed !important;
+      opacity: 0.5;
+    }
+  }
+  &__header {
+    display: flex;
+    gap: scale(8);
+    @include mobile() {
+      flex-direction: column;
+    }
+    @include desktop() {
+      gap: scale(10);
+    }
+  }
+  .widget-form-privacy {
+    display: none !important;
+  }
+
+  &_dark {
+    :deep() {
+      .a-chekbox__label {
+        color: var(--a-color_grey_dark);
+      }
+    }
+  }
+}

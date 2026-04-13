@@ -1,0 +1,115 @@
+.s-talisman {
+  $pad: scale(12);
+  position: relative;
+  margin: scale(4) 0;
+  padding: $pad;
+  padding-bottom: scale(76);
+  border-radius: scale(16);
+  background-color: var(--a-color_red);
+
+  @include tablet(min) {
+    margin: scale(4) var(--layout-h-padding);
+    padding-bottom: $pad;
+  }
+  @include desktop(min) {
+    margin: scale(8) var(--layout-h-padding);
+    padding: scale(24);
+  }
+
+  &__inner {
+    @include tablet(min) {
+      display: grid;
+      grid-gap: scale(8);
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include desktop(min) {
+      grid-gap: 0 scale(20);
+    }
+  }
+
+  &__right {
+    @include tablet(min) {
+      display: flex;
+      flex-direction: column;
+      gap: scale(8);
+      height: auto;
+    }
+    @include desktop(min) {
+      position: relative;
+      &:after {
+        content: '';
+        background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='595' height='149' fill='none' viewBox='0 0 595 149'%3E%3Cpath fill='%23ED131C' d='M428.678 45.65H41.561c-12.468 0-22.576-10.106-22.576-22.575V9.977a9.477 9.477 0 1 0-18.953.032L.38 113.62c.066 19.835 16.164 35.879 36 35.879H583c6.627 0 12-5.373 12-12s-5.373-12-12-12h-64.479a36 36 0 0 1-30.519-16.905l-28.805-46.039a36 36 0 0 0-30.519-16.905Z'/%3E%3C/svg%3E") no-repeat 0 0 / contain;
+        position: absolute;
+        left: scale(-19);
+        top: auto;
+        bottom: scale(-27);
+        width: scale(595);
+        height: scale(153);
+      }
+    }
+    &-img {
+      display: block;
+      @include mobile() {
+        margin: calc(-1 * #{$pad});
+        margin-bottom: 0;
+      }
+      @include tablet(min) {
+        flex: 1;
+        margin-top: calc(-1 * #{$pad});
+      }
+      @include desktop(min) {
+        margin-top: calc(-1 * #{scale(24)});
+      }
+      img {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .a-btn {
+      @include mobile() {
+        position: absolute;
+        left: $pad;
+        top: auto;
+        right: $pad;
+        bottom: $pad;
+      }
+      @include desktop() {
+        position: absolute;
+        left: 0;
+        top: auto;
+        bottom: 0;
+        width: scale(420);
+        z-index: 1;
+      }
+    }
+  }
+
+  &__grid {
+    display: grid;
+    gap: scale(8);
+    margin: scale(8) 0;
+    @include tablet(min) {
+      order: -1;
+      margin: 0;
+    }
+    @include desktop(min) {
+      gap: scale(20);
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+
+      .m-card-text:first-child {
+        grid-column: 1/-1;
+      }
+    }
+  }
+
+  .m-card-text {
+    gap: scale(4) 0;
+    border-radius: scale(12);
+    @include desktop(min) {
+      background-color: var(--a-color_grey_10);
+    }
+  }
+}

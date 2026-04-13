@@ -1,0 +1,53 @@
+.s-grid-text-img {
+  :deep() {
+    .l-section__inner {
+      display: grid;
+      gap: var(--gap_def);
+      grid-template-columns: 1fr;
+  
+      @include desktop(min) {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+
+    .m-card-text {
+      &__block {
+        margin-bottom: 0;
+      }
+
+      &__bottom {
+        gap: var(--gap_def);
+      }
+    }
+  }
+
+  &__rune {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: scale(60);
+    color: var(--a-color_red);
+
+    @include desktop(min) {
+      width: scale(114);
+    }
+  }
+
+  img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+    border-radius: scale(16);
+    order: -1;
+
+    @include tablet() {
+      max-height: scale(240);
+      object-position: top center;
+    }
+
+    @include desktop(min) {
+      order: unset;
+    }
+  }
+}

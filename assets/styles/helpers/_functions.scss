@@ -1,0 +1,34 @@
+@use "sass:math";
+
+@function rem($px) {
+  @return math.div($px, 16) + rem;
+}
+
+@function scale($px) {
+  @return calc(var(--scale) * #{$px});
+}
+
+
+//- z-indexes
+$indexes: (
+  "quiz",
+  "breadcrumbs",
+  "priemnaya-komissiya",
+  "sticky",
+  "branches-letters",
+  "courses-filters",
+  "program-selects",
+  "m-articles-menu",
+  "articles-banners",
+  "fancybox",
+  "header",
+  "fixed-bottom",
+  "bottom-buttons__form",
+  "menu",
+  "program-popup",
+  "quiz-popup",
+);
+@function indexes($name) {
+  $i: index($indexes, $name);
+  @return $i * 1000;
+}

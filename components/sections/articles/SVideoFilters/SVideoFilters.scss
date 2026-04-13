@@ -1,0 +1,30 @@
+.s-video-filters {
+  background-color: var(--a-color_white);
+
+  &__list {
+    gap: scale(12);
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 0 scale(20);
+    @include desktop {
+      margin: 0 0 scale(40);
+    }
+  }
+
+  &__result {
+    gap: scale(10);
+    display: grid;
+    @include tablet(min) {
+      grid-template-columns: repeat(3, 1fr);
+      gap: scale(12) scale(10);
+    }
+    @include desktop {
+      gap: scale(32) scale(20);
+    }
+  }
+
+  .m-filter-tab {
+    background-color: var(--a-color_grey_10);
+    &._is-active { background-color: var(--a-color_dark) }
+  }
+}

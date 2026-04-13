@@ -1,0 +1,86 @@
+.s-form.s-form-pay {
+  overflow: hidden;
+  @include desktop() {
+    &:not(:first-child) {
+      margin: 0;
+    }
+  }
+  .s-form__wrap {
+    @include tablet() {
+      grid-template-columns: 1fr;
+    }
+  }
+
+  .s-form__desc {
+    @include mobile() {
+      display: none;
+    }
+  }
+
+  .s-form__content {
+    @include mobile {
+      height: scale(482);
+    }
+  }
+}
+
+
+
+:deep() {
+  .m-form__content {
+    @include tablet(min) {
+      grid-template-columns: repeat(6, 1fr);
+    }
+
+
+    label {
+      @include tablet(min) {
+        grid-column: span 3;
+      }
+    }
+
+    label span {
+      display: flex;
+      align-items: center;
+      margin-bottom: scale(12);
+      
+      svg,
+      .tooltip {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        width: scale(16);
+        height: scale(16);
+        margin: 0;
+        margin-left: scale(8);
+        color: var(--a-color_white);
+        background-color: var(--a-color_dark);
+        border-radius: 50%;
+        transition: var(--transition);
+  
+        &:hover {
+          color: var(--a-color_dark);
+          background-color: var(--a-color_grey_40);
+        }
+      }
+    }
+  }
+
+  .a-input {
+    @include tablet(min) {
+      grid-column: span 2;
+
+      &.--email {
+        grid-column: 1/7;
+      }
+    }
+  }
+
+  .a-btn {
+    &:disabled {
+      cursor: not-allowed;
+      opacity: .5;
+    }
+  }
+}

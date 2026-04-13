@@ -1,0 +1,51 @@
+.s-friends-about {
+  &__img {
+    width: scale(25);
+    height: scale(25);
+    display: inline-block;
+    position: relative;
+    top: scale(3);
+    margin-right: scale(5);
+
+    @include desktop() {
+      width: scale(63);
+      height: scale(61);
+      top: scale(10);
+    }
+  }
+
+  &__text {
+    line-height: 1;
+  }
+
+  &__token-text {
+    position: relative;
+    color: var(--a-color_white);
+    line-height: 1;
+    &::after {
+      content: "1 токен = 1 рубль";
+      position: relative;
+      left: scale(8);
+      top: scale(1);
+      @include desktop() {
+        left: scale(14);
+      }
+    }
+  }
+
+  &__token-img {
+    position: absolute;
+    z-index: -1;
+    width: scale(223);
+    height: scale(30);
+
+    @include tablet() {
+      width: scale(220);
+    }
+
+    @include desktop() {
+      width: scale(523);
+      height: scale(73);
+    }
+  }
+}

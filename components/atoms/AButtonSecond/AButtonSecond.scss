@@ -1,0 +1,92 @@
+.a-btn {
+  $btn: &;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 scale(16);
+  border: none;
+  border-radius: scale(12);
+  transition: var(--transition);
+  &[class*='a-font'] {
+    display: inline-flex;
+  }
+  @include desktop {
+    padding: 0 scale(24);
+  }
+
+  svg {
+    vertical-align: middle;
+    align-self: center;
+    &:last-child {
+      margin-left: scale(12);
+    }
+    &:first-child {
+      margin-right: scale(12);
+    }
+    &:first-child:last-child {
+      margin: auto;
+    }
+  }
+
+  &--second {
+    padding: scale(8) scale(16);
+    border: rem(1) solid;
+    border-radius: scale(8);
+    @include desktop {
+      padding: scale(8) scale(24);
+      border-radius: scale(12);
+    }
+
+    //- second colors
+    &#{$btn}--grey {
+      border-color: var(--a-color_dark);
+      background-color: var(--a-color_grey_40);
+      color: var(--a-color_dark);
+      &:hover {
+        border-color: var(--a-color_grey_100);
+        background-color: var(--a-color_grey_20);
+      }
+    }
+
+    &#{$btn}--transparent {
+      border-color: var(--a-color_grey_dark);
+      background-color: transparent;
+      color: var(--a-color_dark);
+      &:hover {
+        border-color: var(--a-color_grey_60);
+        color: var(--a-color_grey_100);
+      }
+    }
+  }
+
+  //- size
+  &--lg {
+    height: scale(48);
+    border-radius: scale(12);
+    @include desktop {
+      height: scale(60);
+    }
+  }
+
+  &--md {
+    height: scale(40);
+    border-radius: scale(8);
+    @include desktop {
+      height: scale(48);
+      border-radius: scale(12);
+    }
+  }
+
+  &--sm {
+    height: scale(32);
+    border-radius: scale(8);
+    @include desktop {
+      height: scale(40);
+    }
+  }
+
+  &:disabled {
+    cursor: default;
+  }
+}

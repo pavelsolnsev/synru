@@ -1,0 +1,69 @@
+.s-course-projects {
+
+  &__subtitle {
+    margin-top: scale(-14);
+    margin-bottom: scale(24);
+
+    @include desktop(min) {
+      margin-top: scale(-40);
+      margin-bottom: scale(50);
+    }
+  }
+
+  &__swiper {
+    position: relative;
+  }
+
+  &__slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: scale(12);
+    max-width: scale(288);
+    min-height: scale(290);
+    padding: var(--padding_def);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      gap: scale(16);
+      max-width: scale(600);
+      min-height: scale(412);
+    }
+
+    &-tag {
+      width: max-content;
+      padding: scale(4) scale(8);
+      color: var(--a-color_white);
+      background-color: var(--a-color_dark);
+      border-radius: scale(16);
+    }
+
+    &-title {
+      padding-right: scale(75);
+
+      @include desktop(min) {
+        padding-right: scale(120);
+      }
+    }
+
+    &-text {
+     margin-top: auto; 
+    }
+
+    img {
+      position: absolute;
+      top: var(--padding_def);
+      right: var(--padding_def);
+      width: scale(67);
+      height: scale(67);
+      object-fit: cover;
+      border-radius: scale(16);
+
+      @include desktop(min) {
+        width: scale(112);
+        height: scale(112);
+      }
+    }
+  }
+}

@@ -1,0 +1,130 @@
+.s-credit-intro {
+  padding-top: 0;
+  @include mobile(max) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @include desktop(min) {
+    margin-top: scale(-35);
+    padding-top: scale(20);
+
+    &.--main-credit {
+      margin-top: scale(-50);
+      padding-top: scale(40);
+    }
+    &:not(.--scroll) {
+      z-index: 9000;
+      position: relative;
+    }
+    .with-fancybox & {
+      z-index: 1;
+    }
+  }
+
+  :deep() {
+    .m-breadcrumbs {
+      position: absolute;
+      top: scale(24);
+      left: scale(24);
+      padding: 0;
+      margin: 0;
+    }
+
+    .l-section__inner {
+      z-index: 1;
+      position: relative;
+      display: flex;
+      gap: scale(8);
+      flex-direction: column;
+      height: scale(393);
+      padding: var(--padding_def);
+      color: var(--a-color_white);
+      text-align: center;
+      border-radius: scale(16);
+
+      @include mobile(max) {
+        br {
+          display: none;
+        }
+      }
+
+      @include tablet(min) {
+        height: scale(176);
+        text-align: left;
+      }
+
+      @include desktop(min) {
+        height: scale(320);
+        padding-top: scale(61);
+      }
+    }
+  }
+
+  &.s-credit-intro-black {
+    :deep() {
+      .l-section__inner {
+        color: var(--a-color_dark);
+        background-color: transparent;
+      }
+      .m-breadcrumbs__link a {
+        color: var(--a-color_grey_80);
+      }
+      .m-breadcrumbs__link--last {
+        color: var(--a-color_grey_dark);
+      }
+    }
+  }
+
+  &__title {
+    margin-top: auto;
+    line-height: 1;
+    @include tablet(min) {
+      margin-top: 0;
+      margin-bottom: auto;
+    }
+
+    @include desktop() {
+      max-width: scale(900);
+
+      :deep() {
+        br {
+          display: none;
+        }
+      }
+    }
+  }
+
+  &__subtitle {
+    @include desktop() {
+      color: var(--a-color_grey_100);
+    }
+  }
+
+  picture {
+    z-index: -1;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: auto;
+    border-radius: scale(16);
+    overflow: hidden;
+
+    img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border-radius: scale(16);
+    }
+  }
+}
+
+:deep() {
+  .s-credit-intro.s-credit-intro-white {
+    .l-section__inner {
+      color: var(--a-color_dark);
+      background-color: var(--a-color_white);
+    }
+  }
+}

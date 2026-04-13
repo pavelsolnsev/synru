@@ -1,0 +1,105 @@
+.m-target-ratings {
+  gap: scale(20);
+  display: grid;
+  margin-top: scale(40);
+  @include desktop(min) {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: scale(20);
+    padding: var(--padding_def);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+    svg {
+      display: block;
+      margin-left: auto;
+      margin-top: auto;
+      width: scale(41);
+      height: scale(41);
+      border-radius: 50%;
+      background-color: var(--a-color_red);
+      color: var(--a-color_white);
+
+      @include desktop(min) {
+        width: scale(52);
+        height: scale(52);
+      }
+    }
+  }
+
+  &__slider {
+    overflow: hidden;
+    width: 100%;
+  }
+
+  &__slide {
+    height: auto;
+    max-width: scale(310);
+    border-radius: scale(16);
+    overflow: hidden;
+    @include desktop(min) {
+      max-width: scale(290);
+      min-height: scale(417);
+    }
+
+    :deep() {
+      .m-rating-card {
+        height: 100%;
+      }
+      .m-rating-card__header {
+        @include desktop() {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: scale(5);
+        }
+        .m-rating-card__position {
+          @include desktop() {
+            padding-left: scale(10);
+            padding-right: scale(10);
+            height: scale(35);
+          }
+        }
+        .m-rating-card__num {
+          @include desktop() {
+            font-size: scale(16);
+          }
+        }
+        .m-rating-card__position svg {
+          @include desktop() {
+            height: scale(16);
+            width: scale(16);
+          }
+        }
+      }
+      .m-rating-card__name {
+        @include tablet(max) {
+          max-width: scale(190);
+        }
+        @include desktop() {
+          font-size: scale(22);
+        }
+      }
+      .m-rating-card__image {
+        @include mobile() {
+          width: calc(var(--scale) * 102);
+          height: calc(var(--scale) * 82);
+          bottom: scale(5);
+        }
+        @include tablet() {
+          width: calc(var(--scale) * 102);
+          height: calc(var(--scale) * 82);
+          bottom: scale(5);
+          right: scale(5);
+        }
+        @include desktop() {
+          width: scale(200);
+          height: scale(178);
+          opacity: 0.6;
+        }
+      }
+    }
+  }
+}

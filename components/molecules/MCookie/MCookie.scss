@@ -1,0 +1,43 @@
+.m-cookie {
+  overflow: hidden;
+  gap: scale(8);
+  display: none;
+  max-width: scale(480);
+  margin: 0 var(--layout-h-padding) rem(12);
+  align-items: center;
+  padding: scale(8);
+  border-radius: scale(12);
+  background-color: rgba(var(--a-color_dark_rgb), .8);
+  -webkit-backdrop-filter: blur(22px);
+  backdrop-filter: blur(22px);
+  color: var(--a-color_white);
+  &.--visible {
+      display: inline-flex;
+  }
+  @include tablet(min) {
+    margin-bottom: var(--layout-h-padding);
+  }
+  @include desktop(min) {
+    max-width: scale(520);
+    padding: scale(12);
+  }
+
+  a {
+    text-decoration: underline;
+    transform: .2s;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+
+  &__btn {
+    flex: none;
+    width: scale(90);
+    @include mobile(min, $p_sm) {
+      width: scale(120);
+    }
+    @include desktop(min) {
+      width: scale(172);
+    }
+  }
+}

@@ -1,0 +1,223 @@
+.m-form {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  background-color: var(--a-color_white);
+
+  &__title {
+    margin-bottom: scale(20);
+
+    @include desktop {
+      margin-bottom: scale(32);
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: scale(20);
+
+    @include desktop(min) {
+      margin-bottom: scale(32);
+    }
+  }
+
+  &__content {
+    display: grid;
+    gap: scale(12);
+    margin: 0 0 scale(32);
+
+    @include desktop {
+      gap: scale(20);
+      margin: 0 0 scale(24);
+    }
+  }
+
+  &__call {
+    display: flex;
+    row-gap: scale(24);
+    flex-wrap: wrap;
+    align-items: center;
+    margin: scale(20) 0 scale(32);
+
+    @include desktop {
+      margin: scale(24) 0 auto;
+    }
+  }
+
+  &__call span {
+    margin-right: auto;
+  }
+
+  &__call-wrap {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: scale(48);
+
+    @include desktop {
+      gap: scale(64);
+      margin-right: scale(64);
+    }
+  }
+
+  &__bottom {
+    display: grid;
+    gap: scale(16);
+
+    @include tablet(min) {
+      margin-top: auto;
+    }
+  }
+
+  &__privacy {
+    padding-left: scale(24);
+
+    a {
+      transition: var(--transition);
+    }
+  }
+
+  //- bg-colors
+  &--bgColor-transparent {
+    background-color: transparent;
+  }
+
+  &--bgColor-black {
+    color: var(--a-color_white);
+    background-color: var(--a-color_dark);
+  }
+
+  &--bgColor-grey_40,
+  &--bgColor-grey_20,
+  &--bgColor-grey_10 {
+    .a-input {
+      background-color: var(--a-color_white);
+    }
+    .a-chekbox__label.--radio::before {
+      border-color: var(--a-color_white);
+      background-color: var(--a-color_white);
+    }
+    .a-chekbox__label::before {
+      background-color: var(--a-color_white);
+    }
+  }
+  &--bgColor-grey_10 {
+    background-color: var(--a-color_grey_10);
+  }
+  &--bgColor-grey_20 {
+    background-color: var(--a-color_grey_20);
+  }
+  &--bgColor-grey_40 {
+    background-color: var(--a-color_grey_40);
+  }
+
+  &--bgColor-red {
+    color: var(--a-color_white);
+    background-color: var(--a-color_red);
+
+    .a-btn {
+      background-color: var(--a-color_dark);
+
+      &:hover {
+        background-color: var(--a-color_grey_dark);
+      }
+    }
+
+    .m-form__privacy {
+      :deep() {
+        a:hover {
+          color: var(--a-color_grey_dark);
+        }
+      }
+    }
+  }
+
+  &--min {
+    overflow: hidden;
+    z-index: 1;
+    position: relative;
+    padding: scale(12);
+    border-radius: scale(16);
+    margin: 0 scale(-12);
+    height: scale(328);
+
+    .a-input {
+      background-color: var(--a-color_white);
+    }
+
+    .m-form {
+      &__title {
+        margin-bottom: scale(8);
+
+        &:not(:has(+ .m-form__subtitle)) {
+          margin-bottom: scale(20);
+          @include desktop(min) {
+            margin-bottom: scale(24);
+          }
+        }
+      }
+
+      &__content,
+      &__subtitle {
+        margin-bottom: scale(20);
+      }
+
+      &__logo {
+        z-index: -1;
+        position: absolute;
+        top: scale(17);
+        right: scale(12);
+        width: scale(100);
+        height: scale(100);
+        object-fit: cover;
+        object-position: left;
+      }
+    }
+
+    @include tablet(min) {
+      padding: scale(16);
+      margin: 0 scale(-20);
+      height: scale(298);
+
+      .m-form__logo {
+        object-fit: contain;
+        object-position: center;
+        top: scale(20);
+        right: scale(20);
+        width: scale(408);
+        height: scale(83);
+      }
+    }
+
+    @include desktop(min) {
+      padding: scale(24);
+      margin: 0;
+      height: scale(276);
+
+      .m-form {
+        &__content {
+          gap: scale(20);
+          display: flex;
+          margin-bottom: scale(18);
+          & > * {
+            flex: 1;
+          }
+        }
+
+        &__subtitle {
+          margin-bottom: scale(24);
+        }
+
+        &__logo {
+          top: scale(35);
+          right: scale(33);
+          width: scale(1045);
+          height: scale(213);
+        }
+      }
+    }
+  }
+
+  [type="submit"][disabled] {
+    cursor: not-allowed !important;
+    opacity: 0.5;
+  }
+}

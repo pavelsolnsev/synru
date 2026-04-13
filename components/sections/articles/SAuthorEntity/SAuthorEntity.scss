@@ -1,0 +1,121 @@
+.s-main {
+  @include desktop() {
+    display: grid;
+    gap: 0 scale(20);
+    align-items: start;
+    grid-template-columns: 1fr auto;
+  }
+
+  & > * {
+    grid-column: 1;
+    min-width: 0;
+  }
+
+  &__inner {
+    display: grid;
+    gap: scale(20);
+    align-items: start;
+    margin: 0 0 scale(32);
+    @include desktop() {
+      gap: scale(40);
+      min-width: 0;
+      margin: 0;
+      padding: var(--padding_def);
+      border-radius: scale(16);
+      background-color: var(--a-color_white);
+    }
+  }
+
+  &__bottom {
+    align-self: self-start;
+    display: grid;
+    gap: scale(32);
+    margin: scale(12) 0;
+
+    @include desktop() {
+      gap: scale(40);
+      grid-column: 1;
+      min-width: 0;
+      margin: scale(40) 0 0;
+    }
+
+    &:has(.image-container) {
+      margin: 0;
+
+      @include desktop() {
+        margin: 0;
+      }
+    }
+
+    section {
+      padding: 0 !important;
+    }
+  }
+
+  :deep() {
+    .m-news {
+      padding: 0 var(--layout-h-padding);
+      @include desktop(min) {
+        position: sticky;
+        top: var(--headerArticlesHeight);
+        grid-row: 1/3;
+        grid-column: 2;
+        display: grid;
+        width: scale(363);
+        min-width: 0;
+        height: auto;
+        margin: 0;
+        padding: 0;
+      }
+    }
+  }
+}
+
+.s-author {
+  &-articles {
+    margin: scale(20) 0 0;
+    padding: var(--padding_def);
+    border-radius: scale(16);
+    background-color: var(--a-color_white);
+
+    &.--pending {
+      opacity: 0.3;
+      pointer-events: none;
+    }
+
+    &__inner {
+      gap: scale(16);
+      display: grid;
+      margin: scale(24) 0 0;
+      @include tablet(min) {
+        grid-template-columns: repeat(2, 1fr);
+        margin: scale(40) 0 0;
+      }
+    }
+
+    :deep() {
+      .m-article-card {
+        &__wrap {
+          background-color: var(--a-color_grey_10);
+          min-height: scale(154);
+          @include desktop(min) {
+            min-height: scale(242);
+            padding: scale(24);
+          }
+        }
+
+        &__img {
+          height: scale(172);
+
+          @include tablet(min) {
+            height: scale(140);
+          }
+
+          @include desktop(min) {
+            height: scale(220);
+          }
+        }
+      }
+    }
+  }
+}

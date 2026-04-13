@@ -1,0 +1,21 @@
+.s-university__wrapper {
+  position: relative;
+  padding-top: calc(var(--scale) * 20);
+  border-radius: calc(var(--scale) * 20);
+  background-color: var(--a-color_grey_20);
+}
+
+.s-university__wrapper .swiper-navigation {
+  top: calc(var(--scale) * -102);
+}
+
+.s-university__title-logo {
+  position: absolute;
+  top: calc(var(--scale) * 94);
+  right: var(--layout-h-padding);
+  display: none;
+  @include desktop() {
+    display: block;
+    width: calc(var(--scale) * 63);
+  }
+}

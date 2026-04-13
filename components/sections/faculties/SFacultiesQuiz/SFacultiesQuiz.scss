@@ -1,0 +1,125 @@
+.s-faculties-quiz {
+  overflow: hidden;
+  position: relative;
+  @include desktop() {
+    margin-bottom: scale(40);
+  }
+  &__factoids {
+    overflow: visible;
+    position: absolute;
+    left: scale(12);
+    top: auto;
+    right: scale(12);
+    bottom: calc(var(--scale) * 160);
+    z-index: indexes("quiz");
+    color: var(--a-color_white);
+    .--js-quiz-visible & {
+      z-index: 0;
+    }
+    @include tablet(min) {
+      left: calc(var(--layout-h-padding) + #{scale(12)});
+      bottom: scale(20);
+      right: calc(var(--layout-h-padding) + #{scale(12)});
+    }
+    @include desktop(min) {
+      position: absolute;
+      left: auto;
+      top: scale(24);
+      right: calc(var(--layout-h-padding) + #{scale(24)});
+      bottom: scale(32);
+      width: scale(284);
+    }
+    :deep() {
+      .swiper-wrapper {
+        @include desktop(min) {
+          display: flex;
+          flex-direction: column;
+          gap: scale(16);
+        }
+      }
+
+      .swiper-slide {
+        width: scale(164);
+        &:not(:last-child) {
+          margin-right: scale(6);
+          @include desktop(min) {
+            margin-right: 0;
+          }
+        }
+        @include tablet(min) {
+          flex: 1;
+        }
+        @include desktop(min) {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  &.--form {
+    .s-faculties-quiz__factoids {
+      @include mobile {
+        bottom: calc(var(--scale) * 250);
+      }
+    }
+  }
+
+  &__factoid {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: scale(8);
+    height: auto;
+    padding: scale(12);
+    border-radius: scale(12);
+    border: rem(1) solid var(--a-color_grey_100);
+    background: rgba(var(--a-color_dark_rgb), 0.5);
+    backdrop-filter: blur(10px);
+
+    @include desktop(min) {
+      height: 100%;
+      padding: scale(15) scale(16);
+    }
+  }
+
+  :deep() {
+    .s-quiz {
+      margin-bottom: scale(8);
+      @include tablet(min) {
+        min-height: scale(320);
+      }
+      @include desktop(min) {
+        min-height: scale(518);
+      }
+      &__intro {
+        &-title {
+          margin-bottom: scale(100);
+
+          @include tablet(min) {
+            margin: scale(12) 0 auto;
+          }
+        }
+        &-btn {
+          margin-top: 0;
+
+          @include tablet(min) {
+            margin: 0 0 scale(84);
+          }
+          @include desktop(min) {
+            margin: 0;
+          }
+        }
+      }
+    }
+
+    .m-quiz-form {
+      margin-top: 0;
+      @include tablet(min) {
+        margin: 0 0 scale(84);
+      }
+      @include desktop(min) {
+        margin: 0;
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.m-review-card {
+  display: flex;
+  flex-direction: column;
+  width: scale(280);
+  height: auto;
+  padding: scale(12) scale(16) scale(12) scale(12);
+  background-color: var(--a-color_grey_20);
+  border-radius: scale(32) scale(32) scale(32) 0;
+  @include desktop {
+    width: scale(698);
+    padding: scale(24) scale(32) scale(24) scale(24);
+    border-radius: scale(54) scale(54) scale(54) 0;
+  }
+
+  &__top {
+    display: grid;
+    gap: scale(12);
+    grid-template-columns: auto 1fr;
+    margin-bottom: scale(36);
+
+    @include desktop(min) {
+      gap: scale(20);
+      align-items: center;
+      margin-bottom: scale(36);
+    }
+  }
+
+  &__head {
+    display: grid;
+    gap: scale(4);
+  }
+
+  &__img {
+    width: scale(48);
+    height: scale(48);
+    border-radius: 50%;
+    border: 1px solid var(--a-color_grey_60);
+    object-fit: cover;
+    @include desktop(min) {
+      width: scale(64);
+      height: scale(64);
+    }
+  }
+
+  &__info {
+    color: var(--a-color_grey_80);
+    a {
+      color: var(--a-color_dark);
+      font-weight: 600;
+      text-decoration: underline;
+      transition: var(--transition);
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__text {
+    @include tablet(min) {
+      margin-top: auto;
+    }
+    p:not(:last-child),
+    li:not(:last-child) {
+      margin-bottom: scale(8);
+    }
+  }
+}

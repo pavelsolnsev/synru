@@ -1,0 +1,58 @@
+.s-help-studies {
+  &__slide {
+    display: flex;
+    flex-direction: column;
+    gap: scale(40);
+    max-width: scale(280);
+    height: auto;
+    padding: var(--padding_def);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include tablet(min) {
+      max-width: scale(368);
+    }
+
+    @include desktop(min) {
+      max-width: scale(910);
+    }
+
+    img {
+      display: block;
+      grid-row: 1/3;
+      width: scale(92);
+      height: scale(76);
+      border-radius: scale(16);
+      background-color: var(--a-color_dark);
+      object-fit: cover;
+      object-position: top center;
+
+      @include desktop(min) {
+        width: scale(140);
+        height: scale(140);
+      }
+    }
+  }
+
+  &__slide-head {
+    display: grid;
+    grid-template-rows: min-content 1fr;
+    grid-template-columns: scale(92) 1fr;
+    column-gap: scale(8);
+    row-gap: scale(10);
+
+    @include desktop(min) {
+      grid-template-columns: scale(140) 1fr;
+      column-gap: scale(24);
+      row-gap: scale(15);
+    }
+  }
+
+  &__slide-desc {
+    color: var(--a-color_grey_100); 
+  }
+
+  &__slide-text {
+    margin-top: auto;
+  }
+}

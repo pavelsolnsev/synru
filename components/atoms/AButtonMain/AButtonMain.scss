@@ -1,0 +1,49 @@
+.a-btn-main {
+  display: inline-flex;
+  justify-content: center;
+  cursor: pointer;
+  align-items: center;
+  white-space: nowrap;
+  border-radius: var(--border-radius_def);
+  padding: scale(16) scale(32);
+  border: none;
+  width: fit-content;
+  color: var(--a-color_white);
+  font-size: scale(20);
+  line-height: 100%;
+  font-weight: 600;
+  gap: scale(8);
+  min-height: scale(56);
+  @include tablet(max) {
+    font-size: scale(16);
+  }
+  &.--red {
+    background: var(--a-color_red);
+
+    &:hover {
+      background: #c4151c
+    }
+    &:active {
+      background: linear-gradient(0deg, #ed131c, #ed131c),
+        linear-gradient(
+          0deg,
+          rgba(255, 255, 255, 0.05),
+          rgba(255, 255, 255, 0.05)
+        );
+    }
+
+    &.--disabled {
+      background: #A0A0A033;
+      color:#BEBEBE;
+      cursor: not-allowed;
+    }
+  }
+
+  &.--black {
+    background-color: var(--a-color_dark);
+
+    &:hover {
+      background-color: #323232;
+    }
+  }
+}

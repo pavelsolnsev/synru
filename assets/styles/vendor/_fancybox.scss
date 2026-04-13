@@ -1,0 +1,103 @@
+@import "../helpers/index";
+
+.with-fancybox {
+  overflow: hidden;
+}
+
+html.with-fancybox {
+  overflow: hidden;
+}
+
+.fancybox__container {
+  z-index: indexes("fancybox");
+  @include extra() {
+    max-width: var(--layout-width);
+    margin: 0 auto;
+  }
+}
+
+.fancybox__backdrop {
+  background-color: rgba(var(--a-color_grey_40_rgb), 0.8);
+  -webkit-backdrop-filter: blur(40px);
+  backdrop-filter: blur(40px);
+}
+
+.fancybox__slide {
+  padding: scale(180) 0 scale(48) !important;
+  html:not(.--visible-nav) & {
+    padding-top: scale(148) !important;
+  }
+
+  @media (min-width: 1200px) {
+    padding: scale(166) scale(100) scale(32) !important;
+  }
+  &:before,
+  &:after {
+    content: none;
+  }
+}
+.fancybox__content {
+  margin: auto;
+  padding: scale(12) !important;
+  background-color: var(--a-color_grey_10) !important;
+  border-radius: scale(16);
+  color: var(--a-color_dark);
+  @media (min-width: 1200px) {
+    padding: scale(24) scale(24) scale(20) !important;
+  }
+}
+
+.fancybox__carousel .fancybox__slide.has-image .fancybox__content {
+  height: 100%;
+  width: 100%;
+  max-width: scale(1240);
+}
+
+.fancybox__carousel .fancybox__slide.has-pdf .fancybox__content {
+  height: 80%;
+  width: 100%;
+}
+
+.fancybox__content > .f-button.is-close-btn,
+.is-compact .fancybox__content > .f-button.is-close-btn {
+  top: scale(-55);
+  right: 50%;
+  transform: translateX(50%);
+  width: scale(44);
+  height: scale(44);
+  background-color: var(--a-color_grey_40);
+  border-radius: scale(8);
+  border: none;
+  color: var(--a-color_dark);
+
+  @media (min-width: 1200px) {
+    top: 0;
+    right: scale(-68);
+    width: scale(60);
+    height: scale(60);
+    transform: translateX(0);
+  }
+
+  svg {
+    width: scale(12);
+    height: scale(12);
+    filter: none;
+
+    @media (min-width: 1200px) {
+      width: scale(15);
+      height: scale(15);
+    }
+  }
+}
+
+.fancybox__caption {
+  color: var(--a-color_dark);
+}
+
+.fancybox__carousel .fancybox__slide.has-rutube .fancybox__content {
+  aspect-ratio: 16 / 9;
+  max-width: calc(var(--scale) * 960);
+  width: 100% !important;
+  height: auto !important;
+  padding: 0;
+}

@@ -1,0 +1,263 @@
+#programs-by-level {
+  .s-programs-list {
+    overflow: visible;
+
+    &__loader {
+      text-align: center;
+      &-el {
+        width: scale(48);
+        height: scale(48);
+        border: scale(5) solid var(--a-color_grey_100);
+        border-bottom-color: transparent;
+        border-radius: 50%;
+        display: inline-block;
+        box-sizing: border-box;
+        animation: rotation 1s linear infinite;
+      }
+
+      @keyframes rotation {
+        0% {
+          transform: rotate(0deg);
+        }
+        100% {
+          transform: rotate(360deg);
+        }
+      }
+    }
+
+    &__selects {
+      z-index: 200;
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      grid-gap: var(--gap_def);
+      padding-bottom: scale(8);
+
+      @include tablet(min) {
+        grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+      }
+
+      @include desktop(min) {
+        grid-gap: scale(20);
+        padding-bottom: 0;
+      }
+
+      .a-uikit-select {
+        &__input {
+          background-color: var(--a-color_grey_20);
+          &._open {
+            background-color: var(--a-color_white);
+          }
+        }
+      }
+      &:has(._open) {
+        z-index: indexes('program-selects');
+      }
+    }
+
+    &__inner {
+      display: grid;
+      grid-template-columns: unset;
+      gap: scale(30);
+      margin: scale(40) 0 0;
+      @include tablet(min) {
+        gap: scale(40);
+        margin: scale(24) 0 0;
+      }
+      @include desktop(min) {
+        gap: scale(60);
+        margin: scale(34) 0 0;
+      }
+
+      &.result-by-level {
+        padding: 0;
+        @include tablet(min) {
+          padding: 0;
+        }
+        @include desktop(min) {
+          padding: 0;
+        }
+      }
+    }
+
+    &__block {
+      &-headline {
+        gap: scale(12);
+        display: flex;
+        align-items: flex-start;
+        margin: 0 0 scale(24);
+        @include desktop(min) {
+          margin: 0 0 scale(32);
+        }
+      }
+      &-tools {
+        gap: scale(4);
+        display: flex;
+        align-items: center;
+        transform: translateY(#{scale(-4)});
+        @include desktop(min) {
+          transform: translateY(#{scale(4)});
+        }
+      }
+      &-count {
+        transform: translate(0);
+      }
+      &-info {
+        button {
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          width: scale(18);
+          height: scale(18);
+          border: none;
+          border-radius: 50%;
+          color: var(--a-color_dark);
+          cursor: pointer;
+          &:hover {
+            color: var(--a-color_grey_dark);
+          }
+          @include tablet(min) {
+            width: scale(32);
+            height: scale(32);
+          }
+        }
+      }
+      &-preview {
+        &-text {
+          display: grid;
+          gap: scale(12);
+          padding: scale(24) scale(12) scale(12);
+          @include tablet(min) {
+            gap: scale(24);
+            padding: scale(24) scale(16) scale(24);
+          }
+        }
+      }
+      &-inner {
+        display: grid;
+        grid-gap: var(--gap_def);
+
+        @include tablet() {
+          grid-template-columns: repeat(2, 1fr);
+        }
+
+        @include desktop(min) {
+          padding-top: 0;
+          grid-template-columns: repeat(3, 1fr);
+        }
+      }
+    }
+
+    &__btns {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+      margin-top: scale(24);
+
+      @include desktop {
+        margin-top: scale(40);
+      }
+
+      .a-btn {
+        width: 100%;
+        max-width: scale(290);
+      }
+    }
+  }
+}
+
+.s-programs-list-info {
+  .fancybox__content {
+    position: absolute;
+    bottom: scale(40);
+    width: 100%;
+    padding: 0;
+    border-radius: scale(16) scale(16) 0 0;
+    @include tablet(min) {
+      position: relative;
+      max-width: scale(612);
+      border-radius: scale(16);
+    }
+    @include desktop(min) {
+      max-width: scale(600);
+    }
+    img {
+      display: none;
+      @include tablet(min) {
+        display: block;
+        width: 100%;
+        height: auto;
+        border-radius: scale(16);
+      }
+    }
+  }
+}
+
+.s-programs-list__block {
+  &-headline {
+    gap: scale(12);
+    display: flex;
+    align-items: flex-start;
+    margin: 0 0 scale(24);
+    @include desktop(min) {
+      margin: 0 0 scale(32);
+    }
+  }
+  &-tools {
+    gap: scale(4);
+    display: flex;
+    align-items: center;
+    transform: translateY(#{scale(-4)});
+    @include desktop(min) {
+      transform: translateY(#{scale(4)});
+    }
+  }
+  &-count {
+    transform: translate(0);
+  }
+  &-info {
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: scale(18);
+      height: scale(18);
+      border: none;
+      border-radius: 50%;
+      color: var(--a-color_dark);
+      cursor: pointer;
+      &:hover {
+        color: var(--a-color_grey_dark);
+      }
+      @include tablet(min) {
+        width: scale(32);
+        height: scale(32);
+      }
+    }
+  }
+  &-preview {
+    &-text {
+      display: grid;
+      gap: scale(12);
+      padding: scale(24) scale(12) scale(12);
+      @include tablet(min) {
+        gap: scale(24);
+        padding: scale(24) scale(16) scale(24);
+      }
+    }
+  }
+  &-inner {
+    display: grid;
+    grid-gap: var(--gap_def);
+
+    @include tablet() {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktop(min) {
+      padding-top: 0;
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+}

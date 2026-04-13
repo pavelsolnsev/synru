@@ -1,0 +1,43 @@
+.m-breadcrumbs {
+  $breadcrumbs: &;
+  overflow: hidden;
+  position: relative;
+  z-index: indexes('breadcrumbs');
+  display: none;
+  align-items: center;
+  margin: 0 0 scale(24);
+  color: var(--a-color_grey_60);
+  transition: 0.2s;
+
+  @include tablet(min) {
+    margin: 0 0 scale(12);
+  }
+  @include desktop(min) {
+    display: flex;
+  }
+
+  .swiper-slide {
+    display: flex;
+    width: auto;
+    margin-right: scale(4);
+
+    &:not(:first-child):before {
+      content: '/';
+      margin-right: scale(4);
+      color: var(--a-color_grey_80);
+    }
+  }
+
+  &__link {
+    white-space: nowrap;
+    color: var(--a-color_grey_80);
+
+    &--last {
+      color: var(--a-color_grey_60);
+    }
+  }
+
+  &:deep(.emoji) {
+    display: none;
+  }
+}

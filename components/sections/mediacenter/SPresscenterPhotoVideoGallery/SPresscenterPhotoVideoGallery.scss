@@ -1,0 +1,91 @@
+.m-video-card {
+  z-index: 1;
+  position: relative;
+  overflow: hidden;
+  height: scale(220) !important;
+  border-radius: scale(16);
+
+  @include desktop(min) {
+    height: scale(360) !important;
+  }
+
+  &::after {
+    content: "";
+    display: block;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: scale(118);
+    background: linear-gradient(
+      180deg,
+      rgba(28, 28, 28, 0) 11.88%,
+      rgba(28, 28, 28, 0.65) 52.17%,
+      rgba(28, 28, 28, 0.91) 77.84%,
+      #1c1c1c 100%
+    );
+    z-index: 2;
+  }
+
+  :deep() {
+    .m-video-card__play {
+      z-index: 4;
+      top: scale(12);
+      right: scale(12);
+      width: scale(36);
+      height: scale(36);
+      left: auto;
+      bottom: auto;
+
+      @include desktop(min) {
+        top: scale(24);
+        right: scale(24);
+        width: scale(48);
+        height: scale(48);
+      }
+    }
+
+    .m-video-card__desc {
+      z-index: 3;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      width: 100%;
+      display: grid;
+      gap: scale(12);
+    }
+
+    .m-video-card__title {
+      color: var(--a-color_white);
+    }
+
+    .m-video-card__text {
+      color: var(--a-color_grey_70);
+    }
+  }
+}
+
+.photo-gallery__item {
+  @include desktop(min) {
+    gap: scale(12);
+    grid-column: span 2;
+    height: scale(360) !important;
+  }
+
+  &:nth-child(1),
+  &:nth-child(2),
+  &:nth-child(5),
+  &:nth-child(6) {
+    grid-column: span 1;
+  }
+}
+
+.s-main.--image {
+  :deep() {
+    .mediacenter-page__container {
+      @include desktop() {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+  }
+}

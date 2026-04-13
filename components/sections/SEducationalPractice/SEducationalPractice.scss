@@ -1,0 +1,126 @@
+.s-educational-practice {
+
+  :deep() {
+    .l-section__inner {
+      @include tablet(min) {
+        z-index: 1;
+        position: relative;
+      }
+    }
+  }
+
+  &__image {
+    display: block;
+    margin-bottom: scale(-24);
+
+    @include tablet(min) {
+      margin: 0;
+    }
+
+    @include desktop(min) {
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: -1;
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+    padding: var(--padding_def);
+
+    @include tablet() {
+      padding: 0;
+    }
+
+    @include tablet(min) {
+      display: flex;
+      flex-direction: column;
+      position: static;
+      background-color: transparent;
+    }
+
+    @include desktop(min) {
+      min-height: scale(520);
+    }
+  }
+
+  &__title {
+    display: grid;
+    gap: scale(16);
+    
+    @include tablet() {
+      position: absolute;
+      top: var(--padding_def);
+      left: var(--padding_def);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: scale(184);
+      max-width: scale(355);
+    }
+
+    @include tablet(min) {
+      color: var(--a-color_white);
+    }
+
+    @include desktop(min) {
+      display: grid;
+      gap: scale(24);
+      max-width: scale(743);
+    }
+  }
+
+  &__list {
+    display: grid;
+    gap: var(--gap_def);
+    margin-top: scale(24);
+    
+    @include tablet(min) {
+      margin-top: scale(8);
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktop(min) {
+      margin-top: auto;
+      color: var(--a-color_white);
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    svg {
+      margin-left: auto;
+      margin-top: auto;
+      width: scale(28);
+      height: scale(28);
+      color: var(--a-color_red);
+      background-color: var(--a-color_white);
+      border-radius: 50%;
+
+      @include desktop(min) {
+        width: scale(36);
+        height: scale(36);
+      }
+    }
+
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    gap: scale(12);
+    padding: scale(12);
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      gap: scale(24);
+      background-color: rgba(#87878766, 0.4);
+      border: 1px solid var(--a-color_grey_100);
+      -webkit-backdrop-filter: blur(15px);
+      backdrop-filter: blur(15px);
+    }
+  }
+}

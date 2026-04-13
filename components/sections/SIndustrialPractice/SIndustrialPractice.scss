@@ -1,0 +1,124 @@
+.s-industrial-practice {
+  :deep() {
+    @include tablet(max) {
+      .swiper {
+        padding: 0 scale(12);
+      }
+
+      .l-section__title {
+        hyphens: auto;
+        overflow-wrap: break-word;
+      }
+    }
+    @include desktop(min) {
+      .l-section__title {
+        display: none;
+      }
+
+      .swiper-wrapper {
+        display: grid;
+        gap: var(--gap_def);
+      }
+    }
+  }
+  &__wrapper {
+    z-index: 1;
+    position: relative;
+
+    @include tablet(max) {
+      padding-bottom: scale(84);
+      background-color: var(--a-color_white);
+      border-radius: scale(16);
+    }
+
+    @include desktop(min) {
+      display: grid;
+      gap: var(--gap_def);
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap_def);
+    padding: var(--padding_def);
+    padding-bottom: scale(24);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include tablet(max) {
+      .a-btn {
+        z-index: 10;
+        position: absolute;
+        bottom: var(--padding_def);
+        left: var(--padding_def);
+        right: var(--padding_def);
+      }
+    }
+
+    @include desktop(min) {
+      min-height: scale(500);
+
+      .a-btn {
+        margin-top: auto;
+        max-width: scale(400);
+      }
+    }
+  }
+
+  &__title {
+    display: none;
+
+    @include desktop(min) {
+      display: block;
+    }
+  }
+
+  &__slider {
+    @include desktop(min) {
+      :deep() {
+        .swiper, .swiper-wrapper {
+          height: 100%;
+        }
+      }
+    }
+  }
+
+  &__slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap_def);
+    justify-content: space-between;
+    height: auto;
+    padding: var(--padding_def);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include tablet(max) {
+      max-width: scale(280);
+      min-height: scale(165);
+    }
+
+    @include tablet(max) {
+      background-color: var(--a-color_grey_40);
+    }
+
+    svg {
+      width: scale(32);
+      height: scale(32);
+      border-radius: 50%;
+      position: absolute;
+      top: var(--padding_def);
+      right: var(--padding_def);
+      background-color: var(--a-color_white);
+      
+      @include desktop(min) {
+        width: scale(48);
+        height: scale(48);
+        background-color: var(--a-color_grey_40);
+      }
+    }
+  }
+}

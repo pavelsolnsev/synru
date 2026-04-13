@@ -1,0 +1,129 @@
+.s-dlya-mam-intro {
+  padding-top: 0;
+  color: var(--a-color_white);
+
+  @include mobile() {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  :deep() {
+    .m-breadcrumbs__link--last {
+      color: var(--a-color_white);
+    }
+    .m-section__inner {
+      z-index: 1;
+      overflow: hidden;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: var(--padding_def);
+      text-align: center;
+      background-color: var(--a-color_grey_40);
+      border-radius: scale(16);
+      min-height: scale(600);
+
+      @include desktop(min) {
+        min-height: scale(526);
+        text-align: left;
+        align-items: flex-start;
+        justify-content: flex-start;
+      }
+    }
+
+    .a-bg-images {
+      z-index: -1;
+
+      img {
+        object-position: center top;
+      }
+    }
+
+    .a-btn {
+      @include desktop(min) {
+        min-width: scale(518);
+        height: scale(78);
+      }
+    }
+  }
+
+  &__title {
+    @include desktop(min) {
+      margin: auto 0;
+      max-width: scale(900);
+      font-size: scale(80);
+    }
+  }
+
+  &__list {
+    display: flex;
+    gap: scale(8);
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scrollbar-width: none;
+
+    @include tablet(max) {
+      padding: scale(30) scale(12) 0;
+      margin: 0 scale(-12);
+    }
+
+    @include desktop(min) {
+      display: grid;
+      grid-template-rows: repeat(3, 1fr);
+      height: 100%;
+      gap: scale(17);
+      position: absolute;
+      bottom: 0;
+      top: 0;
+      right: 0;
+      padding: scale(18);
+    }
+  }
+
+  &__item {
+    display: flex;
+    align-items: center;
+    gap: scale(8);
+    text-align: left;
+    color: var(--a-color_dark);
+    border-radius: scale(12);
+    background-color: rgba(var(--a-color_white_rgb), 0.7);
+    padding: scale(8);
+    min-width: scale(266);
+    scroll-snap-align: center;
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+
+    @include desktop(min) {
+      display: flex;
+      align-items: flex-start;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: scale(11);
+      padding: scale(16);
+      min-width: scale(280);
+      max-width: scale(280);
+    }
+    
+    svg {
+      min-width: scale(24);
+      width: scale(24);
+
+      @include desktop(min) {
+        width: scale(40);
+      }
+    }
+  }
+
+  &__text {
+    padding: scale(20) 0 scale(8);
+    
+    @include desktop(min) {
+      padding: scale(24) 0 scale(12);
+      max-width: scale(700);
+    }
+  }
+}

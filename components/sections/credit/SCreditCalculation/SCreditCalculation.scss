@@ -1,0 +1,79 @@
+.s-credit-calculation {
+  margin-bottom: scale(20);
+
+  @include desktop() {
+    margin-bottom: scale(40);
+  }
+  &__wrapper {
+    display: grid;
+    gap: scale(12);
+    @include desktop() {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  :deep() {
+    .m-card-text__bottom {
+      padding-top: scale(24);
+      @include desktop() {
+        padding-top: scale(50);
+      }
+    }
+
+    .m-card-text__text {
+      @include desktop() {
+        max-width: scale(755);
+      }
+    }
+  }
+
+  &__texts {
+    display: grid;
+    gap: scale(8);
+    @include desktop() {
+      gap: scale(20);
+    }
+    &__item {
+      padding: scale(8);
+      padding-left: scale(12);
+      background-color: var(--a-color_grey_40);
+      display: flex;
+      gap: scale(12);
+      align-items: center;
+      border-radius: scale(12);
+      @include tablet(max) {
+        text-transform: lowercase;
+      }
+      @include desktop() {
+        gap: scale(24);
+        padding: scale(16);
+        padding-left: scale(16);
+        font-size: scale(17.33);
+      }
+      &-number {
+        min-width: scale(24);
+        min-height: scale(24);
+        background-color: var(--a-color_red_dark);
+        color: var(--a-color_white);
+        box-sizing: border-box;
+        border-radius: scale(16);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        @include desktop() {
+          min-width: scale(32);
+          min-height: scale(32);
+        }
+      }
+      &-factoid {
+        background-color: var(--a-color_white);
+      }
+    }
+  }
+
+  :deep() {
+    .s-credit-calculation__factoids {
+      background-color: var(--a-color_grey_40);
+    }
+  }
+}

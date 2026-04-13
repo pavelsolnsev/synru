@@ -1,0 +1,363 @@
+.s-course-info {
+  background-color: var(--a-color_grey_20);
+  border-radius: scale(16);
+
+  :deep() {
+    .l-section__inner {
+      display: grid;
+      gap: scale(24);
+
+      @include desktop(min) {
+        gap: scale(60);
+      }
+    }
+  }
+
+  &__block {
+    display: grid;
+    gap: scale(16);
+
+    @include desktop(min) {
+      gap: scale(50);
+    }
+  }
+
+  &__desc {
+    display: grid;
+    gap: var(--gap_def);
+
+    @include tablet(min) {
+      grid-template-columns: repeat(auto-fit, minmax(scale(360), 1fr));
+    }
+
+    &-item {
+      display: grid;
+      gap: scale(16);
+      padding: var(--padding_def);
+      background-color: var(--a-color_white);
+      border-radius: scale(16); 
+
+      &.--logo {
+        @include desktop(min) {
+          gap: scale(10);
+
+          &:has(img) {
+            grid-template-columns: 1fr scale(192);
+          }
+        }
+      }
+
+      &.--price {
+        grid-template-rows: 1fr min-content;
+      }
+    }
+
+    &-item-img {
+      width: scale(60);
+      height: scale(60);
+      padding: scale(9);
+      background-color: var(--a-color_grey_10);
+      border-radius: scale(12);
+
+      @include tablet(max) {
+        order: -1;
+      }
+
+      @include desktop(min) {
+        width: scale(192);
+        height: scale(192);
+        padding: scale(30);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+
+    &-item-price {
+      height: min-content;
+      width: max-content;
+      padding: scale(8) scale(12);
+      background-color: var(--a-color_grey_10);
+      border-radius: scale(12);
+
+      @include desktop(min) {
+        padding: scale(10) scale(18);
+      }
+    }
+  }
+
+
+  &__info {
+    display: grid;
+    gap: var(--gap_def);
+
+    @include tablet(min) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include desktop(min) {
+      grid-template-columns: scale(600) 1fr;
+
+      &:has(>.--soft-skills),
+      &:has(>.--tools) {
+        grid-template-columns: repeat(auto-fit, minmax(scale(360), 1fr));
+      }
+    }
+
+    &-item {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      gap: scale(12);
+      padding: var(--padding_def);
+      background-color: var(--a-color_white);
+      border-radius: scale(16);
+
+      @include desktop(min) {
+        gap: scale(24);
+        grid-row: 1/3;
+
+        .s-course-info__info:has(>.--annotation) & {
+          grid-row: 2;
+        }
+
+        &.--annotation {
+          grid-column: 2;
+          grid-row: 1 !important;
+        }
+
+        &.--tools {
+          grid-column: 3;
+          grid-row: 1 / 3;
+        }
+
+        &.--tools:has(+.--soft-skills) {
+          grid-row: 1;
+        }
+
+        &.--soft-skills {
+          grid-column: 3;
+          grid-row: 1 / 3;
+        }
+
+        &.--tools + &.--soft-skills {
+          grid-row: 2;
+        }
+
+      }
+
+      &.--image {
+        overflow: hidden;
+        padding: 0;
+
+        .s-course-info__info:has(>.--annotation) &{
+          grid-row: 1/3;
+        }
+        
+        img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+        }
+      }
+
+      .--title {
+        color: var(--a-color_grey_80);
+      }
+    }
+  }
+
+  &__prices {
+    display: grid;
+    align-items: end;
+    gap: var(--gap_def);
+
+    @include tablet(min) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include desktop(min) {
+      grid-template-columns: 1fr 1fr 1fr 1fr;
+    }
+
+    &-item {
+      overflow: hidden;
+      position: relative;
+      padding: var(--padding_def);
+      background-color: var(--a-color_white);
+      border-radius: scale(16);
+      height: min-content;
+
+      @include tablet() {
+        height: 100%;
+      }
+
+      img {
+        position: absolute;
+        top: var(--padding_def);
+        right: var(--padding_def);
+        height: scale(26);
+        width: auto;
+
+        @include desktop(min) {
+          position: static;
+          height: scale(50);
+          margin-bottom: auto;
+          object-fit: contain;
+          object-position: left;
+        }
+      }
+
+      &:first-child {
+        .s-course-info__prices-tag {
+          color: var(--a-color_white);
+          background-color: var(--a-color_red);
+        }
+
+        .s-course-info__prices-info {
+          justify-content: center;
+        }
+
+        .s-course-info__prices-info {
+          @include tablet(min) {
+            padding-right: scale(30);
+          }
+
+          @include desktop(min) {
+            padding-right: scale(89);
+          }
+        }
+
+      }
+    }
+
+    &-item-title {
+      margin-top: scale(6);
+      margin-bottom: scale(24); 
+    }
+
+    &-tag {
+      width: max-content;
+      padding: scale(2) scale(8);
+      color: var(--a-color_white);
+      background-color: var(--a-color_dark);
+      border-radius: scale(16);
+
+      @include desktop(min) {
+        padding: scale(4) scale(10);
+      }
+    }
+
+    &-item-flag {
+      top: scale(30);
+      right: scale(-90);
+      position: absolute;
+      rotate: 45deg;
+      width: scale(300);
+      padding: scale(8);
+      text-align: center;
+      color: var(--a-color_white);
+      background-color: var(--a-color_red);
+    }
+
+    &-info {
+      display: flex;
+      flex-direction: column;
+      gap: scale(8);
+      padding: scale(8);
+      background-color: var(--a-color_grey_20);
+      border-radius: scale(16);
+
+      @include desktop(min) {
+        position: relative;
+        overflow: hidden;
+        padding: scale(24);
+        min-height: calc(var(--height) + scale(160));
+      }
+    }
+
+    &-level {
+      margin-right: scale(6);
+      width: max-content;
+      padding: scale(2) scale(8);
+      background-color: var(--a-color_white);
+      border-radius: scale(16);
+
+      @include desktop(min) {
+        padding: scale(4) scale(10);
+        margin-right: scale(10);
+      }
+    }
+
+    &-exp {
+      color: var(--a-color_grey_80);
+    }
+  }
+
+  &__skills-list {
+    display: grid;
+    gap: scale(8);
+
+    li {
+      position: relative;
+      padding-left: scale(20);
+
+      @include desktop(min) {
+        padding-left: scale(30);
+      }
+
+      &::before {
+        position: absolute;
+        left: scale(6);
+        top: scale(6);
+        content: "";
+        display: inline-block;
+        width: scale(4);
+        height: scale(4);
+        background-color: var(--a-color_dark);
+        border-radius: scale(2);
+
+        @include desktop(min) {
+          top: scale(8);
+          width: scale(12);
+          height: scale(12);
+          background-color: var(--a-color_red);
+        }
+      }
+    }
+  }
+
+  &__list-tag {
+    display: flex;
+    flex-wrap: wrap;
+    gap: scale(8);
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: scale(8);
+      padding: scale(8) scale(12);
+      background-color: var(--a-color_grey_10);
+      border-radius: scale(24);
+
+      @include desktop(min) {
+        padding: scale(8) scale(16);
+        border-radius: scale(30);
+      }
+
+      img {
+        min-width: scale(16);
+        max-width: scale(16);
+        height: auto;
+
+        @include desktop(min) {
+          min-width: scale(20);
+          max-width: scale(20);
+        }
+      }
+    }
+  }
+}

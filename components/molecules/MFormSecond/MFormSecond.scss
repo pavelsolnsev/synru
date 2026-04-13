@@ -1,0 +1,110 @@
+.m-form {
+  border-radius: scale(16);
+  padding: scale(16);
+  background-color: var(--a-color_white);
+  @include desktop() {
+    padding: scale(24);
+    display: flex;
+    flex-direction: column;
+  }
+
+  &__title {
+    font-weight: 600;
+    font-size: scale(32);
+    line-height: 120%;
+    margin-bottom: scale(8);
+    @include desktop() {
+      font-size: scale(64);
+      margin-bottom: scale(16);
+    }
+  }
+
+  &__subtitle {
+    font-weight: 500;
+    font-size: scale(16);
+    line-height: 130%;
+    color: #00000080;
+    margin-bottom: scale(32);
+    @include desktop() {
+      font-size: scale(24);
+      margin-bottom: scale(56);
+      font-weight: 600;
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: scale(8);
+    margin-bottom: scale(16);
+    @include desktop() {
+      gap: scale(16);
+      margin-bottom: scale(24);
+    }
+    :deep() {
+      .a-input {
+        height: scale(51);
+        background-color: var(--a-color_grey_20);
+        @include desktop() {
+          height: scale(60);
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    color: #7d7d7d;
+    @include desktop() {
+      flex-grow: 1;
+      display: flex;
+      flex-direction: column;
+    }
+    @include tablet() {
+      display: flex;
+      flex-direction: column;
+    }
+    :deep() {
+      .a-chekbox {
+        margin-bottom: scale(32);
+        span {
+          font-weight: 500;
+          font-size: scale(10);
+          height: scale(52);
+          display: inline-block;
+          line-height: initial;
+          padding-left: scale(10);
+          @include tablet() {
+            height: scale(39);
+          }
+          @include desktop() {
+            height: initial;
+            padding-left: 0;
+            color: var(--a-color_dark);
+            font-size: scale(12);
+          }
+        }
+      }
+      .a-chekbox__label {
+        &::before {
+          @include tablet(max) {
+            width: scale(32);
+            height: scale(32);
+            border-color: #7d7d7d;
+          }
+          border-color: var(--a-color_dark);
+        }
+      }
+      .a-chekbox input[type="checkbox"]:checked + .a-chekbox__label::before {
+        background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 16 16"><path fill="black" d="M6.8 12 3 8.2l1.3-1.3 2.5 2.5L12.2 4l1.3 1.3L6.8 12Z"/></svg>');
+      }
+    }
+
+    .a-btn-main {
+      margin-top: auto;
+      align-self: flex-end;
+      @include mobile() {
+        width: 100%;
+      }
+    }
+  }
+}

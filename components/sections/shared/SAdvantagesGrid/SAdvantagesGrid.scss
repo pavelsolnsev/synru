@@ -1,0 +1,75 @@
+.s-advantages {
+  overflow: hidden;
+
+  &__slider {
+    overflow: visible;
+    position: relative;
+  }
+
+  :deep() {
+    .a-num {
+      color: var(--a-color_white);
+      svg {
+        fill: var(--a-color_dark);
+      }
+    }
+
+    .swiper {
+      overflow: visible;
+    }
+
+    .swiper-navigation {
+      button {
+        margin: 0;
+      }
+    }
+  }
+
+  &__card {
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: scale(12);
+    width: scale(210);
+    height: auto;
+    min-height: scale(100);
+    padding: scale(12);
+    color: var(--a-color_white);
+    background-color: var(--a-color_red);
+    border-radius: scale(12);
+
+    @include desktop(min) {
+      gap: scale(28);
+      width: scale(342);
+      padding: scale(24);
+      border-radius: scale(16);
+    }
+
+    &-text {
+      margin-top: auto;
+    }
+
+    &-img {
+      z-index: -1;
+      position: absolute;
+      top: 0;
+      right: scale(8);
+      bottom: 0;
+      height: scale(86);
+      width: scale(45);
+      margin: auto 0;
+      @include desktop(min) {
+        right: scale(14);
+        height: scale(179);
+        width: scale(93);
+      }
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}

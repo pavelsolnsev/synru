@@ -1,0 +1,18 @@
+.s-faculty-events {
+  :deep() {
+    .m-article-card {
+      display: grid;
+      grid-template-rows: scale(202) 1fr;
+
+      @include desktop {
+        grid-template-rows: scale(350) 1fr;
+      }
+    }
+
+    .swiper-navigation {
+      button {
+        margin: 0;
+      }
+    }
+  }
+}

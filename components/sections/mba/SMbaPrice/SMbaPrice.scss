@@ -1,0 +1,242 @@
+.s-mba-price {
+
+  @include mobile(max) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__body {
+    display: flex;
+    gap: scale(20);
+
+    @include tablet(max) {
+      gap: scale(8);
+    }
+
+    @include mobile(max) {
+      flex-direction: column;
+    }
+  }
+
+  &__left, &__right {
+    width: calc(50% - scale(10));
+    border-radius: scale(16);
+    background-color: var(--a-color_white);
+    padding: scale(24);
+
+    @include tablet(max) {
+      width: calc(50% - scale(4));
+      padding: scale(12);
+    }
+
+    @include mobile(max) {
+      width: 100%;
+    }
+  }
+
+  &__left {
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: scale(540);
+
+    @include tablet(max) {
+      height: scale(399);
+    }
+  }
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  &__discount {
+    width: fit-content;
+    padding: scale(13) scale(20);
+    background-color: var(--a-color_red);
+    border-radius: scale(60);
+    color: var(--a-color_white);
+
+    @include tablet(max) {
+      padding: scale(8) scale(16);
+    }
+  }
+
+  &__bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+
+    @include tablet(max) {
+      flex-direction: column;
+      gap: scale(24);
+      justify-content: start;
+    }
+  }
+
+  .crossed {
+    text-decoration: line-through;
+    color: var(--a-color_grey_80);
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    gap: scale(27);
+
+    @include tablet(max) {
+      gap: scale(6);
+      width: 100%;
+    }
+  }
+
+  &__prices {
+    display: flex;
+    flex-direction: column;
+    gap: scale(6);
+  }
+
+  &__total {
+    display: flex;
+    flex-direction: column;
+    gap: scale(8);
+  }
+
+  &__time {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet(max) {
+      width: 100%;
+    }
+  }
+
+  &__left-places {
+    margin-top: scale(4);
+    color: var(--a-color_grey_80);
+  }
+
+  &__time-left {
+    display: flex;
+    flex-direction: column;
+    gap: scale(8);
+    margin-top: scale(24);
+  }
+
+  &__wrapper {
+    display: flex;
+    gap: scale(15);
+
+    @include tablet(max) {
+      gap: scale(12);
+      justify-content: space-between;
+    }
+  }
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: scale(3);
+    position: relative;
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      &:after {
+        content: ':';
+        position: absolute;
+        right: scale(-11);
+        top: scale(5);
+        font-size: scale(26);
+        font-weight: 600;
+        animation: 1s linear blink infinite;
+      }
+    }
+
+    @include mobile(max) {
+      width: 100%;
+
+      &:nth-child(2),
+      &:nth-child(3) {
+        &:after {
+          right: scale(-9);
+        }
+      }
+    }
+  }
+
+  &__case {
+    width: scale(40);
+    height: scale(44);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: scale(10);
+    background-color: var(--a-color_yellow);
+
+    @include tablet(max) {
+      width: scale(75);
+      height: scale(44);
+    }
+
+    @include mobile(max) {
+      width: 100%;
+    }
+  }
+
+  &__label {
+    font-size: scale(12);
+    font-weight: 600;
+  }
+
+  &__add-info {
+    display: flex;
+    gap: scale(20);
+    margin-top: scale(20);
+
+    @include tablet(max) {
+      margin-top: scale(8);
+      gap: scale(8);
+    }
+  }
+
+  &__plan,
+  &__tax {
+    position: relative;
+    border-radius: scale(16);
+    height: scale(120);
+    width: calc(50% - scale(10));
+    padding: scale(24);
+
+    span {
+      position: relative;
+      z-index: 1;
+    }
+
+    @include tablet(max) {
+      height: scale(83);
+      width: calc(50% - scale(4));
+    }
+
+    @include mobile(max) {
+      height: scale(122);
+    }
+  }
+}
+
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  25% {
+    opacity: 1;
+  }
+  75% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

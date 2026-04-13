@@ -1,0 +1,100 @@
+.s-regions-letters {
+  display: none;
+  overflow: visible;
+  &.--inited {
+    display: block;
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__lines {
+    display: flex;
+    flex-direction: column;
+    gap: scale(4);
+    @include tablet(min) {
+      --letter-gap: #{scale(17)};
+      flex-direction: row;
+      justify-content: space-between;
+      gap: var(--letter-gap);
+      padding: scale(12) scale(16);
+      border-radius: scale(8);
+      background-color: var(--a-color_white);
+    }
+    @include desktop() {
+      --letter-gap: #{scale(54)};
+      padding: scale(16) scale(24);
+    }
+  }
+
+  &__line {
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: scale(12);
+    text-transform: uppercase;
+    color: var(--a-color_grey_60);
+    @include mobile() {
+      padding: scale(12) scale(16);
+      border-radius: scale(8);
+      background-color: var(--a-color_white);
+    }
+    @include tablet(min) {
+      flex: 1;
+      gap: var(--letter-gap);
+      width: 100%;
+    }
+    span {
+      display: inline-block;
+      cursor: default;
+      transition: var(--transition);
+      &:hover {
+        color: var(--a-color_red);
+      }
+    }
+  }
+
+  &__cities {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    z-index: indexes("branches-letters");
+    overflow: hidden;
+    display: flex;
+    max-height: 0;
+    width: 100%;
+    margin: scale(4) 0 0;
+    border-radius: scale(8);
+    background-color: var(--a-color_grey_20);
+    transition: var(--transition);
+    @include tablet() {
+      width: calc(100% / 3);
+    }
+    @include desktop() {
+      width: calc(100% / 6);
+    }
+    &.--visible {
+      max-height: scale(264);
+    }
+
+    &-inner {
+      overflow: auto;
+      height: auto;
+      width: 100%;
+      display: grid;
+      margin: scale(4);
+      padding-right: scale(20);
+    }
+
+    a {
+      padding: scale(8);
+      border-radius: scale(8);
+      transition: var(--transition);
+      &:hover {
+        background-color: var(--a-color_grey_40);
+      }
+    }
+  }
+}

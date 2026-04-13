@@ -1,0 +1,222 @@
+@import "../helpers/index";
+@import 'swiper/scss';
+@import 'swiper/scss/navigation';
+@import 'swiper/scss/pagination';
+@import 'swiper/scss/scrollbar';
+@import 'swiper/scss/effect-fade';
+@import 'swiper/scss/grid';
+
+.swiper {
+  &-initialized {
+    position: relative;
+  }
+  &-container-initialized {
+    position: relative;
+  }
+
+  &-slide {
+    &:not(:last-child) {
+      margin-right: var(--gap_def);
+    }
+  }
+  &-scrollbar {
+    position: relative;
+    top: 0;
+    margin: scale(16) 0 0;
+    border-radius: scale(20);
+    background: var(--a-color_grey_40);
+
+    &.swiper-scrollbar-vertical {
+      margin: scale(8);
+      .swiper-scrollbar-drag {
+        width: scale(4);
+      }
+      @media (min-width: 1200px) {
+        position: absolute;
+        left: auto;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: scale(6);
+        margin: scale(12);
+        .swiper-scrollbar-drag {
+          width: scale(6);
+        }
+      }
+    }
+
+    &.--dark {
+      background: var(--a-color_grey_dark);
+    }
+
+    @media (min-width: 1200px) {
+      margin: scale(40) 0 0;
+    }
+    &-drag {
+      cursor: pointer;
+      height: scale(4);
+      background: var(--a-color_dark);
+      border-radius: scale(4);
+
+      .swiper-scrollbar.--dark & {
+        background: var(--a-color_grey_80);
+      }
+
+      @media (min-width: 1200px) {
+        height: scale(6);
+        border-radius: scale(10);
+      }
+    }
+    &-lock {
+      display: none;
+    }
+  }
+
+  //- Pagination
+  &-pagination-progressbar {
+    overflow: hidden;
+    position: relative;
+    top: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: scale(16) 0 0;
+    border-radius: scale(4);
+    background: var(--a-color_grey_40);
+    @media (min-width: 1200px) {
+      margin: scale(40) 0 0;
+    }
+    &-fill {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--a-color_dark);
+      border-radius: scale(4);
+      transform: scale(0);
+      transform-origin: left top;
+    }
+    .swiper-horizontal > &,
+    &.swiper-pagination-horizontal {
+      width: 100%;
+      height: scale(4);
+      left: 0;
+      top: 0;
+      @media (min-width: 1200px) {
+        height: scale(6);
+      }
+    }
+  }
+
+  &-pagination {
+    &,
+    &-bullets {
+      position: relative;
+      top: 0;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: scale(16) 0 0;
+
+      @media (min-width: 1200px) {
+        margin: scale(40) 0 0;
+      }
+    }
+
+    &-lock {
+      display: none;
+    }
+
+    &-bullet {
+      opacity: 1;
+      cursor: pointer;
+      flex: 1;
+      width: 100%;
+      height: scale(4);
+      max-width: unset;
+      margin: 0 0 0 scale(8);
+      background: var(--a-color_grey_40);
+      border-radius: scale(4);
+      transition: 0.2s;
+
+      @media (min-width: 1200px) {
+        height: scale(6);
+      }
+
+      &:first-child {
+        margin-left: 0;
+      }
+
+      &:hover {
+        cursor: default;
+      }
+      &-active {
+        background: var(--a-color_dark);
+      }
+    }
+  }
+
+  //- Navigation
+  &-navigation {
+    display: none;
+
+    @media (min-width: 1200px) {
+      position: absolute;
+      top: scale(-116);
+      right: 0;
+      height: scale(48);
+      left: auto;
+      z-index: 1;
+      display: flex;
+      align-items: center;
+      gap: scale(20);
+      margin-bottom: scale(67);
+    }
+  }
+
+  &-pagination-lock + &-navigation,
+  &-scrollbar-lock + &-navigation {
+    display: none;
+  }
+
+  &-button-prev,
+  &-button-next {
+    cursor: pointer;
+    position: static;
+    width: scale(48);
+    height: scale(48);
+    border: none;
+    border-radius: scale(12);
+    background-color: var(--a-color_grey_40);
+    color: var(--a-color_dark);
+    transition: var(--transition);
+
+    &:hover:not(.swiper-button-disabled) {
+      color: var(--a-color_dark);
+      background-color: var(--a-color_white);
+    }
+
+    &:after {
+      content: none;
+      color: currentColor;
+    }
+
+    svg {
+      width: scale(10);
+      height: scale(16);
+      transition: var(--transition);
+    }
+  }
+
+  &-button-disabled {
+    cursor: default;
+    background-color: var(--a-color_grey_20);
+  }
+
+  &-navigation.--bg-grey {
+    .swiper-button-disabled {
+      background-color: var(--a-color_grey_10);
+    }
+  }
+}

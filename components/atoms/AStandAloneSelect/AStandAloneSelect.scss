@@ -1,0 +1,83 @@
+.a-select {
+  position: relative;
+
+  select {
+    position: relative;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 100%;
+    min-height: rem(44);
+    margin: 0;
+    padding: rem(8) rem(52) rem(8) rem(16);
+    border: rem(1) solid var(--a-color_grey_60);
+    border-radius: var(--a-borderRadius--x2);
+    background-color: var(--a-color_white);
+    font-size: inherit;
+    color: var(--a-color_grey_80);
+    cursor: pointer;
+    @include desktop(min, $p_xl) {
+      height: rem(52);
+    }
+    &.--filter {
+      height: rem(48);
+      border-color: var(--a-color_dark);
+      font-weight: 600;
+      @include desktop(min, $p_xl) {
+        min-width: rem(200);
+        height: rem(44);
+      }
+    }
+
+    &[disabled] {
+      border-color: var(--a-color_grey_60);
+      background-color: var(--a-color_grey_40);
+      color: var(--a-color_grey_60);
+      cursor: default;
+    }
+
+    &::-ms-expand {
+      display: none;
+    }
+
+    &:focus {
+      outline: none;
+    }
+
+    option {
+      color: var(--a-color_grey_80);
+      background-color: var(--a-color_white);
+
+      &[disabled] {
+        color: var(--a-color_grey_40);
+      }
+
+      &[selected] {
+        color: var(--a-color_grey_100);
+      }
+    }
+
+    &::placeholder,
+    option:first-child[disabled='disabled'] {
+      color: var(--a-color_grey_60);
+    }
+  }
+
+  &::after {
+    cursor: pointer;
+    position: absolute;
+    top: rem(1);
+    right: rem(1);
+    width: rem(44);
+    height: calc(100% - 2px);
+    background: var(--a-color_grey_40)
+      url("data:image/svg+xml,%3Csvg width='14' height='7' viewBox='0 0 14 7' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1L7 6L13 1' stroke='%239BA0BA' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+      no-repeat center;
+    transition: 0.25s all ease;
+    border-top-right-radius: var(--a-borderRadius--x2);
+    border-bottom-right-radius: var(--a-borderRadius--x2);
+    border-left: 0;
+    content: '';
+    pointer-events: none;
+  }
+}

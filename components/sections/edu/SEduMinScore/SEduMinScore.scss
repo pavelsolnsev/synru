@@ -1,0 +1,18 @@
+.s-edu-min-score {
+  display: grid;
+  gap: scale(20);
+  align-items: start;
+  min-width: 0;
+  margin: 0;
+  padding: var(--padding_def);
+  border-radius: scale(16);
+  background-color: var(--a-color_white);
+  @include desktop() {
+    gap: scale(32);
+    padding-bottom: scale(40);
+  }
+
+  :deep() {
+    p { margin: scale(12) 0 }
+  }
+}

@@ -1,0 +1,120 @@
+.s-training-program {
+  :deep() {
+    .m-accordion {
+      background-color: var(--a-color_grey_40);
+      border-radius: scale(16);
+      transition: var(--transition);
+  
+      &:not(:last-child) {
+        margin-bottom: scale(8);
+      }
+  
+      &.--open {
+        background-color: var(--a-color_white);
+  
+        .m-accordion__wrap {
+          padding: scale(12);
+  
+          @include desktop(min) {
+            padding: scale(16) scale(26) scale(24);
+          }
+        }
+  
+        .m-accordion__icon .ico {
+          transform: rotate(-45deg);
+        }
+      }
+  
+      &__header {
+        padding: scale(12);
+  
+        @include desktop(min) {
+          padding: scale(20) scale(24);
+        }
+      }
+  
+      .ico {
+        width: scale(24);
+        height: scale(24);
+  
+        @include desktop(min) {
+          width: scale(32);
+          height: scale(32);
+        }
+      }
+  
+      &__wrap {
+        overflow: hidden;
+        padding: 0 scale(12);
+        transition: var(--transition);
+  
+        @include desktop(min) {
+          padding: 0 scale(26);
+        }
+      }
+    }
+  }
+
+
+  &__item {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    max-width: scale(280);
+    padding: scale(12);
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(12);
+
+    @include desktop(min) {
+      max-width: scale(342);
+      padding: scale(24);
+      border-radius: scale(16);
+    }
+
+    &-head {
+      display: flex;
+      align-items: center;
+      gap: scale(4);
+      margin-bottom: scale(32);
+
+      @include desktop(min) {
+        gap: scale(8);
+        margin-bottom: scale(36);
+      }
+
+      .a-tag {
+        border-color: var(--a-color_grey_80);
+      }
+    }
+
+    & &-num {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: scale(22);
+      height: scale(22);
+      color: var(--a-color_white);
+      background-color: var(--a-color_dark);
+      border-radius: 50%;
+
+      @include desktop(min) {
+        min-width: scale(36);
+        height: scale(36);
+      }
+    }
+
+    &-text {
+      margin-top: auto;
+    }
+  }
+
+  :deep() {
+    .swiper-wrapper {
+      @include desktop(min) {
+        display: grid;
+        row-gap: scale(20);
+        grid-template-columns: repeat(5, 1fr);
+      }
+    }
+  }
+}

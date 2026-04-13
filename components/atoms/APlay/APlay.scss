@@ -1,0 +1,26 @@
+.a-play {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: scale(48);
+  height: scale(48);
+  border-radius: 50%;
+  background-color: var(--a-color_red);
+  color: var(--a-color_white);
+  transition: var(--transition);
+
+  &:hover {
+    background-color: var(--a-color_white);
+    color: var(--a-color_red);
+
+    svg {
+      fill: var(--a-color_red);
+    }
+  }
+
+  svg {
+    width: 70%;
+    height: 70%;
+    fill: var(--a-color_white);
+  }
+}

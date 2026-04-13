@@ -1,0 +1,15 @@
+.--article-test {
+  margin-bottom: scale(16) !important;
+
+  @include desktop() {
+    margin-bottom: scale(20) !important;
+  }
+}
+
+:deep() {
+  .s-articles {
+    .m-article-card:has(a[href="/media/career_guidance/test"]) {
+      display: none;
+    }
+  }
+}

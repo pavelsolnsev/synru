@@ -1,0 +1,142 @@
+.s-intro {
+  min-width: 0;
+  padding: 0;
+  border-radius: 0;
+  @include desktop {
+    overflow: visible;
+    margin: 0;
+  }
+
+
+  .m-breadcrumbs {
+    position: relative;
+    margin: 0;
+    margin-right: calc(-1* var(--layout-h-padding));
+    padding: 0;
+    padding-right: var(--layout-h-padding);
+    @include desktop {
+      margin: 0 scale(-24);
+      padding: 0 scale(24);
+    }
+
+    &__link--last,
+    a:hover {
+      color: var(--a-color_grey_dark);
+    }
+  }
+
+  &__inner {
+    gap: scale(24);
+    display: flex;
+    flex-direction: column;
+  }
+
+
+  &__top {
+    gap: scale(12);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include desktop {
+      gap: scale(24);
+    }
+  }
+
+
+  &__date {
+    gap: scale(12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--a-color_grey_100);
+    svg {
+      width: scale(24);
+      height: scale(24);
+    }
+
+    @include desktop {
+      margin-left: auto;
+    }
+  }
+
+
+  &__descr {
+    margin: scale(16) 0 0;
+
+    @include desktop {
+      margin: scale(20) 0 0;
+    }
+  }
+
+
+  &__img {
+    overflow: hidden;
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: scale(16);
+
+    img {
+      display: block;
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+
+  &__bottom {
+    gap: scale(16);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    @include tablet(min) {
+      gap: scale(40);
+      display: flex;
+      align-items: center;
+    }
+  }
+
+
+  &__tags {
+    gap: scale(8);
+    display: flex;
+    flex-wrap: wrap;
+    @include desktop {
+      gap: scale(12);
+    }
+  }
+
+  .a-tag {
+    border-color: var(--a-color_grey_60);
+    color: var(--a-color_grey_100);
+  }
+
+  &__content {
+    :deep() {
+      p a,
+      ul a,
+      ol a {
+        text-decoration: underline;
+        color: var(--a-color_red);
+        transition: var(--transition);
+        &:hover { text-decoration: none }
+      }
+    }
+  }
+
+  .a-btn {
+    min-width: scale(164);
+    margin: scale(16) 0 0;
+    @include desktop {
+      min-width: scale(246);
+    }
+  }
+
+  .s-article {
+    padding: 0;
+    border-radius: 0;
+  }
+
+}
+

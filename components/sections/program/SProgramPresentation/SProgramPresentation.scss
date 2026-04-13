@@ -1,0 +1,101 @@
+.s-presentation {
+  :deep() {
+    .l-section__inner {
+      display: grid;
+      gap: scale(8);
+  
+      @include desktop(min) {
+        gap: scale(20);
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+    .m-card-text {
+      @include desktop(min) {
+        min-height: scale(420);
+  
+        &:last-child {
+          grid-column: 1/3;
+        }
+      }
+  
+      &__block {
+        margin: 0;
+  
+        .a-btn {
+          width: 100%;
+  
+          @include tablet(min) {
+            position: absolute;
+            left: scale(12);
+            bottom: scale(12);
+            max-width: scale(313);
+          }
+  
+          @include desktop(min) {
+            left: scale(24);
+            bottom: scale(24);
+            max-width: scale(420);
+          }
+        }
+      }
+  
+      &__icons {
+        display: none;
+  
+        @include tablet(min) {
+          display: flex;
+        }
+      }
+
+      .a-btn {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      } 
+    }
+    .m-video-card {
+      height: scale(200);
+  
+      @include tablet(max) {
+        &:not([href]) {
+          order: -1;
+        }
+      }
+  
+      @include tablet(min) {
+        &[href] {
+          height: scale(443);
+        }
+      }
+  
+      @include desktop(min) {
+        height: scale(420);
+      }
+  
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: top center;
+      }
+  
+      .faculty-icon {
+        position: absolute;
+        width: auto;
+        top: scale(49);
+        left: 50%;
+        height: scale(104);
+        transform: translateX(-50%);
+  
+        @include desktop(min) {
+          top: scale(107);
+          height: scale(220);
+        }
+      }
+  
+      .a-tag {
+        display: block;
+      }
+    }
+  }
+}

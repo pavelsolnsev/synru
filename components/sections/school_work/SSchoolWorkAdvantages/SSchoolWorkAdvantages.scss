@@ -1,0 +1,70 @@
+.s-school-work-advantages {
+  &__cards {
+    margin-top: scale(40);
+    display: flex;
+    gap: scale(20);
+
+    @include tablet(max) {
+      margin-top: scale(24);
+      gap: scale(10);
+    }
+
+    @include mobile(max) {
+      flex-direction: column;
+    }
+  }
+
+  &__card {
+    position: relative;
+    width: calc(25% - scale(60) / 4);
+    height: scale(225);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    border-radius: scale(16);
+    padding: scale(24);
+
+    @include tablet(max) {
+      width: calc(25% - scale(30) / 4);
+      padding: scale(12);
+      height: scale(160);
+    }
+
+    @include mobile(max) {
+      width: 100%;
+      justify-content: start;
+      height: auto;
+      gap: scale(24);
+    }
+  }
+
+  &__index {
+    width: scale(48);
+    height: scale(48);
+    border-radius: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--a-color_black);
+    color: var(--a-color_white);
+    font-size: scale(26);
+    font-weight: 600;
+    line-height: 120%;
+    position: relative;
+    z-index: 2;
+
+    @include tablet(max) {
+      width: scale(32);
+      height: scale(32);
+      font-size: scale(17);
+    }
+  }
+
+  &__name {
+    max-width: scale(330);
+    color: var(--a-color_white);
+    position: relative;
+    z-index: 2;
+  }
+}

@@ -1,0 +1,44 @@
+.m-up-button[class*="a-font"] {
+  bottom: scale(120);
+  position: fixed;
+  display: none;
+  right: 30px;
+  align-items: center;
+  justify-content: center;
+  width: scale(48);
+  height: scale(48);
+  color: var(--a-color_grey_100);
+  background-color: var(--a-color_white);
+  border-radius: 50%;
+  box-shadow: 0px 0 rem(2) 0 var(--a-color_grey_60);
+  border: 0;
+  padding: 0;
+  cursor: pointer;
+  &.--visible {
+    display: flex;
+  }
+
+  @media screen and (min-width: 500px) {
+    bottom: scale(80);
+  }
+
+  @include tablet(min) {
+    bottom: scale(110);
+  }
+
+  @include desktop() {
+    bottom: scale(120);
+    width: scale(64);
+    height: scale(64);
+  }
+
+  html.with-fancybox & {
+    display: none;
+  }
+
+  svg {
+    transform: rotate(90deg);
+    width: 0.57em;
+    height: 1em;
+  }
+}

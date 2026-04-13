@@ -1,0 +1,115 @@
+.m-modal-mti-direction {
+  width: scale(1100);
+  height: scale(500);
+  background-color: var(--a-color_grey_40);
+  display: none;
+  position: relative;
+  padding: 0 !important;
+
+  @include tablet(max) {
+    width: calc(100% - scale(40));
+    height: scale(538);
+  }
+
+  @include mobile(max) {
+    width: calc(100% - scale(20));
+    height: scale(637);
+  }
+
+  &__bg {
+    border-radius: scale(16);
+    overflow: hidden;
+  }
+
+  &__top {
+    position: relative;
+    z-index: 1;
+    padding: scale(24);
+
+    @include tablet(max) {
+      padding: scale(16);
+    }
+  }
+
+  &__title {
+    max-width: scale(623);
+
+    @include tablet(max) {
+      max-width: scale(441);
+    }
+
+    @include mobile(max) {
+      max-width: 100%;
+    }
+  }
+
+  &__levels {
+    display: flex;
+    gap: scale(8);
+    flex-wrap: wrap;
+    max-width: scale(720);
+    margin-top: scale(32);
+
+    @include tablet(max) {
+      max-width: scale(495);
+      margin-top: scale(24);
+    }
+
+    @include mobile(max) {
+      max-width: 100%;
+    }
+  }
+
+  &__subtitle {
+    margin-top: scale(53);
+    max-width: scale(598);
+
+    @include tablet(max) {
+      margin-top: scale(40);
+      max-width: scale(508);
+    }
+
+    @include mobile(max) {
+      max-width: 100%;
+    }
+  }
+
+  &__form {
+    width: 100%;
+    margin-top: auto;
+    height: auto;
+    border-radius: scale(16);
+    background-color: var(--a-color_white);
+    padding: scale(24);
+    display: flex;
+    flex-direction: column;
+    gap: scale(16);
+    position: relative;
+    z-index: 1;
+
+    .wrapper {
+      display: flex;
+      gap: scale(12);
+      width: 100%;
+
+      @include tablet(max) {
+        flex-direction: column;
+      }
+    }
+  }
+
+  &__form-input {
+    width: 100% !important;
+    height: scale(60) !important;
+    display: none;
+  }
+
+  &__form-submit {
+    width: scale(280);
+    height: scale(55);
+
+    @include tablet(max) {
+      width: 100%;
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.m-social-links {
+  &__title {
+    margin: 0 0 scale(8);
+    @include tablet(min, $p_md) {
+      margin: 0 0 scale(14);
+    }
+    @include tablet(min, $p_lg) {
+      margin: 0 scale(8) 0 0;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    gap: scale(16);
+    grid-auto-flow: column;
+
+    @include desktop {
+      gap: scale(20);
+    }
+  }
+
+  &__item {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: scale(32);
+    color: var(--a-color_white);
+    background-color: var(--a-color_dark);
+    border-radius: scale(8);
+    outline: none;
+    font-size: 0;
+    transition: var(--transition);
+
+    @include desktop {
+      height: scale(40);
+      border-radius: scale(12);
+    }
+
+    &:hover {
+      background-color: var(--a-color_dark);
+    }
+
+    svg {
+      width: scale(20);
+      height: scale(20);
+    }
+  }
+}

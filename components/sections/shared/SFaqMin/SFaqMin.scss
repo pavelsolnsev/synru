@@ -1,0 +1,196 @@
+.s-faq {
+  overflow: visible;
+
+  :deep(.l-section__inner) {
+    @include extra() {
+      overflow: visible;
+    }
+  }
+
+  &__wrapper {
+    display: grid;
+    gap: scale(12);
+
+    @include desktop {
+      grid-auto-flow: column;
+      gap: scale(20);
+    }
+  }
+
+  &__form {
+    position: relative;
+    height: min-content;
+    padding: var(--padding_def);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include desktop {
+      position: sticky;
+      top: scale(64);
+      display: grid;
+      grid-auto-flow: column;
+      gap: scale(27);
+      min-width: scale(910);
+      max-width: scale(910);
+      padding-right: 0;
+
+      .--visible-nav & {
+        top: scale(110);
+      }
+    }
+
+    img {
+      position: absolute;
+      top: 0;
+      right: 0;
+      height: scale(100);
+      width: auto;
+
+      @include desktop {
+        position: relative;
+        height: scale(212);
+        margin-top: scale(-20);
+      }
+    }
+
+    &-title {
+      margin-bottom: scale(16);
+      padding-right: scale(100);
+
+      @include desktop {
+        padding-right: 0;
+        margin-bottom: scale(12);
+      }
+    }
+
+    &-text {
+      padding-right: scale(100);
+
+      @include desktop {
+        padding-right: 0;
+      }
+    }
+
+    :deep() {
+      .m-quiz-form {
+        margin-top: scale(24);
+
+        @include desktop {
+          margin-top: scale(32);
+        }
+
+        &__header {
+          @include desktop {
+            display: grid;
+            grid-template-columns: 1fr scale(208);
+          }
+        }
+
+        .a-chekbox__label {
+          font-size: scale(10);
+          color: var(--a-color_grey_80);
+
+          @include desktop {
+            font-size: scale(12);
+          }
+        }
+      }
+    }
+  }
+
+  &__inner {
+    display: grid;
+    gap: scale(12);
+  }
+  :deep() {
+    .m-accordion {
+      background-color: var(--a-color_grey_40);
+      border-radius: scale(12);
+      transition: var(--transition);
+
+      &.--open {
+        background-color: var(--a-color_white);
+
+        .m-accordion__wrap {
+          max-width: scale(880);
+          padding: scale(20) scale(12) scale(12);
+
+          @include desktop {
+            padding: scale(24);
+          }
+        }
+
+        .m-accordion__icon svg {
+          transform: rotate(45deg);
+        }
+      }
+
+      @include desktop {
+        border-radius: scale(16);
+      }
+
+      &__header {
+        cursor: pointer;
+        padding: scale(12);
+
+        @include desktop {
+          padding: scale(20) scale(24);
+        }
+      }
+
+      .ico {
+        width: scale(24);
+        height: scale(24);
+
+        @include desktop(min) {
+          width: scale(32);
+          height: scale(32);
+        }
+      }
+
+      &__wrap {
+        padding: 0 scale(12);
+        transition: var(--transition);
+
+        @include desktop {
+          padding: 0 scale(24);
+        }
+        a {
+          color: var(--a-color_red);
+          transition: var(--transition);
+          &:hover {
+            color: var(--a-color_red_dark);
+          }
+        }
+      }
+
+      li {
+        position: relative;
+        padding-left: scale(30);
+        display: flex;
+        align-items: center;
+        &:not(:last-child) {
+          margin: 0 0 scale(6);
+          @include desktop() {
+            margin: 0 0 scale(8);
+          }
+        }
+
+        @include desktop() {
+          padding-left: scale(40);
+        }
+
+        &:before {
+          content: "";
+          position: absolute;
+          left: scale(10);
+          display: block;
+          width: scale(6);
+          height: scale(6);
+          border-radius: scale(12);
+          background-color: currentColor;
+        }
+      }
+    }
+  }
+}

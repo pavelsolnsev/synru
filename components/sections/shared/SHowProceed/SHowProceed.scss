@@ -1,0 +1,64 @@
+.s-how-proceed {
+  &__slider {
+    display: grid;
+    gap: var(--gap_def);
+
+    @include tablet() {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include desktop() {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+  &__bottom {
+    margin-top: var(--gap_def);
+    text-align: center;
+
+    .a-btn {
+      width: 100%;
+      @include desktop() {
+        width: scale(518);
+        height: scale(78);
+      }
+    }
+  }
+}
+
+.how-proceed-card {
+  z-index: 1;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  min-height: scale(136);
+  padding: scale(12);
+  color: var(--a-color_white);
+  background-color: var(--a-color_red);
+  border-radius: scale(12);
+
+  @include desktop(min) {
+    max-width: scale(445);
+    min-height: scale(225);
+    padding: scale(24);
+    border-radius: scale(16);
+  }
+
+  &__text {
+    margin-top: auto;
+
+    @include desktop(min) {
+      max-width: scale(330);
+    }
+  }
+
+  &__img img {
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    height: 100%;
+    width: auto;
+  }
+}

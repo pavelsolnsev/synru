@@ -1,0 +1,29 @@
+.s_what_study {
+  &__slider {
+    position: relative;
+  }
+  :deep() {
+    .swiper {
+      overflow: visible;
+    }
+    .swiper-navigation {
+      button {
+        margin: 0;
+      }
+    }
+    .m-card-list {
+      gap: scale(20);
+      max-width: scale(280);
+      height: auto;
+
+      @include desktop(min) {
+        gap: scale(36);
+        max-width: scale(444);
+      }
+
+      &__head {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

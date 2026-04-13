@@ -1,0 +1,27 @@
+:deep() {
+  .s-quiz {
+    min-height: scale(464);
+    @include tablet(min) {
+      min-height: scale(300);
+    }
+    @include desktop(min) {
+      min-height: scale(590);
+    }
+
+    &__bg {
+      bottom: 0;
+    }
+
+    &__intro-block {
+      margin: 0 !important;
+      gap: scale(24);
+      @include tablet(min) {
+        gap: scale(12);
+      }
+      @include desktop(min) {
+        gap: scale(24);
+        margin: auto 0 0;
+      }
+    }
+  }
+}

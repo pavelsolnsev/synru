@@ -1,0 +1,45 @@
+.s-possibilities {
+  :deep() {
+    .l-section__title {
+      max-width: scale(1397);
+    }
+    .m-card-list {
+      gap: scale(24) 0;
+      display: grid;
+      grid-template-rows: 1fr min-content;
+      height: 100%;
+      @include desktop {
+        gap: scale(36) 0;
+      }
+
+      &__head {
+        margin-bottom: auto;
+        @include desktop {
+          gap: scale(8) 0;
+        }
+      }
+
+      &__title {
+        margin-bottom: 0;
+      }
+
+      &__subtitle {
+        margin-top: 0;
+        margin-bottom: auto;
+      }
+    }
+    .swiper-slide {
+      width: scale(280);
+      height: auto;
+      min-height: scale(308);
+
+      @include desktop {
+        width: scale(445);
+      }
+    }
+
+    .swiper {
+      overflow: visible;
+    }
+  }
+}

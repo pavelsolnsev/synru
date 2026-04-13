@@ -1,0 +1,49 @@
+.s-academic-partners {
+  .swiper-grid-column > .swiper-wrapper {
+    flex-direction: row;
+  }
+
+  &__slider {
+    position: relative;
+  }
+
+  :deep() {
+    .swiper {
+      overflow: visible;
+    }
+    .swiper-navigation {
+      button {
+        margin: 0;
+      }
+    }
+  }
+
+  &__item {
+    display: grid;
+    gap: scale(8);
+    width: scale(164);
+    min-height: scale(80);
+    margin: 0;
+    padding: scale(4);
+    text-align: center;
+    background-color: var(--a-color_grey_20);
+    border-radius: var(--border-radius_sec);
+
+    @include desktop(min) {
+      gap: scale(16);
+      width: scale(352);
+      min-height: scale(144);
+      padding: scale(24);
+    }
+
+    &-logo {
+      display: block;
+      margin: auto auto 0;
+      max-height: scale(20);
+
+      @include desktop(min) {
+        max-height: scale(42);
+      }
+    }
+  }
+}

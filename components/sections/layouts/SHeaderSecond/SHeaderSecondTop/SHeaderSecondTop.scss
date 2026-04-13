@@ -1,0 +1,42 @@
+.s-header-second-top {
+  background-color: var(--a-color_grey_20);
+  display: flex;
+  justify-content: flex-end;
+  padding: 0 var(--layout-h-padding);
+
+  &-eyes {
+    display: flex;
+    align-items: center;
+    gap: scale(8);
+    padding: scale(4) 0;
+    border: 0;
+    background: transparent;
+    transition: var(--transition);
+    cursor: pointer;
+    color: var(--a-color_dark);
+    &:hover {
+      color: var(--a-color_red);
+    }
+
+    span {
+      display: none;
+
+      @include desktop() {
+        font-size: scale(14);
+        font-weight: 500;
+        line-height: scale(16.8);
+        display: block;
+        color: var(--a-color_grey_100);
+      }
+    }
+
+    svg {
+      width: scale(16);
+      height: scale(16);
+
+      @include desktop {
+        color: var(--a-color_grey_100);
+      }
+    }
+  }
+}

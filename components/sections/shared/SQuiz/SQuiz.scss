@@ -1,0 +1,432 @@
+.m-breadcrumbs {
+  margin: 0;
+  padding: scale(8) var(--layout-h-padding);
+  .--js-quiz-visible & {
+    display: none;
+  }
+  @include tablet(min) {
+    padding: scale(12) var(--layout-h-padding);
+  }
+  @include desktop(min) {
+    margin: scale(26) 0 calc(-1 * #{scale(42)}) !important;
+    padding: 0 calc(var(--layout-h-padding) + var(--padding_def));
+  }
+}
+
+:deep() {
+  .m-breadcrumbs__link a {
+    transition: var(--transirion);
+    color: var(--a-color_grey_60);
+    &:hover {
+      color: var(--a-color_white);
+    }
+  }
+  .m-breadcrumbs__link--last * {
+    color: var(--a-color_white);
+  }
+}
+
+.s-quiz {
+  $quiz: &;
+  display: flex;
+  align-items: stretch;
+  position: relative;
+  z-index: indexes("quiz");
+  min-height: scale(510);
+  padding: scale(24) scale(12) scale(12);
+  border-radius: scale(16);
+  background-color: var(--a-color_dark);
+  color: var(--a-color_white);
+  margin-bottom: scale(28);
+
+  @include tablet(min) {
+    min-height: scale(360);
+    margin: 0 var(--layout-h-padding);
+    padding: scale(12);
+    margin-bottom: scale(28);
+  }
+  @include desktop(min) {
+    min-height: scale(518);
+    padding: scale(24);
+    border-radius: scale(16);
+    margin-bottom: scale(40);
+
+    .m-breadcrumbs + & {
+      padding-top: scale(76);
+    }
+  }
+
+  &.--white {
+    .s-quiz {
+      &__intro-description,
+      &__intro-title {
+        @include tablet(min) {
+          color: var(--a-color_dark);
+        }
+      }
+    }
+  }
+
+  &.--dubai {
+    @include tablet(min) {
+      min-height: scale(295);
+    }
+    @include desktop {
+      min-height: scale(540);
+    }
+  }
+
+  &.--big-height-lg {
+    @include desktop(min) {
+      min-height: scale(590);
+    }
+  }
+
+  &.--october_banner {
+    .s-quiz__intro-title {
+      font-size: scale(32);
+      line-height: 110%;
+    }
+
+    @include tablet(min) {
+      min-height: scale(332);
+
+      .s-quiz__intro-title {
+        min-width: scale(450);
+        font-size: scale(44);
+        line-height: 100%;
+      }
+    }
+
+    @include desktop(min) {
+      min-height: scale(660);
+
+      .s-quiz__intro-title {
+        font-size: scale(120);
+      }
+
+      .s-quiz__intro-description {
+        font-size: scale(26);
+        line-height: 120%;
+      }
+    }
+  }
+
+  &.--banner {
+    @include mobile(max) {
+      .s-quiz__bg {
+        bottom: scale(130);
+      }
+    }
+
+    @include tablet(min) {
+      min-height: scale(295);
+    }
+
+    @include desktop(min) {
+      min-height: scale(590);
+      padding-top: scale(24);
+    }
+
+    .s-quiz__intro {
+      @include tablet() {
+        width: 100%;
+      }
+    }
+
+    .s-quiz__intro-title {
+      @include tablet(min) {
+        margin-bottom: scale(8);
+      }
+
+      @include desktop(min) {
+        margin-bottom: scale(12);
+      }
+    }
+
+    .s-quiz__intro-subtitle {
+      margin-bottom: scale(8);
+
+      @include tablet(min) {
+        margin-bottom: auto;
+      }
+    }
+  }
+
+  &.--budget {
+    .s-quiz__intro-title {
+      @include tablet(min) {
+        margin-bottom: auto;
+      }
+    }
+  }
+
+  &.--form {
+    @include mobile(max) {
+      min-height: scale(625);
+      .s-quiz__bg {
+        bottom: scale(185);
+        img {
+          object-position: top;
+        }
+      }
+    }
+    .s-quiz__btns {
+      @include mobile() {
+        min-height: scale(162);
+      }
+      @include tablet() {
+        width: scale(700);
+      }
+      @include desktop() {
+        width: scale(1500);
+      }
+    }
+  }
+
+  &.--garant_trud {
+    .s-quiz__intro-title {
+      @include desktop {
+        margin-top: scale(40);
+      }
+    }
+
+    .s-quiz__intro-description {
+      @include tablet() {
+        max-width: scale(454);
+      }
+    }
+
+    .s-quiz__intro-title {
+      @include mobile() {
+        font-size: scale(40);
+      }
+    }
+  }
+
+  &.--inostr {
+    @include tablet() {
+      min-height: scale(300);
+    }
+
+    @include desktop() {
+      min-height: scale(590);
+    }
+    .s-quiz__intro-title {
+      @include mobile() {
+        font-size: scale(36);
+      }
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    left: 0;
+    top: 0;
+    right: 0;
+    bottom: scale(70);
+    z-index: 0;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    @include tablet(min) {
+      bottom: 0;
+    }
+    img,
+    video {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: right;
+      @include tablet(min) {
+        object-position: left bottom;
+        height: 100%;
+      }
+    }
+  }
+
+  &__btns {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: scale(10);
+    width: 100%;
+
+    @include tablet(min) {
+      flex-direction: row;
+      gap: scale(12);
+      width: scale(412);
+    }
+
+    @include desktop(min) {
+      gap: scale(20);
+      width: scale(660);
+    }
+  }
+
+  &__intro {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: center;
+    @include tablet(min) {
+      width: 60%;
+      text-align: left;
+    }
+
+    &-tags {
+      display: flex;
+      justify-content: center;
+      gap: scale(8);
+
+      margin: 0 auto scale(91);
+      @include tablet(min) {
+        margin: 0 auto scale(30);
+      }
+      @include desktop(min) {
+        margin: 0 auto scale(32);
+      }
+    }
+
+    &-title {
+      margin: auto 0 scale(8);
+      @include tablet(min) {
+        margin: 0 0 auto;
+      }
+    }
+
+    &-description {
+      margin: 0 0 scale(20);
+      @include mobile() {
+        max-width: scale(322);
+      }
+      @include tablet(min) {
+        margin: 0 0 scale(12);
+      }
+      @include desktop(min) {
+        margin: scale(72) 0 scale(24);
+      }
+
+      p:not(:last-child) {
+        margin: 0 0 scale(6);
+        @include desktop(min) {
+          margin: 0;
+        }
+      }
+    }
+
+    &-block {
+      display: grid;
+      gap: scale(8);
+      margin-bottom: scale(24);
+
+      @include tablet(min) {
+        margin-bottom: scale(12);
+      }
+
+      @include desktop(min) {
+        gap: scale(20);
+        margin-bottom: scale(20);
+      }
+    }
+
+    &-btn {
+      width: 100%;
+      margin: 0;
+      white-space: nowrap;
+
+      @include tablet(min) {
+        max-width: scale(330);
+      }
+      @include desktop(min) {
+        max-width: scale(420);
+      }
+    }
+  }
+
+  .m-quiz {
+    position: relative;
+    z-index: 1;
+    display: none;
+  }
+
+  :deep() {
+    .m-quiz-form {
+      @include tablet() {
+        h3 {
+          font-size: scale(22);
+        }
+      }
+      @include desktop() {
+        h3 {
+          font-size: scale(45);
+        }
+      }
+    }
+  }
+
+  .--js-quiz-visible & {
+    min-height: scale(510);
+    padding: 0;
+    @include tablet(min) {
+      min-height: scale(430);
+    }
+    @include desktop(min) {
+      min-height: scale(660);
+      padding: 0;
+    }
+    #{$quiz}__bg {
+      bottom: 0;
+      //filter: blur(#{scale(40)});
+      img {
+        height: 100%;
+        object-position: center;
+      }
+    }
+    #{$quiz}__intro {
+      display: none;
+    }
+    .m-quiz {
+      display: flex;
+    }
+  }
+}
+
+#quiz-popup {
+  width: 100%;
+  padding: 0;
+  background: transparent;
+  .s-quiz {
+    padding: 0;
+    background-color: rgba(var(--a-color_dark_rgb), 0.51);
+  }
+  .s-quiz__intro,
+  .s-quiz__bg {
+    display: none;
+  }
+  .m-quiz {
+    display: flex;
+    height: 100%;
+    margin: 0;
+    background: transparent;
+    @include desktop(min) {
+      padding: scale(70) 0 scale(44);
+    }
+  }
+  .carousel__button {
+    display: none;
+  }
+}
+
+.fancybox__container.--quiz-popup {
+  z-index: indexes("quiz-popup");
+  .fancybox__backdrop {
+    background-color: transparent;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+  }
+  .fancybox__slide {
+    padding: 0;
+  }
+}

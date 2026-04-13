@@ -1,0 +1,110 @@
+.s-certificate-hero {
+
+  :deep(.m-breadcrumbs__link) {
+    color: var(--a-color_grey_40);
+  }
+
+  @include mobile(max) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  &__body {
+    position: relative;
+    padding: scale(24);
+    color: var(--a-color_white);
+    border-radius: scale(16);
+    overflow: hidden;
+    height: scale(473);
+
+    @include tablet(max) {
+      padding: scale(16);
+      height: auto;
+    }
+
+    @include mobile(max) {
+      height: scale(484);
+      padding: scale(257) scale(14) scale(17) scale(14);
+    }
+  }
+
+  &__content {
+    position: relative;
+    z-index: 1;
+  }
+
+  &__title {
+    font-size: scale(98);
+    letter-spacing: scale(-1.96);
+    margin-top: scale(25);
+
+    @include tablet(max) {
+      font-size: scale(44);
+    }
+  }
+
+  &__subtitle {
+    font-size: scale(26);
+    font-weight: 600;
+    line-height: 120%;
+    margin-top: scale(24);
+
+    @include tablet(max) {
+      font-size: scale(14);
+    }
+
+    @include mobile(max) {
+      margin-top: scale(17);
+    }
+  }
+
+  &__tags {
+    margin-top: scale(61);
+    display: flex;
+    gap: scale(12);
+
+    @include tablet(max) {
+      margin-top: scale(89);
+    }
+
+    @include mobile(max) {
+      overflow-x: scroll;
+      margin-top: scale(17);
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+
+      &::-webkit-scrollbar {
+        display: none;
+      }
+
+      position: relative;
+      left: scale(-17);
+      width: calc(100% + scale(34));
+      padding: 0 scale(17);
+    }
+  }
+
+  &__tag {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: fit-content;
+    padding: scale(16) scale(23);
+    background-color: rgba(white, 0.19);
+    backdrop-filter: blur(scale(22));
+    border-radius: scale(8);
+    font-size: scale(23);
+    font-weight: 600;
+    line-height: 120%;
+    white-space: nowrap;
+
+    @include tablet(max) {
+      font-size: scale(12);
+      padding: scale(7) scale(14);
+    }
+
+    @include mobile(max) {
+      font-size: scale(11);
+    }
+  }
+}

@@ -1,0 +1,48 @@
+.m-search {
+  position: relative;
+  display: flex;
+  height: scale(36);
+  color: inherit;
+
+  @include desktop {
+    height: scale(44);
+  }
+
+  .a-input {
+    height: 100%;
+    padding: 0 scale(12);
+    border-color: var(--a-color_grey_40);
+    border-radius: scale(12);
+    background-color: var(--a-color_white);
+    @include desktop {
+      padding: 0 scale(16);
+    }
+
+    &__wrapper {
+      flex: 1;
+    }
+  }
+
+  &__btn {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: scale(40);
+    height: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: scale(18);
+    cursor: pointer;
+    color: var(--a-color_grey_60);
+
+    .icon-sprite {
+      width: scale(20);
+      height: scale(20);
+    }
+  }
+}

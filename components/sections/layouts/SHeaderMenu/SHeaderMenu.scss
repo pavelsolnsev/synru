@@ -1,0 +1,329 @@
+.menu-opened {
+  overflow: hidden;
+  height: 100%;
+  padding-right: var(--scroll-width);
+}
+
+.s-header-menu {
+  z-index: -1;
+  position: absolute;
+  visibility: hidden;
+  display: flex;
+  top: 100%;
+  flex-direction: column;
+  gap: scale(16);
+  background-color: var(--a-color_grey_10);
+  transition: opacity var(--transition);
+  opacity: 0;
+
+  @include desktop {
+    display: grid;
+    gap: scale(20);
+    grid-template-columns: 1fr scale(445);
+    height: calc(100vh - #{scale(196)});
+    padding-top: scale(4);
+  }
+
+  .menu-opened & {
+    position: static;
+    opacity: 1;
+    visibility: visible;
+  }
+
+  &__wrap {
+    display: grid;
+    gap: scale(8);
+    border-radius: scale(16);
+
+    @include desktop {
+      gap: scale(43);
+      padding: scale(24) scale(12) scale(20) scale(24);
+      overflow: hidden;
+      grid-template-columns: scale(398) 1fr;
+      background-color: var(--a-color_white);
+    }
+  }
+
+  .m-social-links {
+    &__wrapper {
+      gap: scale(8);
+
+      @include desktop {
+        gap: scale(20);
+      }
+    }
+
+    &__item {
+      height: scale(38);
+    }
+
+    .social-youtube,
+    .social-telegram {
+      display: none;
+    }
+  }
+
+  &__info {
+    padding: scale(16) scale(16) scale(12);
+    display: flex;
+    flex-direction: column;
+    border-radius: scale(16) scale(16) 0 0;
+    background-color: var(--a-color_grey_20);
+    margin: 0 scale(-16);
+
+    @include desktop {
+      margin: 0;
+      padding: scale(24);
+      border-radius: scale(16);
+    }
+
+    .a-btn--more {
+      height: scale(39);
+
+      @include desktop {
+        height: scale(51);
+      }
+    }
+
+    &-wrap {
+      display: grid;
+      gap: scale(32);
+      margin-bottom: auto;
+    }
+
+    &-item {
+      display: flex;
+      flex-wrap: wrap;
+      gap: scale(6) scale(16);
+      @include desktop {
+        gap: scale(8) scale(16);
+      }
+
+      &.--schedule {
+        column-gap: scale(6);
+
+        @include desktop {
+          max-width: 94%;
+        }
+      }
+
+      &:first-child {
+        display: grid;
+      }
+
+      .a-btn {
+        display: flex;
+        max-width: 100%;
+        width: 100%;
+        border-radius: scale(8);
+
+        &:hover {
+          background-color: var(--a-color_grey_10);
+        }
+      }
+    }
+
+    &-title {
+      grid-column: 1/3;
+      width: 100%;
+      margin-bottom: scale(6);
+
+      @include desktop {
+        margin-bottom: scale(8);
+      }
+    }
+
+    & &-feedback {
+      display: flex;
+      margin-top: scale(32);
+      margin-bottom: scale(8);
+
+      @include desktop {
+        margin-bottom: scale(20);
+      }
+    }
+  }
+
+  &__chapter {
+    display: none;
+
+    @include desktop {
+      display: flex;
+      gap: scale(12);
+      flex-direction: column;
+    }
+
+    &-item {
+      cursor: pointer;
+      display: flex;
+      align-items: center;
+      width: 100%;
+      height: scale(51) !important;
+      padding: 0 scale(16) !important;
+      background-color: var(--a-color_grey_40);
+      border-radius: scale(12);
+      transition: var(--transition);
+
+      &:hover,
+      &._is-active {
+        color: var(--a-color_white);
+        background-color: var(--a-color_dark);
+      }
+      &.menu-item-active {
+        pointer-events: unset;
+      }
+    }
+  }
+
+  &__tabs {
+    overflow: auto;
+    height: 100%;
+    display: grid;
+    gap: scale(8);
+  }
+
+  :deep() {
+    .m-accordion {
+      border-radius: scale(12);
+      background-color: var(--a-color_white);
+  
+      &.--open {
+        .m-accordion__wrap {
+          padding: scale(16);
+          @include media($p_md, $p_xl) {
+            grid-template-columns: repeat(2, 1fr);
+            padding: scale(16) scale(12);
+          }
+        }
+      }
+  
+      &__title {
+        flex: 1;
+        display: block;
+        padding: scale(11) scale(16);
+        border-radius: scale(8);
+      }
+  
+      &__header {
+        background-color: var(--a-color_grey_20);
+        border-radius: scale(12);
+        transition: var(--transition);
+  
+        @include desktop {
+          display: none;
+        }
+
+        .router-link-active {
+          pointer-events: none;
+        }
+      }
+  
+      &__icon {
+        align-self: stretch;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-width: scale(38);
+        height: auto;
+        background-color: var(--a-color_grey_40);
+        border-radius: scale(12);
+  
+        svg {
+          width: scale(24);
+          height: scale(24);
+        }
+  
+        @include desktop {
+          display: none;
+        }
+      }
+  
+      &__wrap {
+        display: grid;
+        gap: scale(12);
+        transition: var(--transition);
+        padding: 0 scale(16);
+  
+        @include desktop {
+          padding: 0;
+          grid-template-columns: 1fr 1fr;
+          gap: scale(12);
+        }
+  
+        .close-accordion {
+          margin-top: scale(6);
+  
+          @include desktop {
+            display: none;
+          }
+        }
+      }
+  
+      &__content {
+        a {
+          transition: var(--transition);
+          &:hover {
+            color: var(--a-color_red);
+          }
+        }
+  
+        @include desktop {
+          grid-template-rows: 1fr;
+        }
+      }
+  
+      @include desktop {
+        &:not(._is-active) {
+          display: none;
+        }
+      }
+    }
+  }
+  
+
+  .close-accordion {
+    color: var(--a-color_red);
+  }
+
+  .s-header-menu__sitemap {
+    display: block;
+    margin-top: scale(32);
+    text-align: center;
+    color: var(--a-color_grey_80);
+
+    @include desktop {
+      position: absolute;
+      left: calc(var(--layout-h-padding) + #{scale(24)});
+      bottom: scale(60);
+    }
+  }
+
+  :deep() {
+    .menu-opened & .a-priemnaya-komissiya {
+      @include desktop {
+        display: flex;
+        justify-content: space-between;
+        margin: 0;
+        border: none;
+        border-radius: scale(12);
+        background-color: var(--a-color_red);
+        color: var(--a-color_white);
+        &:hover {
+          background-color: var(--a-color_red_dark);
+        }
+        svg {
+          display: none;
+        }
+        &__img {
+          order: 2;
+          position: static;
+          width: scale(32);
+          height: scale(32);
+          background-color: var(--a-color_white);
+          transform: none;
+        }
+      }
+    }
+  }
+  
+}

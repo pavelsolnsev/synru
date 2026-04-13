@@ -1,0 +1,153 @@
+.m-map {
+  display: none;
+  &.--visible {
+    display: grid;
+  }
+
+  @include tablet(min) {
+    gap: scale(20);
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  @include desktop(min) {
+    grid-template-columns: 1fr auto;
+  }
+
+  &__tabs {
+    z-index: 1;
+    position: relative;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    border-radius: scale(8);
+    border: 1px solid var(--a-color_grey_60);
+    width: 100%;
+
+    &::before {
+      z-index: -1;
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      display: block;
+      width: 50%;
+      height: 100%;
+      background-color: var(--a-color_dark);
+      border-radius: scale(8);
+      transform: translateX(0);
+      transition: var(--transition);
+    }
+
+    &.is-active::before {
+      transform: translateX(100%);
+    }
+
+    @include tablet(min) {
+      order: 2;
+      justify-self: flex-end;
+    }
+
+    @include desktop(min) {
+      margin: 0;
+      width: scale(433);
+    }
+  }
+
+  &__tab-btn {
+    cursor: pointer;
+    text-align: center;
+    padding: scale(10) scale(20);
+    transition: var(--transition);
+
+    @include desktop(min) {
+      padding: scale(16) scale(32);
+    }
+
+    &.is-active {
+      color: var(--a-color_white);
+    }
+  }
+
+  &__search {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    margin-top: scale(16);
+    width: 100%;
+
+    @include tablet(min) {
+      order: 1;
+      margin: 0;
+    }
+
+    .m-search {
+      width: 100%;
+      @include desktop(min) {
+        height: 100%;
+      }
+      &.--focused .a-input {
+        border-bottom-right-radius: 0;
+        border-bottom-left-radius: 0;
+        transition: 0s;
+      }
+    }
+
+    &-list {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      right: 0;
+      z-index: 1;
+      margin-top: scale(-1);
+      padding: scale(4) scale(8);
+      border: scale(1) solid var(--a-color_grey_40);
+      border-radius: 0 0 var(--border-radius_def) var(--border-radius_def);
+      background-color: var(--a-color_white);
+      opacity: 0;
+      &-inner {
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        max-height: 0;
+        transition: 0.2s;
+        opacity: 0;
+        & > * {
+          padding: scale(8);
+          cursor: pointer;
+          &:hover {
+            color: var(--a-color_red);
+          }
+        }
+      }
+    }
+
+    .m-search.--focused ~ &-list {
+      opacity: 1;
+    }
+    .m-search.--focused ~ &-list &-list-inner {
+      max-height: scale(300);
+      opacity: 1;
+    }
+  }
+
+  &__map {
+    display: none;
+    grid-column: 1 / -1;
+    overflow: hidden;
+    width: 100%;
+    height: scale(430);
+    margin: calc(-1 * var(--padding_def));
+    margin-top: scale(16);
+    border: rem(1) solid var(--a-color_grey_60);
+    border-radius: var(--border-radius_def);
+    @include tablet(min) {
+      order: 3;
+      grid-column: 1/-1;
+      height: scale(418);
+      margin: 0;
+    }
+  }
+  &.--visible &__map {
+    display: block;
+  }
+}

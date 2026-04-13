@@ -1,0 +1,64 @@
+.m-filter-tab {
+  cursor: pointer;
+  display: flex!important;
+  align-items: center;
+  justify-content: space-between;
+  gap: scale(12);
+  width: fit-content;
+  white-space: nowrap;
+  height: scale(32);
+  padding: scale(8) scale(12);
+  text-align: center;
+  background-color: var(--a-color_grey_10);
+  border: 1px solid var(--a-color_grey_60);
+  border-radius: scale(8);
+  color: var(--a-color_dark);
+  transition: var(--transition);
+
+  &:hover {
+    border-color: var(--a-color_dark);
+  }
+
+  &._is-active {
+    background-color: var(--a-color_dark);
+    border-color: var(--a-color_dark);
+    color: var(--a-color_white);
+
+    .ico {
+      color: var(--a-color_white);
+    }
+  }
+  &._icon{
+    flex-direction: row-reverse;
+  }
+
+  @include desktop(min) {
+    height: scale(48);
+    border-radius: scale(12);
+    padding: scale(12) scale(16);
+  }
+
+  &.--reset {
+    text-transform: capitalize;
+    @include tablet(min) {
+      text-transform: none;
+    }
+  }
+
+  .ico {
+    width: scale(16);
+    height: scale(16);
+    color: var(--a-color_red);
+
+    @include desktop(min) {
+      width: scale(24);
+      height: scale(24);
+      margin-left: scale(40);
+    }
+  }
+
+  .popular-ico {
+    display: block;
+    margin-left: 0;
+  }
+}

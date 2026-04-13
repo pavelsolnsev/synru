@@ -1,0 +1,105 @@
+.s-ege-support {
+
+  @include desktop(min) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  @include mobile(max) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__body {
+    padding: scale(80) scale(40) scale(40) scale(40);
+    position: relative;
+    border-radius: scale(40);
+    background-color: var(--a-color_grey_40);
+    overflow: hidden;
+
+    @include tablet(max) {
+      padding: scale(32) scale(12);
+      border-radius: scale(21);
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+
+    img {
+      object-fit: cover;
+      object-position:center;
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__title {
+    max-width: scale(1000);
+    position: relative;
+    z-index: 2;
+  }
+
+  &__list {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    gap: scale(20);
+    margin-top: scale(50);
+
+    @include tablet(max) {
+      margin-top: scale(24);
+      gap: scale(10);
+      flex-direction: column;
+    }
+  }
+
+  &__item {
+    padding: scale(24);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: calc((100% / 3) - (scale(40) / 3));
+    min-height: scale(260);
+    position: relative;
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include tablet(max) {
+      width: 100%;
+      padding: scale(12);
+      min-height: scale(188);
+    }
+  }
+
+  &__img {
+    position: absolute;
+    right: scale(24);
+    top: 0;
+    width: scale(142);
+    height: scale(166);
+
+    @include tablet(max) {
+      width: scale(76);
+      height: scale(90);
+      right: scale(18);
+    }
+  }
+
+  &__subtitle {
+    max-width: scale(448);
+    font-size: scale(18);
+    font-weight: 600;
+    line-height: 120%;
+
+    @include tablet(max) {
+      max-width: 100%;
+      font-size: scale(13);
+    }
+  }
+}

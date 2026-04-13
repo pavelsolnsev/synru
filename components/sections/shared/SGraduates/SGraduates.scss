@@ -1,0 +1,74 @@
+.s-graduates {
+  .m-tabs__tab {
+    position: relative;
+    margin-top: scale(24);
+    @include desktop(min) {
+      margin-top: scale(44);
+    }
+  }
+
+  &__nav.--full {
+    @include mobile() {
+      .m-tabs__btns .swiper-wrapper {
+        display: grid;
+        gap: scale(8);
+        grid-template-columns: 1fr 1fr;
+        width: 100%;
+      }
+      .m-tabs__btn {
+        width: 100%;
+      }
+    }
+  }
+
+  :deep() {
+    .swiper {
+      overflow: visible;
+    }
+    .swiper-navigation {
+      @include desktop(min) {
+        top: scale(-100);
+      }
+      button {
+        margin: 0;
+      }
+    }
+
+    .m-graduate-card {
+      border-radius: scale(16);
+      &__top {
+        margin-bottom: scale(32);
+
+        @include desktop(min) {
+          margin-bottom: scale(36);
+        }
+      }
+
+      &__img {
+        width: scale(80);
+        height: scale(80);
+        object-fit: cover;
+        border-radius: 50%;
+      }
+
+      ul li:not(:last-child) {
+        margin-bottom: calc(var(--scale) * 16);
+      }
+
+      ul li {
+        position: relative;
+        padding-left: calc(var(--scale) * 16);
+        @include desktop(min) {
+          padding-left: calc(var(--scale) * 20);
+        }
+      }
+
+      ul li::before {
+        position: absolute;
+        top: 0;
+        left: 0;
+        content: "•";
+      }
+    }
+  }
+}

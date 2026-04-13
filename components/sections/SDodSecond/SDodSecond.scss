@@ -1,0 +1,106 @@
+.s-dod-second {
+  :deep() {
+    .l-section__inner {
+      display: grid;
+      gap: scale(8);
+      @include tablet() {
+        grid-template-columns: scale(302) 1fr;
+      }
+      @include desktop() {
+        grid-template-columns: 1fr 1fr;
+        gap: scale(20);
+      }
+    }
+    .m-video-card {
+      height: scale(300);
+      @include tablet(min) {
+        height: 100%;
+      }
+      .a-play {
+        display: none;
+      }
+    }
+  }
+
+  &__additional-title {
+    font-weight: 600;
+    font-size: scale(32);
+    line-height: 120%;
+    margin-bottom: scale(32);
+
+    @include tablet() {
+      grid-column: 1 / -1;
+    }
+    @include desktop() {
+      display: none;
+    }
+  }
+  &__main {
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(16);
+    padding: scale(16);
+    @include tablet(min) {
+      display: flex;
+      flex-direction: column;
+    }
+    @include desktop() {
+      padding: scale(24);
+    }
+    &__date-time {
+      display: flex;
+      color: #7d7d7d;
+      font-weight: 500;
+      font-size: scale(16);
+      line-height: 120%;
+      margin-bottom: scale(24);
+
+      @include desktop() {
+        font-weight: 600;
+        font-size: scale(24);
+        line-height: 130%;
+        color: #1c1c1cb2;
+        margin-bottom: scale(32);
+      }
+    }
+
+    &__title {
+      font-weight: 600;
+      font-size: scale(24);
+      line-height: 120%;
+      margin-bottom: scale(16);
+      @include desktop() {
+        font-size: scale(64);
+        margin-bottom: scale(32);
+      }
+    }
+
+    &__description {
+      font-weight: 500;
+      font-size: scale(16);
+      line-height: 120%;
+      margin-bottom: scale(32);
+      color: #7d7d7d;
+      @include desktop() {
+        font-weight: 600;
+        font-size: scale(24);
+        line-height: 130%;
+        color: #1c1c1cb2;
+        margin-bottom: scale(163);
+      }
+    }
+
+    .a-btn-main {
+      width: 100%;
+      height: scale(52);
+      @include tablet() {
+        width: fit-content;
+        align-self: flex-end;
+      }
+      @include desktop() {
+        width: fit-content;
+        height: scale(60);
+        align-self: flex-end;
+      }
+    }
+  }
+}

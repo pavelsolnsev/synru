@@ -1,0 +1,42 @@
+.media-about {
+  &__item {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    min-height: scale(120);
+    padding: var(--padding_def);
+    background-color: var(--a-color_grey_10);
+    border-radius: scale(16);
+    transition: var(--transition);
+    &:hover {
+      background-color: var(--a-color_red);
+      color: var(--a-color_white);
+    }
+
+    @include desktop {
+      min-height: scale(240);
+    }
+  }
+
+  &__title {
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    gap: var(--gap_def);
+    margin-bottom: var(--padding_def);
+
+    .ico {
+      min-width: scale(18);
+      width: scale(18);
+      height: scale(18);
+
+      @include desktop {
+        min-width: scale(24);
+        width: scale(24);
+        height: scale(24);
+      }
+    }
+  }
+}

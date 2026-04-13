@@ -1,0 +1,156 @@
+.s-level-intro {
+  padding-top: 0;
+
+  :deep() {
+    .m-breadcrumbs {
+      position: absolute;
+      top: scale(24);
+      left: scale(24);
+
+      &__link {
+        color: var(--a-color_grey_40);
+      }
+
+      &__link--last {
+        color: var(--a-color_white);
+      }
+
+      .swiper-slide:before {
+        color: var(--a-color_grey_40);
+      }
+    }
+  }
+
+  @include tablet(max) {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  &__inner {
+    z-index: 1;
+    position: relative;
+    margin-bottom: scale(20);
+    color: var(--a-color_white);
+    background-color: var(--a-color_dark);
+    border-radius: scale(16);
+    overflow: hidden;
+
+    @include desktop(min) {
+      margin-bottom: 0;
+    }
+
+    picture {
+      overflow: hidden;
+      position: relative;
+      z-index: -1;
+      display: block;
+      height: scale(300);
+
+      @include desktop(min) {
+        position: absolute;
+        inset: 0;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    @include desktop(min) {
+      &:has(>.m-breadcrumbs) {
+        .s-level-intro__content {
+          padding-top: scale(60);
+        }
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    padding: var(--padding_def);
+    border-radius: scale(16);
+
+    @include tablet(max) {
+      margin-top: scale(-20);
+      background-color: var(--a-color_dark);
+    }
+
+    @include desktop(min) {
+      padding-top: scale(60);
+      min-height: scale(555);
+    }
+  }
+
+  &__title {
+    margin-bottom: scale(24);
+
+    @include tablet(max) {
+      text-align: center;
+    }
+
+    @include desktop() {
+      max-width: scale(1185);
+      margin-bottom: scale(16);
+    }
+  }
+
+  &__tags {
+    position: absolute;
+    top: scale(12);
+    text-align: center;
+
+    @include desktop(min) {
+      position: static;
+      display: flex;
+      flex-direction: column;
+      margin-bottom: scale(24);
+      gap: scale(16);
+      text-align: left;
+    }
+
+    li {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: scale(8);
+      
+      @include desktop(min) {
+        justify-content: start;
+        gap: scale(12);
+      }
+
+      &::before {
+        content: "";
+        display: block;
+        width: scale(6);
+        height: scale(6);
+        background-color: var(--a-color_red);
+        border-radius: 50%;
+
+        @include desktop(min) {
+          width: scale(13);
+          height: scale(13);
+        }
+      }
+    }
+  }
+
+  &__text {
+    margin-bottom: scale(12);
+
+    @include tablet(max) {
+      text-align: center;
+    }
+    
+    @include desktop(min) {
+      margin-top: auto;
+      margin-bottom: scale(24);
+    }
+  }
+
+  :deep(.m-quiz-form__header) {
+    @include tablet(max) {
+      flex-direction: column;
+      .a-input, .a-btn { max-width: unset !important }
+    }
+  }
+}

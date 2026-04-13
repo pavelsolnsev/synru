@@ -1,0 +1,63 @@
+.s-reserve-how-proceed {
+  &__slide {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    width: scale(280);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      width: scale(444);
+    }
+  }
+
+  &__content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    padding: var(--padding_def);
+  }
+
+  &__title {
+    margin-bottom: scale(36);
+  }
+
+  &__text {
+    margin-top: auto;
+  }
+
+  &__num {
+    position: absolute;
+    left: scale(12);
+    bottom: scale(-38);
+
+    @include desktop(min) {
+      left: scale(24);
+      bottom: scale(-64);
+    }
+  }
+
+  &__image {
+    min-height: scale(180);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      min-height: scale(268);
+    }
+  }
+
+  &__btn {
+    z-index: 1;
+    position: absolute;
+    inset: scale(12);
+    top: auto;
+
+    @include desktop(min) {
+      inset: scale(24);
+      top: auto;
+    }
+  }
+}

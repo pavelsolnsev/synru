@@ -1,0 +1,176 @@
+.s-credit {
+  background-color: var(--a-color_grey_20);
+  border-radius: scale(16);
+  margin-top: scale(-20);
+  padding-top: scale(40);
+  padding-bottom: scale(40);
+
+  @include desktop(min) {
+    border-radius: scale(28);
+    padding-top: scale(80);
+    padding-bottom: scale(80);
+    margin-top: scale(40);
+    margin-bottom: scale(40);
+  }
+  :deep() {
+    .l-section__title {
+      max-width: 100%;
+    }
+  }
+
+  &__title {
+    max-width: scale(1330);
+  }
+
+  &__info {
+    display: grid;
+    gap: var(--gap_def);
+    margin-bottom: scale(24);
+
+    @include tablet(min) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include desktop(min) {
+      margin-bottom: scale(48);
+    }
+  }
+
+  :deep() {
+    .m-card-text {
+      min-height: auto;
+      color: var(--a-color_white);
+      background-color: var(--a-color_red);
+
+      @include tablet(min) {
+        min-height: scale(320);
+      }
+
+      @include desktop(min) {
+        min-height: scale(432);
+      }
+
+      &__title {
+        & + .m-card-text__text {
+          @include desktop(min) {
+            margin-top: scale(16);
+          }
+        }
+      }
+
+      &__text {
+        a {
+          text-decoration: underline;
+          transition: var(--transition);
+          &:hover {
+            color: var(--a-color_dark);
+          }
+        }
+      }
+
+      .a-btn {
+        display: flex;
+        width: 100%;
+      }
+
+      &__bottom {
+        position: relative;
+        padding-top: scale(36);
+
+        @include desktop(min) {
+          display: flex;
+          justify-content: space-between;
+        }
+      }
+
+      &__block {
+        margin-bottom: 0;
+
+        @include desktop(min) {
+          max-width: scale(420);
+        }
+      }
+
+      &__icons {
+        @include tablet(max) {
+          display: none;
+        }
+      }
+
+      &__icon {
+        background-color: var(--a-color_dark);
+      }
+
+      &__tags {
+        display: grid;
+        gap: scale(8);
+
+        .a-tag {
+          border-color: var(--a-color_white);
+        }
+
+        @include desktop(min) {
+          display: flex;
+        }
+      }
+    }
+  }
+
+  &__banner {
+    display: flex;
+    position: relative;
+    height: auto;
+    min-height: scale(224);
+    background-color: var(--a-color_dark);
+    border-radius: scale(16);
+    order: -1;
+
+    @include tablet(min) {
+      order: 2;
+    }
+
+    img {
+      right: 0;
+      bottom: 0;
+      z-index: 1;
+      position: absolute;
+      width: 100%;
+      height: auto;
+      border-radius: scale(16);
+    }
+  }
+
+  &__prices {
+    margin-top: scale(16);
+
+    @include desktop(min) {
+      margin-top: scale(40);
+    }
+  }
+  :deep() {
+    .m-card-tag-title {
+      color: var(--a-color_dark);
+      background-color: var(--a-color_white);
+
+      @include desktop(min) {
+        padding: scale(21);
+      }
+
+      .a-tag {
+        background-color: var(--a-color_red);
+      }
+
+      .ico-rub {
+        height: scale(14);
+
+        @include tablet(min) {
+          height: scale(15);
+        }
+
+        @include desktop(min) {
+          height: scale(28);
+        }
+      }
+    }
+  }
+}

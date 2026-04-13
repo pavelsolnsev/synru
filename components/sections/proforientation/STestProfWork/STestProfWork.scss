@@ -1,0 +1,86 @@
+.s-about {
+  margin: 0 calc(-1 * var(--layout-h-padding));
+  background-color: var(--a-color_white);
+  @include tablet(min) {
+    margin: 0;
+  }
+  @include desktop() {
+    padding: var(--padding_def);
+    border-radius: calc(var(--scale) * 16);
+  }
+
+  &__list {
+    gap: scale(10);
+    display: grid;
+    @include tablet(min) {
+      gap: scale(8);
+      grid-template-columns: repeat(2, 1fr);
+    }
+    @include desktop() {
+      gap: scale(20);
+      grid-template-columns: repeat(3, 1fr);
+    }
+  }
+
+  &__item {
+    position: relative;
+    overflow: hidden;
+    gap: scale(16);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: auto;
+    min-height: scale(160);
+    padding: scale(12);
+    border-radius: scale(16);
+    background: var(--a-color_grey_10) #{__cdnUrl('synergy-ru/content/mediacenter/ai-prof/about/sm.webp')} no-repeat 100% 100% / contain;
+    @include tablet(min) {
+      background-image: #{__cdnUrl('synergy-ru/content/mediacenter/ai-prof/about/md.webp')};
+      &:last-child:nth-child(odd) { grid-column: 1 / -1 }
+    }
+    @include desktop() {
+      min-height: scale(240);
+      padding: scale(24);
+      background-image: #{__cdnUrl('synergy-ru/content/mediacenter/ai-prof/about/lg.webp')};
+      &:last-child:nth-child(odd) { grid-column: unset }
+    }
+
+    &-text {
+      max-width: scale(600);
+      padding-right: scale(105);
+    }
+
+    &-num {
+      position: absolute;
+      left: auto;
+      top: auto;
+      right: scale(12);
+      bottom: scale(12);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      width: scale(36);
+      height: scale(36);
+      border-radius: 50%;
+      background-color: var(--a-color_red);
+      color: var(--a-color_white);
+      @include desktop() {
+        right: scale(24);
+        bottom: scale(24);
+        width: scale(48);
+        height: scale(48);
+      }
+    }
+  }
+
+  .a-btn[class*=a-font] {
+    display: flex;
+    width: 100%;
+    max-width: scale(390);
+    margin: scale(24) auto 0;
+    @include desktop() {
+      max-width: scale(565);
+      margin: scale(40) auto 0;
+    }
+  }
+}

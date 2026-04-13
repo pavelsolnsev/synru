@@ -1,0 +1,32 @@
+.s-video-list {
+  overflow: visible;
+  display: grid;
+  gap: scale(24);
+  @include desktop() {
+    gap: scale(40);
+  }
+
+  :deep(.m-more-btn) {
+    max-width: scale(253);
+    margin: 0;
+    @include tablet(min) {
+      max-width: 100%;
+    }
+    &:hover { background-color: var(--a-color_white) }
+  }
+
+  &__wrapper {
+    background-color: var(--a-color_white);
+  }
+  
+  &__inner {
+    display: grid;
+    gap: scale(10);
+    @include tablet(min) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+    @include desktop() {
+      gap: scale(20);
+    }
+  }
+}

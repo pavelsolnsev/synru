@@ -1,0 +1,113 @@
+.s-cooperation {
+
+  & + .s-banner {
+    margin-top: 0;
+  }
+
+  &__wrap {
+    display: flex;
+    flex-direction: column-reverse;
+    gap: var(--gap_def);
+
+    @include tablet(min) {
+      display: grid;
+    }
+  
+    @include desktop(min) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+  }
+
+  &__card {
+    .a-btn {
+      width: 100%;
+      display: flex;
+
+      @include tablet(min) {
+        max-width: scale(326);
+      }
+
+      @include desktop(min) {
+        max-width: scale(425);
+      }
+    }
+  }
+
+  :deep() {
+    .swiper {
+      height: 100%;
+      overflow: visible;
+    }
+    .m-card-text {
+      &__title {
+        max-width: scale(560);
+  
+        @include desktop(min) {
+          max-width: scale(750);
+        }
+      }
+      &__image {
+        width: 100%;
+        height: 100%;
+  
+        img {
+          object-fit: cover;
+          object-position: bottom;
+        }
+      }
+  
+      @include tablet(min) {
+        order: 2;
+      }
+  
+      @include desktop(min) {
+        order: 0;
+        min-height: scale(474);
+      }
+    }
+  }
+
+}
+
+.cooperationItem {
+  display: flex;
+  flex-direction: column;
+  width: scale(220);
+  height: auto;
+  background-color: var(--a-color_white);
+  border-radius: scale(16);
+
+  @include tablet(min) {
+    width: scale(240);
+  }
+  @include desktop(min) {
+    width: scale(290);
+  }
+
+  &__logo {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: scale(140);
+    background-color: var(--a-color_grey_20);
+    border-radius: scale(16);
+
+    img {
+      width: 40%;
+    }
+    
+    @include desktop(min) {
+      height: scale(219);
+      margin-bottom: scale(42px);
+    }
+  }
+
+  &__text {
+    padding: scale(12);
+
+    @include desktop(min) {
+      padding: scale(24);
+    }
+  }
+}

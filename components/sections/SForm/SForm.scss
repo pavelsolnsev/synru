@@ -1,0 +1,225 @@
+.s-form {
+  padding-left: 0;
+  padding-right: 0;
+  @include tablet(min){
+    padding: var(--layout-v-padding) var(--layout-h-padding);
+  }
+  @include desktop(min){
+    &:not(:first-child) {
+      margin-top: calc(-1 * var(--layout-v-padding));
+    }
+  }
+
+  &.s-form--grey {
+    .a-chekbox__label::before,
+    .a-input {
+      background-color: var(--a-color_white);
+    }
+
+    .a-chekbox__label::before {
+      border-color: var(--a-color_white);
+    }
+  }
+
+  &__wrap {
+    overflow: hidden;
+    display: grid;
+    border-radius: scale(16);
+    @include tablet(min){
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__content {
+    min-height: scale(420);
+    overflow: hidden;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    gap: scale(12);
+    padding: scale(12);
+    color: var(--a-color_white);
+    background-color: var(--a-color_red);
+
+    &--bgColor-black {
+      background-color: var(--a-color_black);
+    }
+    &--bgColor-transparent {
+      color: var(--a-color_dark);
+      background-color: transparent;
+    }
+    &--bgColor-white {
+      background-color: var(--a-color_white);
+    }
+    @include tablet() {
+      min-height: scale(325);
+    }
+    @include desktop() {
+      min-height: scale(540);
+      padding: scale(20) scale(24) scale(24);
+    }
+  }
+
+  &__title {
+    max-width: scale(440);
+    margin-bottom: auto;
+
+    &:has(+.s-form__subtitle) {
+      margin-bottom: 0;
+    }
+  }
+
+  &__subtitle {
+    max-width: scale(400);
+    margin-bottom: auto;
+  }
+
+  &__desc {
+    max-width: scale(600);
+  }
+
+  &__text {
+    display: none;
+    @include desktop() {
+      display: block;
+    }
+  }
+
+  &__tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: scale(8);
+    max-width: scale(800);
+
+    @include desktop() {
+      gap: scale(11);
+    }
+  }
+
+  &__image {
+    z-index: -1;
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+      object-fit: cover;
+    }
+  }
+
+  &__form {
+    background-color: var(--a-color_white);
+
+    :deep() {
+      .--free-red {
+        display: inline;
+        line-height: 1.2;
+      }
+    }
+    
+    .m-form {
+      padding: scale(20) scale(12);
+      @include tablet() {
+        padding: scale(12);
+      }
+      @include desktop() {
+        padding:scale(24);
+      }
+    }
+  }
+
+  &.rounded, &.rounded-special {
+
+    .s-form {
+      &__title, &__subtitle {
+        color: var(--a-color_white);
+      }
+
+      &__wrap {
+        gap: scale(20);
+
+        @include tablet(max) {
+          gap: scale(8);
+        }
+
+        @include mobile(max) {
+          gap: 0;
+        }
+      }
+
+      &__form {
+        border-radius: scale(16);
+        overflow: hidden;
+
+        @include mobile(max) {
+          border-radius: 0;
+        }
+      }
+
+      &__image {
+        border-radius: scale(16);
+        overflow: hidden;
+      }
+
+      &__title {
+        max-width: scale(546);
+
+        @include mobile(max) {
+          color: var(--a-color_black);
+          font-size: scale(17);
+          margin: 0;
+          display: none;
+        }
+      }
+
+      &__subtitle {
+        @include mobile(max) {
+          margin: 0;
+          margin-top: scale(16);
+          color: var(--a-color_black);
+        }
+      }
+
+      &__content {
+        @include mobile(max) {
+          justify-content: end;
+          gap: scale(0);
+        }
+      }
+
+      &__tags {
+        @include mobile(max) {
+          margin-top: scale(24);
+
+          &:deep(.a-tag) {
+            color: var(--a-color_black);
+            border-color: var(--a-color_black);
+          }
+        }
+      }
+    }
+  }
+
+  &.rounded-special {
+    .s-form {
+      &__title {
+
+        @include mobile(max) {
+          font-size: scale(26);
+          display: block;
+        }
+      }
+
+      &__content {
+        @include mobile(max) {
+          min-height: scale(291);
+        }
+      }
+    }
+  }
+}

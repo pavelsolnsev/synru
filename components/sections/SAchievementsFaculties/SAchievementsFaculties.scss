@@ -1,0 +1,32 @@
+.s-achievements-faculties {
+  padding: calc(var(--layout-v-padding) * 2) var(--layout-h-padding);
+  border-radius: scale(16);
+  background-color: var(--a-color_grey_20);
+
+  :deep() {
+    .swiper-navigation {
+      button {
+        margin: 0;
+      }
+    }
+  }
+
+  .m-article-card {
+    &__wrap {
+      @include desktop(min) {
+        padding: scale(24);
+      }
+    }
+    &__title {
+      @include desktop(min) {
+        margin-bottom: scale(30);
+      }
+    }
+    &__img {
+      height: scale(200);
+      @include desktop(min) {
+        height: scale(416);
+      }
+    }
+  }
+}

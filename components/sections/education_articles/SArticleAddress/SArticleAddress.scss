@@ -1,0 +1,149 @@
+.s-article-address {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+
+  @include default-margin;
+  @include reset-margin();
+
+  h4 {
+    @include desktop() {
+      margin: scale(16) 0 scale(24);
+    }
+    margin: scale(16) 0;
+  }
+
+  &__inner {
+    position: relative;
+  }
+
+  &__text {
+    display: grid;
+    gap: scale(4);
+    z-index: 10;
+    left: scale(10);
+    top: scale(10);
+    right: scale(10);
+    position: absolute;
+    padding: var(--padding_def);
+    background-color: var(--a-color_white);
+    border-radius: scale(8);
+
+    @include desktop(min) {
+      gap: scale(6);
+      width: fit-content;
+      padding: scale(16) var(--padding_def);
+    }
+
+    &[class*="a-font"] {
+      display: grid;
+    }
+
+    .ico {
+      color: var(--a-color_grey_100);
+    }
+  }
+
+  & &__item-title {
+    margin-bottom: scale(4);
+  }
+
+  &__address {
+    display: flex;
+    align-items: center;
+    gap: scale(8);
+
+    .ico {
+      width: scale(18);
+      height: scale(18);
+
+      @include desktop(min) {
+        width: scale(28);
+        height: scale(28);
+        margin-left: scale(-4);
+      }
+    }
+  }
+
+  &__metro {
+    display: flex;
+    align-items: center;
+    gap: scale(8);
+
+    .ico {
+      color: var(--a-color_red);
+      width: scale(16);
+      height: scale(16);
+
+      @include desktop(min) {
+        width: scale(28);
+        height: scale(16);
+        margin-left: scale(-4);
+      }
+    }
+  }
+
+  &__phones {
+    display: flex;
+    align-items: center;
+    gap: scale(8);
+
+    .ico {
+      width: scale(20);
+      height: scale(20);
+
+      @include desktop(min) {
+        width: scale(28);
+        height: scale(28);
+        margin-left: scale(-4);
+      }
+    }
+
+    a {
+      display: flex;
+      align-items: center;
+    }
+    a:not(:last-child):after {
+      content: none;
+      display: block;
+      min-width: 2px;
+      height: 2px;
+      border-radius: 50%;
+      margin-left: scale(12);
+      margin-right: scale(4);
+      background-color: var(--a-color_grey_70);
+
+      @include desktop(min) {
+        content: "";
+      }
+    }
+  }
+
+  &__map {
+    overflow: hidden;
+    width: 100%;
+    height: scale(370);
+    border-radius: scale(16);
+
+    img {
+      margin: 0 !important;
+      border-radius: 0;
+      border: none;
+      box-shadow: none;
+    }
+    @include desktop() {
+      height: scale(464);
+    }
+  }
+
+  .leaflet-popup .dg-popup__container {
+    width: scale(120);
+    @include desktop() {
+      padding: scale(12);
+      &:after {
+        width: scale(20);
+        height: scale(20);
+      }
+    }
+  }
+}

@@ -1,0 +1,77 @@
+.l-section {
+  overflow: hidden;
+  @include desktop() {
+    border-radius: scale(48);
+    padding: scale(84) scale(40);
+  }
+  @include tablet() {
+    border-radius: scale(16);
+    padding: scale(52) scale(16);
+  }
+
+  @include mobile() {
+    border-radius: scale(16);
+    padding: scale(52) scale(10);
+  }
+
+  &.px-0 {
+    padding-right: 0;
+    padding-left: 0;
+  }
+  &.py-0 {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+  &.p-0 {
+    padding: 0;
+  }
+  &.br-0 {
+    border-radius: 0;
+  }
+
+  &__inner {
+    width: 100%;
+  }
+
+  &__title {
+    margin-bottom: scale(32);
+    font-size: scale(32);
+    @include desktop(min, $p_xl) {
+      max-width: scale(1470);
+      margin-bottom: scale(40);
+      font-size: scale(64);
+    }
+
+    &-nums {
+      display: inline-block;
+      height: scale(28);
+      padding: scale(7) scale(12);
+      border-radius: rem(40);
+      background-color: var(--a-color_grey_40);
+      letter-spacing: 0;
+      transform: translateY(#{scale(-8)});
+      @include desktop(min) {
+        height: scale(40);
+        padding: scale(10) scale(20);
+        transform: translateY(#{scale(-36)});
+      }
+    }
+  }
+
+  :deep() {
+    .l-section__title-nums {
+      display: inline-block;
+      height: scale(28);
+      padding: scale(7) scale(12);
+      border-radius: rem(40);
+      background-color: var(--a-color_grey_40);
+      letter-spacing: 0;
+      transform: translateY(#{scale(-10)});
+      @include desktop(min) {
+        height: scale(40);
+        padding: scale(10) scale(20);
+        transform: translateY(#{scale(-26)});
+      }
+    }
+  }
+}

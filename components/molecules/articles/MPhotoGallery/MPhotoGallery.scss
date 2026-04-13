@@ -1,0 +1,48 @@
+.photo-gallery {
+  &__item {
+    cursor: pointer;
+    z-index: 1;
+    display: flex;
+    gap: scale(8);
+    justify-content: flex-end;
+    flex-direction: column;
+    position: relative;
+    width: 100%;
+    height: scale(560);
+    padding: var(--padding_def);
+    color: var(--a-color_white);
+    border-radius: scale(16);
+    overflow: hidden;
+
+    &::after {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 100%;
+      height: scale(180);
+      background: linear-gradient(
+        180deg,
+        rgba(28, 28, 28, 0) 11.88%,
+        rgba(28, 28, 28, 0.65) 52.17%,
+        rgba(28, 28, 28, 0.91) 77.84%,
+        #1c1c1c 100%
+      );
+      z-index: -1;
+    }
+
+    img {
+      inset: 0;
+      position: absolute;
+      object-fit: cover;
+      height: 100%;
+      width: 100%;
+      z-index: -2;
+    }
+  }
+
+  &__date {
+    color: var(--a-color_grey_70);
+  }
+}

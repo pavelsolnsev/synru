@@ -1,0 +1,93 @@
+.a-checkbox-animated {
+  display: flex;
+  align-items: center;
+  gap: scale(16);
+  padding: scale(11) scale(16);
+  font-size: scale(23);
+  font-weight: 600;
+  line-height: 120%;
+  border-radius: 12px;
+  background-color: var(--a-color_grey_10);
+  color: var(--a-color_black);
+  transition: background-color 0.3s, color 0.3s;
+  width: fit-content;
+  cursor: pointer;
+
+  @include tablet(max) {
+    gap: scale(8);
+    padding: scale(10) scale(12);
+    font-size: scale(16);
+    border-radius: scale(12);
+  }
+
+  input {
+    display: none;
+  }
+
+  &.active {
+    background-color: var(--a-color_red);
+    color: var(--a-color_white);
+
+    .a-checkbox-animated__toggle {
+      background-color: var(--a-color_white);
+      border: 1px solid var(--a-color_white);
+    }
+
+    .a-checkbox-animated__toggle-icon {
+      left: scale(21);
+      background-color: var(--a-color_red);
+      filter: none;
+
+      @include tablet(max) {
+        left: scale(19);
+      }
+    }
+  }
+
+  &__toggle {
+    width: scale(44);
+    height: scale(26);
+    border-radius: scale(16);
+    border: 1px solid var(--a-color_grey_60);
+    position: relative;
+    transition: background-color 0.3s;
+
+    @include tablet(max) {
+      width: scale(36);
+      height: scale(20);
+    }
+  }
+
+  &__toggle-icon {
+    width: scale(20);
+    height: scale(20);
+    filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.15));
+    background-color: var(--a-color_white);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    left: scale(3);
+    transition: background-color 0.3s, left 0.3s;
+    border-radius: 100%;
+
+    @include tablet(max) {
+      width: scale(14);
+      height: scale(14);
+    }
+
+    svg {
+
+      @include tablet(max) {
+        width: scale(9);
+        height: scale(7);
+      }
+
+      path {
+        transition: fill 0.3s;
+      }
+    }
+  }
+}

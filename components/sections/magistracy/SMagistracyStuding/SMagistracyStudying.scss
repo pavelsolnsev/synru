@@ -1,0 +1,332 @@
+.s-magistracy-studying {
+  &__content {
+    display: grid;
+    gap: var(--gap_def);
+    grid-template-columns: repeat(2, 1fr);
+
+    @include tablet(min) {
+      grid-template-columns: repeat(3, 1fr);
+    }
+
+    @include desktop(min) {
+      grid-template-columns: repeat(8, 1fr);
+    }
+
+    .s-magistracy-studying__item {
+      z-index: 1;
+      display: flex;
+      justify-content: space-between;
+      flex-direction: column;
+      position: relative;
+      grid-column: span 2;
+      min-height: scale(180);
+      background-color: var(--a-color_red);
+      border-radius: scale(16);
+
+      &:has(p) {
+        padding: var(--padding_def);
+      }
+
+      img:not([class]) {
+        position: absolute;
+        inset: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: scale(16);
+      }
+
+      &:nth-child(4),
+      &:last-child {
+        overflow: hidden;
+        background-color: var(--a-color_grey_40);
+      }
+
+      &:nth-child(2) {
+        z-index: 2;
+        &:before,
+        &:after {
+          content: '';
+          z-index: -1;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          display: block;
+          background-color: var(--a-color_red);
+          border-radius: scale(16);
+        }
+
+        &:before {
+          width: 100%;
+          height: scale(90);
+          background: linear-gradient(to top, var(--a-color_red) 60%, transparent 100%);
+
+          @include desktop(min) {
+            height: scale(90);
+          }
+        }
+
+        &:after {
+          height: 100%;
+          width: scale(30);
+          background: linear-gradient(to left, var(--a-color_red) 60%, transparent 100%);
+
+          @include tablet() {
+            display: none;
+          }
+
+          @include desktop(min) {
+            width: scale(90);
+          }
+        }
+        svg {
+          z-index: -2;
+          position: absolute;
+          width: 130%;
+          height: 100%;
+          top: scale(-20);
+          left: scale(30);
+          border-radius: scale(16);
+
+          @include tablet() {
+            width: 90%;
+            height: 90%;
+            left: scale(30);
+          }
+
+          @include desktop(min) {
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+          }
+        }
+      }
+
+      @include mobile() {
+        &:first-child {
+          order: -1;
+          min-height: scale(250);
+        }
+
+        &:nth-child(2),
+        &:nth-child(3) {
+          grid-column: span 1;
+        }
+
+        &:nth-child(4) {
+          order: 8;
+          min-height: scale(250);
+          background: radial-gradient(circle at 90% 180%, var(--a-color_red) 40%, var(--a-color_grey_40) 90%);
+
+          .text {
+            max-width: 100%;
+          }
+        }
+
+        &:nth-child(6),
+        &:nth-child(7) {
+          display: none;
+        }
+
+        &:last-child {
+          padding: 0;
+          order: -1;
+
+          .text {
+            max-width: 60%;
+          }
+
+          .s-magistracy-studying__bg {
+            bottom: auto;
+            top: 0;
+            height: auto;
+            width: 100%;
+          }
+        }
+      }
+
+      @include tablet() {
+        grid-column: span 1;
+        min-height: scale(164);
+        &:first-child {
+          grid-column: 2;
+          grid-row: 1/4;
+        }
+
+        &:nth-child(2) {
+          grid-column: 1;
+          grid-row: 1/3;
+          overflow: hidden;
+        }
+
+        &:nth-child(3) {
+          grid-column: 2;
+          grid-row: 4/6;
+        }
+
+        &:nth-child(4) {
+          grid-column: 3;
+          grid-row: 1/6;
+          min-height: scale(500);
+          background: radial-gradient(circle at 50% 80%, var(--a-color_red) 20%, var(--a-color_grey_40) 80%);
+        }
+
+        &:nth-child(5) {
+          grid-column: 1;
+          grid-row: 3/6;
+        }
+
+        &:nth-child(6),
+        &:nth-child(7) {
+          display: none;
+        }
+
+        &:last-child {
+          grid-column: 1/4;
+
+          .title {
+            max-width: 50%;
+          }
+        }
+      }
+
+      @include desktop(min) {
+        min-height: scale(320);
+
+        &:first-child {
+          img {
+            object-position: center 30%;
+          }
+        }
+
+        &:nth-child(4) {
+          grid-row: 2/4;
+          background: radial-gradient(circle at 80% 100%, var(--a-color_red) 30%, var(--a-color_grey_40) 80%);
+        }
+
+        &:nth-last-child(2) {
+          grid-column: 3/5;
+          grid-row: 3;
+        }
+
+        &:nth-child(5),
+        &:nth-child(6) {
+          grid-column: span 3;
+        }
+
+        &:first-child,
+        &:last-child {
+          grid-column: span 4;
+        }
+
+        &:last-child {
+          .title {
+            max-width: scale(500);
+          }
+        }
+      }
+    }
+  }
+
+  &__svg-wrap {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    z-index: -2;
+  }
+
+  &__icon {
+    position: absolute;
+    top: var(--padding_def);
+    right: var(--padding_def);
+    width: scale(48);
+    height: scale(48);
+    z-index: 2;
+
+    @include mobile() {
+      right: -100%;
+      top: auto;
+      bottom: var(--padding_def);
+    }
+
+    @include desktop(min) {
+      width: scale(88);
+      height: scale(88);
+    }
+  }
+
+  &__bg {
+    z-index: -1;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: scale(250);
+    width: auto;
+
+    @include tablet() {
+      bottom: scale(-25);
+      height: scale(320);
+    }
+
+    @include desktop(min) {
+      height: scale(540);
+    }
+  }
+
+  &__gerb {
+    position: absolute;
+    bottom: scale(12);
+    right: scale(0);
+    width: scale(129);
+    height: scale(129);
+    opacity: 0.4;
+    z-index: -1;
+
+    @include tablet() {
+      bottom: scale(60);
+      right: scale(-35);
+      width: scale(197);
+      height: scale(197);
+    }
+
+    @include desktop(min) {
+      bottom: scale(70);
+      right: scale(-20);
+      width: scale(276);
+      height: scale(276);
+    }
+  }
+
+  &__spec-title {
+    font-size: scale(32);
+    font-weight: 600;
+    line-height: 1.1em;
+    max-width: scale(640);
+
+    @include tablet(max) {
+      font-size: scale(19);
+      max-width: scale(320);
+    }
+
+    @include mobile(max) {
+      display: block;
+      padding: scale(12);
+      background-color: var(--a-color_white);
+      font-size: scale(14);
+      border-radius: scale(16);
+      margin-top: scale(156);
+      width: 100%;
+      max-width: 100%;
+    }
+  }
+
+  .mobile-no-br {
+    &:deep(br) {
+      display: none;
+    }
+  }
+}

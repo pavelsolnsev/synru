@@ -1,0 +1,6 @@
+.s-smi-contacts {
+  margin-top: scale(24);
+  @include desktop() {
+    margin-top: scale(40);
+  }
+}

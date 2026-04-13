@@ -1,0 +1,58 @@
+.s-achievements-students {
+  :deep() {
+    .swiper {
+      overflow: visible;
+    }
+
+    .swiper-navigation {
+      button {
+        margin: 0;
+      }
+    }
+  }
+  &__item {
+    display: flex;
+    flex-direction: column;
+    max-width: scale(280);
+    height: auto;
+    min-height: scale(150);
+    padding: scale(12);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      max-width: scale(600);
+      min-height: scale(220);
+      padding: scale(24);
+    }
+  }
+
+  &__item-top {
+    display: grid;
+    gap: scale(20);
+    grid-template-columns: scale(40) 1fr;
+    align-items: center;
+    margin-bottom: scale(32);
+
+    @include desktop(min) {
+      grid-template-columns: scale(80) 1fr;
+      margin-bottom: scale(36);
+    }
+  }
+
+  &__item-img {
+    width: 100%;
+    height: scale(40);
+    background-color: var(--a-color_white);
+    border-radius: 50%;
+    object-fit: cover;
+
+    @include desktop(min) {
+      height: scale(80);
+    }
+  }
+
+  &__item-text {
+    margin-top: auto;
+  }
+}

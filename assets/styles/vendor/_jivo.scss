@@ -1,0 +1,51 @@
+footer {
+  @include desktop(min) {
+    padding-bottom: scale(36);
+  }
+}
+
+
+.s-fixed-bottom {
+  overflow: visible !important;
+  box-sizing: content-box !important;
+  @include desktop(min) {
+    bottom: scale(40);
+  }
+
+  .m-up-button {
+    position: absolute;
+    bottom: rem(124);
+    @include tablet(min) {
+      bottom: rem(92);
+    }
+    @include desktop(min) {
+      bottom: rem(24);
+    }
+  }
+}
+
+.__jivoMobileButton {
+  margin-right: rem(-16);
+  z-index: 11000 !important;
+  .--visible-bottom-btns & {
+    z-index: 11000 !important;
+    margin-bottom: rem(42);
+  }
+
+  @include tablet(min) {
+    margin-right: rem(-12);
+  }
+  @include tablet(min, $p_lg) {
+    margin-right: 0;
+  }
+}
+jdiv {
+  [class*="leafCont_"],
+  [class*="leaf_"] {
+    display: none !important;
+  }
+  jdiv[class*="header_"] > jdiv,
+  jdiv[class*="label_"][class*="_bottom_"] {
+    border-top-right-radius: 8px !important;
+  }
+}

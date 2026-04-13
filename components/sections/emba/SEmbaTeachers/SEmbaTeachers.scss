@@ -1,0 +1,48 @@
+:deep() {
+  .swiper-navigation {
+    @include desktop {
+      top: scale(-97);
+    }
+  }
+
+  .m-teacher-card {
+    &__text {
+      color: var(--a-color_grey_80);
+      font-size: scale(12);
+      line-height: 1.2;
+
+      @include tablet(max) {
+        position: absolute;
+        top: scale(12);
+        right: scale(12);
+        width: scale(119);
+      }
+
+      @include desktop {
+        font-size: scale(16);
+      }
+    }
+
+    &__position {
+      display: grid;
+      gap: scale(4);
+      color: var(--a-color_dark);
+
+      @include tablet(max) {
+        margin: 0;
+      }
+      
+      @include desktop {
+        gap: scale(12);
+      }
+    }
+  }
+}
+
+.m-tabs {
+  margin-bottom: scale(16);
+
+  @include desktop {
+    margin-bottom: scale(40);
+  }
+}

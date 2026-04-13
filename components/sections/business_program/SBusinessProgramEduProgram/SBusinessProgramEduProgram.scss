@@ -1,0 +1,66 @@
+.s-edu-program {
+  &__inner {
+    display: grid;
+    gap: scale(12);
+  }
+
+  :deep() {
+    .m-accordion {
+      background-color: var(--a-color_grey_40);
+      border-radius: scale(12);
+      transition: var(--transition);
+  
+      &.--open {
+        background-color: var(--a-color_white);
+  
+        .m-accordion__wrap {
+          max-width: scale(880);
+          padding:  scale(20) scale(12) scale(12);
+  
+          @include desktop {
+            padding:  scale(24);
+          }
+        }
+  
+        .m-accordion__icon svg {
+          transform: rotate(45deg);
+        }
+      }
+  
+      @include desktop {
+        border-radius: scale(16);
+      }
+  
+      &__header {
+        cursor: pointer;
+        padding: scale(12);
+  
+        @include desktop {
+          padding: scale(20) scale(24);
+        }
+      }
+  
+      &__icon svg {
+        width: scale(24);
+        height: scale(24);
+      }
+  
+      &__wrap {
+        padding:  0 scale(12);
+        transition: var(--transition);
+  
+        @include desktop {
+          padding:  0 scale(24);
+        }
+        a {
+          color: var(--a-color_red);
+          transition: var(--transition);
+          &:hover {
+            color: var(--a-color_red_dark);
+          }
+        }
+      }
+    }
+  }
+
+}

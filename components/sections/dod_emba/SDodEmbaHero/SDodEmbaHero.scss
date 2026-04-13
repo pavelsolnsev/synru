@@ -1,0 +1,156 @@
+.s-dodemba-hero {
+
+  @include mobile(max) {
+    padding-right: 0;
+    padding-left: 0;
+  }
+
+  :deep(.m-breadcrumbs__link) {
+    color: var(--a-color_grey_40);
+  }
+
+  &__body {
+    position: relative;
+    width: 100%;
+    border-radius: scale(16);
+    overflow: hidden;
+    padding: scale(24) scale(26);
+    display: flex;
+    gap: scale(92);
+    height: scale(530);
+
+    @include tablet(max) {
+      height: scale(289);
+      padding: scale(12);
+    }
+
+    @include mobile(max) {
+      height: scale(510);
+      display: flex;
+      flex-direction: column;
+      justify-content: end;
+    }
+  }
+
+  &__info {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    z-index: 2;
+  }
+
+  &__title {
+    margin-top: scale(33);
+    font-size: scale(86);
+    line-height: 1em;
+    font-weight: 600;
+    letter-spacing: scale(-1.72);
+    color: var(--a-color_white);
+
+    @include tablet(max) {
+      font-size: scale(44);
+      max-width: scale(397);
+      margin-top: 0;
+    }
+
+    @include mobile(max) {
+      font-size: scale(33);
+    }
+  }
+
+  &__subtitle {
+    font-size: scale(26);
+    line-height: 1em;
+    font-weight: 600;
+    color: var(--a-color_white);
+    margin-top: scale(15);
+
+    @include tablet(max) {
+      font-size: scale(17);
+      margin-top: scale(13);
+      max-width: scale(362);
+    }
+
+    @include mobile(max) {
+      margin-top: scale(8);
+    }
+  }
+
+  &__free {
+    font-size: scale(26);
+    line-height: 1.2em;
+    font-weight: 600;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: scale(360);
+    height: scale(41);
+    padding-left: scale(7);
+    background: linear-gradient(90deg, #FFF 40%, rgba(249, 249, 249, 0.00) 100%);
+    margin-top: scale(15);
+
+    @include tablet(max) {
+      display: none;
+    }
+  }
+
+  &__btn {
+    margin-top: auto;
+    width: scale(420);
+    height: scale(60);
+
+    @include tablet(max) {
+      width: scale(336);
+      height: scale(48);
+    }
+
+    @include mobile(max) {
+      width: 100%;
+      margin-top: scale(29);
+    }
+  }
+
+  &__place-and-time {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: space-between;
+    flex-shrink: 0;
+    position: relative;
+    z-index: 2;
+
+    @include tablet(max) {
+      display: none;
+    }
+  }
+
+  &__item {
+    width: scale(327);
+    height: scale(228);
+    padding: scale(24) scale(20);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    color: var(--a-color_white);
+    border-radius: scale(40);
+    border: 1px solid var(--a-color_grey_10);
+    background: rgba(255, 255, 255, 0.01);
+    backdrop-filter: blur(scale(22));
+
+    span {
+      text-align: center;
+      font-weight: 600;
+      line-height: 1em;
+
+      &.big {
+        font-size: scale(28);
+        margin-top: scale(26);
+      }
+
+      &.small {
+        font-size: scale(17);
+        margin-top: scale(38);
+      }
+    }
+  }
+}

@@ -1,0 +1,67 @@
+.s-discipline-article {
+  &__title {
+    margin-bottom: scale(12);
+    @include desktop(min) {
+      margin-bottom: scale(16);
+    }
+  }
+
+  &__description {
+    margin-bottom: scale(24);
+    @include desktop(min) {
+      margin-bottom: scale(40);
+    }
+  }
+
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: scale(16);
+    @include desktop(min) {
+      gap: scale(24);
+    }
+  }
+
+  &__card {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet(min) {
+      flex-direction: row;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    &-info {
+      flex: 1;
+    }
+
+    &-title {
+      margin-bottom: scale(8);
+      @include desktop(min) {
+        margin-bottom: scale(16);
+      }
+    }
+
+    &-img {
+      width: scale(112);
+      height: scale(112);
+      flex: 0 0 scale(112);
+      margin: 0 0 scale(16) 0;
+      @include tablet(min) {
+        margin: 0 scale(24) 0 0;
+      }
+      @include desktop(min) {
+        width: scale(152);
+        height: scale(152);
+        flex: 0 0 scale(152);
+      }
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+    }
+  }
+}

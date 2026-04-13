@@ -1,0 +1,70 @@
+.s-mba-accent {
+  &__body {
+    display: flex;
+    gap: scale(20);
+
+    @include tablet(max) {
+      gap: scale(8);
+    }
+
+    @include mobile(max) {
+      flex-direction: column;
+    }
+  }
+
+  &__card {
+    width: calc(100% / 3 - scale(40) / 3);
+    height: scale(300);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: scale(24);
+    border-radius: scale(16);
+    background-color: var(--a-color_white);
+    position: relative;
+
+    @include tablet(max) {
+      width: calc(100% / 3 - scale(16) / 3);
+      height: scale(220);
+      padding: scale(12);
+    }
+
+    @include mobile(max) {
+      width: 100%;
+      height: scale(180);
+    }
+
+    &__header {
+      display: flex;
+      gap: scale(14);
+      justify-content: space-between;
+    }
+  }
+
+  &__title {
+    color: #3b3b3a;
+  }
+
+  &__icon {
+    width: scale(48);
+    height: scale(48);
+    margin-left: auto;
+
+    @include tablet(max) {
+      width: scale(32);
+      height: scale(32);
+    }
+  }
+
+  &__icon-bg {
+    position: absolute;
+    right: scale(44);
+    top: scale(18);
+
+    @include tablet(max) {
+      right: scale(12);
+      top: scale(12);
+      width: scale(45);
+    }
+  }
+}

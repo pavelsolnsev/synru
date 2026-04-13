@@ -1,0 +1,163 @@
+.s-reviews-intro {
+  padding-top: 0;
+
+  @include mobile() {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  :deep() {
+    .s-ratings__slide {
+      @include desktop() {
+        min-height: scale(380);
+      }
+    }
+
+    .m-rating-card__name {
+      @include desktop() {
+        max-width: scale(400);
+      }
+    }
+  }
+
+  &__banner {
+    z-index: 1;
+    position: relative;
+    overflow: hidden;
+    padding: var(--padding_def);
+    background-color: var(--a-color_grey_40);
+    border-radius: scale(16);
+
+    @include mobile() {
+      padding-top: scale(207);
+    }
+
+    @include tablet(min) {
+      display: grid;
+      grid-template-columns: 1fr scale(312);
+      min-height: scale(324);
+    }
+
+    @include desktop(min) {
+      grid-template-columns: 1fr scale(645);
+      min-height: scale(470);
+    }
+  }
+
+  &__banner-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    img {
+      display: block;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+
+      @include mobile() {
+        object-position: top center;
+      }
+    }
+  }
+
+  &__text {
+    @include desktop(min) {
+      max-width: scale(666);
+    }
+  }
+
+  &__banner-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--gap_def);
+
+    @include mobile() {
+      text-align: center;
+    }
+
+    @include tablet(min) {
+      height: 100%;
+      justify-content: space-between;
+    }
+  }
+
+  &__ratings {
+    display: grid;
+    margin-top: scale(40);
+    gap: var(--gap_def);
+
+    @include desktop(min) {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+
+  &__slider {
+    overflow: hidden;
+  }
+
+  &__slider-item {
+    max-width: scale(280);
+    overflow: hidden;
+    border-radius: scale(16);
+
+    @include tablet() {
+      max-width: scale(340);
+    }
+
+    @include desktop(min) {
+      max-width: scale(702);
+    }
+  }
+
+  &__ratings-content {
+    z-index: 1;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: scale(24);
+    padding: var(--padding_def);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include tablet(min) {
+      min-height: scale(203);
+    }
+
+    @include desktop(min) {
+      min-height: scale(417);
+    }
+  }
+
+  &__ratings-content-text {
+    @include tablet(min) {
+      max-width: scale(494);
+    }
+
+    @include desktop(min) {
+      max-width: scale(630);
+    }
+  }
+
+  &__ratings-image {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+
+    img {
+      width: 100%;
+      height: 100%;
+      display: block;
+      object-fit: cover;
+      object-position: bottom right;
+    }
+  }
+}

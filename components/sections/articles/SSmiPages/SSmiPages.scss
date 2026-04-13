@@ -1,0 +1,58 @@
+.s-smi-pages {
+  padding: scale(20) var(--layout-h-padding);
+  margin: 0;
+  background-color: var(--a-color_white);
+  border-radius: scale(16);
+
+  @include tablet(min) {
+    margin: 0 calc(-1 * var(--layout-h-padding));
+  }
+
+  @include desktop {
+    padding: scale(24);
+    margin: 0;
+  }
+
+  &__title {
+    margin-bottom: scale(16);
+
+    @include desktop {
+      margin-bottom: scale(32);
+    }
+  }
+
+  &__subtitle {
+    margin-bottom: scale(16);
+
+    @include desktop {
+      margin-bottom: scale(32);
+    }
+  }
+
+  &__container {
+    display: grid;
+    gap: var(--gap_def);
+
+    @include tablet(min) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+
+  .--more-btn {
+    display: flex;
+    margin: scale(24) auto 0;
+    min-width: scale(226);
+
+    @include desktop {
+      margin-top: scale(40);
+      min-width: scale(290);
+    }
+  }
+
+  :deep(.s-smi-contacts) {
+    margin: scale(20) 0 0;
+    @include desktop {
+      margin: scale(40) 0 0;
+    }
+  }
+}

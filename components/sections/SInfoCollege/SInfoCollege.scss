@@ -1,0 +1,196 @@
+.s-info-ratings {
+  position: relative;
+  background-color: var(--a-color_grey_20);
+  border-radius: scale(16);
+
+  :deep() {
+    .m-card-text .a-btn {
+      width: 100%;
+      margin-top: scale(32);
+
+      @include tablet() {
+        position: absolute;
+        bottom: scale(12);
+        left: scale(12);
+        width: scale(224);
+      }
+
+      @include desktop(min) {
+        width: scale(400) !important;
+      }
+    }
+
+    .m-card-text__bottom {
+      @include mobile() {
+        display: none;
+      }
+
+      @include tablet() {
+        padding-top: scale(56);
+      }
+    }
+  }
+
+  &__info-slider-item {
+    position: relative;
+    display: flex;
+    gap: scale(16);
+    flex-direction: column;
+    justify-content: space-between;
+    max-width: scale(280);
+    min-height: scale(165);
+    height: auto;
+    margin-top: var(--gap_def);
+    padding: var(--padding_def);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      max-width: scale(445);
+      min-height: scale(200);
+
+      &:nth-child(3):last-child {
+        max-width: scale(910);
+      }
+    }
+
+    .--title {
+      padding-right: scale(40);
+
+      @include desktop(min) {
+        padding-right: scale(60);
+      }
+    }
+
+    :deep() {
+      .ico {
+        top: scale(12);
+        right: scale(12);
+        position: absolute;
+        width: scale(32);
+        height: scale(32);
+        color: var(--a-color_white);
+        background-color: var(--a-color_red);
+        border-radius: 50%;
+
+        @include desktop(min) {
+          top: scale(24);
+          right: scale(24);
+          width: scale(48);
+          height: scale(48);
+        }
+      }
+    }
+  }
+
+  &__ratings {
+    display: grid;
+    gap: var(--gap_def);
+    margin-top: scale(40);
+
+    @include desktop(min) {
+      gap: scale(44);
+      grid-template-columns: 1fr scale(910);
+      margin-top: scale(80);
+    }
+  }
+
+  &__ratings-text {
+    display: grid;
+    gap: scale(16);
+    height: max-content;
+    margin-bottom: scale(24);
+
+    @include desktop(min) {
+      gap: scale(20);
+      margin-bottom: 0;
+    }
+  }
+
+  &__ratings-title {
+    display: flex;
+    flex-direction: column;
+
+    @include tablet() {
+      flex-direction: row;
+      align-items: center;
+      gap: scale(12);
+    }
+  }
+
+  &__ratings-img {
+    width: scale(164);
+    height: scale(40);
+
+    @include desktop() {
+      width: scale(271);
+      height: scale(65);
+    }
+  }
+
+  &__ratings-slider {
+    display: grid;
+    gap: var(--gap_def);
+
+    @include desktop(min) {
+      overflow: auto;
+      padding-right: scale(12);
+      max-height: scale(880);
+    }
+
+    :deep() {
+      .a-btn {
+        width: scale(229);
+        margin: 0 auto;
+        @include desktop(min) {
+          display: none;
+        }
+      }
+    }
+  }
+
+  .s-university__title-logo {
+    position: absolute;
+    top: calc(var(--scale) * 60);
+    width: calc(var(--scale) * 63);
+    right: var(--layout-h-padding);
+    display: none;
+
+    @include desktop() {
+      display: block;
+    }
+  }
+
+  &.--landing {
+    :deep() {
+      .s-university__first {
+        a {
+          display: none !important;
+        }
+      }
+    }
+  }
+}
+
+.s-ratings {
+  &__slide {
+    position: relative;
+    min-height: scale(180);
+    border-radius: scale(16);
+    overflow: hidden;
+
+    @include tablet(max) {
+      &.--hidden {
+        display: none;
+      }
+    }
+
+    @include desktop(min) {
+      min-height: scale(280);
+    }
+
+    &.--landing {
+      pointer-events: none;
+    }
+  }
+}

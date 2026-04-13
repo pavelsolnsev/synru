@@ -1,0 +1,22 @@
+.s-level-programs-form-faculties {
+  display: flex;
+  flex-direction: column;
+  &__programs {
+    order: 0;
+
+    &.--swap {
+      order: 2;
+    }
+  }
+
+  &__form {
+    order: 1;
+  }
+
+  &__faculties {
+    order: 2;
+    &.--swap {
+      order: 0;
+    }
+  }
+}

@@ -1,0 +1,145 @@
+.s-thanks-cards {
+  gap: scale(24);
+  display: grid;
+  padding: scale(40) scale(12);
+  margin: scale(40) 0;
+  border-radius: scale(16);
+  background-color: var(--a-color_grey_20);
+
+  @include tablet(min) {
+    padding: scale(40) scale(16);
+  }
+
+  @include desktop() {
+    gap: scale(60);
+    margin: scale(80) 0;
+    padding: scale(80) scale(40);
+  }
+
+
+  &__info {
+    letter-spacing: scale(.6);
+    @include desktop {
+      max-width: scale(1600);
+      letter-spacing: scale(-1);
+    }
+
+    img {
+      width: scale(40);
+      height: scale(40);
+      margin: scale(-12);
+      margin-right: 0;
+      vertical-align: middle;
+      transition: .2s;
+      @include desktop() {
+        width: scale(126);
+        height: scale(126);
+        margin: scale(-32) scale(-24) scale(-32) scale(-42);
+      }
+    }
+    a {
+      @include desktop() {
+        display: inline-block;
+      }
+      &:hover {
+        color: var(--a-color_red);
+        transition: .2s;
+      }
+      &:hover img {
+        transform: #{"scale(1.14)"};
+      }
+    }
+  }
+
+  
+  &__list {
+    gap: scale(8);
+    display: grid;
+
+    @include tablet(min) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include desktop() {
+      gap: scale(40);
+    }
+  }
+
+
+  &__item {
+    overflow: hidden;
+    position: relative;
+    min-width: 0;
+    border-radius: scale(16);
+
+    @include desktop() {
+      gap: scale(20);
+      display: grid;
+      grid-template-columns: 1fr auto;
+      padding: scale(24);
+      background-color: var(--a-color_white);
+    }
+
+    picture {
+      display: block;
+      overflow: hidden;
+      width: 100%;
+      height: 100%;
+      height: scale(200);
+      @include desktop() {
+        grid-column: 2;
+        grid-row: 1/3;
+        width: scale(416);
+        height: scale(320);
+        border-radius: scale(16);
+      }
+    }
+
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    svg {
+      position: absolute;
+      left: auto;
+      top: scale(12);
+      right: scale(12);
+      width: scale(40);
+      height: scale(40);
+      border-radius: scale(10);
+      background-color: var(--a-color_red);
+      color: var(--a-color_white);
+      @include desktop() {
+        top: scale(40);
+        right: scale(358);
+        width: scale(66);
+        height: scale(66);
+      }
+    }
+
+    &-title {
+      position: absolute;
+      left: scale(12);
+      top: auto;
+      right: auto;
+      bottom: scale(12);
+      padding-right: scale(80);
+      color: var(--a-color_white);
+      @include desktop() {
+        position: static;
+        padding: 0;
+        color: inherit;
+      }
+    }
+
+    .a-btn {
+      width: 100%;
+      margin-top: auto;
+      @include desktop() {
+        width: scale(373);
+      }
+    }
+  }
+}

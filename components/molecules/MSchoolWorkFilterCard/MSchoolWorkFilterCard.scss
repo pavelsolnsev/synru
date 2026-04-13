@@ -1,0 +1,70 @@
+.m-school-work-filter-card {
+  display: flex;
+  flex-direction: column;
+  background-color: var(--a-color_white);
+  padding: scale(24);
+  border-radius: scale(16);
+  height: scale(252);
+  width: calc(100% / 3 - scale(40) / 3);
+  position: relative;
+
+  @include tablet(max) {
+    width: calc(50% - scale(4));
+    height: scale(162);
+    padding: scale(12);
+  }
+
+  @include mobile(max) {
+    width: 100%;
+  }
+
+  &__tag {
+    font-size: scale(16);
+    font-weight: 600;
+    line-height: 120%;
+    color: var(--a-color_grey_80);
+    margin-bottom: scale(12);
+
+    @include tablet(max) {
+      font-size: scale(13);
+    }
+  }
+
+  &__btn {
+    margin-top: auto;
+    width: scale(148);
+    height: scale(48);
+    font-size: scale(15);
+
+    @include tablet(max) {
+      width: scale(107);
+      height: scale(40);
+      font-size: scale(12);
+    }
+  }
+
+  &__bg {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: scale(18);
+    width: scale(137);
+    height: scale(223);
+    z-index: 0;
+
+    @include tablet(max) {
+      width: scale(84);
+      height: scale(136);
+      right: scale(40);
+    }
+
+    @include mobile(max) {
+      right: scale(12);
+    }
+  }
+
+  &__name {
+    position: relative;
+    z-index: 1;
+  }
+}

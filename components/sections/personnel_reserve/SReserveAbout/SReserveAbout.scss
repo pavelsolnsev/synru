@@ -1,0 +1,127 @@
+.s-reserve-about {
+  &__title {
+    margin-bottom: scale(20);
+
+    a {
+      text-decoration: underline;
+      transition: var(--transition);
+
+      &:hover {
+        color: var(--a-color_red);
+        text-decoration: none;
+      }
+    }
+
+    @include mobile() {
+      font-size: scale(19);
+    }
+
+    @include desktop(min) {
+      margin-bottom: scale(80);
+    }
+  }
+
+  &__logo {
+    display: inline-block;
+    margin: -0.1em scale(8);
+    width: scale(28);
+    height: scale(28);
+
+    &:first-child {
+      margin-left: 0;
+      margin-right: 0;
+      @include tablet(max) {
+        width: scale(20);
+        height: scale(20);
+      }
+    }
+
+    @include desktop(min) {
+      margin: -0.1em scale(20);
+      width: scale(49);
+      height: scale(49);
+    }
+  }
+
+  &__content {
+    position: relative;
+    margin-bottom: var(--gap_def);
+    background-color: var(--a-color_white);
+    border-radius: scale(16);
+    overflow: hidden;
+
+    @include desktop(min) {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: scale(20);
+      background-color: transparent;
+    }
+
+    img {
+      display: block;
+      border-radius: scale(16);
+
+      @include mobile() {
+        height: scale(216);
+        object-fit: cover;
+      }
+    }
+
+    :deep() {
+      @include tablet(max) {
+        .m-card-text {
+          position: static;
+        }
+
+        .m-card-text__text {
+          bottom: 0;
+          left: 0;
+          position: absolute;
+          width: 100%;
+          padding: scale(12);
+          color: var(--a-color_white);
+          background: linear-gradient(180deg,rgba(255, 255, 255, 0) 0%, rgba(0, 0, 0, .6) 40%, rgba(0, 0, 0, 1) 100%);
+        }
+      }
+
+      @include desktop(min) {
+        .m-card-text__title {
+          margin-bottom: auto;
+        }
+      }
+    }
+  }
+
+  &__slide {
+    display: flex;
+    justify-content: space-between;
+    gap: scale(24);
+    max-width: scale(280);
+    height: auto;
+    padding: var(--padding_def);
+    background-color: var(--a-color_grey_40);
+    border-radius: scale(16);
+
+    @include desktop(min) {
+      max-width: scale(350);
+      min-height: scale(142);
+      padding: scale(16);
+
+      &:last-child {
+        margin-right: 0;
+      }
+    }
+
+    img {
+      width: scale(80);
+      margin: scale(-12);
+      margin-left: 0;
+
+      @include desktop(min) {
+        width: scale(98);
+        height: scale(98);
+        margin: auto scale(-16) scale(-16) 0;
+      }
+    }
+  }
+}

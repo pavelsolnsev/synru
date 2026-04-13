@@ -1,0 +1,33 @@
+.s-gallery-grid {
+  :deep() {
+    .swiper-wrapper {
+      height: scale(220);
+
+      @include tablet(min) {
+        height: scale(450);
+      }
+
+      @include desktop(min) {
+        height: scale(780);
+      }
+    }
+  }
+
+  &__slide {
+    margin: 0;
+    padding-top: var(--gap_def);
+    padding-right: var(--gap_def);
+
+    @include mobile() {
+      width: scale(280);
+    }
+
+    img {
+      border-radius: scale(16);
+      display: block;
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

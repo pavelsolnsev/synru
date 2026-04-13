@@ -1,0 +1,144 @@
+.s-loyalty-program {
+  :deep() {
+    .l-section__title {
+      max-width: 100%;
+    }
+  }
+
+
+  &__wrap {
+    display: grid;
+    gap: scale(8);
+
+    @include tablet(min, $p-md) {
+      grid-template-columns: 1fr 1fr;
+    }
+
+    @include desktop {
+      gap: scale(20)
+    }
+  }
+
+  :deep() {
+    .m-card-text {
+      @include desktop {
+        min-height: scale(536);
+      }
+      &__bottom {
+        display: flex;
+        flex-direction: column;
+        gap: scale(36);
+        padding-top: scale(8);
+  
+        @include desktop {
+          flex-direction: row;
+          gap: scale(140);
+          padding-top: scale(16);
+        }
+      }
+  
+      &__block {
+        margin: 0;
+        max-width: scale(584);
+      }
+  
+      &__text {
+        max-width: scale(751);
+      }
+  
+      .s-loyalty-program__subtext {
+  
+        @include mobile {
+          margin-bottom: scale(32);
+  
+          & + .a-btn {
+            margin-bottom: scale(8);
+          }
+        }
+      }
+  
+      &__title {
+        max-width: scale(825);
+      }
+  
+      .a-btn {
+        display: none;
+        width: 100%;
+  
+        @include mobile {
+          display: flex;
+        }
+      }
+  
+      &__icons {
+        @include mobile {
+          display: none;
+        }
+      }
+  
+      &__icon {
+        background-color: var(--a-color_dark);
+        color: var(--a-color_yellow);
+      }
+  
+    }
+  }
+
+
+  &__banner {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    gap: scale(12);
+    min-height: scale(376);
+    padding: scale(12);
+    background-color: var(--a-color_dark);
+    border-radius: scale(16);
+
+    @include mobile {
+      order: -1;
+      min-height: scale(198);
+    }
+
+    .a-btn {
+      position: relative;
+      z-index: 2;
+
+      &:first-child {
+        margin-top: auto;
+      }
+
+      @include mobile {
+        display: none;
+      }
+
+      @include desktop {
+        margin-top: auto;
+      }
+    }
+
+    @include desktop {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: scale(20);
+      padding: scale(28) scale(24);
+      border-radius: scale(16);
+    }
+  }
+
+  picture {
+    left: 0;
+    top: 0;
+    z-index: 1;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+
+    img {
+      object-fit: cover;
+      width: 100%;
+      height: 100%;
+    }
+  }
+}

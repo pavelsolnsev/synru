@@ -1,0 +1,24 @@
+.s-discipline-types {
+  padding: var(--padding_def);
+  border-radius: calc(var(--scale) * 16);
+  background-color: var(--a-color_white);
+
+  :deep() {
+    .l-section__inner {
+      display: grid;
+      grid-gap: scale(16);
+
+      @include desktop() {
+        grid-gap: scale(20);
+      }
+    }
+  }
+}
+
+.s-discipline-content {
+  :deep() {
+    p {
+      margin: scale(12) 0;
+    }
+  }
+}

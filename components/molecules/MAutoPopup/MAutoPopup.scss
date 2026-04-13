@@ -1,0 +1,41 @@
+.m-auto-popup {
+  z-index: 1;
+  display: none;
+  position: relative;
+  width: 100%;
+  text-align: center;
+  max-width: scale(413);
+  color: var(--a-color_white);
+  background: radial-gradient(100% 100% at 0% 100%, var(--a-color_white) -40%, var(--a-color_red) 60%) !important;
+
+  &:before {
+    z-index: -2;
+    display: block;
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    bottom: -10%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(40% 60% at 50% 50%, var(--a-color_red) 0%, transparent 70%);
+  }
+
+  &__img {
+    z-index: -1;
+    position: absolute;
+    bottom: 100%;
+    left: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  &__title {
+    margin-bottom: scale(8);
+  }
+
+  .a-btn {
+    width: 100%;
+    margin-top: scale(24);
+  }
+}

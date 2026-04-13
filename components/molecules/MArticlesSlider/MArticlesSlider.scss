@@ -1,0 +1,15 @@
+.m-articles {
+  position: relative;
+  &-slider {
+    overflow: visible;
+    .swiper {
+      &-slide {
+        width: scale(280);
+        height: auto;
+        @include desktop() {
+          width: scale(600);
+        }
+      }
+    }
+  }
+}
